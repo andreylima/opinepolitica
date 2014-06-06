@@ -1,0 +1,233 @@
+<?php
+ 
+
+
+
+class perfisModel {
+	
+
+	private $curtiu_percent;
+
+	private $naocurtiu_percent;
+	
+	private $perfil_id;
+
+	private $votado;
+
+	private $mandato;
+	
+
+	public function __construct($perfil_id)
+	{
+		
+		$this->perfil_id = $perfil_id;
+		$this->setCurtiu_percent();
+		$this->setNaocurtiu_percent();
+		$this->setMandato();
+				
+
+	}
+
+	
+	
+	public function setCurtiu_percent()
+	{
+
+		
+		$autor_id = $this->perfil_id;
+
+		$array_curtiu = get_post_meta($autor_id, 'curtiu');
+		$array_naocurtiu = get_post_meta($autor_id, 'naocurtiu');
+
+		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
+		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
+
+		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));
+		if ($total_votos != 0) {
+			$this->curtiu_percent = round(count(array_filter($array_curtiu)) / $total_votos * 100)."%";
+		}
+		else
+		{
+			$this->curtiu_percent = "0%";
+		}
+		
+	}
+
+	public function getCurtiu_percent()
+	{
+
+		return $this->curtiu_percent;
+
+	}
+	
+	public function setNaocurtiu_percent()
+	{
+
+		
+		$autor_id = $this->perfil_id;
+
+		$array_curtiu = get_post_meta($autor_id, 'curtiu');
+		$array_naocurtiu = get_post_meta($autor_id, 'naocurtiu');
+
+		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
+		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
+
+		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));
+
+		if ($total_votos != 0) {
+			$this->naocurtiu_percent = round(count(array_filter($array_naocurtiu)) / $total_votos * 100)."%";
+
+		}
+		else
+		{
+			$this->naocurtiu_percent = "0%";
+		}
+		
+		
+		
+	}
+
+	public function getNaocurtiu_percent()
+	{
+
+		return $this->naocurtiu_percent;
+
+	}
+	public function curtir()
+	{
+		
+			
+		$array_curtiu = get_post_meta($this->perfil_id , 'curtiu', true);
+		$array_naocurtiu = get_post_meta($this->perfil_id , 'naocurtiu', true);
+		
+		
+		if (!empty($array_naocurtiu)) {
+
+			if (in_array(get_current_user_id() , $array_naocurtiu)) {
+				
+				$indice = array_search(get_current_user_id(), $array_naocurtiu);
+				unset( $array_naocurtiu[$indice] );
+				
+				update_post_meta( $this->perfil_id, 'naocurtiu', $array_naocurtiu);
+
+				}
+		}
+
+		
+
+		if (!empty($array_curtiu)) {
+
+			if (!in_array(get_current_user_id() , $array_curtiu)) {
+			$array_curtiu[] = get_current_user_id();
+			update_post_meta( $this->perfil_id, 'curtiu', $array_curtiu );
+				}
+
+		}
+		else
+		{
+			$array_curtiu[] = get_current_user_id();
+			update_post_meta( $this->perfil_id, 'curtiu', $array_curtiu );
+
+		}
+		
+		
+		return true;
+		exit;
+
+		
+
+
+	}
+
+	public function naocurtir()
+	{
+
+			
+		$array_naocurtiu = get_post_meta( $this->perfil_id, 'naocurtiu', true);
+		$array_curtiu = get_post_meta( $this->perfil_id, 'curtiu', true);
+		
+		
+		if (!empty($array_curtiu)) {
+
+			if (in_array(get_current_user_id() , $array_curtiu)) {
+
+				$indice = array_search(get_current_user_id(), $array_curtiu);
+				unset( $array_curtiu[$indice] );
+				
+				update_post_meta(  $this->perfil_id, 'curtiu', $array_curtiu);
+
+				}
+		}
+
+		
+
+		if (!empty($array_naocurtiu)) {
+
+			if (!in_array(get_current_user_id() , $array_naocurtiu)) {
+			$array_naocurtiu[] = get_current_user_id();
+			update_post_meta(  $this->perfil_id, 'naocurtiu', $array_naocurtiu );
+				}
+
+		}
+		else
+		{
+			$array_naocurtiu[] = get_current_user_id();
+			update_post_meta(  $this->perfil_id, 'naocurtiu', $array_naocurtiu );
+
+		}
+		
+		return true;
+		exit;
+
+	}
+
+	function verifica_curtida()
+	{
+
+		$array_curtiu = get_post_meta($this->perfil_id, 'curtiu',true);
+		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
+
+		if (in_array(get_current_user_id(), $array_curtiu))
+		{
+			return true;
+			exit();
+		}
+
+		return false;
+
+	}
+	function verifica_naocurtida()
+	{
+		$array_naocurtiu = get_post_meta($this->perfil_id, 'naocurtiu',true);
+		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
+
+		if (in_array(get_current_user_id(), $array_naocurtiu))
+		{
+			return true;
+			exit();
+		}
+
+		return false;
+
+	}
+
+	function setMandato()
+	{
+		$this->mandato = get_post_meta($this->perfil_id, 'mandato',true);
+
+	}
+	function getMandato()
+	{
+		return $this->mandato;
+	}
+
+	
+			
+			
+				
+
+	
+
+}
+
+?>

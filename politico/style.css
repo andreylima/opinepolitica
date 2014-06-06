@@ -1,0 +1,110 @@
+/*
+Theme Name:Sistema Politico 
+Theme URI: http://sistemapolitico.com
+Author: Andrey	
+Author URI: https://www.facebook.com/andrey.lima.ramos
+Description: Sistema Político
+Version: 1.0
+*/
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+@import url('bootstrap/css/bootstrap.css'); 
+
+@font-face {
+  font-family: "Lato-Bol";
+  src: url("assets/fonts/Lato-Bol.ttf");
+}
+@font-face {
+  font-family: "Lato-Reg";
+  src: url("assets/fonts/Lato-Reg.ttf");
+}
+html
+{
+	font-size: 16px;
+}
+body
+{
+	margin: 0;
+	width: 100%;
+}
+
+header
+{
+	width: 100%;
+	height: 60px;
+	background: gray;
+}
+#logo
+{
+	float: left;
+}
+.open_menu
+{
+	display: none;
+}
+#menu-body
+{
+	display: none;
+}
+
+@media only screen and (max-width : 480px) { 
+
+#menu-header
+{
+	display: none;
+}
+.show-menu
+{
+	display: block !important;
+}
+
+.open_menu
+{
+	display: block;
+	width: 60px;
+	height: 56px;
+	float: right;
+	text-align: center;
+	line-height: 49px;
+	font-size: 60px;
+	border: solid 2px #000000;
+	border-radius: 5px;
+}
+#menu-body ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#menu-body ul li
+{
+	height: 60px;
+	height: 3.750rem;
+	line-height: 60px;
+	line-height: 3.750rem;
+	background-color: aquamarine;
+	border-bottom: 1px solid;
+	border-bottom: 0.0625rem solid;
+	text-align: center;
+
+}
+#menu-body ul li a
+{
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+.menu-arrow
+{
+	float: right;
+	margin-right: 20px;
+	margin-right: 1.250rem;
+	line-height: 60px;
+	line-height: 3.750rem;
+	position: absolute;
+}
+
+
+}
