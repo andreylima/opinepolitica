@@ -23,18 +23,21 @@ Version: 1.0
 html
 {
 	font-size: 16px;
+
 }
 body
 {
 	margin: 0;
 	width: 100%;
+	font-family: 'Lato-Bol' !important;
 }
 
 header
 {
 	width: 100%;
 	height: 60px;
-	background: gray;
+	height: 4.0625rem;
+	background: #ecf0f1;
 }
 #logo
 {
@@ -51,6 +54,12 @@ header
 
 @media only screen and (max-width : 480px) { 
 
+h1
+{
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin: 0;	
+}
 #menu-header
 {
 	display: none;
@@ -64,6 +73,7 @@ header
 {
 	display: block;
 	width: 60px;
+	width: 3.750rem;	
 	height: 56px;
 	float: right;
 	text-align: center;
@@ -105,6 +115,16 @@ header
 	line-height: 3.750rem;
 	position: absolute;
 }
+.destaque
+{
+	background-color: #34495e;
+	height: 128px;
+	height: 8rem;
+	color: #ecf0f1;
+	text-align: center;
+}
+.wrap-destaque
+{
 
-
+}
 }
