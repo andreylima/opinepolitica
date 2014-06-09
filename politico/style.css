@@ -12,6 +12,8 @@ Version: 1.0
 
 @import url('bootstrap/css/bootstrap.css'); 
 
+@import url('assets/css/flickerplate.css'); 
+
 @font-face {
   font-family: "Lato-Bol";
   src: url("assets/fonts/Lato-Bol.ttf");
@@ -34,8 +36,10 @@ body
 
 header
 {
+	padding-top: 2.5px;
+	padding-top: 0.15625rem;
 	width: 100%;
-	height: 60px;
+	height: 65px;
 	height: 4.0625rem;
 	background: #ecf0f1;
 }
@@ -50,6 +54,104 @@ header
 #menu-body
 {
 	display: none;
+}
+.login-connect input[type="submit"]
+{
+	width: 48%;
+	margin: auto;
+	margin-left: 4%;
+	background-color: #2f96b4;
+	background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+	background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+	background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+	background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	border-radius: 5px;	
+	height: 28px;
+	height: 1.75rem;
+	color: white;
+}
+.see-more
+{
+	display: block;
+	height: 28px;
+	height: 1.75rem;
+	background-color: #2f96b4;
+	color: white;
+	width: 30%;
+	border-radius: 5px;
+	border-radius: 0.3125rem;
+	text-align: center;
+	line-height: 28px;
+	float: left;
+	
+
+}
+div.new-fb-7
+{
+	margin: 0 !important;
+	width: 48%;
+	float: left;
+}
+.panel-body
+{
+	color: black;
+}
+.mini-percent-apoiaram
+{
+	display: block;
+	position: relative;
+	height: 30px;
+	min-width: 80px;	
+	border: solid 1px #ddd;
+	float: right;	
+	line-height: 30px;
+	background-color: #2ecc71;
+	color: white;
+}
+.mini-percent-naoapoiaram
+{
+	display: block;
+	position: relative;
+	height: 30px;
+	min-width: 80px;
+	border: solid 1px #ddd;
+	float: right;	
+	line-height: 30px;
+	background-color: #e74c3c;
+	color: white;
+
+}
+.mini-icon-s
+{
+	font-size: 20px;
+	height: 29px;
+	padding: 4px;
+	top: 0;
+	color: white;
+	float: left;
+	margin-left: 10px;
+	margin-left: 0.625rem;
+}
+.mini-icon-n
+{
+	font-size: 20px;
+	height: 29px;
+	padding: 4px;
+	top: 0;
+	color: white;
+	float: left;
+	margin-left: 10px;
+	margin-left: 0.625rem;
+
+}
+.apoio
+{
+	float: left;
+	width: 65%;
 }
 
 @media only screen and (max-width : 480px) { 
@@ -78,15 +180,22 @@ h1
 	float: right;
 	text-align: center;
 	line-height: 49px;
-	font-size: 60px;
-	border: solid 2px #000000;
+	line-height: 3.0625rem;
+	font-size: 37px;
+	font-size: 2.3125rem;
 	border-radius: 5px;
+	margin-right: 10px;
+	margin-right: 0.625rem;
+	background-color: #34495e;
+	color: white;
 }
 #menu-body ul
 {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	font-size: 18px;
+	font-size: 1.125rem;
 }
 #menu-body ul li
 {
@@ -94,10 +203,11 @@ h1
 	height: 3.750rem;
 	line-height: 60px;
 	line-height: 3.750rem;
-	background-color: aquamarine;
-	border-bottom: 1px solid;
-	border-bottom: 0.0625rem solid;
+	background-color: #16a085;
+	border-bottom: 1px solid white;
+	border-bottom: 0.0625rem solid white;
 	text-align: center;
+	text-transform: uppercase;
 
 }
 #menu-body ul li a
@@ -105,6 +215,8 @@ h1
 	height: 100%;
 	width: 100%;
 	display: block;
+	color: white;
+	text-decoration: none;
 }
 .menu-arrow
 {
@@ -117,14 +229,65 @@ h1
 }
 .destaque
 {
+	padding-top: 30px;
+	padding-top: 1.875rem;
 	background-color: #34495e;
 	height: 128px;
 	height: 8rem;
 	color: #ecf0f1;
 	text-align: center;
 }
-.wrap-destaque
+.wrap-destaque h1
 {
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-size: 1.125rem;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 6px;
+	padding: 0.375rem;
+	display: inline-block;
+}
+.login-wrap
+{
+	padding-top: 30px;
+	padding-top: 1.875rem;
+	background-color: #ecf0f1;
+	height: 160px;
+}
+.login-connect input[type="text"], input[type="password"]
+{
+	margin: auto;
+	display: block;
+	width: 40px;
+	width: 65%;
+	height: 35px;
+	height: 2.1875rem;
+	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
+}
+
+.face-connect
+{
+	float: left;
+	width: 60px;
+}
+.login-field
+{
+	width: 90%;
+	margin: auto;
+}
+
+.center-buttons
+{
+	margin: auto;
+	width: 65%;
+}
+.projetos-slider-wraper
+{
+	height: 230px;
+	height: 14.375rem;
 
 }
+
+
 }

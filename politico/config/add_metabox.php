@@ -200,7 +200,7 @@ function consideracoes_display_metabox($post, $box)
   ?>
   
   <label for="consideracoes">CONSIDERAÇÕES DO AUTOR</label>
-  <input type="text" name="consideracoes" id="consideracoes" value="<?php echo $consideracoes; ?>" required/>
+  <textarea rows="3" cols="55" name="consideracoes" id="consideracoes"><?php echo $consideracoes; ?></textarea>
   
 
 
