@@ -21,7 +21,7 @@ jQuery(".mini-percent-naoapoiaram").each(function(){ jQuery(this).css("width", j
 jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", jQuery(this).text())});
 
 jQuery(".apoio").each(function(){
-if (jQuery(this.find(".mini-percent-apoiaram") ).text() == "0%" ) {
+if (jQuery(this).find(".mini-percent-apoiaram").text() == "0%" ) {
 
 jQuery(".mini-percent-naoapoiaram").each(function(){ jQuery(this).css("width", "50%")});
 jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", "50%")});
