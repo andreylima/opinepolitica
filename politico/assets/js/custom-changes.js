@@ -17,18 +17,27 @@ jQuery(".open_menu").click(function(){
 		
 jQuery('.flicker-example').flicker();
 
-jQuery(".mini-percent-naoapoiaram").each(function(){ jQuery(this).css("width", jQuery(this).text())});
-jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", jQuery(this).text())});
+jQuery(".mini-percent-naoapoiaram").each(function(){ 
 
-jQuery(".apoio").each(function(){
-if (jQuery(this).find(".mini-percent-apoiaram").text() == "0%" ) {
+	var percent_naoapoio = jQuery(this).text().replace(/^\s+|\s+$/g,"");
+	var er = /\^|~|\?|,|\*|\.|\-/g;
+	
 
-jQuery(".mini-percent-naoapoiaram").each(function(){ jQuery(this).css("width", "50%")});
-jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", "50%")});
+	jQuery(this).css("width", percent_naoapoio +"%");
 
-};
 
 });
+jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", jQuery(this).text())});
+
+// jQuery(".apoio").each(function(){
+// if (jQuery(this).find(".mini-percent-apoiaram").text() == "0%" ) {
+
+// jQuery(".mini-percent-naoapoiaram").each(function(){ jQuery(this).css("width", "50%")});
+// jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", "50%")});
+
+// };
+
+// });
 
 
 }
