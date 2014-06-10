@@ -22,7 +22,7 @@ get_header('mobile');
       		<input type="password" name="senha" value="senha" id="senha-log">
       		</div>
       		<div class="center-buttons">
-      		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">CONNECT</div></div></div>
+      		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">FACE</div></div></div>
       		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
       		</div>
       		<!-- <span class="forgot-pass-header"><a href="">Esqueci a senha</a> </span>  -->
@@ -49,7 +49,10 @@ get_header('mobile');
      <div class="panel panel-default">
       <div class="panel-heading"><?php the_title(); ?></div>
       <div class="panel-body">
+      <div class="projeto-excerpt">
       	<?php the_excerpt(); ?>
+      	</div>
+      	<div class="panel-bottom">
       	<div class="see-more">
       		VEJA MAIS
       	</div>
@@ -63,6 +66,7 @@ get_header('mobile');
             <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
             <?php echo $projeto->getPositivar_percent(); ?>
             </span>
+		</div>
 		</div>
 		</div>
 
