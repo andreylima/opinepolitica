@@ -30,9 +30,9 @@ get_header('mobile');
 	</div>
 </div>
 	
-<div class="projetos-slider-wraper">
+<div class="projetos-slider-wrapper">
 
-<div class="flicker-example" data-block-text="false">
+<div class="flicker-example projetos-slider" data-block-text="false">
 		
 		<ul>
 			
@@ -83,6 +83,57 @@ get_header('mobile');
 
 
 
+</div>
+
+<div class="prefeito-wrapper">
+	
+
+    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'prefeito',  'posts_per_page' => 1) ); ?>
+    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <?php 
+      $perfis = new perfisModel($post->ID);
+      $curtiu = $perfis->verifica_curtida();
+      $naocurtiu = $perfis->verifica_naocurtida();
+
+       ?>
+      <div class="prefeito perfil">
+        <div class="thumb">  
+          <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
+          <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
+            <span class="glyphicon glyphicon-thumbs-up icon-vote">
+              
+            </span>
+            <span class="percent-autor">
+            <?php 
+            
+            echo $perfis->getCurtiu_percent(); 
+
+            ?>
+            </span>
+          </div>
+        </a>
+        <a href="">
+        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
+        <span class="glyphicon glyphicon-thumbs-down icon-vote">
+          
+        </span>
+       <span class="percent-autor">
+              <?php 
+            
+            echo $perfis->getNaocurtiu_percent(); 
+
+            ?>
+            </span>
+        </div>
+        </a>
+      </div>
+      
+      <h4 class="name_perfil"><?php the_title() ?></h4>
+        <div class="link-perfil"> PERFIL</div>
+
+    </div>
+
+  <?php endwhile; ?>
 </div>
 
 

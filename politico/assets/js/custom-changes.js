@@ -20,10 +20,10 @@ jQuery('.flicker-example').flicker();
 jQuery(".mini-percent-naoapoiaram").each(function(){ 
 
 	var percent_naoapoio = jQuery(this).text().replace(/^\s+|\s+$/g,"");
-	var er = /\^|~|\?|,|\*|\.|\-/g;
+	var percent_naoapoio =  percent_naoapoio.replace(/[^\w\s]/gi, '');
 	
 
-	jQuery(this).css("width", percent_naoapoio +"%");
+	jQuery(this).css("width", percent_naoapoio + "%");
 
 
 });
