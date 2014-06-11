@@ -20,24 +20,27 @@ jQuery('.flicker-example').flicker();
 jQuery(".mini-percent-naoapoiaram").each(function(){ 
 
 	var percent_naoapoio = jQuery(this).text().replace(/^\s+|\s+$/g,"");
-	var percent_naoapoio =  percent_naoapoio.replace(/[^\w\s]/gi, '');
-	
+	percent_naoapoio =  percent_naoapoio.replace(/[^\w\s]/gi, '');
+	percent_naoapoio -= 0.5;
 
 	jQuery(this).css("width", percent_naoapoio + "%");
 
 
 });
-jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", jQuery(this).text())});
+jQuery('.flicker-example').flicker();
 
-// jQuery(".apoio").each(function(){
-// if (jQuery(this).find(".mini-percent-apoiaram").text() == "0%" ) {
+jQuery(".mini-percent-apoiaram").each(function(){ 
 
-// jQuery(".mini-percent-naoapoiaram").each(function(){ jQuery(this).css("width", "50%")});
-// jQuery(".mini-percent-apoiaram").each(function(){ jQuery(this).css("width", "50%")});
+	var percent_naoapoio = jQuery(this).text().replace(/^\s+|\s+$/g,"");
+	percent_naoapoio =  percent_naoapoio.replace(/[^\w\s]/gi, '');
+	percent_naoapoio -= 2;
 
-// };
+	jQuery(this).css("width", percent_naoapoio + "%");
 
-// });
+
+});
+
+
 
 
 }

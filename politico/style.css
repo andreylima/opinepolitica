@@ -81,7 +81,7 @@ header
 	height: 1.75rem;
 	background-color: #2f96b4;
 	color: white;
-	width: 30%;
+	width: 35%;
 	border-radius: 5px;
 	border-radius: 0.3125rem;
 	text-align: center;
@@ -293,15 +293,21 @@ h1
 }
 .projetos-slider-wrapper
 {
-	height: 230px;
-	height: 14.375rem;
+	height: 245px;
+	height: 15.3125rem;
 
 }
 .politicos-slider-wrapper
 {
-	height: 230px;
-	height: 14.375rem;
+	height: 245px;
+	height: 15.3125rem;
 	background-color: #ecf0f1;
+}
+.prefeito-wrapper
+{
+	padding-top: 15px;
+	padding-bottom: 15px;
+
 }
 .projeto-excerpt
 {
@@ -351,7 +357,9 @@ h1
 .dot
 {
 	height: 10px !important;
+	height: 0.625rem !important;
 	width: 10px !important;
+	width: 0.625rem !important;
 }
 .prefeito 
 {
@@ -359,23 +367,23 @@ h1
 }
 .perfil
 {
-	margin: 30px 30px; 
-	width: 230px;
-	height: 300px;
+	width: 80%;
+	
 }
 .thumb 
 {
-	height: 200px;
-	width: 200px;
+	width: 155px;
+	width: 9.6875rem;
 	margin: auto;
 }
 .perfil-size 
 {
 	height: 150px;
 	width: 150px;
-	padding:3px;
 	border: 2px solid #021a40;
 	background-color:white;
+	margin: auto;
+	display: block;
 
 }
 .votes , .voten
@@ -393,14 +401,22 @@ h1
 	transition: all 0.1s linear;
 
 }
-
+.votes
+{
+	left: -15px;
+	left: -0.9375rem;
+	color: white;
+	background-color: #2ecc71;
+}
+.voten
+{
+	right: -15px;
+	right: -0.9375rem;
+	color: white;
+	background-color: #e74c3c;
+}
 .votes:hover , .voten:hover
 {
-	border: solid 2px black;
-	border-radius: 50%;
-	position: relative;
-	bottom: 40px;
-	background-color: white;
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	-o-transition: all 0.1s linear;
@@ -419,6 +435,7 @@ h1
 {
 	font-size:  20pt !important;
 	top: 10px !important;
+	left: 10px !important;
 }
 .percent-autor 
 {
@@ -432,5 +449,28 @@ h1
 	text-align: center;
 	line-height: 30px;
 }
+.percent-curtiu
+{
+	background-color: #2ecc71;
+}
+.percent-naocurtiu
+{
+	background-color: #e74c3c;
+}
+.link-perfil
+{
+	text-align: center;
+	display: block;
+	height: 28px;
+	height: 1.75rem;
+	background-color: #2f96b4;
+	color: white;
+	width: 35%;
+	border-radius: 5px;
+	border-radius: 0.3125rem;
+	text-align: center;
+	line-height: 28px;
+	margin: auto;
 
+}
 }

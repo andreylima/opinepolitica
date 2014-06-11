@@ -103,7 +103,7 @@ get_header('mobile');
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
               
             </span>
-            <span class="percent-autor">
+            <span class="percent-autor percent-curtiu">
             <?php 
             
             echo $perfis->getCurtiu_percent(); 
@@ -117,7 +117,7 @@ get_header('mobile');
         <span class="glyphicon glyphicon-thumbs-down icon-vote">
           
         </span>
-       <span class="percent-autor">
+       <span class="percent-autor percent-naocurtiu">
               <?php 
             
             echo $perfis->getNaocurtiu_percent(); 
@@ -129,7 +129,7 @@ get_header('mobile');
       </div>
       
       <h4 class="name_perfil"><?php the_title() ?></h4>
-        <div class="link-perfil"> PERFIL</div>
+        <div class="link-perfil">VER PERFIL</div>
 
     </div>
 
