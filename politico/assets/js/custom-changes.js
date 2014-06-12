@@ -27,7 +27,7 @@ jQuery(".mini-percent-naoapoiaram").each(function(){
 
 
 });
-jQuery('.flicker-example').flicker();
+
 
 jQuery(".mini-percent-apoiaram").each(function(){ 
 
