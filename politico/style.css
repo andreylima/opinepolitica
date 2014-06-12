@@ -87,7 +87,6 @@ header
 	text-align: center;
 	line-height: 28px;
 	float: left;
-	margin-right: 1%;
 	
 
 }
@@ -160,11 +159,7 @@ div.new-fb-7
 .apoio
 {
 	float: right;
-	width: 64%;
-}
-.name_perfil
-{
-	min-height: 40px;
+	width: 65%;
 }
 
 @media only screen and (max-width : 480px) { 
@@ -298,8 +293,8 @@ h1
 }
 .projetos-slider-wrapper
 {
-	height: 230px;
-	height: 14.375rem;
+	height: 245px;
+	height: 15.3125rem;
 
 }
 .politicos-slider-wrapper
@@ -314,11 +309,6 @@ h1
 	padding-bottom: 15px;
 
 }
-.vereadores-wrapper
-{
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
 .projeto-excerpt
 {
 	height: 100px;
@@ -329,9 +319,9 @@ h1
 	display: block;
 	position: relative;
 	height: 30px;
-	min-width: 35%;	
+	min-width: 34%;	
 	margin-right: 1%;
-	max-width: 64%;
+	max-width: 65%;
 	border: solid 1px #ddd;
 	float: right;	
 	line-height: 30px;
@@ -341,16 +331,14 @@ h1
 	padding-left: 0.3125rem;
 	padding-right: 5px;
 	padding-right: 0.3125rem;
-	border-radius: 5px;
-	border-radius: 0.3125rem;
 }
 .mini-percent-naoapoiaram
 {
 	display: block;
 	position: relative;
 	height: 30px;
-	min-width: 35%;
-	max-width: 64%;
+	min-width: 34%;
+	max-width: 65%;
 	border: solid 1px #ddd;
 	float: right;	
 	line-height: 30px;
@@ -360,8 +348,6 @@ h1
 	padding-left: 0.3125rem;
 	padding-right: 5px;
 	padding-right: 0.3125rem;
-	border-radius: 5px;
-	border-radius: 0.3125rem;
 
 }
 .panel-bottom
@@ -394,7 +380,7 @@ h1
 {
 	height: 150px;
 	width: 150px;
-	border: 2px solid #BDC3C7;
+	border: 2px solid #021a40;
 	background-color:white;
 	margin: auto;
 	display: block;
@@ -402,7 +388,7 @@ h1
 }
 .votes , .voten
 {
-	border: solid 2px #BDC3C7;
+	border: solid 2px black;
 	border-radius: 50%;
 	height:	50px;
 	width: 50px;
@@ -443,7 +429,7 @@ h1
 }
 .votado
 {
-	color: yellow !important;
+	background-color: yellow !important;
 }
 .icon-vote 
 {
@@ -455,7 +441,7 @@ h1
 {
 	height: 30px;
 	background-color: white;
-	border: solid 2px #BDC3C7;
+	border: solid 2px black;
 	display: block;
 	position: relative;
 	top: -70px;

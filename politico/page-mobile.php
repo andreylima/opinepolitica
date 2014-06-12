@@ -58,12 +58,10 @@ get_header('mobile');
       	</div>
       	<div class="apoio">
       	<span class="mini-percent-naoapoiaram">
-          <div>
             <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
             <?php echo $projeto->getNegativar_percent(); ?>
-          </div>
             </span>
-          
+
             <span class="mini-percent-apoiaram">
             <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
             <?php echo $projeto->getPositivar_percent(); ?>
@@ -136,13 +134,7 @@ get_header('mobile');
     </div>
 
   <?php endwhile; ?>
-</div> <!-- prefeito wrapper -->
-
-<div class="vereadores-wrapper">
-  
-
 </div>
-
 
 
 <?php get_footer() ?>
