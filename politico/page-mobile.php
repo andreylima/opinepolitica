@@ -13,13 +13,14 @@ get_header('mobile');
 </div>
 </div>
 <div class="login-wrap">
+  <div class="login-title"> FAÇA LOGIN</div>
 	<div class="login-field">
 		<span class="face-connect">
 			</span>
 		<span class="login-connect">
-			<div >
-			<input type="text" name="email" value="email" id="email-log">
-      		<input type="password" name="senha" value="senha" id="senha-log">
+			<div class="inputs-login">
+			 <span class="icon-input"><i class="fa fa-envelope fa-2x"></i></span><input type="text" name="email" value="" id="email-log" placeholder="e-mail">
+      		<span class="icon-input"><i class="fa fa-key fa-2x"></i></span><input type="password" name="senha" placeholder="senha" id="senha-log">
       		</div>
       		<div class="center-buttons">
       		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">FACE</div></div></div>
@@ -31,8 +32,8 @@ get_header('mobile');
 </div>
 	
 <div class="projetos-slider-wrapper">
-
-<div class="flicker-example projetos-slider" data-block-text="false">
+<div class="projetos-title">PROJETOS DE LEI EM DEBATE</div>
+<div class="projetos-slider" data-block-text="false">
 		
 		<ul>
 			
@@ -99,13 +100,15 @@ get_header('mobile');
 
        ?>
       <div class="prefeito perfil">
+        <div class="cargo"><?php $terms = wp_get_post_terms( $post->ID, "Cargos", array("fields" => "names") ); echo $terms[0];  ?></div>
+        <div class="thumb-wrap">
         <div class="thumb">  
           <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
           <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
               
             </span>
-            <span class="percent-autor percent-curtiu">
+            <span class="percent-both percent-curtiu">
             <?php 
             
             echo $perfis->getCurtiu_percent(); 
@@ -119,7 +122,7 @@ get_header('mobile');
         <span class="glyphicon glyphicon-thumbs-down icon-vote">
           
         </span>
-       <span class="percent-autor percent-naocurtiu">
+       <span class="percent-both percent-naocurtiu">
               <?php 
             
             echo $perfis->getNaocurtiu_percent(); 
@@ -129,8 +132,9 @@ get_header('mobile');
         </div>
         </a>
       </div>
-      
-      <h4 class="name_perfil"><?php the_title() ?></h4>
+      </div>  <!-- thumb wrap -->
+
+      <h3 class="name-perfil"><?php the_title() ?></h3>
         <div class="link-perfil">VER PERFIL</div>
 
     </div>
@@ -138,10 +142,97 @@ get_header('mobile');
   <?php endwhile; ?>
 </div> <!-- prefeito wrapper -->
 
-<div class="vereadores-wrapper">
-  
+<div class="vereadores-slider-wrapper">
+    <div class="vereadores-slider">
 
+      <ul>
+
+          
+            <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'Vereador',  'posts_per_page' => 100, 'orderby'=> 'title', 'order' => 'asc') ); ?>
+  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+  <?php 
+      $perfis = new perfisModel($post->ID);
+      $curtiu = $perfis->verifica_curtida();
+      $naocurtiu = $perfis->verifica_naocurtida();
+
+  ?>
+    <li>
+
+    <div class="vereador perfil  <?php echo $post->ID ?>">
+      <div class="cargo"><?php $terms = wp_get_post_terms( $post->ID, "Cargos", array("fields" => "names") ); echo $terms[0];  ?></div>
+      <div class="thumb-wrap">
+      <div class="thumb">
+        <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
+        <a href="">
+        <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
+        <span class="glyphicon glyphicon-thumbs-up icon-vote">
+          
+        </span>
+        <span class="percent-both percent-curtiu">
+              <?php 
+            $perfis = new perfisModel($post->ID);
+            echo $perfis->getCurtiu_percent(); 
+
+            ?>
+            </span>
+        </div>
+        </a>
+        <a href=""> 
+        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
+        <span class="glyphicon glyphicon-thumbs-down icon-vote">
+          
+        </span>
+        <span class="percent-both percent-naocurtiu">
+               <?php 
+            $perfis = new perfisModel($post->ID);
+            echo $perfis->getNaocurtiu_percent(); 
+
+            ?>
+            </span>
+        </div>
+        </a>
+      </div>
+      </div> <!-- thumb-wrap -->
+      <h3 class="name-perfil"><?php the_title() ?></h3>
+        <div class="link-perfil">VER PERFIL</div>
+    </div>
+ </li>
+  <?php endwhile; ?>
+
+         
+
+      </ul>
+
+    </div>
+
+
+</div> <!-- vereadores wrapper -->
+
+<div class="login-wrapper">
+  <?php if (!is_user_logged_in()) {
+
+      ?>
+<div class="form-cadastro">
+  <h1>CADASTRE-SE PARA INTERAGIR.</h1>
+  <h3>É rápido e fácil.</h3>
+  <form action="" method="post" id="cadastro_form" novalidate="novalidate">
+  <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
+  <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
+  <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input" name="email">
+  <input type="text" placeholder="Digite seu CPF." id="CPF" class="cadastro-input" name="cpf">
+  <span class="legenda-cpf">*É importante para termos certeza que você é uma pessoa real.</span>
+  <select class="cidade_select" id="cidade_select" name="cidade_select">
+  <option value="" disabled selected>Selecione a sua Cidade</option>
+  <option value="Governador Valadares">Governador Valadares</option>
+  </select>
+  <input type="password" placeholder="Escolha uma senha." id="senha" class="cadastro-input" name="senha">
+  <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
 </div>
+</form>
+
+<?php } ?>
+</div>
+
 
 
 

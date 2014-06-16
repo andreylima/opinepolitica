@@ -32,8 +32,9 @@
 </head>
 <body  <?php body_class(); ?>>
 <header>
-<img id="logo" class="img-circle logo-index pull-left" src="http://placehold.it/60x60">
-<div class="open_menu">&#9776;</div>
+<div id="logo" ></div>
+<a href="#button-cadastrar" class="cadastrar-link">CADASTRE-SE</a>
+<a href="#menu-body"><div class="open_menu">&#9776;</div></a>
 <?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-header' ) ); ?>
 
  </header>

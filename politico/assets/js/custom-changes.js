@@ -4,10 +4,13 @@ jQuery(".open_menu").click(function(){
 
 	if (jQuery("#menu-body").hasClass("show-menu")) {
 		jQuery("#menu-body").removeClass("show-menu");
+		jQuery(".destaque").removeClass("destaque-fit");
+
 	}
 	else
 	{
 		jQuery("#menu-body").addClass("show-menu");
+		jQuery(".destaque").addClass("destaque-fit");
 	};
 
 })
@@ -15,7 +18,10 @@ jQuery(".open_menu").click(function(){
 	
 
 		
-jQuery('.flicker-example').flicker();
+jQuery('.projetos-slider').flicker();
+jQuery('.vereadores-slider').flicker();
+
+
 
 jQuery(".mini-percent-naoapoiaram").each(function(){ 
 
@@ -39,6 +45,8 @@ jQuery(".mini-percent-apoiaram").each(function(){
 
 
 });
+
+jQuery("#menu-body ul li a").append("<i class='fa fa-arrow-right arrow-margin'></i>");
 
 
 

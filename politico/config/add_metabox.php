@@ -182,10 +182,14 @@ $mandato = get_post_meta( $post->ID, 'mandato', true );
 function projetos_debatidos_display_metabox($post, $box)
 {
     $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true );
-    $projetos_debatidos = implode(', ', $projetos_debatidos);
+    
+    if ($projetos_debatidos != "") {
+       $projetos_debatidos = implode(', ', $projetos_debatidos);
+    }
+   
 
   ?>
-  <textarea rows="4" cols="80" name="resposta_responsavel" id="resposta_responsavel"><?php echo $projetos_debatidos; ?>
+  <textarea rows="4" cols="55" name="resposta_responsavel" id="resposta_responsavel"><?php echo $projetos_debatidos; ?>
   </textarea>
   
   <?php
