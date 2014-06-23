@@ -13,7 +13,7 @@ jQuery(".open_menu").click(function(){
 		jQuery(".destaque").addClass("destaque-fit");
 	};
 
-})
+});
 
 	
 

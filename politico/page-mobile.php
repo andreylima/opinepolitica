@@ -12,11 +12,14 @@ get_header('mobile');
 	<h1>PROPOSTOS EM GOVERNADOR VALADARES</h1>
 </div>
 </div>
+<?php if (!is_user_logged_in()) {
+
+      ?>
 <div class="login-wrap">
+
   <div class="login-title"> FAÇA LOGIN</div>
 	<div class="login-field">
-		<span class="face-connect">
-			</span>
+		
 		<span class="login-connect">
 			<div class="inputs-login">
 			 <span class="icon-input"><i class="fa fa-envelope fa-2x"></i></span><input type="text" name="email" value="" id="email-log" placeholder="e-mail">
@@ -30,6 +33,7 @@ get_header('mobile');
 		</span>
 	</div>
 </div>
+<?php } ?>
 	
 <div class="projetos-slider-wrapper">
 <div class="projetos-title">PROJETOS DE LEI EM DEBATE</div>
@@ -207,11 +211,11 @@ get_header('mobile');
 
 
 </div> <!-- vereadores wrapper -->
-
-<div class="login-wrapper">
-  <?php if (!is_user_logged_in()) {
+<?php if (!is_user_logged_in()) {
 
       ?>
+<div class="login-wrapper">
+  
 <div class="form-cadastro">
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
@@ -230,9 +234,9 @@ get_header('mobile');
 </div>
 </form>
 
-<?php } ?>
-</div>
 
+</div>
+<?php } ?>
 
 
 

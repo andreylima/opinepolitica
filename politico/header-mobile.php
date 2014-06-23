@@ -33,8 +33,32 @@
 <body  <?php body_class(); ?>>
 <header>
 <div id="logo" ></div>
+<?php if (!is_user_logged_in()) {
+
+      ?>
 <a href="#button-cadastrar" class="cadastrar-link">CADASTRE-SE</a>
+<?php } ?>
 <a href="#menu-body"><div class="open_menu">&#9776;</div></a>
 <?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-header' ) ); ?>
 
+<?php if (!is_user_logged_in()) {
+
+      ?>
+<div class="login-wrap-header">
+  		
+		<span class="login-connect">
+		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">FACE</div></div></div>
+			<div class="inputs-login">
+			 <span class="icon-input"><i class="fa fa-envelope fa-2x"></i></span><input type="text" name="email" value="" id="email-log" placeholder="e-mail">
+      		<span class="icon-input"><i class="fa fa-key fa-2x"></i></span><input type="password" name="senha" placeholder="senha" id="senha-log">
+      		</div>
+      		
+      		
+      		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
+      		
+      		<!-- <span class="forgot-pass-header"><a href="">Esqueci a senha</a> </span>  -->
+		</span>
+	
+</div>
+<?php } ?>
  </header>
