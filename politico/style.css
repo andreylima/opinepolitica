@@ -27,12 +27,14 @@ Version: 1.0
 html
 {
 	font-size: 16px;
+	height: 100%;
 
 }
 body
 {
 	margin: 0;
 	width: 100%;
+	height: 100%;
 	font-family: 'Lato-Reg' !important;
 }
 
@@ -67,7 +69,7 @@ header
 }
 .login-connect input[type="submit"]
 {
-	width: 48%;
+	
 	margin: auto;
 	margin-left: 4%;
 	background-color: #19B5FE;
@@ -99,8 +101,9 @@ header
 }
 div.new-fb-7
 {
-	margin: 0 !important;
+	margin-right: 5px;
 	float: left;
+
 }
 .panel-body
 {
@@ -215,15 +218,74 @@ div.new-fb-7
 {
 	float: right;
 }
-.login-connect input[type="text"], .login-connect input[type="password"]
+.login-connect-header input[type="text"], .login-connect-header input[type="password"]
 {
-	margin: auto;
-	display: block;
-	height: 45px;
-	height: 2.8125rem;
-	border: 1px solid #36D7B7;
-	padding-left: 10px;
+	border-radius: 5px;
+	margin-right: 5px;
+	padding-left: 5px;
+	height: 34px;
+	line-height: 34px;
+
 }
+.login-connect-header
+{
+	width: 50%;
+	float: right;
+	margin-top: 15px;
+}
+.icon-input
+{
+	float: left;
+}
+
+#btnentrar-log
+{
+	line-height: 34px;
+	 color: #ffffff;
+	  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	  background-color: #2f96b4;
+	  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+	  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+	  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+	  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+	  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+	  background-repeat: repeat-x;
+	  border-color: #2f96b4 #2f96b4 #1f6377;
+	  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+	  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+#btnentrar-log:hover
+{
+	
+  	text-decoration: none;
+	background-position: 0 -15px;
+	-webkit-transition: background-position 0.1s linear;
+	-moz-transition: background-position 0.1s linear;
+	-o-transition: background-position 0.1s linear;
+	transition: background-position 0.1s linear;
+}
+.destaque
+{
+	padding-top: 70px;
+	height: 100%;
+	background: #1c1c1e url("assets/img/valadares.jpg") 50% 0 no-repeat fixed;
+}
+.fundo
+{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width : 480px) { 
 
 h1
@@ -247,7 +309,7 @@ div.new-fb-7
 {
 	display: none;
 }
-.login-wrap-header
+.login-connect-header
 {
 	display: none;
 }
@@ -304,6 +366,11 @@ div.new-fb-7
 	color: #36D7B7;
 	text-decoration: none;
 }
+div.new-fb-7
+{
+	margin: 0 !important;
+	float: left;
+}
 .arrow-margin
 {
 	margin-left: 15px;
@@ -312,7 +379,7 @@ div.new-fb-7
 {
 	padding-top: 95px;
 	padding-top: 5.9375rem;
-	background-color: #34495e;
+	background: #34495e;
 	height: 225px;
 	height: 14.0625rem;
 	color: #36D7B7;
@@ -369,6 +436,17 @@ div.new-fb-7
 	height: 2.8125rem;
 	border: 1px solid #36D7B7;
 	padding-left: 10px;
+}
+.login-connect input[type="submit"]
+{
+	width: 48%;
+	margin: auto;
+	margin-left: 4%;
+	background-color: #19B5FE;
+	border-radius: 5px;	
+	height: 28px;
+	height: 1.75rem;
+	color: white;
 }
 .inputs-login
 {

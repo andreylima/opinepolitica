@@ -44,21 +44,21 @@
 <?php if (!is_user_logged_in()) {
 
       ?>
-<div class="login-wrap-header">
+
   		
-		<span class="login-connect">
+		<div class="login-connect-header">
 		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">FACE</div></div></div>
-			<div class="inputs-login">
-			 <span class="icon-input"><i class="fa fa-envelope fa-2x"></i></span><input type="text" name="email" value="" id="email-log" placeholder="e-mail">
-      		<span class="icon-input"><i class="fa fa-key fa-2x"></i></span><input type="password" name="senha" placeholder="senha" id="senha-log">
-      		</div>
+			
+			 <input type="text" name="email" value="" id="email-log" placeholder="e-mail">
+      		 <input type="password" name="senha" placeholder="senha" id="senha-log">
+      		
       		
       		
       		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
       		
       		<!-- <span class="forgot-pass-header"><a href="">Esqueci a senha</a> </span>  -->
-		</span>
-	
-</div>
+		</div>
+		
+
 <?php } ?>
  </header>
