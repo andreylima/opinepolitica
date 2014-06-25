@@ -375,6 +375,66 @@ div.new-fb-7
 	background-color:#1E8BC3 !important;
 
 }
+.projetos-slider-wrapper
+{
+	height: 100%;
+	padding-top: 85px;
+	background-color: #34495e;
+	color: #36D7B7;
+	overflow: hidden;
+}
+
+.projetos-title
+{
+	text-align: center;
+	font-size: 40px;
+	font-family: "Lato-Bol";
+}
+.header-fixed
+{
+	background-color: #34495e;
+}
+.projetos-slider
+{
+	background-color: #34495e;
+	height: 100%;
+	overflow: hidden;
+}
+.projetos-slider .dot-navigation
+{
+	bottom: 60px;
+}
+.prefeito 
+{
+	margin: auto;
+}
+.prefeito-wrapper
+{
+	background-color: #ecf0f1;
+	height: 100%
+}
+.perfil
+{
+	width: 80%;
+	margin: auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -390,6 +450,10 @@ div.new-fb-7
 header
 {
 	background: #ecf0f1;
+}
+.header-fixed
+{
+	background-color: #ecf0f1;
 }
 h1
 {
@@ -590,7 +654,7 @@ div.new-fb-7
 }
 .projetos-slider-wrapper
 {
-	
+	height: auto;
 	background-color: #34495e;
 	text-align: center;
 	color: #36D7B7;
@@ -699,6 +763,7 @@ div.new-fb-7
 .prefeito-wrapper
 {
 	background-color: #ecf0f1;
+	height: auto;
 }
 .perfil
 {
