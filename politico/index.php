@@ -75,6 +75,9 @@ get_header();
      <div class="panel panel-default">
       <div class="panel-heading"><?php the_title(); ?></div>
       <div class="panel-body">
+        <div class="pic-projeto">
+
+        </div>
       <div class="projeto-excerpt">
       	<?php the_excerpt(); ?>
       	</div>

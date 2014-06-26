@@ -378,10 +378,10 @@ div.new-fb-7
 .projetos-slider-wrapper
 {
 	height: 100%;
-	padding-top: 85px;
+	padding-top: 110px;
 	background-color: #34495e;
 	color: #36D7B7;
-	overflow: hidden;
+	
 }
 
 .projetos-title
@@ -419,6 +419,34 @@ div.new-fb-7
 	margin: auto;
 	padding-top: 15px;
 	padding-bottom: 15px;
+}
+.arrow
+{
+	opacity: 1 !important;
+}
+.flickerplate .arrow-navigation 
+{
+	top: 0 !important;
+}
+.flickerplate ul.flicks>li .flick-inner .flick-content 
+{
+	max-width: 55em !important;
+}
+
+.panel
+{
+	min-height: 400px;
+	padding-bottom: 10px;
+}
+.pic-projeto
+{
+	height: 200px;
+	background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');
+    background-position:center
+}
+.projeto-excerpt
+{
+	height: 100px;
 }
 
 
@@ -481,6 +509,10 @@ div.new-fb-7
 	display: none;
 }
 .login-connect-header
+{
+	display: none;
+}
+.pic-projeto
 {
 	display: none;
 }
@@ -682,7 +714,6 @@ div.new-fb-7
 }
 .projeto-excerpt
 {
-	height: 100px;
 	overflow: hidden;
 }
 .mini-percent-apoiaram
@@ -740,6 +771,8 @@ div.new-fb-7
 .panel
 {
 	margin-bottom: 0!important;
+	padding-bottom: auto;
+	height: auto;
 }
 .dot-navigation
 {
@@ -1004,4 +1037,17 @@ background-color: #36D7B7;
 	font-size: 20px;
 	font-family: "Lato-Bol";
 }
+
+
+.flickerplate ul.flicks>li .flick-inner .flick-content 
+{
+	max-width: 68.75em !important;
+}
+
+
+
+
+
+
+
 }
