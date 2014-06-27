@@ -136,9 +136,17 @@ add_filter('excerpt_save_pre', 'auto_insert_excerpt');
 
 
 
+function wpmayor_filter_image_sizes( $sizes) {
+
+unset( $sizes['medium']);
+unset( $sizes['large']);
 
 
+return $sizes;
+}
+add_filter('intermediate_image_sizes_advanced', 'wpmayor_filter_image_sizes');
 
+add_image_size( 'custom', 300, 300, true );
 
 
 ?>

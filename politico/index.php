@@ -131,7 +131,7 @@ get_header();
         <div class="cargo"><?php $terms = wp_get_post_terms( $post->ID, "Cargos", array("fields" => "names") ); echo $terms[0];  ?></div>
         <div class="thumb-wrap">
         <div class="thumb">  
-          <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
+          <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('custom', array('class' => 'img-circle perfil-size')); ?></a> 
           <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
               
@@ -162,7 +162,7 @@ get_header();
       </div>
       </div>  <!-- thumb wrap -->
 
-      <h3 class="name-perfil"><?php the_title() ?></h3>
+      <h1 class="name-perfil"><?php the_title() ?></h1>
         <div class="link-perfil">VER PERFIL</div>
 
     </div>
@@ -190,7 +190,7 @@ get_header();
       <div class="cargo"><?php $terms = wp_get_post_terms( $post->ID, "Cargos", array("fields" => "names") ); echo $terms[0];  ?></div>
       <div class="thumb-wrap">
       <div class="thumb">
-        <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
+        <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('custom', array('class' => 'img-circle perfil-size')); ?></a> 
         <a href="">
         <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
         <span class="glyphicon glyphicon-thumbs-up icon-vote">
