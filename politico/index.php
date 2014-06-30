@@ -33,20 +33,25 @@ get_header();
   <h1 class="fundo">OPINE SOBRE OS PROJETOS DE LEI</h1>
   <h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES </h1>  
 </div>
+
+<a href="#projetos">
 <div class="placa-projetos">
   <h4>DISCUTA OS</h4>
   <h4>PROJETOS DE LEI</h4>
   <h4>PROPOSTOS EM</h4>
   <h4>SUA CIDADE.</h4>
 </div>
-<a id="scroll_down_proj" href="#projetos"></a>
+<span id="scroll_down_proj"></span>
+</a>
+
+<a href="#politicos">
 <div class="placa-politicos">
   <h4>CONFIRA O NÍVEL DE APROVAÇÃO </h5> 
   <h4>E ESCOLHA</h4>
   <h4>QUEM TE REPRESENTA.</h4>
-  
 </div>
-<a id="scroll_down_pol" href="#politicos"></a>
+<span id="scroll_down_pol"></span>
+</a>
   <div class="form-cadastro-top">
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
@@ -117,9 +122,11 @@ get_header();
       	<?php the_excerpt(); ?>
       	</div>
       	<div class="panel-bottom">
+        <a href="<?php the_permalink(); ?>">
       	<div class="see-more">
       		SAIBA MAIS
       	</div>
+        </a>
       	<div class="apoio">
       	<span class="mini-percent-naoapoiaram">
           <div>
@@ -198,7 +205,7 @@ get_header();
       </div>  <!-- thumb wrap -->
 
       <h1 class="name-perfil"><?php the_title() ?></h1>
-        <div class="link-perfil">VER PERFIL</div>
+        <a href="<?php the_permalink(); ?>"><div class="link-perfil">VER PERFIL</div></a>
 
     </div>
 
@@ -257,7 +264,7 @@ get_header();
       </div>
       </div> <!-- thumb-wrap -->
       <h1 class="name-perfil"><?php the_title() ?></h1>
-        <div class="link-perfil">VER PERFIL</div>
+        <a href="<?php the_permalink(); ?>" ><div class="link-perfil">VER PERFIL</div></a>
     </div>
  </li>
   <?php endwhile; ?>

@@ -418,7 +418,10 @@ div.new-fb-7
 {
 	color: #34495e;
 }
-
+.perfil a:hover
+{
+	text-decoration: none;
+}
 
 
 
@@ -614,6 +617,10 @@ div.new-fb-7
 	font-size: 1.5625rem;
 
 }
+.link-perfil:hover
+{
+	background-color: #0094DA;
+}
 .thumb-wrap
 {
 	overflow: hidden;
@@ -683,14 +690,14 @@ div.new-fb-7
 	font-family: "Kulturista_Semibold";
 	font-size: 20px;
 }
-a#scroll_down_proj {
+#scroll_down_proj {
 	position: absolute;
 	display: none;
 	height: 98px;
 	width: 99px;
 	left: 50%;
 	margin-left: -50px;
-	background: url(assets/img/down_arrow2.png) repeat-x;
+	background: url(assets/img/down_arrow_blue.png) repeat-x;
 	background-position: bottom;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
@@ -705,17 +712,20 @@ a#scroll_down_proj {
 	display: inline;
 	bottom: 50px;
 }
-a#scroll_down_proj:hover {
+a:hover #scroll_down_proj{
 	background-position: top;
 }
-a#scroll_down_pol {
+a:hover .placa-projetos {
+	background: #19B5FE;
+}
+#scroll_down_pol {
 	position: absolute;
 	display: none;
 	height: 98px;
 	width: 99px;
 	left: 15%;
 	margin-left: -50px;
-	background: url(assets/img/down_arrow2.png) repeat-x;
+	background: url(assets/img/down_arrow_red.png) repeat-x;
 	background-position: bottom;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
@@ -730,8 +740,12 @@ a#scroll_down_pol {
 	display: inline;
 	bottom: 50px;
 }
-a#scroll_down_pol:hover {
+a:hover #scroll_down_pol{
 	background-position: top;
+}
+a:hover .placa-politicos
+{
+	background: #EF4836;
 }
 .mobile-destaque
 {
@@ -799,7 +813,19 @@ a#scroll_down_pol:hover {
 	font-size: 16px;
 	font-family: "Lato-Bol";
 }
+.panel-heading
+{
+	padding: 0;
+	height: 70px;
+	font-size: 20px;
+	font-family: "Lato-Bol";
+	line-height: 70px;
+	padding-left: 15px;
 }
+
+
+}
+
 
 
 
@@ -1175,6 +1201,7 @@ div.new-fb-7
 	font-size: 20px;
 	font-size: 1.25rem;
 	background-color: #ecf0f1;
+
 }
 .panel
 {
@@ -1391,10 +1418,10 @@ background-color: #63e82a;
 	padding-bottom: 1.25rem;
 	background-color: #ecf0f1;
 }
-a#scroll_down_proj {
+#scroll_down_proj {
 	display: none;
 }
-a#scroll_down_pol {
+#scroll_down_pol {
 	display: none;
 }
 .wide-destaque
