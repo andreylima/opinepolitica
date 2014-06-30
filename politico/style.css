@@ -104,7 +104,7 @@ div.new-fb-7
 	height: 29px;
 	padding: 4px;
 	top: 0;
-	color: white;
+	color: #34495e;
 	float: left;
 }
 .mini-icon-n
@@ -277,7 +277,7 @@ div.new-fb-7
 .projetos-slider-wrapper
 {
 	height: 100%;
-	padding-top: 110px;
+	padding-top: 5%;
 	background-color: #34495e;
 	color: #63e82a;
 	
@@ -302,7 +302,7 @@ div.new-fb-7
 {
 	background-color: #ecf0f1;
 	height: 100%;
-	padding-top: 80px;
+	padding-top: 5%;
 }
 .perfil
 {
@@ -326,7 +326,7 @@ div.new-fb-7
 {
 	left: -15px;
 	left: -0.9375rem;
-	color: white;
+	color: #34495e;
 	background-color: #63e82a;
 }
 .voten
@@ -357,6 +357,7 @@ div.new-fb-7
 .percent-curtiu
 {
 	background-color: #63e82a;
+	color: #34495e;
 }
 .percent-naocurtiu
 {
@@ -403,7 +404,10 @@ div.new-fb-7
 	background-image: none;
 
 }
-
+.color-dark
+{
+	color: #34495e;
+}
 
 
 
@@ -438,10 +442,12 @@ div.new-fb-7
 {
 	border: solid 2px #34495e;
 	border-radius: 50%;
-	height:	100px;
-	width: 100px;
+	height:	70px;
+	height:	4.375rem;
+	width: 70px;
+	width: 4.375rem;
 	position: relative;
-	bottom: 40px;
+	bottom: 53px;
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	-o-transition: all 0.1s linear;
@@ -485,11 +491,12 @@ div.new-fb-7
 	line-height: 40px;
 	line-height: 2.5rem;
 	background-color: #63e82a;
-	color: white;
+	color: #34495e;
 	padding-left: 5px;
 	padding-left: 0.3125rem;
 	padding-right: 5px;
 	padding-right: 0.3125rem;
+	font-family: "Lato-Bol";
 }
 .mini-percent-naoapoiaram
 {
@@ -509,6 +516,7 @@ div.new-fb-7
 	padding-left: 0.3125rem;
 	padding-right: 5px;
 	padding-right: 0.3125rem;
+	font-family: "Lato-Bol";
 
 }
 .see-more
@@ -553,16 +561,17 @@ div.new-fb-7
 }
 .thumb 
 {
-	width: 300px;
-	width: 18.75rem;
+	width: 245px;
+	width: 15.3125rem;
 	margin: auto;
 }
 .perfil-size 
 {
-	height: 300px;
-	height: 18.75rem;
-	width: 300px;
-	width: 18.75rem;
+	height: 250px;
+	height: 15.625rem;
+	width: 250px;
+	width: 15.625rem;
+	padding: 3px;
 	border: 2px solid #34495e;
 	background-color:white;
 	margin: auto;
@@ -598,11 +607,13 @@ div.new-fb-7
 .thumb-wrap
 {
 	overflow: hidden;
-	height: 100%;
+	height: 285px;
+	height: 17.8125rem;
+
 }
 .icon-vote 
 {
-	font-size: 40pt !important;
+	font-size: 20pt !important;
 	top: 20px !important;
 	left: 20px !important;
 }
@@ -629,12 +640,12 @@ div.new-fb-7
 	border: solid 2px #34495e;
 	display: block;
 	position: relative;
-	top: -110px;
+	top: -82px;
 	cursor: default;
 	text-align: center;
 	line-height: 35px;
 	font-family: "Lato-Bol";
-	font-size: 25px;
+	font-size: 16px;
 }
 .cargo
 {
@@ -656,7 +667,56 @@ div.new-fb-7
 	margin-top: 10px !important;
 	font-size: 36px;
 }
-
+a#scroll_down_proj {
+	position: absolute;
+	display: none;
+	height: 98px;
+	width: 99px;
+	left: 50%;
+	margin-left: -50px;
+	background: url(assets/img/down_arrow2.png) repeat-x;
+	background-position: bottom;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	-khtml-border-radius: 100px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	overflow: hidden;
+	cursor: pointer;
+	display: inline;
+	bottom: 50px;
+}
+a#scroll_down_proj:hover {
+	background-position: top;
+}
+a#scroll_down_pol {
+	position: absolute;
+	display: none;
+	height: 98px;
+	width: 99px;
+	left: 25%;
+	margin-left: -50px;
+	background: url(assets/img/down_arrow2.png) repeat-x;
+	background-position: bottom;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	-khtml-border-radius: 100px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	overflow: hidden;
+	cursor: pointer;
+	display: inline;
+	bottom: 50px;
+}
+a#scroll_down_pol:hover {
+	background-position: top;
+}
 }
 
 
@@ -763,7 +823,7 @@ div.new-fb-7
 	font-size: 37px;
 	font-size: 2.3125rem;
 	background-color: #34495e;
-	color: #36D7B7;
+	color: #63e82a;
 }
 #menu-body ul
 {
@@ -791,7 +851,7 @@ div.new-fb-7
 	height: 100%;
 	width: 100%;
 	display: block;
-	color: #36D7B7;
+	color: #63e82a;
 	text-decoration: none;
 }
 div.new-fb-7
@@ -830,7 +890,7 @@ div.new-fb-7
 	padding: 6px;
 	padding: 0.375rem;
 	display: inline-block;
-	color: #36D7B7;
+	color: #63e82a;
 	font-family: "Lato-Bol"
 }
 .wrap-destaque 
@@ -953,14 +1013,15 @@ div.new-fb-7
 	border: solid 1px #ddd;
 	float: right;	
 	line-height: 30px;
-	background-color: #63e82a;
-	color: white;
+	background-color: #EF4836;
+	color: #34495e;
 	padding-left: 5px;
 	padding-left: 0.3125rem;
 	padding-right: 5px;
 	padding-right: 0.3125rem;
 	border-radius: 5px;
 	border-radius: 0.3125rem;
+	font-family: "Lato-Bol";
 }
 .mini-percent-naoapoiaram
 {
@@ -980,6 +1041,7 @@ div.new-fb-7
 	padding-right: 0.3125rem;
 	border-radius: 5px;
 	border-radius: 0.3125rem;
+	font-family: "Lato-Bol";
 
 }
 .percent-both 
@@ -1055,6 +1117,7 @@ div.new-fb-7
 {
 	height: 150px;
 	width: 150px;
+	padding: 3px;
 	border: 2px solid #34495e;
 	background-color:white;
 	margin: auto;
@@ -1077,7 +1140,6 @@ div.new-fb-7
 }
 .link-perfil
 {
-	text-align: center;
 	display: block;
 	height: 28px;
 	height: 1.75rem;
@@ -1105,7 +1167,7 @@ div.new-fb-7
 	color: white;
 	padding: 15px;
 	margin: auto;
-	margin-top: 20px;
+	
 
 }
 
@@ -1168,10 +1230,10 @@ div.new-fb-7
 	line-height: 45px;
 	line-height: 2.8125rem;
 	background-color: #34495e;
-	color: #36D7B7;
+	color: #63e82a;
 }
 .flickerplate .dot-navigation .dot.active {
-background-color: #36D7B7;
+background-color: #63e82a;
 }
 .cadastrar-link
 {
@@ -1208,7 +1270,19 @@ background-color: #36D7B7;
 	margin-top: 10px !important;
 	font-size: 30px;
 }
-
-
+.login-wrapper-footer
+{
+	padding-top: 20px;
+	padding-top: 1.25rem;
+	padding-bottom: 20px;
+	padding-bottom: 1.25rem;
+	background-color: #ecf0f1;
+}
+a#scroll_down_proj {
+	display: none;
+}
+a#scroll_down_pol {
+	display: none;
+}
 
 }

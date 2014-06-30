@@ -4,14 +4,32 @@ get_header();
 
 
 ?>
+<script>
+  jQuery(function() {
+    jQuery('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = jQuery(this.hash);
+        target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          jQuery('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
 
+  
+</script>
 <?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-body' ) ); ?>
 <div class="destaque">
 <div class="wrap-destaque">
 	<h1 class="fundo">OPINE SOBRE OS PROJETOS DE LEI</h1> 
 	<h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES</h1>
 </div>
-
+<a id="scroll_down_proj" href="#projetos"></a>
+<a id="scroll_down_pol" href="#politicos"></a>
   <div class="form-cadastro-top">
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
@@ -56,7 +74,7 @@ get_header();
 </div>
 <?php } ?>
 
-<div class="projetos-slider-wrapper">
+<div class="projetos-slider-wrapper" id="projetos">
 <div class="projetos-title">PROJETOS DE LEI EM DEBATE</div>
 <div class="projetos-slider" data-block-text="false">
 		
@@ -83,7 +101,7 @@ get_header();
       	</div>
       	<div class="panel-bottom">
       	<div class="see-more">
-      		VEJA MAIS
+      		SAIBA MAIS
       	</div>
       	<div class="apoio">
       	<span class="mini-percent-naoapoiaram">
@@ -116,7 +134,7 @@ get_header();
 
 </div>
 
-<div class="prefeito-wrapper">
+<div class="prefeito-wrapper" id="politicos">
 	
 
     <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'prefeito',  'posts_per_page' => 1) ); ?>
@@ -136,7 +154,7 @@ get_header();
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
               
             </span>
-            <span class="percent-both percent-curtiu">
+            <span class="percent-both percent-curtiu color-dark">
             <?php 
             
             echo $perfis->getCurtiu_percent(); 
@@ -221,7 +239,7 @@ get_header();
         </a>
       </div>
       </div> <!-- thumb-wrap -->
-      <h3 class="name-perfil"><?php the_title() ?></h3>
+      <h1 class="name-perfil"><?php the_title() ?></h1>
         <div class="link-perfil">VER PERFIL</div>
     </div>
  </li>
