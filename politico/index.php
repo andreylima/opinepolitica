@@ -24,11 +24,28 @@ get_header();
 </script>
 <?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-body' ) ); ?>
 <div class="destaque">
-<div class="wrap-destaque">
-	<h1 class="fundo">OPINE SOBRE OS PROJETOS DE LEI</h1> 
-	<h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES</h1>
+<div class="wrap-destaque wide-destaque">
+	<h1 class="fundo">PARTICIPE E AJUDE </h1>
+  <h1 class="fundo">A FISCALIZAR A CIDADE</h1>  
+	<h1 class="fundo">QUE A GENTE AMA.</h1>
+</div>
+<div class="wrap-destaque mobile-destaque">
+  <h1 class="fundo">OPINE SOBRE OS PROJETOS DE LEI</h1>
+  <h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES </h1>  
+</div>
+<div class="placa-projetos">
+  <h4>DISCUTA OS</h4>
+  <h4>PROJETOS DE LEI</h4>
+  <h4>PROPOSTOS EM</h4>
+  <h4>SUA CIDADE.</h4>
 </div>
 <a id="scroll_down_proj" href="#projetos"></a>
+<div class="placa-politicos">
+  <h4>CONFIRA O NÍVEL DE APROVAÇÃO </h5> 
+  <h4>E ESCOLHA</h4>
+  <h4>QUEM TE REPRESENTA.</h4>
+  
+</div>
 <a id="scroll_down_pol" href="#politicos"></a>
   <div class="form-cadastro-top">
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
@@ -154,7 +171,7 @@ get_header();
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
               
             </span>
-            <span class="percent-both percent-curtiu color-dark">
+            <span class="percent-both percent-curtiu">
             <?php 
             
             echo $perfis->getCurtiu_percent(); 
