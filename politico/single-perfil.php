@@ -10,7 +10,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 ?>
 
 
-<div class="row-fluid">
+<div class="single-wrapper">
   
     <div class="box-autor coluna-lateral">  
       
@@ -20,7 +20,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
             
               
             </span>
-            <span class="percent-autor">
+            <span class="percent-both percent-curtiu">
             <?php echo $perfis->getCurtiu_percent(); ?>
             </span>
         </div>
@@ -30,7 +30,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
             <span class="glyphicon glyphicon-thumbs-down icon-vote">
         
             </span>
-            <span class="percent-autor">
+            <span class="percent-both percent-naocurtiu">
             <?php echo $perfis->getNaocurtiu_percent(); ?>
             </span>
         </div>

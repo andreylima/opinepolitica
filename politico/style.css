@@ -367,7 +367,7 @@ div.new-fb-7
 .percent-curtiu
 {
 	background-color: #63e82a;
-	color: #34495e;
+	
 }
 .percent-naocurtiu
 {
@@ -822,8 +822,28 @@ a:hover .placa-politicos
 	line-height: 70px;
 	padding-left: 15px;
 }
+.panel-autor
+{
+	height: 65px;
+	height: 4.0625rem;
+	width: 65px;
+	width: 4.0625rem;
+	border-radius: 50%;	 
+	margin-left: 10px;
+	margin-bottom: 5.5px;
+	margin-bottom: 0.34375rem;
+	padding: 2px;
+	border: solid 1px black;
 
-
+}
+.title-autor-panel
+{
+	display: block;
+	margin-right: 15px;
+	margin-right: 0.9375rem;
+	float: right;
+}
+.h
 }
 
 
@@ -1145,7 +1165,7 @@ div.new-fb-7
 	border: solid 1px #ddd;
 	float: right;	
 	line-height: 30px;
-	background-color: #EF4836;
+	background-color: #63e82a;
 	color: #34495e;
 	padding-left: 5px;
 	padding-left: 0.3125rem;
@@ -1427,5 +1447,69 @@ background-color: #63e82a;
 .wide-destaque
 {
 	display: none;
+}
+.title-autor-panel
+{
+	display: none;
+}
+.placas
+{
+	display: none;
+}
+.single-wrapper
+{
+	padding-top: 80px;
+	padding-top: 5rem;
+	background-color: #ecf0f1;
+
+}
+.box-autor
+{
+	width: 155px;
+	width: 9.6875rem;
+	margin: auto;
+}
+.caixa-titulo-projeto {
+width: 70%;
+border: solid black;
+text-align: center;
+margin: auto;
+margin-top: 21px;
+}
+.partido {
+display: block;
+height: 50px;
+width: 50px;
+border-radius: 50%;
+border: solid black;
+position: relative;
+left: 87%;
+top: -19px;
+padding: 3px;
+-webkit-transition: all 0.1s linear;
+-moz-transition: all 0.1s linear;
+-o-transition: all 0.1s linear;
+transition: all 0.1s linear;
+background-color: white;
+line-height: 0px;
+}
+.partido:hover
+{
+	border-radius: 50%;
+	border: solid black;
+	position: relative;
+	left: 87%;
+	top: -19px;
+	padding: 3px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+	-webkit-transform:scale(1.1); /* prefixo para browsers webkit */
+	-moz-transform:scale(1.1); /* prefixo para browsers gecko */
+	-o-transform:scale(1.1); /* prefixo para opera */
+	transform:scale(1.1);
+	background-color: white;
+	line-height: 0px;
 }
 }

@@ -34,7 +34,7 @@ get_header();
   <h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES </h1>  
 </div>
 
-<a href="#projetos">
+<a href="#projetos" class="placas">
 <div class="placa-projetos">
   <h4>DISCUTA OS</h4>
   <h4>PROJETOS DE LEI</h4>
@@ -44,7 +44,7 @@ get_header();
 <span id="scroll_down_proj"></span>
 </a>
 
-<a href="#politicos">
+<a href="#politicos" class="placas">
 <div class="placa-politicos">
   <h4>CONFIRA O NÍVEL DE APROVAÇÃO </h5> 
   <h4>E ESCOLHA</h4>
@@ -97,7 +97,7 @@ get_header();
 <?php } ?>
 
 <div class="projetos-slider-wrapper" id="projetos">
-<div class="projetos-title">PROJETOS DE LEI EM DEBATE</div>
+<div class="projetos-title">PROJETOS DE LEI RECENTES</div>
 <div class="projetos-slider" data-block-text="false">
 		
 		<ul>
@@ -107,13 +107,14 @@ get_header();
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
   <?php 
       $projeto = new projetosModel(get_the_ID());
+      $autor_id = $projeto->getAutor_projeto();
       $positivou = $projeto->verifica_positivou();
       $negativou = $projeto->verifica_negativou();
 
   ?>
     <li class="mini-projeto">
      <div class="panel panel-default">
-      <div class="panel-heading"><?php the_title(); ?></div>
+      <div class="panel-heading"><?php the_title(); ?><span class="title-autor-panel">AUTOR:  <?php  echo get_the_post_thumbnail( $autor_id, "thumbnail",  array('class' =>'panel-autor')); ?></span></div>
       <div class="panel-body">
         <div class="pic-projeto">
 
