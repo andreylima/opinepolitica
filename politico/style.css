@@ -843,7 +843,8 @@ a:hover .placa-politicos
 	margin-right: 0.9375rem;
 	float: right;
 }
-.h
+
+
 }
 
 
@@ -1458,8 +1459,8 @@ background-color: #63e82a;
 }
 .single-wrapper
 {
-	padding-top: 80px;
-	padding-top: 5rem;
+	padding-top: 25%;
+	padding-bottom: 10%;
 	background-color: #ecf0f1;
 
 }
@@ -1471,20 +1472,23 @@ background-color: #63e82a;
 }
 .caixa-titulo-projeto {
 width: 70%;
-border: solid black;
+border: solid #34495e;
 text-align: center;
 margin: auto;
 margin-top: 21px;
+background-color: white;
+height: 102px;
+color: #34495e;
 }
 .partido {
 display: block;
 height: 50px;
 width: 50px;
 border-radius: 50%;
-border: solid black;
+border: solid #34495e;
 position: relative;
 left: 87%;
-top: -19px;
+top: 17px;
 padding: 3px;
 -webkit-transition: all 0.1s linear;
 -moz-transition: all 0.1s linear;
@@ -1492,14 +1496,15 @@ padding: 3px;
 transition: all 0.1s linear;
 background-color: white;
 line-height: 0px;
+font-family: "Lato-Bol";
 }
 .partido:hover
 {
 	border-radius: 50%;
-	border: solid black;
+	border: solid #34495e;;
 	position: relative;
 	left: 87%;
-	top: -19px;
+	top: 17px;
 	padding: 3px;
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
@@ -1512,4 +1517,62 @@ line-height: 0px;
 	background-color: white;
 	line-height: 0px;
 }
+.titulo-perfil
+{
+	position: relative;
+	bottom: 47px;
+	font-size: 25px;
+	font-family: "Lato-Bol";
+}
+.debatidos
+{
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+	border-color: #34495e;
+}
+.mandato
+{
+	bottom: 41px;
+	position: relative;
+}
+.title-projeto-single
+{
+	background-color: #34495e !important;
+	border-color: #34495e !important;
+	color: white !important;
+}
+.mini-projeto
+{
+	margin-bottom: 40px !important;
+	border-color: #34495e;
+}
+.mini-projeto-header
+{
+	background-color: #34495e !important;
+	border-color: #34495e !important;
+	color: white !important;
+	font-size: 15px;
+	text-align: center;
+}
+.debatidos a:hover
+{
+	text-decoration: none;
+}
+.mini-projeto .see-more
+{
+	width: 32%;
+	font-size: 10px;
+}
+.mini-projeto .mini-percent-naoapoiaram
+{
+	min-width: 28%;
+	max-width: 38%;
+}
+.mini-projeto .mini-percent-apoiaram
+{
+	min-width: 28%;
+	max-width: 38%;
+}
+
 }

@@ -55,7 +55,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
    
 </div>
    <div class="conteudo panel panel-default debatidos">
-      <div class="panel-heading">PERFIL</div>
+      <div class="panel-heading title-projeto-single">PERFIL</div>
       <div class="panel-body">
         <?php
        while ( have_posts() ) : the_post();
@@ -65,7 +65,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
   </div>
 
     <div class="conteudo panel panel-default debatidos">
-      <div class="panel-heading">PROJETOS DEBATIDOS</div>
+      <div class="panel-heading title-projeto-single">PROJETOS DELE</div>
       <div class="panel-body">
         <?php 
         $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true );
@@ -74,30 +74,33 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
             $projeto_dados = get_post($projeto);
             $projetos = new projetosModel($projeto_dados->ID);
 
-        ?>
-        <a href="<?php echo get_permalink($projeto_dados->ID); ?>">
-        <div class="panel panel-default mini-projeto">
-            <div class="panel-heading mini-projeto-header"><div class="mini-projeto-titulo"><?php echo $projeto_dados->post_title; ?></div>
-            
-            <span class="mini-percent-naoapoiaram">
-            <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
-            <?php echo $projetos->getNegativar_percent(); ?>
-            </span>
+            ?>
+                <div class="panel panel-default mini-projeto">
+                    <div class="panel-heading mini-projeto-header"><?php echo $projeto_dados->post_title; ?></div>
+                    <div class="panel-body"><?php echo $projeto_dados->post_excerpt; ?>
+                    <div class="panel-bottom">
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="see-more">
+                                SAIBA MAIS
+                            </div>
+                            </a>
+                            <span class="mini-percent-naoapoiaram">
+                                <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
+                                <?php echo $projetos->getNegativar_percent(); ?>
+                            </span>
 
-            <span class="mini-percent-apoiaram">
-            <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
-            <?php echo $projetos->getPositivar_percent(); ?>
-            </span>
-            
-            </div>
-            <div class="panel-body"><?php echo $projeto_dados->post_excerpt; ?></div>
+                            <span class="mini-percent-apoiaram">
+                                <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
+                                <?php echo $projetos->getPositivar_percent(); ?>
+                            </span>
+                        </div>
+                  </div>
 
+                </div>
             
+            <?php } ?>
+
         </div>
-        </a>
-        <?php } ?>
-
-    </div>
     </div>
 
 
