@@ -72,23 +72,7 @@ header
 }
 
 
-.see-more
-{
-	display: block;
-	height: 28px;
-	height: 1.75rem;
-	background-color:#19B5FE;
-	color: white;
-	width: 35%;
-	border-radius: 5px;
-	border-radius: 0.3125rem;
-	text-align: center;
-	line-height: 28px;
-	float: left;
-	margin-right: 1%;
-	
 
-}
 div.new-fb-7
 {
 	margin-right: 5px;
@@ -376,7 +360,7 @@ div.new-fb-7
 
 .projeto-excerpt
 {
-	height: 100px;
+	height: 110px;
 }
 
 .vereadores-slider
@@ -449,6 +433,10 @@ div.new-fb-7
 
 
 @media only screen and (min-width : 480px) { 
+.single-perfil header
+{
+	background-color: #34495e;
+}
 .votes , .voten
 {
 	border: solid 2px #34495e;
@@ -497,7 +485,6 @@ div.new-fb-7
 	min-width: 34%;	
 	margin-right: 1%;
 	max-width: 65%;
-	border: solid 1px #ddd;
 	float: right;	
 	line-height: 40px;
 	line-height: 2.5rem;
@@ -509,6 +496,9 @@ div.new-fb-7
 	padding-right: 0.3125rem;
 	font-family: "Lato-Bol";
 	border: 2px solid #34495e;
+	border-radius: 5px;
+	border-radius: 0.3125rem;
+	
 }
 .mini-percent-naoapoiaram
 {
@@ -518,7 +508,6 @@ div.new-fb-7
 	height: 2.5rem;
 	min-width: 34%;
 	max-width: 65%;
-	border: solid 1px #ddd;
 	float: right;	
 	line-height: 40px;
 	line-height: 2.5rem;;
@@ -530,26 +519,40 @@ div.new-fb-7
 	padding-right: 0.3125rem;
 	font-family: "Lato-Bol";
 	border: 2px solid #34495e;
+	border-radius: 5px;
+	border-radius: 0.3125rem;
 
 }
 .see-more
 {
+	display: block;
 	height: 40px;
 	height: 2.5rem;
 	line-height: 40px;
 	line-height: 2.5rem;
-
+	background-color:#19B5FE;
+	color: white;
+	width: 35%;
+	border-radius: 5px;
+	border-radius: 0.3125rem;
+	text-align: center;
+	float: left;
+	margin-right: 1%;
+	border: 2px solid #34495e;
+}
+.see-more:hover
+{
+	background-color: #0094DA;
 }
 .pic-projeto
 {
 	height: 200px;
-	background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');
-    background-position:center
+	background-position:center
 }
 
 .panel
 {
-	min-height: 400px;
+	min-height: auto;
 	padding-bottom: 10px;
 }
 
@@ -844,6 +847,183 @@ a:hover .placa-politicos
 	float: right;
 }
 
+.box-autor
+{
+	width: 155px;
+	width: 9.6875rem;
+	margin: auto;
+	margin-left: 30px;
+	float: left;
+	height: 220px;
+	margin-top: 20px !important;
+	text-align: center;
+}
+.caixa-titulo-projeto {
+width: 70%;
+float: right;
+height: 200px;
+margin-top: 100px;
+margin-right: 100px;
+border: solid black;
+text-align: center;
+border: solid #34495e;
+background-color: white;
+color: #34495e;
+}
+.partido 
+{
+display: block;
+height: 100px;
+width: 100px;
+border-radius: 50%;
+position: relative;
+left: 93%;
+top: -20%;
+padding: 3px;
+-webkit-transition: all 0.1s linear;
+-moz-transition: all 0.1s linear;
+-o-transition: all 0.1s linear;
+transition: all 0.1s linear;
+background-color: white;
+line-height: 90px;
+border: solid #34495e;
+}
+.partido:hover
+{
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+	-webkit-transform:scale(1.1); /* prefixo para browsers webkit */
+	-moz-transform:scale(1.1); /* prefixo para browsers gecko */
+	-o-transform:scale(1.1); /* prefixo para opera */
+	transform:scale(1.1);
+}
+.titulo-perfil {
+font-size: 60px;
+position: relative;
+bottom: 20%;
+}
+.mandato {
+border: solid #34495e;
+height: 40px;
+width: 200px;
+display: block;
+line-height: 40px;
+position: relative;
+bottom: 20px;
+left: 20px;
+background-color: white;
+padding-left: 50px;
+}
+.conteudo {
+width: 70%;
+margin-right: 100px;
+float: right;
+}
+.perfil-size-single
+{
+
+	height: 150px;
+	width: 150px;
+	padding: 3px;
+	border: 2px solid #021a40;
+	background-color: white;
+
+}
+.coluna-lateral .votes,.coluna-lateral .voten {
+border: solid 2px #34495e;
+border-radius: 50%;
+height: 50px;
+width: 50px;
+position: relative;
+bottom: 40px;
+-webkit-transition: all 0.1s linear;
+-moz-transition: all 0.1s linear;
+-o-transition: all 0.1s linear;
+transition: all 0.1s linear;
+}
+.coluna-lateral .icon-vote {
+font-size: 20pt !important;
+top: 10px !important;
+left: 0px !important;
+}
+.single-wrapper
+{
+	padding-top: 1%;
+	padding-bottom: 10%;
+	background-color: #ecf0f1;
+	height: 100%;
+}
+#label_n_mandato
+{
+	float: left;
+}
+.debatidos
+{
+	
+	margin-top: 40px;
+	border-color: #34495e;
+
+}
+.single-perfil
+{
+	background-color: #ecf0f1;
+}
+.title-projeto-single 
+{
+background-color: #34495e !important;
+border-color: #34495e !important;
+color: white !important;
+text-align: center;
+}
+.mini-projeto {
+margin-bottom: 40px !important;
+border-color: #34495e;
+}
+.mini-projeto .mini-percent-naoapoiaram
+{
+	min-width: 10%;
+	max-width: 39%;
+}
+.mini-projeto .mini-percent-apoiaram
+{
+	min-width: 10%;
+	max-width: 39%;
+}
+.mini-projeto .see-more
+{
+	width: 20%;
+	font-size: 17px;
+}
+.panel-bottom
+{
+	margin-top: 30px;
+}
+.mini-projeto-header
+{
+	background-color: #34495e !important;
+	border-color: #34495e !important;
+	color: white !important;
+	font-size: 15px;
+	text-align: center;
+}
+.debatidos .panel-body
+{
+	padding-top: 50px;
+	font-size: 20px;
+}
+.info-perfil
+{
+	background-color: #34495e !important;
+	height: 400px;
+	height: 25rem;
+	float: left;
+	width: 230px;
+	margin-left: 20px;
+	margin-top: 100px;
+
+}
 
 }
 
@@ -1154,16 +1334,17 @@ div.new-fb-7
 {
 	overflow: hidden;
 
+
 }
 .mini-percent-apoiaram
 {
 	display: block;
 	position: relative;
 	height: 30px;
+	height: 1.875rem;
 	min-width: 35%;	
 	margin-right: 1%;
 	max-width: 64%;
-	border: solid 1px #ddd;
 	float: right;	
 	line-height: 30px;
 	background-color: #63e82a;
@@ -1184,7 +1365,6 @@ div.new-fb-7
 	height: 30px;
 	min-width: 35%;
 	max-width: 64%;
-	border: solid 1px #ddd;
 	float: right;	
 	line-height: 30px;
 	background-color: #EF4836;
@@ -1500,12 +1680,6 @@ font-family: "Lato-Bol";
 }
 .partido:hover
 {
-	border-radius: 50%;
-	border: solid #34495e;;
-	position: relative;
-	left: 87%;
-	top: 17px;
-	padding: 3px;
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	-o-transition: all 0.1s linear;
@@ -1514,8 +1688,7 @@ font-family: "Lato-Bol";
 	-moz-transform:scale(1.1); /* prefixo para browsers gecko */
 	-o-transform:scale(1.1); /* prefixo para opera */
 	transform:scale(1.1);
-	background-color: white;
-	line-height: 0px;
+	
 }
 .titulo-perfil
 {
@@ -1574,5 +1747,21 @@ font-family: "Lato-Bol";
 	min-width: 28%;
 	max-width: 38%;
 }
-
+.see-more
+{
+	display: block;
+	height: 30px;
+	height: 1.875rem;
+	line-height: 27px;
+	line-height: 1.6875rem;
+	background-color:#19B5FE;
+	color: white;
+	width: 35%;
+	border-radius: 5px;
+	border-radius: 0.3125rem;
+	text-align: center;
+	float: left;
+	margin-right: 1%;
+	border: 2px solid #34495e;
+}
 }

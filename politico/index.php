@@ -112,11 +112,11 @@ get_header();
       $negativou = $projeto->verifica_negativou();
 
   ?>
-    <li class="mini-projeto">
+    <li class="mini-projeto-index">
      <div class="panel panel-default">
       <div class="panel-heading"><?php the_title(); ?><span class="title-autor-panel">AUTOR:  <?php  echo get_the_post_thumbnail( $autor_id, "thumbnail",  array('class' =>'panel-autor')); ?></span></div>
       <div class="panel-body">
-        <div class="pic-projeto">
+        <div class="pic-projeto" style="background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');">
 
         </div>
       <div class="projeto-excerpt">
