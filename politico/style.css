@@ -433,13 +433,10 @@ div.new-fb-7
 
 
 @media only screen and (min-width : 480px) { 
-.single-perfil header
-{
-	background-color: #34495e;
-}
+
 .votes , .voten
 {
-	border: solid 2px #34495e;
+	border: solid 2px #ecf0f1;
 	border-radius: 50%;
 	height:	70px;
 	height:	4.375rem;
@@ -867,8 +864,9 @@ margin-right: 100px;
 border: solid black;
 text-align: center;
 border: solid #34495e;
-background-color: white;
+background-color: #ecf0f1;
 color: #34495e;
+box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .partido 
 {
@@ -884,9 +882,10 @@ padding: 3px;
 -moz-transition: all 0.1s linear;
 -o-transition: all 0.1s linear;
 transition: all 0.1s linear;
-background-color: white;
+background-color: #ecf0f1;
 line-height: 90px;
 border: solid #34495e;
+box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .partido:hover
 {
@@ -913,8 +912,9 @@ line-height: 40px;
 position: relative;
 bottom: 20px;
 left: 20px;
-background-color: white;
+background-color: #ecf0f1;
 padding-left: 50px;
+box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .conteudo {
 width: 70%;
@@ -926,11 +926,12 @@ float: right;
 
 	height: 150px;
 	width: 150px;
-	padding: 3px;
-	border: 2px solid #021a40;
-	background-color: white;
+	padding: 3px !important;
+	border: 2px solid #34495e !important;
+	
 
 }
+
 .coluna-lateral .votes,.coluna-lateral .voten {
 border: solid 2px #34495e;
 border-radius: 50%;
@@ -952,7 +953,7 @@ left: 0px !important;
 {
 	padding-top: 1%;
 	padding-bottom: 10%;
-	background-color: #ecf0f1;
+	background-color: #34495e;
 	height: 100%;
 }
 #label_n_mandato
@@ -964,18 +965,19 @@ left: 0px !important;
 	
 	margin-top: 40px;
 	border-color: #34495e;
+	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 
 }
 .single-perfil
 {
-	background-color: #ecf0f1;
+	background-color: #34495e;
 }
 .title-projeto-single 
 {
-background-color: #34495e !important;
+background-color: #ecf0f1 !important;
 border-color: #34495e !important;
-color: white !important;
-text-align: center;
+color: #34495e !important;
+text-align: #34495e;
 }
 .mini-projeto {
 margin-bottom: 40px !important;
@@ -1004,7 +1006,7 @@ border-color: #34495e;
 {
 	background-color: #34495e !important;
 	border-color: #34495e !important;
-	color: white !important;
+	color: #ecf0f1 !important;
 	font-size: 15px;
 	text-align: center;
 }
@@ -1012,16 +1014,18 @@ border-color: #34495e;
 {
 	padding-top: 50px;
 	font-size: 20px;
+
 }
 .info-perfil
 {
-	background-color: #34495e !important;
+	background-color: #ecf0f1 !important;
 	height: 400px;
 	height: 25rem;
 	float: left;
 	width: 230px;
 	margin-left: 20px;
 	margin-top: 100px;
+	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 
 }
 
@@ -1087,6 +1091,10 @@ header
 {
 	background-color: #ecf0f1;
 }
+.single-perfil
+{
+	background-color: #34495e;
+}
 h1
 {
 	font-size: 14px;
@@ -1130,7 +1138,7 @@ div.new-fb-7
 }
 .votes , .voten
 {
-	border: solid 2px #34495e;
+	border: solid 2px #ecf0f1;
 	border-radius: 50%;
 	height:	50px;
 	width: 50px;
@@ -1382,7 +1390,7 @@ div.new-fb-7
 .percent-both 
 {
 	height: 30px;
-	border: solid 2px #34495e;
+	border: solid 2px #ecf0f1;
 	display: block;
 	position: relative;
 	top: -70px;
@@ -1641,7 +1649,7 @@ background-color: #63e82a;
 {
 	padding-top: 25%;
 	padding-bottom: 10%;
-	background-color: #ecf0f1;
+
 
 }
 .box-autor
@@ -1656,9 +1664,10 @@ border: solid #34495e;
 text-align: center;
 margin: auto;
 margin-top: 21px;
-background-color: white;
+background-color: #ecf0f1;
 height: 102px;
 color: #34495e;
+box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .partido {
 display: block;
@@ -1674,9 +1683,10 @@ padding: 3px;
 -moz-transition: all 0.1s linear;
 -o-transition: all 0.1s linear;
 transition: all 0.1s linear;
-background-color: white;
+background-color: #ecf0f1;
 line-height: 0px;
 font-family: "Lato-Bol";
+box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .partido:hover
 {
@@ -1703,17 +1713,20 @@ font-family: "Lato-Bol";
 	margin: auto;
 	margin-top: 20px;
 	border-color: #34495e;
+	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+
 }
 .mandato
 {
 	bottom: 41px;
 	position: relative;
+	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .title-projeto-single
 {
-	background-color: #34495e !important;
+	background-color: #ecf0f1 !important;
 	border-color: #34495e !important;
-	color: white !important;
+	color: #34495e !important;
 }
 .mini-projeto
 {
@@ -1764,4 +1777,15 @@ font-family: "Lato-Bol";
 	margin-right: 1%;
 	border: 2px solid #34495e;
 }
+.perfil-size-single
+{
+
+	height: 150px;
+	width: 150px;
+	padding: 3px !important;
+	border: 2px solid #ecf0f1 !important;
+	
+
+}
+
 }
