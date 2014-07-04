@@ -14,17 +14,17 @@ $negativou = $projetos->verifica_negativou();
 get_header('inside'); 
 
 ?>
-<div class="row-fluid">
+<div class="single-wrapper">
   
     <div class="box-autor coluna-lateral">  
       
-        <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size img-circle')); ?></a>
+        <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
         <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
             
               
             </span>
-            <span class="percent-autor">
+            <span class="percent-both percent-curtiu">
             <?php echo $perfis->getCurtiu_percent(); ?>
             </span>
         </div>
@@ -35,20 +35,20 @@ get_header('inside');
             <span class="glyphicon glyphicon-thumbs-down icon-vote">
         
             </span>
-            <span class="percent-autor">
+            <span class="percent-both percent-naocurtiu">
             <?php echo $perfis->getNaocurtiu_percent(); ?>
             </span>
         </div>
     </a>
 </div>
 <div class="caixa-titulo-projeto">
-    <img src="http://placehold.it/100x100" class="quem-perguntou">
+    
     <div id="titulo" class="titulo-projeto"><?php the_title(); ?></div>
     <!-- debate ativo desde:  -->
     <!-- situação -->
     <span id="data-proposta" class="data-proposta">
     <label for="data-proposta">Proposto em:</label>
-    <input type="date" name="data-proposta" value="<?php ?>" class="pickdate"> 
+    <input type="date" name="data-proposta" value="<?php ?>" class="projeto-date" disabled> 
  </span>
   
     <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
@@ -58,8 +58,8 @@ get_header('inside');
 
 
 </div>
-<div class="row-fluid">
-    <div class="avaliacao-projeto coluna-lateral">
+
+    <div class="avaliacao-projeto ">
       <img src="http://placehold.it/200x100" class="img-destaque-apoio"></img>
       <a href="">
       <div class="votes pull-left positivar-projeto <?php echo ($positivou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
@@ -75,12 +75,12 @@ get_header('inside');
         </span>
       </div>
     </a>
+    </div>
 
-  </div>
 
     
-    <div id="about" class="conteudo panel panel-default">
-      <div class="panel-heading">SOBRE O PROJETO</div>
+    <div id="about" class="conteudo panel panel-default debatidos">
+      <div class="panel-heading title-projeto-single">SOBRE O PROJETO</div>
       <div class="panel-body">
        <?php
        while ( have_posts() ) : the_post();
@@ -91,7 +91,7 @@ get_header('inside');
     
     </div>
 
-    <div id="justificativa" class="conteudo panel panel-default">
+    <div id="justificativa" class="conteudo panel panel-default debatidos">
       <div class="panel-heading">CONSIDERAÇÕES DO AUTOR</div>
       <div class="panel-body">
        <?php

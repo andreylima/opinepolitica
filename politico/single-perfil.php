@@ -11,7 +11,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 
 
 <div class="single-wrapper">
-  <div class="info-perfil">
+  <div class="info-perfil-wrapper">
     <div class="box-autor coluna-lateral">  
       
         <?php  echo get_the_post_thumbnail( get_the_ID(), array('class' =>'null perfil-size-single img-circle')); ?>
@@ -36,8 +36,13 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
         </div>
     </a>
 </div>
+<div class="info-perfil">
+<?php $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true ); ?>
+    <h4><?php  echo sizeof($projetos_debatidos); ?> Projetos Cadastrados</h4>
+
 </div>
-<div class="caixa-titulo-projeto">
+</div>
+<div class="caixa-titulo-politico">
     <div class="partido">
        <?php 
            echo $partidos[0];
