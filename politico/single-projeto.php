@@ -15,9 +15,9 @@ get_header('inside');
 
 ?>
 <div class="single-wrapper">
-  
+  <div class="info-perfil-wrapper">
     <div class="box-autor coluna-lateral">  
-      
+      <div class="autor-titulo">AUTOR DO PROJETO</div>
         <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
         <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
@@ -41,14 +41,16 @@ get_header('inside');
         </div>
     </a>
 </div>
+</div>
 <div class="caixa-titulo-projeto">
     
     <div id="titulo" class="titulo-projeto"><?php the_title(); ?></div>
     <!-- debate ativo desde:  -->
     <!-- situação -->
     <span id="data-proposta" class="data-proposta">
-    <label for="data-proposta">Proposto em:</label>
-    <input type="date" name="data-proposta" value="<?php ?>" class="projeto-date" disabled> 
+    
+    <div clas="data-text">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
+    
  </span>
   
     <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
@@ -57,20 +59,26 @@ get_header('inside');
 
 
 
-</div>
 
+<div class="row-fluid">
     <div class="avaliacao-projeto ">
-      <img src="http://placehold.it/200x100" class="img-destaque-apoio"></img>
+      <div class="avalie"><h2>Avalie o Projeto.</h2></div>
       <a href="">
-      <div class="votes pull-left positivar-projeto <?php echo ($positivou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
-       <span class="percent-projeto">
+      <div class="votes pull-left  <?php echo ($positivou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
+<span class="glyphicon glyphicon-thumbs-up icon-vote">
+        
+            </span>
+       <span class="percent-both percent-curtiu">
       <?php echo $projetos->getPositivar_percent(); ?>
         </span>
         </div>
       </a>
       <a href="">
       <div class="voten pull-right negativar-projeto <?php echo ($negativou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
-        <span class="percent-projeto">
+        <span class="glyphicon glyphicon-thumbs-down icon-vote">
+        
+            </span>
+        <span class="percent-both percent-naocurtiu">
       <?php echo $projetos->getNegativar_percent(); ?>
         </span>
       </div>
@@ -79,8 +87,8 @@ get_header('inside');
 
 
     
-    <div id="about" class="conteudo panel panel-default debatidos">
-      <div class="panel-heading title-projeto-single">SOBRE O PROJETO</div>
+    <div class="conteudo panel panel-default debatidos">
+  <div class="panel-heading title-projeto-single">SOBRE O PROJETO</div>
       <div class="panel-body">
        <?php
        while ( have_posts() ) : the_post();
@@ -90,7 +98,7 @@ get_header('inside');
     </div>
     
     </div>
-
+</div>
     <div id="justificativa" class="conteudo panel panel-default debatidos">
       <div class="panel-heading">CONSIDERAÇÕES DO AUTOR</div>
       <div class="panel-body">
@@ -112,12 +120,12 @@ get_header('inside');
     </div>
 
     
-    <div class="conteudo">
+    <div class="form-comment">
     <?php comment_form( array( 
     'title_reply' => 'Qual é a sua opnião?', 
-    'label_submit' => 'Salvar' , 
+    'label_submit' => 'Comentar' , 
     'comment_notes_after' => '', 
-    'comment_field' => '<p class="comment-form-comment"><label for="comment">Comente:</label></br><textarea id="comment" name="comment" cols="153" rows="8" aria-required="true"></textarea></p>' ) ); ?>
+    'comment_field' => '<p class="comment-form-comment"><label for="comment">Comente:</label></br><textarea id="comment" name="comment"  rows="8" aria-required="true"></textarea></p>' ) ); ?>
       
     <div class="comments">
         <ol class='commentlist'>

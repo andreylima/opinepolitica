@@ -32,8 +32,22 @@ function save_projeto_postmeta( $post_id )
     
    
 
-    if( isset( $_POST['autoria'] ) )
+    if( isset( $_POST['autoria'] ) ) {
+
+      $autor = get_post_meta( $post_id , 'autoria', true );
+
+      if ($autor != "") {
+        $projetos = get_post_meta($autor, 'projetos_debatidos', true);
+        $indice = array_search($post_id, $projetos);
+        unset($projetos[$indice]);
+        // die($autor);
+        update_post_meta($autor, 'projetos_debatidos', $projetos);
+      }
+
+
       update_post_meta( $post_id, 'autoria', $_POST['autoria']);
+
+    }
 
      if( isset( $_POST['data_proposta'] ) )
       update_post_meta( $post_id, 'data_proposta', $_POST['data_proposta']);
@@ -47,10 +61,12 @@ function save_projeto_postmeta( $post_id )
       update_post_meta( $post_id, 'consideracoes', $_POST['consideracoes']);
    
 
+
     $projetos_debatidos = get_post_meta( $_POST['autoria'], 'projetos_debatidos', true );
     if (!in_array($post_id , $projetos_debatidos))
     $projetos_debatidos[] = $post_id;
-  
+
+
     update_post_meta( $_POST['autoria'], 'projetos_debatidos' , $projetos_debatidos);
 
 }

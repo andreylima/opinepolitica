@@ -183,8 +183,17 @@ function projetos_debatidos_display_metabox($post, $box)
 {
     $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true );
     
-    if ($projetos_debatidos != "") {
-       $projetos_debatidos = implode(', ', $projetos_debatidos);
+    if (!empty($projetos_debatidos)) {
+      foreach ($projetos_debatidos as $projeto) {
+        $projetos[] = get_the_title($projeto); 
+        $projetos_debatidos = implode(', ', $projetos);
+      }
+
+       
+    }
+    else
+    {
+      $projetos_debatidos = "";
     }
    
 

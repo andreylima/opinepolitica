@@ -59,7 +59,6 @@ header
 	height: 60px;
 	width: 60px;
 	display: block;
-	background-color: white;
 	float: left;
 }
 .open_menu
@@ -411,6 +410,55 @@ div.new-fb-7
 {
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
+.avalie {
+height: 100px;
+width: 200px;
+background-color: #34495e;
+text-align: center;
+color: #63e82a;
+box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+padding-top: 12px;
+border: 2px solid #ecf0f1;
+margin: auto;
+}
+.avalie h2
+{
+	width: 60%;
+	margin: auto;
+}
+.avaliacao-projeto .votes, .avaliacao-projeto .voten
+{
+	border: solid 2px #ecf0f1;
+}
+#dialog
+{
+	display: none;
+}
+#comment
+{
+	width: 90%;
+	margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -440,7 +488,7 @@ div.new-fb-7
 
 .votes , .voten
 {
-	border: solid 2px #ecf0f1;
+	border: solid 2px #34495e;
 	border-radius: 50%;
 	height:	70px;
 	height:	4.375rem;
@@ -619,6 +667,7 @@ div.new-fb-7
 	margin-top: 10px;
 	font-size: 25px;
 	font-size: 1.5625rem;
+	border: 2px solid #34495e;
 
 }
 .link-perfil:hover
@@ -667,6 +716,18 @@ div.new-fb-7
 	line-height: 35px;
 	font-family: "Lato-Bol";
 	font-size: 16px;
+}
+.single-perfil .percent-both, .single-projeto .percent-both 
+{
+	height: 30px;
+	border: solid 2px #34495e;
+	display: block;
+	position: relative;
+	top: -70px;
+	cursor: default;
+	text-align: center;
+	line-height: 30px;
+
 }
 .cargo
 {
@@ -934,7 +995,7 @@ float: right;
 
 }
 
-.coluna-lateral .votes,.coluna-lateral .voten {
+.coluna-lateral .votes,.coluna-lateral .voten, .avaliacao-projeto .votes, .avaliacao-projeto .voten {
 border: solid 2px #34495e;
 border-radius: 50%;
 height: 50px;
@@ -945,6 +1006,11 @@ bottom: 40px;
 -moz-transition: all 0.1s linear;
 -o-transition: all 0.1s linear;
 transition: all 0.1s linear;
+}
+.avaliacao-projeto .icon-vote
+{
+	top: 10px !important;
+	left: 10px !important;
 }
 .coluna-lateral .icon-vote {
 font-size: 20pt !important;
@@ -1043,8 +1109,149 @@ border-color: #34495e;
 	margin: auto;
 	width: 80%;
 }
+.autor-titulo
+{
+	height: 30px;
+	height: 1.875rem;
+	line-height: 21px;
+	line-height: 1.3125rem;
+	background-color: #ecf0f1;
+	border: solid 2px #34495e !important;
+	padding: 3px;
+	color: #34495e;
+	text-align: center;
+	font-family: "Lato-Bol";
+	bottom: -4px;
+	bottom: -0.25rem;
+	position: relative;
 
 }
+.caixa-titulo-projeto {
+width: 70%;
+float: right;
+height: 200px;
+margin-top: 100px;
+margin-right: 100px;
+border: solid black;
+text-align: center;
+background-color: #ecf0f1;
+border: solid #34495e;
+color: #34495e;
+}
+.titulo-projeto {
+font-size: 60px;
+position: relative;
+bottom: -30%;
+}
+.data-proposta {
+
+height: 40px;
+width: 300px;
+display: block;
+line-height: 40px;
+position: relative;
+bottom: -90px;
+left: 20px;
+background-color: white;
+border: solid #34495e;
+background-color: #ecf0f1;
+}
+.row-fluid
+{
+	clear: both;
+}
+.avaliacao-projeto
+{
+	margin-left: 30px;
+	width: 220px;
+	float: left;
+	margin-top: 40px;
+}
+.form-comment
+{
+	clear: both;
+}
+.form-comment #submit
+{
+	width: 100%;
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	line-height: 34px;
+	background-color: hsl(102, 81%, 36%) !important;
+	background-repeat: repeat-x;
+	background-image: -webkit-linear-gradient(#63e82a, #3ea611);
+	background-image: -o-linear-gradient(#63e82a, #3ea611);
+	background-image: linear-gradient(#63e82a, #3ea611);
+	border-radius: 6px;
+	padding: 11px 19px;
+	font-size: 17.5px;
+	border: 0px;
+	color: white;
+}
+.form-comment #submit:hover 
+{
+	text-decoration: none;
+	background-color:#3ea611 !important;
+	background-image: none;
+}
+.form-comment
+{
+	width: 70%;
+	margin: auto;
+	color: #63e82a;
+	float: right;
+	margin-right: 100px;
+}
+#comment
+{
+	color: black;
+}
+.form-comment a{
+	text-decoration: none;
+	color: #63e82a;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1153,7 +1360,7 @@ div.new-fb-7
 }
 .votes , .voten
 {
-	border: solid 2px #ecf0f1;
+	border: solid 2px #34495e;
 	border-radius: 50%;
 	height:	50px;
 	width: 50px;
@@ -1402,18 +1609,7 @@ div.new-fb-7
 	border: 2px solid #34495e;
 
 }
-.percent-both 
-{
-	height: 30px;
-	border: solid 2px #ecf0f1;
-	display: block;
-	position: relative;
-	top: -70px;
-	cursor: default;
-	text-align: center;
-	line-height: 30px;
 
-}
 .panel-bottom
 {
 	margin-top: 7px;
@@ -1754,6 +1950,10 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 	border-color: #34495e !important;
 	color: #34495e !important;
 }
+.single-projeto .title-projeto-single
+{
+
+}
 .mini-projeto
 {
 	margin-bottom: 40px !important;
@@ -1826,6 +2026,7 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 	width: 210px;
 	width: 13.125rem;
 	margin: auto;
+	height: 130px;
 }
 .percent-projeto {
 height: 30px;
@@ -1852,5 +2053,98 @@ color: #34495e;
 .single-projeto
 {
 	background-color: #34495e;
+}
+.percent-both 
+{
+	height: 30px;
+	border: solid 2px #34495e;
+	display: block;
+	position: relative;
+	top: -70px;
+	cursor: default;
+	text-align: center;
+	line-height: 30px;
+
+}
+.single-projeto .percent-both, .single-perfil .percent-both
+{
+	border: solid 2px #ecf0f1;
+}
+.coluna-lateral .votes,.coluna-lateral .voten {
+border: solid 2px #ecf0f1 !important;
+
+}
+.form-comment
+{
+	width: 90%;
+	margin: auto;
+	color: #63e82a;
+}
+.form-comment a{
+	text-decoration: none;
+	color: #63e82a;
+}
+.form-comment #submit
+{
+	width: 100%;
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	line-height: 34px;
+	background-color: hsl(102, 81%, 36%) !important;
+	background-repeat: repeat-x;
+	background-image: -webkit-linear-gradient(#63e82a, #3ea611);
+	background-image: -o-linear-gradient(#63e82a, #3ea611);
+	background-image: linear-gradient(#63e82a, #3ea611);
+	border-radius: 6px;
+	padding: 11px 19px;
+	font-size: 17.5px;
+	border: 0px;
+	color: white;
+}
+.form-comment #submit:hover 
+{
+	text-decoration: none;
+	background-color:#3ea611 !important;
+	background-image: none;
+}
+.data-proposta
+{
+	display: block;
+}
+.autor-titulo
+{
+	height: 30px;
+	height: 1.875rem;
+	line-height: 21px;
+	line-height: 1.3125rem;
+	background-color: #34495e;
+	border: solid 2px #ecf0f1 !important;
+	padding: 3px;
+	color: white;
+	text-align: center;
+	font-family: "Lato-Bol";
+	bottom: -4px;
+	bottom: -0.25rem;
+	position: relative;
+
+}
+.single-projeto .row-fluid
+{
+	margin-top: 40px;
+	margin-top: 2.5rem;
+}
+.data-text
+{
+	margin-top: 15px;
+	font-size: 16px;
+}
+.titulo-projeto
+{
+	font-size: 27px;
+}
+#comment
+{
+	color: black;
 }
 }

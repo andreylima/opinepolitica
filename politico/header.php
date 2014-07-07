@@ -32,7 +32,7 @@
 </head>
 <body  <?php body_class(); ?>>
 <header>
-<div id="logo" ></div>
+<img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo">
 <?php if (!is_user_logged_in()) {
 
       ?>
