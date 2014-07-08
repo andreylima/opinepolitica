@@ -54,6 +54,10 @@ header
 	background: url("assets/img/bg-header2.png") repeat-x;
 
 }
+a:hover
+{
+	text-decoration: none;
+}
 #logo
 {
 	height: 60px;
@@ -670,6 +674,16 @@ margin: auto;
 	border: 2px solid #34495e;
 
 }
+.single-projeto .link-perfil
+{
+	width: 80%;
+	font-size: 18px;
+	font-size: 1.125rem;
+	height: 34px;
+	height: 2.125rem;
+	line-height: 34px;
+	line-height: 2.125rem;
+} 
 .link-perfil:hover
 {
 	background-color: #0094DA;
@@ -915,8 +929,14 @@ a:hover .placa-politicos
 	width: 9.6875rem;
 	margin: auto;
 	margin-left: 30px;
-	margin-top: 20px !important;
+	margin-top: 20px;
+	margin-top: 1.25rem;
 	text-align: center;
+}
+.single-projeto .box-autor
+{
+	margin-top: 5px;
+	margin-top: 0.3125rem;
 }
 .caixa-titulo-politico {
 width: 70%;
@@ -1100,6 +1120,7 @@ border-color: #34495e;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 
 }
+
 .info-perfil
 {
 	clear: both;
@@ -1211,6 +1232,13 @@ background-color: #ecf0f1;
 	text-decoration: none;
 	color: #63e82a;
 }
+.overflow-autor
+{
+	height: 200px;
+	height: 12.5rem;
+	overflow: hidden;
+}
+
 }
 
 
@@ -1709,6 +1737,10 @@ div.new-fb-7
 	margin-top: 10px;
 
 }
+.link-perfil:hover
+{
+	background-color: #0094DA;
+}
 .thumb-wrap
 {
 	overflow: hidden;
@@ -1887,7 +1919,7 @@ text-align: center;
 margin: auto;
 margin-top: 21px;
 background-color: #ecf0f1;
-height: 120px;
+height: 100px;
 color: #34495e;
 box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
@@ -2141,10 +2173,25 @@ border: solid 2px #ecf0f1 !important;
 }
 .titulo-projeto
 {
-	font-size: 27px;
+	font-size: 18px;
+	font-size: 1.125rem;
+	margin-top: 20px;
+	margin-top: 1.25rem;
+
 }
 #comment
 {
 	color: black;
+}
+.overflow-autor
+{
+	height: 200px;
+	height: 12.5rem;
+	overflow: hidden;
+}
+.font-header-small
+{
+	font-size: 15px;
+	
 }
 }

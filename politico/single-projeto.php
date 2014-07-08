@@ -16,6 +16,7 @@ get_header('inside');
 ?>
 <div class="single-wrapper">
   <div class="info-perfil-wrapper">
+  <div class="overflow-autor">
     <div class="box-autor coluna-lateral">  
       <div class="autor-titulo">AUTOR DO PROJETO</div>
         <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
@@ -42,6 +43,8 @@ get_header('inside');
     </a>
 </div>
 </div>
+<a href="<?php the_permalink(); ?>"><div class="link-perfil">VER PERFIL</div></a>
+</div>
 <div class="caixa-titulo-projeto">
     
     <div id="titulo" class="titulo-projeto"><?php the_title(); ?></div>
@@ -49,7 +52,7 @@ get_header('inside');
     <!-- situação -->
     <span id="data-proposta" class="data-proposta">
     
-    <div clas="data-text">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
+    <div class="data-text">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
     
  </span>
   
@@ -100,7 +103,7 @@ get_header('inside');
     </div>
 </div>
     <div id="justificativa" class="conteudo panel panel-default debatidos">
-      <div class="panel-heading">CONSIDERAÇÕES DO AUTOR</div>
+      <div class="panel-heading font-header-small">CONSIDERAÇÕES DO AUTOR</div>
       <div class="panel-body">
        <?php
           $consideracoes = get_post_meta( get_the_ID(), 'consideracoes', true );
