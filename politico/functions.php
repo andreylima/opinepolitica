@@ -149,4 +149,46 @@ add_filter('intermediate_image_sizes_advanced', 'wpmayor_filter_image_sizes');
 add_image_size( 'custom', 300, 300, true );
 
 
+
+
+add_filter('comment_form_default_fields', 'url_filtered');
+function url_filtered($fields)
+{
+  if(isset($fields['url']))
+   unset($fields['url']);
+  return $fields;
+}
+
+
+add_filter( 'comment_form_defaults', 'cd_pre_comment_text' );
+
+
+function cd_pre_comment_text( $arg ) {
+  $arg['comment_notes_before'] = "Want to see your ugly mug by your comment? Get a free custom avatar at <a href='http://www.gravatar.com' target='_blank' >Gravatar</a>.";
+  return $arg;
+}
+
+
+
+class Comment_Says_Custom_Text_Wrangler {
+	function comment_says_text($translation, $text, $domain) {
+
+
+	$new_says = 'Votou nao'; //whatever you want to have instead of 'says' in comments
+    $translations = &get_translations_for_domain( $domain );
+    if ( $text == '<cite class="fn">%s</cite> <span class="says">says:</span>' ) {
+	   if($new_says) $new_says = ' '.$new_says; //compensate for the space character
+       return $translations->translate( '<cite class="fn">%s</cite><span class="says">'.$new_says.':</span>' );
+     } else {
+    return $translation; // standard text
+	 }  
+	}
+}
+add_filter('gettext', array('Comment_Says_Custom_Text_Wrangler', 'comment_says_text'), 10, 4);
+
+
+
+
+
 ?>
+

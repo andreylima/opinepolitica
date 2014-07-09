@@ -57,6 +57,7 @@ header
 a:hover
 {
 	text-decoration: none;
+	cursor: pointer;
 }
 #logo
 {
@@ -443,7 +444,11 @@ margin: auto;
 	width: 90%;
 	margin: auto;
 }
-
+.form-comment ol {
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
 
 
 
@@ -1220,7 +1225,6 @@ background-color: #ecf0f1;
 {
 	width: 70%;
 	margin: auto;
-	color: #63e82a;
 	float: right;
 	margin-right: 100px;
 }
@@ -1229,8 +1233,9 @@ background-color: #ecf0f1;
 	color: black;
 }
 .form-comment a{
-	text-decoration: none;
-	color: #63e82a;
+	text-decoration: underline;
+	color: black;
+
 }
 .overflow-autor
 {
@@ -2110,12 +2115,16 @@ border: solid 2px #ecf0f1 !important;
 {
 	width: 90%;
 	margin: auto;
-	color: #63e82a;
+	background-color: #f5f5f5;
+	padding: 10px;
+	margin-top: 20px;
 }
 .form-comment a{
-	text-decoration: none;
-	color: #63e82a;
+	text-decoration: underline;
+	color: black;
+
 }
+
 .form-comment #submit
 {
 	width: 100%;
@@ -2194,4 +2203,6 @@ border: solid 2px #ecf0f1 !important;
 	font-size: 15px;
 	
 }
+
+
 }
