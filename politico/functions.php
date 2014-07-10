@@ -215,7 +215,7 @@ class Comment_Says_Custom_Text_Wrangler {
 	}
 
 
-	$new_says = ' - ' . $voto;//whatever you want to have instead of 'says' in comments
+	$new_says = ' - <span class="voto-comment">' . $voto . '</span> ' ;//whatever you want to have instead of 'says' in comments
     $translations = &get_translations_for_domain( $domain );
     if ( $text == '<cite class="fn">%s</cite> <span class="says">says:</span>' ) {
 	   if($new_says) $new_says = ' '.$new_says; //compensate for the space character

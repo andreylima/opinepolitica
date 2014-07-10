@@ -449,6 +449,12 @@ margin: auto;
 	margin: 0;
 	padding: 0;
 }
+.voto-comment
+{
+	font-weight: 900;
+}
+
+
 
 
 
@@ -657,6 +663,7 @@ margin: auto;
 	text-align: center;
 	font-family: "Lato-Bol";
 	margin: 0;
+	color: #34495e;
 }
 .link-perfil
 {
@@ -689,6 +696,16 @@ margin: auto;
 	line-height: 34px;
 	line-height: 2.125rem;
 } 
+.archive .link-perfil
+{
+	width: 80%;
+	font-size: 18px;
+	font-size: 1.125rem;
+	height: 34px;
+	height: 2.125rem;
+	line-height: 34px;
+	line-height: 2.125rem;
+}
 .link-perfil:hover
 {
 	background-color: #0094DA;
@@ -698,6 +715,13 @@ margin: auto;
 	overflow: hidden;
 	height: 285px;
 	height: 17.8125rem;
+
+}
+.archive .thumb-wrap
+{
+
+	overflow: hidden;
+	height: 170px;
 
 }
 .icon-vote 
@@ -752,10 +776,11 @@ margin: auto;
 {
 	width: 40%;
 	margin: auto;
-	font-family: "Lato-Bol";
+	font-family: "Kulturista_Semibold";
 	font-size: 50px;
 	margin-top: -10px;
 	text-align: center;
+	color: #34495e;
 }
 .login-wrapper-footer
 {
@@ -1061,6 +1086,12 @@ left: 0px !important;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 
 }
+.single-projeto .debatidos
+{
+	margin-top: 0;
+	border-color: #34495e;
+	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+}
 .single-perfil
 {
 	background-color: #34495e;
@@ -1116,13 +1147,14 @@ border-color: #34495e;
 .info-perfil-wrapper
 {
 	background-color: #ecf0f1 !important;
-	height: 250px;
-	height: 15.625rem;
+	height: 275px;
+	height: 17.185rem;
 	float: left;
 	width: 230px;
 	margin-left: 20px;
 	margin-top: 100px;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+
 
 }
 
@@ -1243,8 +1275,134 @@ background-color: #ecf0f1;
 	height: 12.5rem;
 	overflow: hidden;
 }
+.form-comment
+{
+	width: 70%;
+	margin: auto;
+	background-color: white;
+	padding: 10px;
+	margin-top: 20px;
+	margin-right: 100px;
+	margin-bottom: 50px;
+}
+.form-comment a{
+	text-decoration: underline;
+	color: black;
 
 }
+
+.comment-edit-link
+{
+	clear: both;
+}
+
+.comment-body
+{
+	
+	border: solid 2px #f5f5f5;
+	padding: 6px;
+	border-radius: 5px;
+}
+.comment-body p
+{
+	margin-top: 40px;
+	clear: both;
+}
+.commentmetadata
+{
+	
+	
+	font-size: 11px;
+	margin-left: 20px;
+	float: left;
+	margin-top: 5px;
+}
+.comment-author
+{
+	float: left;
+}
+.perfis .thumb
+{
+	width: 155px;
+	width: 9.6875rem;
+	margin: auto;
+}
+.perfis .perfil-size
+{
+	height: 150px;
+	height: 9.375rem;
+	width: 150px;
+	width: 9.375rem;
+	padding: 3px;
+	border: 2px solid #34495e;
+	margin: auto;
+	display: block;
+}
+.perfis .votes,.perfis .voten {
+border: solid 2px #34495e;
+border-radius: 50%;
+height: 50px;
+height: 3.125rem;
+width: 50px;
+width: 3.125rem;
+position: relative;
+bottom: 53px;
+-webkit-transition: all 0.1s linear;
+-moz-transition: all 0.1s linear;
+-o-transition: all 0.1s linear;
+transition: all 0.1s linear;
+}
+.perfis .icon-vote {
+font-size: 20pt !important;
+top: 10px !important;
+left: 10px !important;
+}
+.perfis .percent-both 
+{
+	height: 30px;
+	border: solid 2px #34495e;
+	display: block;
+	position: relative;
+	top: -70px;
+	cursor: default;
+	text-align: center;
+	line-height: 30px;
+
+}
+.archive .vereador
+{
+	background-color: #ecf0f1;
+	color: #34495e;
+	box-shadow: none;
+	float: left;
+}
+.archive .perfil
+{
+	width: 24%;
+}
+#archive-wrapper
+{
+	padding-top: 100px;
+}
+.archive
+{
+	background-color: #ecf0f1;
+}
+.archive .perfis
+{
+	width: 90%;
+	margin: auto;
+}
+.title-panel {
+color: #34495e;
+}
+}
+
+
+
+
+
+
 
 
 
@@ -1707,7 +1865,6 @@ div.new-fb-7
 	width: 150px;
 	padding: 3px;
 	border: 2px solid #34495e;
-	background-color:white;
 	margin: auto;
 	display: block;
 
@@ -1725,6 +1882,13 @@ div.new-fb-7
 	text-align: center;
 	font-family: "Lato-Bol";
 	margin: 0;
+}
+.single-projeto .name-perfil
+{
+	text-align: center;
+	font-family: "Lato-Bol";
+	margin: 0;
+	color: #ecf0f1;
 }
 .link-perfil
 {
@@ -2107,7 +2271,15 @@ color: #34495e;
 {
 	border: solid 2px #ecf0f1;
 }
+.archive .percent-both
+{
+	border: solid 2px #ecf0f1;
+}
 .coluna-lateral .votes,.coluna-lateral .voten {
+border: solid 2px #ecf0f1 !important;
+
+}
+.archive .votes,.archive .voten {
 border: solid 2px #ecf0f1 !important;
 
 }
@@ -2115,7 +2287,7 @@ border: solid 2px #ecf0f1 !important;
 {
 	width: 90%;
 	margin: auto;
-	background-color: #f5f5f5;
+	background-color: white;
 	padding: 10px;
 	margin-top: 20px;
 }
@@ -2203,26 +2375,76 @@ border: solid 2px #ecf0f1 !important;
 	font-size: 15px;
 	
 }
-.comment-meta a:first-child
-{
-	font-size: 11px;
-	float: left;
-	margin-top: 7px;
-	margin-left: 5px;
-}
+
 .comment-edit-link
 {
 	clear: both;
 }
-.comment-author
-{
-	float: left;s
-}
+
 .comment-body
 {
-	border-color: #34495e;
-	border: solid 1px;
+	
+	border: solid 2px #f5f5f5;
 	padding: 6px;
 	border-radius: 5px;
+}
+.comment-body p
+{
+	margin-top: 40px;
+	clear: both;
+}
+.commentmetadata
+{
+	width: 25%;
+	overflow: hidden;
+	height: 17px;
+	font-size: 11px;
+	margin-left: 20px;
+	float: left;
+	margin-top: 5px;
+}
+.comment-author
+{
+	float: left;
+}
+#archive-wrapper
+{
+	padding-top: 70px;
+}
+.archive
+{
+	background-color: #34495e;
+}
+.archive .perfis
+{
+	width: 90%;
+	margin: auto;
+}
+.title-panel
+{
+	color: #63e82a;
+}
+.archive .vereador
+{
+	background-color: #34495e;
+	color: #ecf0f1;
+	box-shadow: none;
+	margin-top: 15px;
+	margin-top: 0.9375rem;
+}
+.archive .name-perfil
+{
+	color: #ecf0f1;
+}
+.perfis .perfil-size
+{
+	height: 150px;
+	height: 9.375rem;
+	width: 150px;
+	width: 9.375rem;
+	padding: 3px;
+	border: 2px solid #ecf0f1;
+	margin: auto;
+	display: block;
 }
 }

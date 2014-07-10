@@ -37,8 +37,20 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
     </a>
 </div>
 <div class="info-perfil">
-    <?php $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true ); ?>
-    <h4><?php  echo count(array_filter($projetos_debatidos)); ?> Projetos Cadastrados</h4>
+    <?php 
+
+    $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true ); 
+    if (!empty($projetos_debatidos)) {
+           $projetos_debatidos = count(array_filter($projetos_debatidos));
+       }
+    else
+    {
+        $projetos_debatidos = "0";
+    }
+
+
+    ?>
+    <h4><?php  echo $projetos_debatidos; ?> Projetos Cadastrados</h4>
 
 </div>
 </div>

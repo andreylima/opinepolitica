@@ -11,7 +11,7 @@ $naocurtiu = $perfis->verifica_naocurtida();
 $positivou = $projetos->verifica_positivou();
 $negativou = $projetos->verifica_negativou();
 
-get_header('inside'); 
+get_header(); 
 
 ?>
 <div class="single-wrapper">
@@ -43,7 +43,8 @@ get_header('inside');
     </a>
 </div>
 </div>
-<a href="<?php the_permalink(); ?>"><div class="link-perfil">VER PERFIL</div></a>
+<h4 class="name-perfil"><?php echo get_the_title($autor_id); ?></h4>
+<a href="<?php echo get_permalink($autor_id); ?>"><div class="link-perfil">VER PERFIL</div></a>
 </div>
 <div class="caixa-titulo-projeto">
     
