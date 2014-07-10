@@ -2203,6 +2203,26 @@ border: solid 2px #ecf0f1 !important;
 	font-size: 15px;
 	
 }
-
-
+.comment-meta a:first-child
+{
+	font-size: 11px;
+	float: left;
+	margin-top: 7px;
+	margin-left: 5px;
+}
+.comment-edit-link
+{
+	clear: both;
+}
+.comment-author
+{
+	float: left;s
+}
+.comment-body
+{
+	border-color: #34495e;
+	border: solid 1px;
+	padding: 6px;
+	border-radius: 5px;
+}
 }
