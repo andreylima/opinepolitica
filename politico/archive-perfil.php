@@ -124,3 +124,9 @@ $perfis = new perfisModel($post->ID);
 
 
 </div>
+
+
+
+
+
+<?php get_footer() ?>

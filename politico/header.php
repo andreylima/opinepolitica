@@ -62,3 +62,4 @@
 
 <?php } ?>
  </header>
+<?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-body' ) ); ?>

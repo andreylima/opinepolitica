@@ -95,6 +95,9 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 <div class="conteudo panel panel-default debatidos">
   <div class="panel-heading title-projeto-single">PROJETOS DELE</div>
   <div class="panel-body">
+  <div class="mini-projeto-wrapper">
+      
+  
     <?php 
     $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true );
 
@@ -122,6 +125,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
                                 SAIBA MAIS
                             </div>
                         </a>
+                        <div class="percent-wrapper">
                         <span class="mini-percent-naoapoiaram">
                             <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
                             <?php echo $projetos->getNegativar_percent(); ?>
@@ -131,6 +135,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
                             <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
                             <?php echo $projetos->getPositivar_percent(); ?>
                         </span>
+                        </div>
                     </div>
                 </div>
 
@@ -144,6 +149,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
             ?>
         <span> Ainda não foram cadastrados projetos desse Político. Clique AQUI e faça sua sugestão.</span>
         <?php } ?>
+          </div>
         </div>
     </div>
 

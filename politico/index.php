@@ -22,7 +22,7 @@ get_header();
 
   
 </script>
-<?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-body' ) ); ?>
+
 <div class="destaque">
 <div class="wrap-destaque wide-destaque">
 	<h1 class="fundo">PARTICIPE E AJUDE </h1>
