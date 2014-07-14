@@ -52,7 +52,12 @@ get_header();
 </div>
 <span id="scroll_down_pol"></span>
 </a>
+<?php if (!is_user_logged_in()) {
+
+      ?>
   <div class="form-cadastro-top">
+
+  <?php } ?>
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
   <form action="" method="post" id="cadastro_form" novalidate="novalidate">
@@ -286,7 +291,7 @@ get_header();
 <div class="form-cadastro">
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
-  <form action="" method="post" id="cadastro_form" novalidate="novalidate">
+  <form action="" method="post" id="cadastro_form_down" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
   <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input" name="email">

@@ -431,6 +431,28 @@ margin: auto;
 {
 	font-weight: 900;
 }
+ input[type="text"]:focus, input[type="password"]:focus, input[type="select"]:focus
+ {
+	outline: 0;
+	border: solid 2px #63e82a !important;
+ }
+.valid
+{
+	border:solid 2px #EEE !important;
+	background-color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1407,6 +1429,8 @@ color: #63e82a;
 {
 	width: 90%;
 	margin: auto;
+	padding-top: 20px;
+
 }
 .small-header
 {
@@ -1416,6 +1440,7 @@ color: #63e82a;
 {
 font-family: "Kulturista_Semibold";
 }
+
 }
 
 
