@@ -8,10 +8,16 @@ get_header();
 
 <div id="archive-wrapper">
 
-  <div class="title-panel text-center">
-    <h3>Conheça mais sobre cada Projeto,</h3> 
+  <div class="title-panel text-center big-header">
+    <h1>Conheça mais sobre cada Projeto,</h1> 
+    <h2>dê a sua opinião,</h2> 
+    <h1>e mostre que estamos de olho!</h1>
+  </div>
+
+  <div class="title-panel text-center small-header">
+    <h4>Conheça mais sobre cada Projeto,</h4> 
     <h4>dê a sua opinião,</h4> 
-    <h3>e mostre que estamos de olho!</h3>
+    <h4>e mostre que estamos de olho!</h4>
   </div>
 
 <div class="todos-projetos">
@@ -39,6 +45,7 @@ get_header();
                                 SAIBA MAIS
                             </div>
                         </a>
+                         <div class="percent-wrapper">
                         <span class="mini-percent-naoapoiaram">
                             <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
                             <?php echo $projetos->getNegativar_percent(); ?>
@@ -48,6 +55,7 @@ get_header();
                             <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
                             <?php echo $projetos->getPositivar_percent(); ?>
                         </span>
+                    </div>
                     </div>
                 </div>
 

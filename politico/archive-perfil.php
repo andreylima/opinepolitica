@@ -12,7 +12,13 @@ $perfis = new perfisModel($post->ID);
 
 <div id="archive-wrapper">
 
-  <div class="title-panel text-center">
+  <div class="title-panel text-center big-header">
+    <h1>Confira o nível de aprovação dos Poderes</h1> 
+    <h2>Executivo e Legislativo</h2> 
+    <h1>de Governador Valadares</h1>
+  </div>
+
+  <div class="title-panel text-center small-header">
     <h3>Confira o nível de aprovação dos Poderes</h3> 
     <h4>Executivo e Legislativo</h4> 
     <h3>de Governador Valadares</h3>
@@ -63,7 +69,7 @@ $perfis = new perfisModel($post->ID);
       </div>
       </div>
       <h4 class="name-perfil"><?php the_title() ?></h4>
-        <div class="link-perfil"> PERFIL</div>
+        <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
 
     </div>
 
@@ -114,7 +120,7 @@ $perfis = new perfisModel($post->ID);
       </div>
       </div>
       <h4 class="name-perfil"><?php the_title() ?></h4> 
-      <div class="link-perfil"> PERFIL</div>
+      <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
     </div>
 
   <?php endwhile; ?>

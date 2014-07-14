@@ -32,7 +32,9 @@
 </head>
 <body  <?php body_class(); ?>>
 <header>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 <img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo">
+</a>
 <?php if (!is_user_logged_in()) {
 
       ?>

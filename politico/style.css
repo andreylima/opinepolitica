@@ -90,31 +90,6 @@ div.new-fb-7
 }
 
 
-.mini-icon-s
-{
-	font-size: 18px;
-	height: 29px;
-	padding: 4px;
-	top: 0;
-	color: #34495e;
-	float: left;
-}
-.mini-icon-n
-{
-	font-size: 18px;
-	height: 29px;
-	padding: 4px;
-	top: 0;
-	color: white;
-	float: left;
-
-}
-.apoio
-{
-	float: right;
-	width: 64%;
-}
-
 .flick-inner
 {
 	padding-top: 0px !important;
@@ -145,6 +120,7 @@ div.new-fb-7
 	position: absolute;
 	margin-left: 70px;
 	margin-left: 4.375rem;
+	font-family: "Kulturista_Semibold";
 }
 .login-wrap
 {
@@ -364,10 +340,9 @@ div.new-fb-7
 
 .projeto-excerpt
 {
-	height: 110px;
+	height: 115px;
 	height: 6.875rem;
-	padding-top: 15px;
-	padding-top: 0.9375rem;
+	
 }
 
 .vereadores-slider
@@ -528,7 +503,7 @@ margin: auto;
 }
 .projetos-slider .dot-navigation
 {
-	bottom: 60px;
+	bottom: 20px;
 }
 .vereadores-slider .dot-navigation
 {
@@ -545,13 +520,12 @@ margin: auto;
 }
 .mini-percent-apoiaram
 {
+	width: 49.5%;
 	display: block;
 	position: relative;
 	height: 40px;
 	height: 2.5rem;
-	min-width: 34%;	
 	margin-right: 1%;
-	max-width: 65%;
 	float: right;	
 	line-height: 40px;
 	line-height: 2.5rem;
@@ -569,12 +543,11 @@ margin: auto;
 }
 .mini-percent-naoapoiaram
 {
+	width: 49.5%;
 	display: block;
 	position: relative;
 	height: 40px;
 	height: 2.5rem;
-	min-width: 34%;
-	max-width: 65%;
 	float: right;	
 	line-height: 40px;
 	line-height: 2.5rem;;
@@ -599,7 +572,7 @@ margin: auto;
 	line-height: 2.5rem;
 	background-color:#19B5FE;
 	color: white;
-	width: 35%;
+	width: 30%;
 	border-radius: 5px;
 	border-radius: 0.3125rem;
 	text-align: center;
@@ -623,21 +596,6 @@ margin: auto;
 	padding-bottom: 10px;
 }
 
-.mini-icon-n 
-{
-	height: 32px;
-	height: 2rem;
-	float: none;
-	vertical-align: middle;
-
-}
-.mini-icon-s
-{
-	height: 32px;
-	height: 2rem;
-	float: none;
-	vertical-align: middle;
-}
 .arrow
 {
 	opacity: 1 !important;
@@ -917,12 +875,12 @@ a:hover .placa-politicos
 .placa-politicos h4
 {
 	font-size: 16px;
-	font-family: "Lato-Bol";
+	font-family: "Kulturista_Semibold";
 }
 .placa-projetos h4
 {
 	font-size: 16px;
-	font-family: "Lato-Bol";
+	font-family: "Kulturista_Semibold";
 }
 .panel-heading
 {
@@ -1123,13 +1081,11 @@ float: left;
 }
 .mini-projeto .mini-percent-naoapoiaram
 {
-	min-width: 35%;
-	max-width: 39%;
+	width: 49.5%;%;
 }
 .mini-projeto .mini-percent-apoiaram
 {
-	min-width: 35%;
-	max-width: 39%;
+	width: 49.5%;
 }
 .mini-projeto .see-more
 {
@@ -1142,15 +1098,13 @@ float: left;
 }
 .mini-projeto-header
 {
-	background-color: #ecf0f1  !important;
 	border-color: #34495e !important;
-	color: #34495e !important;
 	font-size: 15px;
 	text-align: center;
 }
 .debatidos .panel-body
 {
-	padding-top: 50px;
+	
 	font-size: 14px;
 
 }
@@ -1390,6 +1344,10 @@ left: 10px !important;
 {
 	width: 24%;
 }
+.post-type-archive-projeto h3
+{
+	font-size: 22px;
+}
 #archive-wrapper
 {
 	padding-top: 100px;
@@ -1414,6 +1372,49 @@ color: #63e82a;
 {
 	width: 60%;
 	float: left;
+}
+.projeto-excerpt
+{
+	padding-top: 10px;
+}
+.mini-icon-s
+{
+	font-size: 18px;
+	padding: 4px;
+	top: 0;
+	color: #34495e;
+	float: left;
+	height: 32px;
+	height: 2rem;
+	float: none;
+	vertical-align: middle;
+
+}
+.mini-icon-n
+{
+	font-size: 18px;
+	padding: 4px;
+	top: 0;
+	color: white;
+	float: left;
+	height: 32px;
+	height: 2rem;
+	float: none;
+	vertical-align: middle;
+
+}
+.todos-projetos
+{
+	width: 90%;
+	margin: auto;
+}
+.small-header
+{
+	display: none;
+}
+.big-header
+{
+font-family: "Kulturista_Semibold";
 }
 }
 
@@ -1563,6 +1564,8 @@ div.new-fb-7
 #menu-body
 {
 	padding-top: 65px;
+	font-family: "Kulturista_Semibold";
+
 }
 .show-menu
 {
@@ -1654,6 +1657,7 @@ div.new-fb-7
 	height: 160px;
 	height: 10rem;
 }
+
 .wrap-destaque h1
 {
 	margin-bottom: 10px;
@@ -1782,9 +1786,8 @@ div.new-fb-7
 	position: relative;
 	height: 30px;
 	height: 1.875rem;
-	min-width: 35%;	
+	width: 49.5%;
 	margin-right: 1%;
-	max-width: 64%;
 	float: right;	
 	line-height: 30px;
 	background-color: #63e82a;
@@ -1797,14 +1800,15 @@ div.new-fb-7
 	border-radius: 0.3125rem;
 	font-family: "Lato-Bol";
 	border: 2px solid #34495e;
+	font-size: 11px;
 }
 .mini-percent-naoapoiaram
 {
 	display: block;
 	position: relative;
 	height: 30px;
-	min-width: 35%;
-	max-width: 64%;
+	height: 1.875rem;
+	width: 49.5%;
 	float: right;	
 	line-height: 30px;
 	background-color: #EF4836;
@@ -1817,6 +1821,7 @@ div.new-fb-7
 	border-radius: 0.3125rem;
 	font-family: "Lato-Bol";
 	border: 2px solid #34495e;
+	font-size: 11px;
 
 }
 
@@ -2181,9 +2186,7 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .mini-projeto-header
 {
-	background-color: #34495e !important;
 	border-color: #34495e !important;
-	color: white !important;
 	font-size: 15px;
 	text-align: center;
 }
@@ -2193,18 +2196,18 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .mini-projeto .see-more
 {
-	width: 32%;
+	width: 30%;
 	font-size: 10px;
 }
 .mini-projeto .mini-percent-naoapoiaram
 {
-	min-width: 28%;
-	max-width: 38%;
+	min-width: 45%;
+	max-width: 49.5%;
 }
 .mini-projeto .mini-percent-apoiaram
 {
-	min-width: 28%;
-	max-width: 38%;
+	min-width: 45%;
+	max-width: 49.5%;
 }
 .see-more
 {
@@ -2215,13 +2218,14 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 	line-height: 1.6875rem;
 	background-color:#19B5FE;
 	color: white;
-	width: 35%;
+	width: 30%;
 	border-radius: 5px;
 	border-radius: 0.3125rem;
 	text-align: center;
 	float: left;
 	margin-right: 1%;
 	border: 2px solid #34495e;
+	font-size: 10px;
 }
 .perfil-size-single
 {
@@ -2430,6 +2434,10 @@ border: solid 2px #ecf0f1 !important;
 {
 	padding-top: 70px;
 }
+.archive-wrapper-fit
+{
+	padding-top: 20px !important;
+}
 .archive
 {
 	background-color: #34495e;
@@ -2465,5 +2473,42 @@ border: solid 2px #ecf0f1 !important;
 	border: 2px solid #ecf0f1;
 	margin: auto;
 	display: block;
+}
+.percent-wrapper
+{
+	width: 60%;
+	float: left;
+}
+.mini-icon-s
+{
+	font-size: 15px;
+	height: 29px;
+	padding: 4px;
+	top: 3px;
+	color: #34495e;
+	float: left;
+}
+.mini-icon-n
+{
+	font-size: 15px;
+	height: 29px;
+	padding: 4px;
+	top: 3px;
+	color: white;
+	float: left;
+
+}
+.todos-projetos
+{
+	width: 90%;
+	margin: auto;
+}
+.big-header
+{
+	display: none;
+}
+.small-header
+{
+font-family: "Kulturista_Semibold";
 }
 }

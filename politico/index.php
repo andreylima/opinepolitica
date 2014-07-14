@@ -128,7 +128,7 @@ get_header();
       		SAIBA MAIS
       	</div>
         </a>
-      	<div class="apoio">
+      	<div class="percent-wrapper">
       	<span class="mini-percent-naoapoiaram">
           <div>
             <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
