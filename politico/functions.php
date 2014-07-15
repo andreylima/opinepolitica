@@ -23,6 +23,10 @@ add_action('wp_ajax_nopriv_verify_login', 'verify_login');
 add_action('wp_ajax_savedata', 'savedata');
 add_action('wp_ajax_nopriv_savedata', 'savedata');
 
+add_action('wp_ajax_login_user', 'login_user');
+add_action('wp_ajax_nopriv_login_user', 'login_user');
+
+add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
 
 function verify_login()
 	{
@@ -114,11 +118,6 @@ function verify_login()
 		$cidade = $_POST['cidade_select'];
 		$senha = $_POST['senha'];
 
-		if (username_exists( $email )) {
-			echo "E-mail já cadastrado";
-			exit();
-
-		}
 		
 
 		$userdata = array(
@@ -135,15 +134,51 @@ function verify_login()
 
 		$user_id = wp_insert_user( $userdata );
 
+		if (is_wp_error( $user_id )) {
+			echo $user_id->get_error_message();
+			die();
+		}
+
 		update_user_meta( $user_id, "cpf" , $cpf );
 		update_user_meta( $user_id, "cidade" , $cidade );
 
+		$creds = array();
+		$creds['user_login'] = $email;
+		$creds['user_password'] = $senha;
+		$creds['remember'] = true;
 
-		echo $user_id;
+		$signon = wp_signon( $creds, false );
+		wp_set_current_user( $user_id, $nome );
+
+		echo true;
 		die();
 
 	}
 
+	function login_user()
+	{
+		$email = $_POST['email_log'];
+		$senha = $_POST['senha_log'];
+
+		$creds = array();
+		$creds['user_login'] = $email;
+		$creds['user_password'] = $senha;
+		$creds['remember'] = true;
+
+		$signon = wp_signon( $creds, false );
+
+		if( is_wp_error( $signon ) ) {
+    		echo $signon->get_error_message();
+		}
+		else
+		{
+			echo true;
+		}
+
+
+		die();
+
+	}
 
 
 ?>

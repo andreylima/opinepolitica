@@ -20,7 +20,7 @@ get_header();
     <div class="box-autor coluna-lateral">  
       <div class="autor-titulo">AUTOR DO PROJETO</div>
         <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
-        <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
+        <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
             
               
@@ -29,9 +29,9 @@ get_header();
             <?php echo $perfis->getCurtiu_percent(); ?>
             </span>
         </div>
-    </a>
+    
 
-    <a href="">
+    
         <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
             <span class="glyphicon glyphicon-thumbs-down icon-vote">
         
@@ -40,7 +40,7 @@ get_header();
             <?php echo $perfis->getNaocurtiu_percent(); ?>
             </span>
         </div>
-    </a>
+    
 </div>
 </div>
 <h4 class="name-perfil"><?php echo get_the_title($autor_id); ?></h4>
@@ -67,7 +67,7 @@ get_header();
 <div class="row-fluid">
     <div class="avaliacao-projeto ">
       <div class="avalie"><h2>Avalie o Projeto.</h2></div>
-      <a href="">
+      
       <div class="votes pull-left  <?php echo ($positivou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
 <span class="glyphicon glyphicon-thumbs-up icon-vote">
         
@@ -76,8 +76,8 @@ get_header();
       <?php echo $projetos->getPositivar_percent(); ?>
         </span>
         </div>
-      </a>
-      <a href="">
+     
+      
       <div class="voten pull-right negativar-projeto <?php echo ($negativou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
         <span class="glyphicon glyphicon-thumbs-down icon-vote">
         
@@ -86,7 +86,7 @@ get_header();
       <?php echo $projetos->getNegativar_percent(); ?>
         </span>
       </div>
-    </a>
+    
     </div>
 
 

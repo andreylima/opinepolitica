@@ -38,6 +38,7 @@ get_header();
   <h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES </h1>  
 </div>
 
+
 <a href="#projetos" class="placas">
 <div class="placa-projetos">
   <h4>DISCUTA OS</h4>
@@ -45,17 +46,29 @@ get_header();
   <h4>PROPOSTOS EM</h4>
   <h4>SUA CIDADE.</h4>
 </div>
-<span id="scroll_down_proj"></span>
+<span id="scroll-down-proj"></span>
 </a>
 
 <a href="#politicos" class="placas">
+<?php if (!is_user_logged_in()) { ?>
 <div class="placa-politicos">
-  <h4>CONFIRA O NÍVEL DE APROVAÇÃO </h5> 
+<?php }else { ?>
+<div class="placa-politicos-full">
+<?php } ?>
+  <h4>CONFIRA O NÍVEL DE APROVAÇÃO </h4> 
   <h4>E ESCOLHA</h4>
   <h4>QUEM TE REPRESENTA.</h4>
 </div>
-<span id="scroll_down_pol"></span>
+<?php if (!is_user_logged_in()) { ?>
+<span id="scroll-down-pol"></span>
+<?php }else { ?>
+<span id="scroll-down-pol-full"></span>
+<?php } ?>
 </a>
+
+
+
+
 <?php if (!is_user_logged_in()) { ?>
   <div class="form-cadastro-top">
 
@@ -182,7 +195,7 @@ get_header();
         <div class="thumb-wrap">
         <div class="thumb">  
           <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('custom', array('class' => 'img-circle perfil-size')); ?></a> 
-          <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
+          <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
               
             </span>
@@ -194,8 +207,8 @@ get_header();
             ?>
             </span>
           </div>
-        </a>
-        <a href="">
+        
+        
         <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
         <span class="glyphicon glyphicon-thumbs-down icon-vote">
           
@@ -208,7 +221,7 @@ get_header();
             ?>
             </span>
         </div>
-        </a>
+        
       </div>
       </div>  <!-- thumb wrap -->
 

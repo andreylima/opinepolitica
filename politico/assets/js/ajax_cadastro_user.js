@@ -23,7 +23,45 @@
     return true;
 }, "Informe um CPF válido."); 
 
+jQuery("#log-form").validate({
 
+ rules: {
+            
+            email_log: {
+                required: true,
+                email: true
+            },
+            senha_log: "required"
+                       
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            
+            email_log: {
+                required: "Favor inserir seu e-mail",
+                email: "E-mail inválido"
+            },
+            senha_log: "Digitar senha"
+            
+        },
+        errorPlacement: function(error, element) {
+        
+            
+        element.css("background-color","rgb(241, 255, 168)");
+        element.css("border","solid 2px red");
+        
+        
+        
+    },
+        
+        submitHandler: function(form) {
+
+            log_user();
+            
+        }
+
+});
 
 
 jQuery("#cadastro_form").validate({
@@ -116,15 +154,15 @@ jQuery("#cadastro_form_down").validate({
         },
         errorPlacement: function(error, element) {
        	
-        element.attr("placeholder",error.text());
-        element.val("");
+        element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
+        
         
     },
         
         submitHandler: function(form) {
         	
-            form.submit();
+            cadastrar_usuario();
         }
     });
 
@@ -160,3 +198,33 @@ function cadastrar_usuario()
         	});
 }
 
+function log_user()
+{
+    var user_data = jQuery('#log-form').serialize(); // <--- Important
+
+            jQuery.ajax({
+                type: 'POST',
+                url: myAjax.ajaxurl,
+                data: user_data + '&action=login_user',
+                success: function(response) {
+
+                    console.log(response);
+
+                    if (response != true) {
+
+                        jQuery(".show-error").css("display", "block");
+                        jQuery(".show-error").html(response);
+                        
+
+                        return;
+
+                    }
+                    
+
+                    location.reload(true);
+
+                    event.preventDefault();
+                }
+            });
+
+}

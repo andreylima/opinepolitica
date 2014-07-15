@@ -1,12 +1,12 @@
-window.onload=function(){
+
 
 	jQuery('.curtir').click(function(events){
 		
 		var acao = "curtir";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		// jQuery(this).addClass("votado");
-		// jQuery("div#" + id_votado + ".voten").removeClass("votado");
+		jQuery(this).addClass("votado");
+		jQuery("div#" + id_votado + ".voten").removeClass("votado");
 		events.preventDefault();	
 		});	
 
@@ -14,8 +14,8 @@ window.onload=function(){
 		var acao = "naocurtir";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		// jQuery(this).addClass("votado");
-		// jQuery("div#" + id_votado + ".votes").removeClass("votado");
+		jQuery(this).addClass("votado");
+		jQuery("div#" + id_votado + ".votes").removeClass("votado");
 		events.preventDefault();	
 		});
 
@@ -23,8 +23,8 @@ window.onload=function(){
 		var acao = "positivar_projeto";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		// jQuery(this).addClass("votado");
-		// jQuery("div#" + id_votado + ".voten").removeClass("votado");
+		jQuery(this).addClass("votado");
+		jQuery("div#" + id_votado + ".voten").removeClass("votado");
 		events.preventDefault();
 		});
 
@@ -32,15 +32,15 @@ window.onload=function(){
 		var acao = "negativar_projeto";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		// jQuery(this).addClass("votado");
-		// jQuery("div#" + id_votado + ".votes").removeClass("votado");
+		jQuery(this).addClass("votado");
+		jQuery("div#" + id_votado + ".votes").removeClass("votado");
 		events.preventDefault();	
 		});
 
-	validate_form();
+	
 
 
-};	
+
 
 
 
@@ -62,14 +62,14 @@ function declaraApoio(events,acao,id_votado){
 			switch(acao){
 
 				case "curtir":
-				jQuery("div#" + id_votado + ".votes > .percent-autor" ).text(response.curtiu);
-				jQuery("div#" + id_votado + ".voten > .percent-autor" ).text(response.naocurtiu);
+				jQuery("div#" + id_votado + ".votes > .percent-curtiu" ).text(response.curtiu);
+				jQuery("div#" + id_votado + ".voten > .percent-naocurtiu" ).text(response.naocurtiu);
 				jQuery("div#" + id_votado + ".votes").addClass("votado");
 				jQuery("div#" + id_votado + ".voten").removeClass("votado");
 				break;
 				case "naocurtir":
-				jQuery("div#" + id_votado + ".votes > .percent-autor" ).text(response.curtiu);
-				jQuery("div#" + id_votado + ".voten > .percent-autor" ).text(response.naocurtiu);
+				jQuery("div#" + id_votado + ".votes > .percent-curtiu" ).text(response.curtiu);
+				jQuery("div#" + id_votado + ".voten > .percent-naocurtiu" ).text(response.naocurtiu);
 				jQuery("div#" + id_votado + ".voten").addClass("votado");
 				jQuery("div#" + id_votado + ".votes").removeClass("votado");
 				break;

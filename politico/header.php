@@ -50,18 +50,27 @@
   		
 		<div class="login-connect-header">
 		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">FACE</div></div></div>
-			
-			 <input type="text" name="email" value="" id="email-log" placeholder="e-mail">
-      		 <input type="password" name="senha" placeholder="senha" id="senha-log">
+			<form action="" method="post" id="log-form" novalidate="novalidate">
+			 <input type="text" name="email_log" value="" id="email-log" placeholder="e-mail">
+      		 <input type="password" name="senha_log" placeholder="senha" id="senha-log">
       		
       		
       		
       		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
-      		
+      		</form>
+      		<div class="show-error"></div>
       		<!-- <span class="forgot-pass-header"><a href="">Esqueci a senha</a> </span>  -->
 		</div>
 		
 
+<?php } else{ ?>
+<div class="user-logged">
+	<?php echo $current_user->user_firstname ?>
+	<span class="glyphicon glyphicon glyphicon-chevron-down open-user"></span>
+	<div class="user-menu">
+		<a href="<?php echo wp_logout_url(); ?>"><span class="log-out">Sair</span></a>
+	</div>
+</div>
 <?php } ?>
  </header>
 <?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-body' ) ); ?>
