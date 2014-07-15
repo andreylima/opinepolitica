@@ -24,7 +24,11 @@ get_header();
 </script>
 
 <div class="destaque">
-<div class="wrap-destaque wide-destaque">
+  <?php if (!is_user_logged_in()) { ?>
+<div class="wrap-destaque wide-destaque ">
+  <?php }else { ?>
+<div class="wrap-destaque-full wide-destaque">
+  <?php } ?>
 	<h1 class="fundo">PARTICIPE E AJUDE </h1>
   <h1 class="fundo">A FISCALIZAR A CIDADE</h1>  
 	<h1 class="fundo">QUE A GENTE AMA.</h1>
@@ -52,12 +56,10 @@ get_header();
 </div>
 <span id="scroll_down_pol"></span>
 </a>
-<?php if (!is_user_logged_in()) {
-
-      ?>
+<?php if (!is_user_logged_in()) { ?>
   <div class="form-cadastro-top">
 
-  <?php } ?>
+  
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
   <form action="" method="post" id="cadastro_form" novalidate="novalidate">
@@ -75,7 +77,7 @@ get_header();
 </div>
 </form>
 </div>
-
+<?php } ?>
 
 </div>
 <?php if (!is_user_logged_in()) {

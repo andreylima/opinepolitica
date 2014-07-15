@@ -138,12 +138,12 @@ function verify_login()
 		update_user_meta( $user_id, "cpf" , $cpf );
 		update_user_meta( $user_id, "cidade" , $cidade );
 
-		echo true;
+
+		echo $user_id;
 		die();
 
 	}
 
-	
 
 
 ?>

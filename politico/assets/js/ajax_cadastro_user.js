@@ -141,7 +141,7 @@ function cadastrar_usuario()
 
         			console.log(response);
 
-        			if (response != "1") {
+        			if (response != true) {
 
         				jQuery("#email").val("");
         				jQuery("#email").attr("placeholder",response);
@@ -151,12 +151,9 @@ function cadastrar_usuario()
         				return;
 
         			}
-        			else
-        			{
-        				
-        			}
+        			
 
-        			// location.reload(true);
+        			location.reload(true);
 
         			event.preventDefault();
         		}
