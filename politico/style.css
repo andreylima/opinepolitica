@@ -428,10 +428,20 @@ margin: auto;
 	width: 90%;
 	margin: auto;
 }
-.form-comment ol {
+.form-comment ol,.first-comments ol {
 	list-style-type:none;
 	margin: 0;
 	padding: 0;
+}
+.form-comment ol li, .first-comments ol li 
+{
+	margin-bottom: 15px;
+}
+
+.first-comments
+{
+	padding-top: 20px;
+	clear: both;
 }
 .voto-comment
 {
@@ -448,6 +458,10 @@ margin: auto;
 	background-color: white !important;
 }
 .curtir:hover , .naocurtir:hover
+{
+	cursor: pointer;
+}
+.positivar-projeto:hover, .negativar-projeto:hover
 {
 	cursor: pointer;
 }
@@ -540,7 +554,7 @@ margin: auto;
 {
 	bottom: 14px;
 }
-.vereadores-slider-wrapper
+#vereadores-slider-wrapper
 {
 	height: 100%;
 }
@@ -618,7 +632,8 @@ margin: auto;
 .pic-projeto
 {
 	height: 200px;
-	background-position:center
+	background-position:center;
+	background-repeat: no-repeat;
 }
 
 .panel
@@ -1340,7 +1355,7 @@ background-color: #ecf0f1;
 .comment-body
 {
 	
-	border: solid 2px #f5f5f5;
+	border: solid 2px #D0ECFF;
 	padding: 6px;
 	border-radius: 5px;
 }
@@ -1549,6 +1564,41 @@ font-family: "Kulturista_Semibold";
 {
 	color: white;
 	text-decoration: underline;
+}
+#scroll-down-vereadores {
+	position: absolute;
+	height: 98px;
+	width: 99px;
+	background: url(assets/img/down_arrow_blue.png) repeat-x;
+	background-position: bottom;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	-khtml-border-radius: 100px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	overflow: hidden;
+	cursor: pointer;
+	display: block;
+	margin-top: 200px;
+	margin-left: 200px;
+	
+	
+}
+#scroll-down-vereadores:hover
+{
+	background-position: top;
+}
+.vereador-scroll
+{
+	position: relative;
+	left: 200px;
+	top: 200px;
+	font-family: "Kulturista_Semibold";
+	font-size: 15px;
+
 }
 
 }

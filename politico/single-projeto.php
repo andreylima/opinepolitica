@@ -68,7 +68,7 @@ get_header();
     <div class="avaliacao-projeto ">
       <div class="avalie"><h2>Avalie o Projeto.</h2></div>
       
-      <div class="votes pull-left  <?php echo ($positivou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
+      <div class="votes pull-left  positivar-projeto <?php echo ($positivou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
 <span class="glyphicon glyphicon-thumbs-up icon-vote">
         
             </span>
@@ -94,6 +94,10 @@ get_header();
     <div class="conteudo panel panel-default debatidos">
   <div class="panel-heading title-projeto-single">SOBRE O PROJETO</div>
       <div class="panel-body">
+        <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+        <div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
+
+                    </div> 
        <?php
        while ( have_posts() ) : the_post();
        the_content();

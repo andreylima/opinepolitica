@@ -72,12 +72,13 @@ class Comment_Says_Custom_Text_Wrangler {
 		if (in_array($author , $quem_positivou )) {
 			$voto = "Apoia";
 		}
-		elseif (in_array($author , $quem_negativou)) {
+		elseif (!empty($quem_negativou)) {
+			if (in_array($author , $quem_negativou)) 
 			$voto = "Não Apoia";
 		}
 		else
 		{
-			$voto = "Não Votou";
+			$voto = $comment_id;
 		}
 	}
 	else
@@ -90,14 +91,10 @@ class Comment_Says_Custom_Text_Wrangler {
 			}
 			else
 			{
-			$voto = "Não Votou";
+			$voto =$comment_id;
 			}
 		}
-		else
-		{
-			$voto = "Não Votou";
-		}
-
+		
 	}
 
 

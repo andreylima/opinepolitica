@@ -74,14 +74,14 @@ function declaraApoio(events,acao,id_votado){
 				jQuery("div#" + id_votado + ".votes").removeClass("votado");
 				break;
 				case "positivar_projeto":
-				jQuery("div#" + id_votado + ".votes > .percent-projeto" ).text(response.positivou);
-				jQuery("div#" + id_votado + ".voten > .percent-projeto" ).text(response.negativou);
+				jQuery("div#" + id_votado + ".votes > .percent-curtiu" ).text(response.positivou);
+				jQuery("div#" + id_votado + ".voten > .percent-naocurtiu" ).text(response.negativou);
 				jQuery("div#" + id_votado + ".votes").addClass("votado");
 				jQuery("div#" + id_votado + ".voten").removeClass("votado");
 				break;
 				case "negativar_projeto":
-				jQuery("div#" + id_votado + ".votes > .percent-projeto" ).text(response.positivou);
-				jQuery("div#" + id_votado + ".voten > .percent-projeto" ).text(response.negativou);
+				jQuery("div#" + id_votado + ".votes > .percent-curtiu" ).text(response.positivou);
+				jQuery("div#" + id_votado + ".voten > .percent-naocurtiu" ).text(response.negativou);
 				jQuery("div#" + id_votado + ".voten").addClass("votado");
 				jQuery("div#" + id_votado + ".votes").removeClass("votado");
 				break;

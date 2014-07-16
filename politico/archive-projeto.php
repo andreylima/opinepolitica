@@ -33,7 +33,8 @@ get_header();
 <div class="panel panel-default mini-projeto">
                 <div class="panel-heading mini-projeto-header"><?php the_title(); ?></div>
                 <div class="panel-body">
-                    <div class="pic-projeto" style="background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');">
+                    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+                    <div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
 
                     </div>      
                     <div class="projeto-excerpt">
@@ -57,7 +58,30 @@ get_header();
                         </span>
                     </div>
                     </div>
-                </div>
+        <div class="first-comments"> 
+
+        <div class="comments">
+        <ol class='commentlist'>
+        <?php
+          //Gather comments for a specific page/post 
+          $comments = get_comments(array(
+            'number' => '3',
+            'post_id' =>  $post->ID,
+            'status' => 'approve' //Change this to the type of comments to be displayed
+          ));
+
+          //Display the list of comments
+          wp_list_comments(array(
+            'per_page' => 3, //Allow comment pagination
+            'reverse_top_level' => false //Show the latest comments at the top of the list
+          ), $comments);
+        ?>
+      </ol>
+
+      </div>
+    </div>
+
+    </div>
 
             </div>
 

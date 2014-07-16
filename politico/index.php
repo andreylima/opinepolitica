@@ -134,9 +134,10 @@ get_header();
   ?>
     <li class="mini-projeto-index">
      <div class="panel panel-default">
-      <div class="panel-heading"><?php the_title(); ?><span class="title-autor-panel">AUTOR:  <?php  echo get_the_post_thumbnail( $autor_id, "thumbnail",  array('class' =>'panel-autor')); ?></span></div>
+      <div class="panel-heading"><?php the_title(); ?><span class="title-autor-panel">AUTOR:  <a href="<?php echo get_permalink( $autor_id); ?> "><?php  echo get_the_post_thumbnail( $autor_id, "thumbnail",  array('class' =>'panel-autor')); ?></a></span></div>
       <div class="panel-body">
-        <div class="pic-projeto" style="background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');">
+        <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+        <div class="pic-projeto" style="background-image: url('<?php echo $url ?>');">
 
         </div>
       <div class="projeto-excerpt">
@@ -181,7 +182,7 @@ get_header();
 
 <div class="prefeito-wrapper" id="politicos">
 	
-
+<a href="#vereadores-slider-wrapper"><span class="vereador-scroll">VEREADORES</span><span id="scroll-down-vereadores"></span></a>
     <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'prefeito',  'posts_per_page' => 1) ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <?php 
@@ -233,7 +234,7 @@ get_header();
   <?php endwhile; ?>
 </div> <!-- prefeito wrapper -->
 
-<div class="vereadores-slider-wrapper">
+<div id="vereadores-slider-wrapper">
     <div class="vereadores-slider">
 
       <ul>
