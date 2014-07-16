@@ -62,10 +62,10 @@ class Comment_Says_Custom_Text_Wrangler {
 	$ID = get_the_ID();
 
 	$comment_id = get_comment_ID();
-	$author = get_comment( $comment_id );
+	$author =  get_comment($comment_id)->user_id;
 
-	$quem_positivou = get_post_meta( $post_id, 'positivar_projeto', true);
-	$quem_negativou = get_post_meta( $post_id, 'negativar_projeto', true);
+	$quem_positivou = get_post_meta( get_the_id(), 'positivar_projeto', true);
+	$quem_negativou = get_post_meta( get_the_id(), 'negativar_projeto', true);
 
 	if (!empty($quem_positivou)) {
 		
@@ -78,7 +78,7 @@ class Comment_Says_Custom_Text_Wrangler {
 		}
 		else
 		{
-			$voto = $comment_id;
+			$voto = "Não votou";
 		}
 	}
 	else
@@ -91,7 +91,7 @@ class Comment_Says_Custom_Text_Wrangler {
 			}
 			else
 			{
-			$voto =$comment_id;
+			$voto = "Não votou";
 			}
 		}
 		
