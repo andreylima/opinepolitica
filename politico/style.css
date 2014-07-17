@@ -161,7 +161,7 @@ div.new-fb-7
 	-o-transition: background-position 0.1s linear;
 	transition: background-position 0.1s linear;
 }
-#destaque
+.destaque
 {
 	padding-top: 70px;
 	height: 100%;
@@ -1462,7 +1462,7 @@ color: #63e82a;
 }
 .percent-wrapper
 {
-	width: 69%;
+	width: 60%;
 	float: left;
 }
 .projeto-excerpt
@@ -1599,74 +1599,6 @@ font-family: "Kulturista_Semibold";
 	font-family: "Kulturista_Semibold";
 	font-size: 15px;
 
-}
-.window {
-position: fixed;
-left: 0;
-top: 0;
-display: none;
-z-index: 9999;
-padding: 20px;
-}
-#dialog {
-width: 700px;
-height: 350px;
-padding: 10px;
-background-color: #ffffff;
-border-color: black;
-}
-.close {
-float: right;
-font-size: 21px;
-font-weight: bold;
-line-height: 1;
-color: #000;
-text-shadow: 0 1px 0 #fff;
-filter: alpha(opacity=20);
-opacity: .2;
-}
-.title-modal {
-float: left;
-font-size: x-large;
-font-family: "Kulturista_Semibold";
-}
-.inner_container {
-padding-top: 20px;
-}
-.login_container {
-width: 45%;
-float: left;
-}
-.legend-frmlogin, .legend-registerfrm {
-display: block;
-padding: 0;
-margin-bottom: 13px;
-font-size: 19.5px;
-line-height: 36px;
-color: #333;
-border: 0;
-border-bottom: 1px solid #e5e5e5;
-font-family: "Kulturista_Semibold";
-}
-.form-vertical {
-height: 200px;
-}
-.control-group {
-clear: both;
-margin-bottom: 10px;
-}
-.register-container {
-margin-left: 20px;
-width: 45%;
-float: left;
-}
-#mask {
-  position:fixed;
-  left:0;
-  top:0;
-  z-index:9000;
-  background-color:#000;
-  display:none;
 }
 
 }
@@ -1891,7 +1823,7 @@ div.new-fb-7
 {
 	margin-left: 15px;
 }
-#destaque
+.destaque
 {
 	padding-top: 95px;
 	padding-top: 5.9375rem;
@@ -2764,80 +2696,4 @@ border: solid 2px #ecf0f1 !important;
 {
 font-family: "Kulturista_Semibold";
 }
-
-.window {
-position: fixed;
-left: 0;
-top: 0;
-display: none;
-z-index: 9999;
-padding: 20px;
-}
-#dialog {
-width: 90%;
-height: 80%;
-padding: 10px;
-background-color: #ffffff;
-border-color: black;
-}
-.close {
-float: right;
-font-size: 21px;
-font-weight: bold;
-line-height: 1;
-color: #000;
-text-shadow: 0 1px 0 #fff;
-filter: alpha(opacity=20);
-opacity: .2;
-}
-.title-modal {
-float: left;
-font-size: large;
-font-family: "Kulturista_Semibold";
-}
-.inner_container {
-padding-top: 20px;
-}
-.login_container {
-width: 90%;
-
-}
-.legend-frmlogin, .legend-registerfrm {
-display: block;
-padding: 0;
-margin-bottom: 13px;
-font-size: 15px;
-line-height: 36px;
-color: #333;
-border: 0;
-border-bottom: 1px solid #e5e5e5;
-font-family: "Kulturista_Semibold";
-}
-.form-vertical {
-
-}
-.control-group {
-clear: both;
-margin-bottom: 10px;
-}
-.register-container {
-margin-left: 20px;
-width: 45%;
-float: left;
-}
-#mask {
-  position:fixed;
-  left:0;
-  top:0;
-  z-index:9000;
-  background-color:#000;
-  display:none;
-}
-#vereador-scroll-block
-{
-	display: none;
-}
-
-
-
 }

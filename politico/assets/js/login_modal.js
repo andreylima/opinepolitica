@@ -11,12 +11,6 @@ $('.window .close').click(function (e) {
 	$('#mask').click(function () {
 		$(this).hide();
 		$('.window').hide();
-	});		
-
-	$('#register-manual').click(function() {
-   window.location = "#destaque";
-   $('#mask').hide();
-   $('.window').hide();
-});	
+	});			
 
 });
