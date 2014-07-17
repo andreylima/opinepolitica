@@ -5,8 +5,8 @@
 		var acao = "curtir";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		jQuery(this).addClass("votado");
-		jQuery("div#" + id_votado + ".voten").removeClass("votado");
+		// jQuery(this).addClass("votado");
+		// jQuery("div#" + id_votado + ".voten").removeClass("votado");
 		events.preventDefault();	
 		});	
 
@@ -14,8 +14,8 @@
 		var acao = "naocurtir";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		jQuery(this).addClass("votado");
-		jQuery("div#" + id_votado + ".votes").removeClass("votado");
+		// jQuery(this).addClass("votado");
+		// jQuery("div#" + id_votado + ".votes").removeClass("votado");
 		events.preventDefault();	
 		});
 
@@ -23,8 +23,8 @@
 		var acao = "positivar_projeto";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		jQuery(this).addClass("votado");
-		jQuery("div#" + id_votado + ".voten").removeClass("votado");
+		// jQuery(this).addClass("votado");
+		// jQuery("div#" + id_votado + ".voten").removeClass("votado");
 		events.preventDefault();
 		});
 
@@ -32,8 +32,8 @@
 		var acao = "negativar_projeto";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
-		jQuery(this).addClass("votado");
-		jQuery("div#" + id_votado + ".votes").removeClass("votado");
+		// jQuery(this).addClass("votado");
+		// jQuery("div#" + id_votado + ".votes").removeClass("votado");
 		events.preventDefault();	
 		});
 
@@ -53,9 +53,10 @@ function declaraApoio(events,acao,id_votado){
 		data: 'action=verify_login&acao='+acao+'&id_votado='+id_votado,
 		success: function(response) {
 		
-			console.log(response);
-			var response = JSON.parse(response);
 			
+			var response = JSON.parse(response);
+			console.log(response.logged);
+
 			if (response.logged != false) {
 
 			
@@ -110,8 +111,8 @@ function declaraApoio(events,acao,id_votado){
 				var winH = jQuery(window).height();
 				var winW = jQuery(window).width();
 		              
-				jQuery(id).css('top',  winH/2-jQuery(id).height()/2);
-				jQuery(id).css('left', winW/2-jQuery(id).width()/2);
+				jQuery(id).css('top',  "15%");
+				jQuery(id).css('left', "5%");
 			
 				jQuery(id).fadeIn(); 
 

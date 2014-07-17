@@ -23,7 +23,7 @@ get_header();
   
 </script>
 
-<div class="destaque">
+<div id="destaque">
   <?php if (!is_user_logged_in()) { ?>
 <div class="wrap-destaque wide-destaque ">
   <?php }else { ?>
@@ -182,7 +182,7 @@ get_header();
 
 <div class="prefeito-wrapper" id="politicos">
 	
-<a href="#vereadores-slider-wrapper"><span class="vereador-scroll">VEREADORES</span><span id="scroll-down-vereadores"></span></a>
+<a href="#vereadores-slider-wrapper" id="vereador-scroll-block"><span class="vereador-scroll">VEREADORES</span><span id="scroll-down-vereadores"></span></a>
     <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'prefeito',  'posts_per_page' => 1) ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <?php 
@@ -321,10 +321,60 @@ get_header();
   <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
 </div>
 </form>
-
-
 </div>
 <?php } ?>
+
+
+<div id="dialog" class="window">
+    <a href="#" class="close">Fechar [X]</a>
+  
+    <div class="title-modal">Para opinar é necessário estar cadastrado.</div>
+    <div class="inner_container">
+      <div class="login_container">
+            
+              <form id="formLogin" class="form-vertical well" target="_self" action="" method="POST">
+              <div class="control-group">
+                <div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">ENTRAR</div></div></div>
+              </div>
+              <div class="control-group">
+                
+                <div class="controls">
+                  <input type="text" class="input-large" id="username_login" placeholder="e-mail">
+                </div>
+               </div>
+              <div class="control-group">
+                <div class="controls">
+                  <input type="password" class="input-large"  id="password_login" placeholder="senha">
+                </div>
+              </div>
+
+              <div class="control-group">
+                <button type="submit" class="btn btn-primary btn-pos">Entrar</button>
+                <a href="" onclick="" class="lnk-recovery-password" data-toggle="modal">Esqueci
+                  minha senha</a>
+              </div>
+            </form>
+          
+          </div>
+
+    <div class="register-container">
+      <div class="legend-registerfrm">Não possui cadastro?</div>
+    
+    <div class="form-vertical well">
+                      
+          <div class="new-fb-btn new-fb-1 new-fb-default-anim"><div class="new-fb-1-1"><div class="new-fb-1-1-1">Registrar com Facebook</div></div></div>
+          <div id="register-manual">Registrar Manualmente</div>
+
+
+
+    </div>
+      
+
+    </div>
+    </div>
+    </div>
+
+    <div id="mask"></div>
 
 
 
