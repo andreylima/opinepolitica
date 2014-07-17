@@ -75,14 +75,6 @@ a:hover
 	display: none;
 }
 
-
-
-div.new-fb-7
-{
-	margin-right: 5px;
-	float: left;
-
-}
 .panel-body
 {
 	color: black;
@@ -465,7 +457,10 @@ margin: auto;
 {
 	cursor: pointer;
 }
-
+.display-block
+{
+	display: block !important;
+}
 
 
 
@@ -788,7 +783,7 @@ margin: auto;
 	text-align: center;
 	color: #34495e;
 }
-.login-wrapper-footer
+#cadastro-wrapper-footer
 {
 	display: none;
 }
@@ -1181,7 +1176,7 @@ float: left;
 }
 .mini-projeto .see-more
 {
-	width: 39%;
+	width: 30%;
 	font-size: 17px;
 }
 .panel-bottom
@@ -1462,7 +1457,7 @@ color: #63e82a;
 }
 .percent-wrapper
 {
-	width: 60%;
+	width: 69%;
 	float: left;
 }
 .projeto-excerpt
@@ -1668,6 +1663,11 @@ float: left;
   background-color:#000;
   display:none;
 }
+div.new-fb-7
+{
+	float: left;
+	margin-right: 5px;
+}
 }
 
 
@@ -1791,12 +1791,7 @@ h1
 {
 	display: none;
 }
-div.new-fb-7
-{
-	margin-bottom: 10px !important;
-	width: 48%;
-	float: left;
-}
+
 .login-wrap
 {
 	display: block;
@@ -1810,6 +1805,12 @@ div.new-fb-7
 	display: none;
 }
 .pic-projeto
+{
+	height: 200px;
+	background-position:center;
+	background-repeat: no-repeat;
+}
+.mini-projeto-index .pic-projeto
 {
 	display: none;
 }
@@ -1881,11 +1882,7 @@ div.new-fb-7
 	color: #63e82a;
 	text-decoration: none;
 }
-div.new-fb-7
-{
-	margin: 0 !important;
-	float: left;
-}
+
 .arrow-margin
 {
 	margin-left: 15px;
@@ -2307,7 +2304,7 @@ background-color: #63e82a;
 {
 	font-family: "Kulturista_Semibold";
 }
-.login-wrapper-footer
+#cadastro-wrapper-footer
 {
 	padding-top: 20px;
 	padding-top: 1.25rem;
@@ -2728,7 +2725,7 @@ border: solid 2px #ecf0f1 !important;
 }
 .percent-wrapper
 {
-	width: 60%;
+	width: 69%;
 	float: left;
 }
 .mini-icon-s
@@ -2775,7 +2772,7 @@ padding: 20px;
 }
 #dialog {
 width: 90%;
-height: 80%;
+height: 70%;
 padding: 10px;
 background-color: #ffffff;
 border-color: black;
@@ -2803,6 +2800,7 @@ clear: both;
 .login_container {
 width: 90%;
 margin: auto;
+text-align: center;
 }
 .legend-frmlogin, .legend-registerfrm {
 display: block;
@@ -2813,6 +2811,8 @@ border: 0;
 font-family: "Kulturista_Semibold";
 }
 .form-vertical {
+	padding: 8px !important;
+	padding: 0.5rem;
 
 }
 .control-group {
@@ -2854,13 +2854,63 @@ padding: 0 10px 0 5px !important;
 #register-manual
 {
 
-padding: 5px;
 color: #fff;
 background-color: #19B5FE;
 border-color: #285e8e;
-border-radius: 14px;
+border-radius: 17px;
+margin: auto;
 margin-top: 10px;
-width: 100%;
+width: 70%;
+padding: 8px;
+border: solid 2px #285e8e;
+border-top: 0;
 }
+
+.btn-entrar
+{
+	clear: both;
+	margin: auto;
+	margin-bottom: 6px;
+	background-color: #19B5FE;
+	border-radius: 5px;
+	height: 28px;
+	height: 1.75rem;
+	color: white;
+	border: solid 2px #285e8e;
+	border-top: 0;
+}
+.user-logged
+{
+	float: right;
+	color: #63e82a;
+	margin-right: 20px;
+	margin-top: 20px;
+	font-family: "Kulturista_Semibold";
+	border: solid 1px white;
+	padding: 4px;
+	background-color: #34495e;
+}
+.user-logged a
+{
+	color: #63e82a;
+}
+.user-logged a:hover
+{
+	text-decoration: underline;
+}
+.user-logged:hover
+{
+	cursor: pointer;
+	background-color: #34495e;
+}
+.user-menu
+{
+	display: none;
+	text-align: center;
+	margin-top: 6px;
+}
+.open-user
+{
+	top: 4px;
 }
 }

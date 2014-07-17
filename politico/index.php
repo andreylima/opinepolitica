@@ -101,19 +101,22 @@ get_header();
   <div class="login-title"> FAÇA LOGIN</div>
 	<div class="login-field">
 		
-		<span class="login-connect">
+		<div class="login-connect">
 			<div class="inputs-login">
-			 <span class="icon-input"><i class="fa fa-envelope fa-2x"></i></span><input type="text" name="email" value="" id="email-log" placeholder="e-mail">
-      		<span class="icon-input"><i class="fa fa-key fa-2x"></i></span><input type="password" name="senha" placeholder="senha" id="senha-log">
+      <form action="" method="post" id="log-form-mobile" novalidate="novalidate">
+			 <span class="icon-input"><i class="fa fa-envelope fa-2x"></i></span><input type="text" name="email_log" value="" id="email_log" placeholder="e-mail">
+      		<span class="icon-input"><i class="fa fa-key fa-2x"></i></span><input type="password" name="senha_log" placeholder="senha" id="senha_log">
       		</div>
       		<div class="center-buttons">
       		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">FACE</div></div></div>
       		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
       		</div>
+          </form>
       		<!-- <span class="forgot-pass-header"><a href="">Esqueci a senha</a> </span>  -->
-		</span>
+		</div>
 	</div>
 </div>
+<div class="show-error"> </div>
 <?php } ?>
 
 <div class="projetos-slider-wrapper" id="projetos">
@@ -302,22 +305,22 @@ get_header();
 <?php if (!is_user_logged_in()) {
 
       ?>
-<div class="login-wrapper-footer">
+<div id="cadastro-wrapper-footer">
   
 <div class="form-cadastro">
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
-  <form action="" method="post" id="cadastro_form_down" novalidate="novalidate">
-  <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
-  <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
-  <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input" name="email">
-  <input type="text" placeholder="Digite seu CPF." id="CPF" class="cadastro-input" name="cpf">
+  <form action="" method="post" id="cadastro_form_mobile" novalidate="novalidate">
+  <input type="text" placeholder="Nome" id="nome_mobile" class="cadastro-input" name="nome">
+  <input type="text" placeholder="Sobrenome" id="sobrenome_mobile" class="cadastro-input" name="sobrenome">
+  <input type="text" placeholder="Qual é o seu e-mail?" id="email_mobile" class="cadastro-input" name="email">
+  <input type="text" placeholder="Digite seu CPF." id="CPF_mobile" class="cadastro-input" name="cpf">
   <span class="legenda-cpf">*É importante para termos certeza que você é uma pessoa real.</span>
-  <select class="cidade_select" id="cidade_select" name="cidade_select">
+  <select class="cidade_select" id="cidade_select_mobile" name="cidade_select">
   <option value="" disabled selected>Selecione a sua Cidade</option>
   <option value="Governador Valadares">Governador Valadares</option>
   </select>
-  <input type="password" placeholder="Escolha uma senha." id="senha" class="cadastro-input" name="senha">
+  <input type="password" placeholder="Escolha uma senha." id="senha_mobile" class="cadastro-input" name="senha">
   <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
 </div>
 </form>
@@ -349,7 +352,7 @@ get_header();
               </div>
 
               <div class="control-group">
-                <button type="submit" class="btn btn-primary btn-pos">Entrar</button>
+                <button type="submit" class="btn-entrar">Entrar</button>
                 <a href="" onclick="" class="lnk-recovery-password" data-toggle="modal">Esqueci
                   minha senha</a>
               </div>

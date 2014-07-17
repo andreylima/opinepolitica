@@ -50,7 +50,7 @@ function declaraApoio(events,acao,id_votado){
 	jQuery.ajax({
 		type: 'POST',
 		url: myAjax.ajaxurl,
-		data: 'action=verify_login&acao='+acao+'&id_votado='+id_votado,
+		data: 'action=verify_login&acao='+acao+'&id_votado='+id_votado+'&security='+myAjax.ajax_nonce,
 		success: function(response) {
 		
 			

@@ -30,10 +30,10 @@ add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
 
 function verify_login()
 	{
+		check_ajax_referer( 'debate_nonce', 'security' );
 
-
-		$acao = $_POST['acao'];
-		$id_votado = $_POST['id_votado'];
+		$acao = sanitize_text_field($_POST['acao']);
+		$id_votado = sanitize_text_field($_POST['id_votado']);
 
 		if ( is_user_logged_in() ) { 
 
@@ -110,13 +110,15 @@ function verify_login()
 
 	function savedata()
 	{
+		check_ajax_referer( 'debate_nonce', 'security' );
 
-		$nome = $_POST['nome'];
-		$sobrenome = $_POST['sobrenome'];
-		$email = $_POST['email'];
-		$cpf = $_POST['cpf'];
-		$cidade = $_POST['cidade_select'];
-		$senha = $_POST['senha'];
+
+		$nome = sanitize_text_field($_POST['nome']);
+		$sobrenome = sanitize_text_field($_POST['sobrenome']);
+		$email = sanitize_email($_POST['email']);
+		$cpf = intval($_POST['cpf']);
+		$cidade = sanitize_text_field($_POST['cidade_select']);
+		$senha = sanitize_text_field($_POST['senha']);
 
 		
 
@@ -157,8 +159,10 @@ function verify_login()
 
 	function login_user()
 	{
-		$email = $_POST['email_log'];
-		$senha = $_POST['senha_log'];
+		check_ajax_referer( 'debate_nonce', 'security' );
+
+		$email = sanitize_email($_POST['email_log']);
+		$senha = sanitize_text_field($_POST['senha_log']);
 
 		$creds = array();
 		$creds['user_login'] = $email;

@@ -30,6 +30,7 @@
 	
     <?php wp_head(); ?>
 </head>
+
 <body  <?php body_class(); ?>>
 <header>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

@@ -14,9 +14,19 @@ $('.window .close').click(function (e) {
 	});		
 
 		$('#register-manual').click(function() {
-   window.location = "#destaque";
-   $('#mask').hide();
-   $('.window').hide();
-});		
+
+			width = $(window).width(); 
+			
+			if (width <= 480) {
+				window.location = "#login-wrapper-footer";
+				$('#mask').hide();
+				$('.window').hide();
+				return false;
+			}
+			window.location = "#destaque";
+				$('#mask').hide();
+				$('.window').hide();
+			
+		});		
 
 });

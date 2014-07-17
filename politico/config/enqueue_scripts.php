@@ -43,7 +43,7 @@ function ajax_initiate() {
 
    wp_enqueue_script( "ajax_initiate",get_template_directory_uri().'/assets/js/ajax_initiate.js', array('jquery'), '1.0', true ); //chama a função php via ajax
    
-   wp_localize_script( 'ajax_initiate', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ))); // localiza o arquivo que vai tratar o ajax       
+   wp_localize_script( 'ajax_initiate', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'ajax_nonce' => wp_create_nonce('debate_nonce'),)); // localiza o arquivo que vai tratar o ajax       
    
 }
 

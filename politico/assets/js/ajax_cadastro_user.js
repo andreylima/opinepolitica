@@ -23,6 +23,14 @@
     return true;
 }, "Informe um CPF válido."); 
 
+
+
+    jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Letters only please"); 
+
+
+
 jQuery("#log-form").validate({
 
  rules: {
@@ -57,19 +65,71 @@ jQuery("#log-form").validate({
         
         submitHandler: function(form) {
 
-            log_user();
+            log_user("full");
             
         }
 
 });
 
 
+jQuery("#log-form-mobile").validate({
+
+ rules: {
+            
+            email_log: {
+                required: true,
+                email: true
+            },
+            senha_log: "required"
+                       
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            
+            email_log: {
+                required: "Favor inserir seu e-mail",
+                email: "E-mail inválido"
+            },
+            senha_log: "Digitar senha"
+            
+        },
+        errorPlacement: function(error, element) {
+        
+            
+        element.css("background-color","rgb(241, 255, 168)");
+        element.css("border","solid 2px red");
+        
+        
+        
+    },
+        
+        submitHandler: function(form) {
+
+            log_user("mobile");
+            
+        }
+
+});
+
+
+
+
+
+
+
 jQuery("#cadastro_form").validate({
     
         // Specify the validation rules
         rules: {
-            nome: "required",
-            sobrenome: "required",
+            nome: {
+                required: true,
+                lettersonly: true
+            },
+            sobrenome:{
+                required: true,
+                lettersonly: true
+            },
             email: {
                 required: true,
                 email: true
@@ -85,8 +145,14 @@ jQuery("#cadastro_form").validate({
         
         // Specify the validation error messages
         messages: {
-            nome: "Nome Obrigatório",
-            sobrenome: "Sobrenome Obrigatório",
+            nome:{
+                required: "Nome Obrigatório",
+                lettersonly: "Somente letras são permitidas"  
+            } ,
+            sobrenome:{
+                required: "Sobrenome Obrigatório",  
+                lettersonly: "Somente letras são permitidas" 
+            } ,
             email: {
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
@@ -110,7 +176,7 @@ jQuery("#cadastro_form").validate({
         
         submitHandler: function(form) {
 
-        	cadastrar_usuario();
+        	cadastrar_usuario("full");
             
         }
     });
@@ -118,12 +184,18 @@ jQuery("#cadastro_form").validate({
 
 
 
-jQuery("#cadastro_form_down").validate({
+jQuery("#cadastro_form_mobile").validate({
     
         // Specify the validation rules
         rules: {
-            nome: "required",
-            sobrenome: "required",
+            nome: {
+                required: true,
+                lettersonly: true
+            },
+            sobrenome:{
+                required: true,
+                lettersonly: true
+            },
             email: {
                 required: true,
                 email: true
@@ -139,8 +211,14 @@ jQuery("#cadastro_form_down").validate({
         
         // Specify the validation error messages
         messages: {
-            nome: "Nome Obrigatório",
-            sobrenome: "Sobrenome Obrigatório",
+           nome:{
+                required: "Nome Obrigatório",
+                lettersonly: "Somente letras são permitidas"  
+            } ,
+            sobrenome:{
+                required: "Sobrenome Obrigatório",  
+                lettersonly: "Somente letras são permitidas" 
+            } ,
             email: {
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
@@ -162,50 +240,93 @@ jQuery("#cadastro_form_down").validate({
         
         submitHandler: function(form) {
         	
-            cadastrar_usuario();
+            cadastrar_usuario("mobile");
         }
     });
 
 
-function cadastrar_usuario()
+function cadastrar_usuario(size)
 {
-	var user_data = jQuery('#cadastro_form').serialize(); // <--- Important
+    if (size == "mobile") {
+        var user_data = jQuery('#cadastro_form_mobile').serialize();
 
-        	jQuery.ajax({
-        		type: 'POST',
-        		url: myAjax.ajaxurl,
-        		data: user_data + '&action=savedata',
-        		success: function(response) {
+              jQuery.ajax({
+                type: 'POST',
+                url: myAjax.ajaxurl,
+                data: user_data + '&action=savedata'+'&security='+myAjax.ajax_nonce,
+                success: function(response) {
 
-        			console.log(response);
+                    console.log(response);
 
-        			if (response != true) {
+                    if (response != true) {
 
-        				jQuery("#email").val("");
-        				jQuery("#email").attr("placeholder",response);
-        				jQuery("#email").removeClass("valid");
-        				jQuery("#email").css("border", "solid 2px red");
+                        jQuery("#email_mobile").val("");
+                        jQuery("#email_mobile").attr("placeholder",response);
+                        jQuery("#email_mobile").removeClass("valid");
+                        jQuery("#email_mobile").css("border", "solid 2px red");
 
-        				return;
+                        return;
 
-        			}
-        			
+                    }
+                    
 
-        			location.reload(true);
+                    location.reload(true);
 
-        			event.preventDefault();
-        		}
-        	});
-}
+                    event.preventDefault();
+                }
+            });
 
-function log_user()
-{
-    var user_data = jQuery('#log-form').serialize(); // <--- Important
+    }
+    else
+    {
+        var user_data = jQuery('#cadastro_form').serialize();
+
 
             jQuery.ajax({
                 type: 'POST',
                 url: myAjax.ajaxurl,
-                data: user_data + '&action=login_user',
+                data: user_data + '&action=savedata'+'&security='+myAjax.ajax_nonce,
+                success: function(response) {
+
+                    console.log(response);
+
+                    if (response != true) {
+
+                        jQuery("#email").val("");
+                        jQuery("#email").attr("placeholder",response);
+                        jQuery("#email").removeClass("valid");
+                        jQuery("#email").css("border", "solid 2px red");
+
+                        return;
+
+                    }
+                    
+
+                    location.reload(true);
+
+                    event.preventDefault();
+                }
+            });
+
+    }
+
+
+}
+
+function log_user(size)
+{
+    if (size == "mobile") {
+        var user_data = jQuery('#log-form-mobile').serialize();
+    }
+    else
+    {
+        var user_data = jQuery('#log-form').serialize();
+    }
+
+            jQuery.ajax({
+                type: 'POST',
+                url: myAjax.ajaxurl,
+                data: user_data + '&action=login_user'+'&security='+myAjax.ajax_nonce,
                 success: function(response) {
 
                     console.log(response);

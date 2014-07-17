@@ -25,7 +25,24 @@ jQuery('.vereadores-slider').flicker();
 
 
 
+if (jQuery(window).width() <= 480) {
 
+	jQuery(".user-logged").click(function(){
+
+		if (jQuery(".user-menu").hasClass("display-block")) {
+			jQuery(".user-menu").removeClass("display-block");
+		}
+		else
+		{
+			jQuery(".user-menu").addClass("display-block");
+		}
+		
+
+
+
+	});
+
+};
 
 
 
