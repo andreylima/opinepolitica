@@ -26,6 +26,9 @@ add_action('wp_ajax_nopriv_savedata', 'savedata');
 add_action('wp_ajax_login_user', 'login_user');
 add_action('wp_ajax_nopriv_login_user', 'login_user');
 
+add_action('wp_ajax_cadastro_faceuser', 'cadastro_faceuser');
+add_action('wp_ajax_nopriv_cadastro_faceuser', 'cadastro_faceuser');
+
 add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
 
 function verify_login()
@@ -117,6 +120,7 @@ function verify_login()
 		$sobrenome = sanitize_text_field($_POST['sobrenome']);
 		$email = sanitize_email($_POST['email']);
 		$cpf = intval($_POST['cpf']);
+		$sex = sanitize_text_field($_POST['sex']);
 		$cidade = sanitize_text_field($_POST['cidade_select']);
 		$senha = sanitize_text_field($_POST['senha']);
 
@@ -143,6 +147,7 @@ function verify_login()
 
 		update_user_meta( $user_id, "cpf" , $cpf );
 		update_user_meta( $user_id, "cidade" , $cidade );
+		update_user_meta( $user_id, "sexo" , $cidade );
 
 		$creds = array();
 		$creds['user_login'] = $email;
@@ -182,6 +187,30 @@ function verify_login()
 
 		die();
 
+	}
+
+	function cadastro_faceuser()
+	{
+		check_ajax_referer( 'debate_nonce', 'security' );
+
+		$first_name = sanitize_text_field($_POST['first_name']);
+		$last_name = sanitize_text_field($_POST['last_name']);
+		$email = sanitize_email($_POST['email']);
+		$gender = sanitize_text_field($_POST['gender']);
+
+		
+		// if ( username_exists( $email )
+		// {
+
+		// 	$user_id = get_user_by( 'email', $email );			
+		// 	wp_set_auth_cookie( $user_id, true);
+
+
+		// }
+
+		
+		echo $_POST['first_name'];
+		die();
 	}
 
 

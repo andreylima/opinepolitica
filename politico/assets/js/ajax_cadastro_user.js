@@ -349,3 +349,33 @@ function log_user(size)
             });
 
 }
+
+
+
+// function cadastro_face(first_name, last_name, email, gender)
+// {
+    
+//     var user_data = {"first_name":first_name, "last_name":last_name,"email":email,"gender":gender }
+
+//      jQuery.ajax({
+//                 type: 'POST',
+//                 url: myAjax.ajaxurl,
+//                 data: user_data + '&action=login_user'+'&security='+myAjax.ajax_nonce,
+//                 success: function(response) {
+
+//                     console.log(response);
+
+                    
+                        
+
+//                         return;
+
+                    
+                    
+
+//                     location.reload(true);
+
+//                     event.preventDefault();
+//                 }
+//             });
+// }

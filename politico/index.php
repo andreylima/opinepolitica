@@ -79,7 +79,10 @@ get_header();
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
   <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input" name="email">
-  <input type="text" placeholder="Digite seu CPF." id="CPF" class="cadastro-input" name="cpf">
+  <input type="text" placeholder="Digite seu CPF." id="CPF" class="cadastro-input cpf" name="cpf">
+  <span class="sexo">Sexo:</span>
+  <input type="radio" name="sex" value="male" required>M
+  <input type="radio" name="sex" value="female">F
   <span class="legenda-cpf">*É importante para termos certeza que você é uma pessoa real.</span>
   <select class="cidade_select" id="cidade_select" name="cidade_select">
   <option value="" disabled selected>Selecione a sua Cidade</option>
@@ -314,7 +317,10 @@ get_header();
   <input type="text" placeholder="Nome" id="nome_mobile" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome_mobile" class="cadastro-input" name="sobrenome">
   <input type="text" placeholder="Qual é o seu e-mail?" id="email_mobile" class="cadastro-input" name="email">
-  <input type="text" placeholder="Digite seu CPF." id="CPF_mobile" class="cadastro-input" name="cpf">
+  <input type="text" placeholder="Digite seu CPF." id="CPF_mobile" class="cadastro-input cpf" name="cpf">
+  <span class="sexo">Sexo:</span>
+  <input type="radio" name="sex" value="male" required>M
+  <input type="radio" name="sex" value="female">F
   <span class="legenda-cpf">*É importante para termos certeza que você é uma pessoa real.</span>
   <select class="cidade_select" id="cidade_select_mobile" name="cidade_select">
   <option value="" disabled selected>Selecione a sua Cidade</option>

@@ -461,7 +461,15 @@ margin: auto;
 {
 	display: block !important;
 }
-
+.cpf
+{
+	width: 50% !important;
+} 
+.sexo
+{
+	margin-right: 10px;
+	margin-left: 10px;
+}
 
 
 
@@ -1668,6 +1676,14 @@ div.new-fb-7
 	float: left;
 	margin-right: 5px;
 }
+.fb_iframe_widget {
+display: inline-block;
+position: relative;
+float: left;
+top: 10px;
+margin-right: 5px;
+}
+
 }
 
 
