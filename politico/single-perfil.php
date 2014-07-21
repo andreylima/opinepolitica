@@ -68,7 +68,6 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 </span>
 
 
-<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 
 </div>
 

@@ -123,16 +123,7 @@
     			success: function(response) {
 
     				console.log(response);
-
-
-
-
-    				return;
-
-
-
-
-    				location.reload(true);
+    				// location.reload(true);
 
     				event.preventDefault();
     			}
@@ -149,10 +140,39 @@
 <?php if (!is_user_logged_in()) {
 
       ?>
-<a href="#button-cadastrar" class="cadastrar-link">CADASTRE-SE</a>
+<a href="#cadastro-wrapper-footer" class="cadastrar-link">CADASTRE-SE</a>
 <?php } ?>
 <a href="#menu-body"><div class="open_menu">&#9776;</div></a>
-<?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-header' ) ); ?>
+ <?php 
+
+if (is_home()) {
+	if (is_user_logged_in()) { 
+
+ 	wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-header' ) ); 
+ 	
+ }
+ else
+ {
+ 	wp_nav_menu( array( 'theme_location'=>'logged_out', 'container_id' => 'menu-header' ) ); 
+ 	
+ }
+}
+else
+{
+	if (is_user_logged_in()) { 
+
+ 	wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-header' ) ); 
+ 	
+ }
+ else
+ {
+ 	wp_nav_menu( array( 'theme_location'=>'interno', 'container_id' => 'menu-header' ) ); 
+ 	
+ }
+}
+ 
+?>
+
 
 <?php if (!is_user_logged_in()) {
 
@@ -160,8 +180,10 @@
 
   		
 		<div class="login-connect-header">
+		<div class="face_button_header">
 		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
+</div>
 			<form action="" method="post" id="log-form" novalidate="novalidate">
 			 <input type="text" name="email_log" value="" id="email-log" placeholder="e-mail">
       		 <input type="password" name="senha_log" placeholder="senha" id="senha-log">
@@ -185,4 +207,9 @@
 </div>
 <?php } ?>
  </header>
-<?php wp_nav_menu( array( 'theme_location'=>'principal', 'container_id' => 'menu-body' ) ); ?>
+ <?php 
+
+ 	wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-body' ) ); 
+ 		
+
+?>

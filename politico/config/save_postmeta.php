@@ -63,8 +63,18 @@ function save_projeto_postmeta( $post_id )
 
 
     $projetos_debatidos = get_post_meta( $_POST['autoria'], 'projetos_debatidos', true );
-    if (!in_array($post_id , $projetos_debatidos))
-    $projetos_debatidos[] = $post_id;
+     
+     if (!empty($projetos_debatidos)){
+
+         if (!in_array($post_id , $projetos_debatidos))
+        $projetos_debatidos[] = $post_id;
+     }
+     else
+      {
+        $projetos_debatidos[] = $post_id;
+      }
+
+   
 
 
     update_post_meta( $_POST['autoria'], 'projetos_debatidos' , $projetos_debatidos);

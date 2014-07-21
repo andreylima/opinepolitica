@@ -91,10 +91,7 @@ a:hover
 
 }
 
-.cadastrar-link
-{
-	display: none;
-}
+
 #menu-header ul li
 {
 	list-style-type: none;
@@ -470,8 +467,34 @@ margin: auto;
 	margin-right: 10px;
 	margin-left: 10px;
 }
+.btn-entrar
+{
+	clear: both;
+	margin: auto;
+	margin-bottom: 6px;
+	background-color: #19B5FE;
+	border-radius: 5px;
+	height: 28px;
+	height: 1.75rem;
+	color: white;
+	border: solid 2px #285e8e;
+	border-top: 0;
+}
+#register-manual
+{
 
-
+color: #fff;
+background-color: #19B5FE;
+border-color: #285e8e;
+border-radius: 17px;
+margin: auto;
+margin-top: 10px;
+width: 70%;
+padding: 8px;
+border: solid 2px #285e8e;
+border-top: 0;
+text-align: center;
+}
 
 
 
@@ -1614,7 +1637,6 @@ padding: 20px;
 }
 #dialog {
 width: 700px;
-height: 350px;
 padding: 10px;
 background-color: #ffffff;
 border-color: black;
@@ -1636,11 +1658,13 @@ font-family: "Kulturista_Semibold";
 }
 .inner_container {
 padding-top: 20px;
+clear: both;
 
 }
 .login_container {
 width: 45%;
 float: left;
+text-align: center;
 }
 .legend-frmlogin, .legend-registerfrm {
 display: block;
@@ -1662,6 +1686,7 @@ margin-bottom: 10px;
 margin-left: 20px;
 width: 45%;
 float: left;
+text-align: center;
 }
 #mask {
   position:fixed;
@@ -1676,14 +1701,23 @@ div.new-fb-7
 	float: left;
 	margin-right: 5px;
 }
-.fb_iframe_widget {
-display: inline-block;
-position: relative;
+.cadastrar-link
+{
+	display: none;
+}
+.face_button_header
+{
 float: left;
 top: 10px;
-margin-right: 5px;
+position: relative;
+margin-right: 10px;
 }
+.face-button-modal
+{
+	width: 25%;
+	margin: auto;
 
+}
 }
 
 
@@ -2867,34 +2901,8 @@ padding: 0 10px 0 5px !important;
 {
 	font-size: 11px !important;
 }
-#register-manual
-{
 
-color: #fff;
-background-color: #19B5FE;
-border-color: #285e8e;
-border-radius: 17px;
-margin: auto;
-margin-top: 10px;
-width: 70%;
-padding: 8px;
-border: solid 2px #285e8e;
-border-top: 0;
-}
 
-.btn-entrar
-{
-	clear: both;
-	margin: auto;
-	margin-bottom: 6px;
-	background-color: #19B5FE;
-	border-radius: 5px;
-	height: 28px;
-	height: 1.75rem;
-	color: white;
-	border: solid 2px #285e8e;
-	border-top: 0;
-}
 .user-logged
 {
 	float: right;

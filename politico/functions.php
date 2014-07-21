@@ -15,7 +15,18 @@ global $post;
 add_filter('show_admin_bar', '__return_false');
 add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
-register_nav_menu( 'principal', 'menu principal' );
+
+
+	function register_my_menus() {
+			register_nav_menus(
+				array(
+					'logged_in' => 'Logado' ,
+					'logged_out' => 'Não logado',
+					'interno' => 'Interno'
+					)
+				);
+		}
+add_action( 'init', 'register_my_menus' );
 
 add_action('wp_ajax_verify_login', 'verify_login');
 add_action('wp_ajax_nopriv_verify_login', 'verify_login');
@@ -147,7 +158,7 @@ function verify_login()
 
 		update_user_meta( $user_id, "cpf" , $cpf );
 		update_user_meta( $user_id, "cidade" , $cidade );
-		update_user_meta( $user_id, "sexo" , $cidade );
+		update_user_meta( $user_id, "sexo" , $sex );
 
 		$creds = array();
 		$creds['user_login'] = $email;
@@ -198,20 +209,63 @@ function verify_login()
 		$email = sanitize_email($_POST['email']);
 		$gender = sanitize_text_field($_POST['gender']);
 
-		
-		// if ( username_exists( $email )
+		if ( email_exists( $email ))
+		{
+			$user_id = get_user_by( 'email', $email )->ID;
+			wp_set_auth_cookie( $user_id, true);
+			echo "authenticated";
+			die();
+		}
+		else
+		{
+			echo "nao existe";
+			die();
+		}
+
+
+
+	
+
+		// if ( username_exists( $email ))
 		// {
 
 		// 	$user_id = get_user_by( 'email', $email );			
 		// 	wp_set_auth_cookie( $user_id, true);
+		// 	echo "authenticated";
+		// 	die();
 
+		// }
+		// else
+		// {
+
+		// $userdata = array(
+		// 	'user_login'  =>  $email,
+		// 	'user_pass'   =>  wp_generate_password(),
+		// 	'user_nicename' =>  $first_name,
+		// 	'user_email' => $email,
+		// 	'display_name' => $first_name,
+		// 	'nickname' => $first_name,
+		// 	'first_name' => $first_name,
+		// 	'last_name' => $last_name,
+
+  //   	);
+
+		// $user_id = wp_insert_user( $userdata );
+
+
+		// update_user_meta( $user_id, "sexo" , $gender );
+		// wp_set_auth_cookie( $user_id, true);
+
+		// echo "registered and authenticated";
+
+		// die();
 
 		// }
 
 		
-		echo $_POST['first_name'];
-		die();
-	}
+		
+		
+			}
 
 
 ?>

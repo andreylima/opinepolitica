@@ -70,7 +70,7 @@ get_header();
 
 
 <?php if (!is_user_logged_in()) { ?>
-  <div class="form-cadastro-top">
+  <div class="form-cadastro-top" >
 
   
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
@@ -310,7 +310,7 @@ get_header();
       ?>
 <div id="cadastro-wrapper-footer">
   
-<div class="form-cadastro">
+<div class="form-cadastro" >
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
   <form action="" method="post" id="cadastro_form_mobile" novalidate="novalidate">
@@ -367,11 +367,14 @@ get_header();
           </div>
 
     <div class="register-container">
-      <div class="legend-registerfrm">Não possui cadastro?</div>
+     
     
     <div class="form-vertical well">
-                      
-          <div class="new-fb-btn new-fb-1 new-fb-default-anim"><div class="new-fb-1-1"><div class="new-fb-1-1-1">Registrar com Facebook</div></div></div>
+         <div class="legend-registerfrm">Não possui cadastro?</div> 
+         <div class="face-button-modal">             
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+</div>
           <div id="register-manual">Registrar Manualmente</div>
 
 
