@@ -113,7 +113,45 @@ jQuery("#log-form-mobile").validate({
 });
 
 
+jQuery("#formLogin").validate({
 
+ rules: {
+            
+            email_log: {
+                required: true,
+                email: true
+            },
+            senha_log: "required"
+                       
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            
+            email_log: {
+                required: "Favor inserir seu e-mail",
+                email: "E-mail inválido"
+            },
+            senha_log: "Digitar senha"
+            
+        },
+        errorPlacement: function(error, element) {
+        
+            
+        element.css("background-color","rgb(241, 255, 168)");
+        element.css("border","solid 2px red");
+        
+        
+        
+    },
+        
+        submitHandler: function(form) {
+
+            log_user("modal");
+            
+        }
+
+});
 
 
 
@@ -315,13 +353,20 @@ function cadastrar_usuario(size)
 
 function log_user(size)
 {
-    if (size == "mobile") {
-        var user_data = jQuery('#log-form-mobile').serialize();
-    }
-    else
+    switch(size)  
     {
+        case "mobile":
+        var user_data = jQuery('#log-form-mobile').serialize();
+        break;
+
+        case "full":
         var user_data = jQuery('#log-form').serialize();
+        break;
+
+        case "modal":
+        var user_data = jQuery('#formLogin').serialize();
     }
+
 
             jQuery.ajax({
                 type: 'POST',
@@ -332,6 +377,13 @@ function log_user(size)
                     console.log(response);
 
                     if (response != true) {
+
+                        if (size == "modal") {
+
+                        jQuery(".show-error-modal").css("display", "block");
+                        jQuery(".show-error-modal").html(response);   
+                        return;
+                        };
 
                         jQuery(".show-error").css("display", "block");
                         jQuery(".show-error").html(response);

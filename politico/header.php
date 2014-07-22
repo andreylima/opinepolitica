@@ -60,9 +60,11 @@
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
+    
+        FB.getLoginStatus(function(response) {
+    	statusChangeCallback(response);
+  });
+    
   }
 
   window.fbAsyncInit = function() {
@@ -86,9 +88,7 @@
   //
   // These three cases are handled in the callback function.
 
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+
 
   };
 
@@ -123,7 +123,7 @@
     			success: function(response) {
 
     				console.log(response);
-    				// location.reload(true);
+    				location.reload(true);
 
     				event.preventDefault();
     			}
@@ -137,11 +137,19 @@
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 <img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo">
 </a>
-<?php if (!is_user_logged_in()) {
 
-      ?>
-<a href="#cadastro-wrapper-footer" class="cadastrar-link">CADASTRE-SE</a>
-<?php } ?>
+<?php if (!is_user_logged_in()) 
+{
+	if (is_home()) 
+	{ ?>
+	<a href="#cadastro-wrapper-footer" class="cadastrar-link">CADASTRE-SE</a>
+
+<?php } else{ ?>
+	<a href="http://www.debategv.com.br" class="cadastrar-link">CADASTRE-SE</a>
+
+	<?php } } ?>
+		
+
 <a href="#menu-body"><div class="open_menu">&#9776;</div></a>
  <?php 
 

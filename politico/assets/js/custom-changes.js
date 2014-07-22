@@ -17,7 +17,18 @@ jQuery(".open_menu").click(function(){
 
 });
 
-	
+jQuery(".log-out").click(function(){
+
+	 FB.getLoginStatus(function(response) {
+        if (response && response.status === 'connected') {
+            FB.logout(function(response) {
+                document.location.reload();
+            });
+        }
+    });
+
+
+});	
 
 		
 jQuery('.projetos-slider').flicker();

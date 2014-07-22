@@ -111,7 +111,10 @@ get_header();
       		<span class="icon-input"><i class="fa fa-key fa-2x"></i></span><input type="password" name="senha_log" placeholder="senha" id="senha_log">
       		</div>
       		<div class="center-buttons">
-      		<div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">FACE</div></div></div>
+          <div class="face-button-mobile">
+      		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+        </div>
       		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
       		</div>
           </form>
@@ -341,19 +344,20 @@ get_header();
     <div class="inner_container">
       <div class="login_container">
             
-              <form id="formLogin" class="form-vertical well" target="_self" action="" method="POST">
+              <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
               <div class="control-group">
-                <div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">ENTRAR</div></div></div>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
               </div>
               <div class="control-group">
                 
                 <div class="controls">
-                  <input type="text" class="input-large" id="username_login" placeholder="e-mail">
+                  <input type="text" class="input-large" id="email_log" name="email_log" placeholder="e-mail">
                 </div>
                </div>
               <div class="control-group">
                 <div class="controls">
-                  <input type="password" class="input-large"  id="password_login" placeholder="senha">
+                  <input type="password" class="input-large"  id="senha_log" name="senha_log" placeholder="senha">
                 </div>
               </div>
 
@@ -362,6 +366,7 @@ get_header();
                 <a href="" onclick="" class="lnk-recovery-password" data-toggle="modal">Esqueci
                   minha senha</a>
               </div>
+              <div class="show-error-modal"> </div>
             </form>
           
           </div>

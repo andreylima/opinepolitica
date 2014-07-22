@@ -15,10 +15,11 @@ $('.window .close').click(function (e) {
 
 		$('#register-manual').click(function() {
 
+
 			width = $(window).width(); 
 			
 			if (width <= 480) {
-				window.location = "#login-wrapper-footer";
+				window.location = "#cadastro-wrapper-footer";
 				$('#mask').hide();
 				$('.window').hide();
 				return false;
@@ -27,6 +28,19 @@ $('.window .close').click(function (e) {
 				$('#mask').hide();
 				$('.window').hide();
 			
-		});		
+		});	
+
+
+
+		$('#register-manual-inside').click(function() {
+
+					
+				window.location = "http://www.debategv.com.br";
+				$('#mask').hide();
+				$('.window').hide();
+				
+			
+			
+		});			
 
 });

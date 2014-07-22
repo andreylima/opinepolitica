@@ -160,43 +160,44 @@ get_header();
     <div class="title-modal">Para opinar é necessário estar cadastrado.</div>
     <div class="inner_container">
       <div class="login_container">
-            <div class="legend-frmlogin">Entrar</div>
-              <form id="formLogin" class="form-vertical well" target="_self" action="" method="POST">
+            
+              <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
               <div class="control-group">
-                <div class="new-fb-btn new-fb-7 new-fb-default-anim"><div class="new-fb-7-1"><div class="new-fb-7-1-1">ENTRAR</div></div></div>
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
               </div>
               <div class="control-group">
-                <label class="control-label" for="username_login">E-mail</label>
+                
                 <div class="controls">
-                  <input type="text" class="input-large" id="username_login">
+                  <input type="text" class="input-large" id="email_log" name="email_log" placeholder="e-mail">
                 </div>
-                </br>
-              </div>
+               </div>
               <div class="control-group">
-                <label class="control-label" for="username_pass">Senha</label>
                 <div class="controls">
-                  <input type="password" class="input-large"  id="password_login">
+                  <input type="password" class="input-large"  id="senha_log" name="senha_log" placeholder="senha">
                 </div>
               </div>
 
               <div class="control-group">
-                <button type="submit" class="btn btn-primary btn-pos">Entrar</button>
+                <button type="submit" class="btn-entrar">Entrar</button>
                 <a href="" onclick="" class="lnk-recovery-password" data-toggle="modal">Esqueci
                   minha senha</a>
               </div>
+              <div class="show-error-modal"> </div>
             </form>
           
           </div>
 
     <div class="register-container">
-      <div class="legend-registerfrm">Não possui cadastro?</div>
+     
     
     <div class="form-vertical well">
-      
-          <div class="chamada">É rápido, e fácil. Basta escolher uma das opções abaixo.</div>
-          
-          <div class="new-fb-btn new-fb-1 new-fb-default-anim"><div class="new-fb-1-1"><div class="new-fb-1-1-1">Registrar com Facebook</div></div></div>
-           <div class="register-manual">Registrar Manualmente</div>
+         <div class="legend-registerfrm">Não possui cadastro?</div> 
+         <div class="face-button-modal">             
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+</div>
+          <div id="register-manual-inside">Registrar Manualmente</div>
 
 
 
@@ -204,12 +205,9 @@ get_header();
       
 
     </div>
-
-
-
+    </div>
     </div>
 
-    </div>
     <div id="mask"></div>
   
 
