@@ -2971,4 +2971,16 @@ top: 4px;
 position: relative;
 margin-right: 10px;
 }
+#page-wrapper
+{
+	padding-top: 30%;
+	padding-left: 5%;
+	padding-right: 5%;
+	background-color: #34495e;
+}
+.page-wrapper-fit
+{
+	padding-top: 10% !important; 
+
+}
 }

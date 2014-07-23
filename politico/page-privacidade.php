@@ -6,7 +6,7 @@ get_header();
 <div id="page-wrapper">
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Termos de Serviço e Sigilo do debategv</h3>
+    <h3 class="panel-title">Privacidade</h3>
   </div>
   <div class="panel-body">
    <div id="content" class="widecolumn">

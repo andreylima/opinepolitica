@@ -6,13 +6,15 @@ jQuery(".open_menu").click(function(){
 		jQuery("#menu-body").removeClass("show-menu");
 		jQuery("#destaque").removeClass("destaque-fit");
 		jQuery("#archive-wrapper").removeClass("archive-wrapper-fit");
+		jQuery("#page-wrapper").removeClass("page-wrapper-fit");
 
 	}
 	else
 	{
 		jQuery("#menu-body").addClass("show-menu");
 		jQuery("#destaque").addClass("destaque-fit");
-		jQuery("#archive-wrapper").addClass("archive-wrapper-fit")
+		jQuery("#archive-wrapper").addClass("archive-wrapper-fit");
+		jQuery("#page-wrapper").addClass("page-wrapper-fit");
 	};
 
 });
