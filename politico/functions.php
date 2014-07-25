@@ -22,7 +22,8 @@ add_theme_support( 'post-thumbnails' );
 				array(
 					'logged_in' => 'Logado' ,
 					'logged_out' => 'Não logado',
-					'interno' => 'Interno'
+					'interno' => 'Interno',
+					'mobile' => 'Mobile'
 					)
 				);
 		}

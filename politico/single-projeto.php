@@ -14,10 +14,10 @@ $negativou = $projetos->verifica_negativou();
 get_header(); 
 
 ?>
-<div class="single-wrapper">
-  <div class="info-perfil-wrapper">
+<div id="single-wrapper">
+  <div class="info-perfil-wrapper coluna-lateral">
   <div class="overflow-autor">
-    <div class="box-autor coluna-lateral">  
+    <div class="box-autor">  
       <div class="autor-titulo">AUTOR DO PROJETO</div>
         <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
         <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
@@ -45,27 +45,8 @@ get_header();
 </div>
 <h4 class="name-perfil"><?php echo get_the_title($autor_id); ?></h4>
 <a href="<?php echo get_permalink($autor_id); ?>"><div class="link-perfil">VER PERFIL</div></a>
-</div>
-<div class="caixa-titulo-projeto">
-    
-    <div id="titulo" class="titulo-projeto"><?php the_title(); ?></div>
-    <!-- debate ativo desde:  -->
-    <!-- situação -->
-    <span id="data-proposta" class="data-proposta">
-    
-    <div class="data-text">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
-    
- </span>
-  
-
-</div>
-
-
-
-
-<div class="row-fluid">
-    <div class="avaliacao-projeto ">
-      <div class="avalie"><h2>Avalie o Projeto.</h2></div>
+  <div class="avaliacao-projeto ">
+      <div class="avalie">Avalie o Projeto</div>
       
       <div class="votes pull-left  positivar-projeto <?php echo ($positivou) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>"> 
 <span class="glyphicon glyphicon-thumbs-up icon-vote">
@@ -87,26 +68,41 @@ get_header();
       </div>
     
     </div>
+</div>
+<div class="conteudo">
+<div class="caixa-titulo">
+    
+    <div id="titulo" class="titulo-projeto"><?php the_title(); ?></div>
+    
+    <span id="data-proposta" class="data-proposta">
+    
+    <div class="data-text">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
+    
+ </span>
+  
 
+</div>
 
     
-    <div class="conteudo panel panel-default debatidos">
+    <div class="panel panel-default debatidos">
   <div class="panel-heading title-projeto-single">SOBRE O PROJETO</div>
       <div class="panel-body">
         <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
         <div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
 
-                    </div> 
+        </div> 
+        <div class="project-content">
        <?php
        while ( have_posts() ) : the_post();
        the_content();
        endwhile;
         ?>
+        </div>
     </div>
     
     </div>
-</div>
-    <div id="justificativa" class="conteudo panel panel-default debatidos">
+
+    <div id="justificativa" class="panel panel-default debatidos">
       <div class="panel-heading font-header-small">CONSIDERAÇÕES DO AUTOR</div>
       <div class="panel-body">
        <?php
@@ -152,6 +148,7 @@ get_header();
       </ol>
 
       </div>
+    </div>
     </div>
 <!--   Janela Modal para login ou redirecionamento de registro. -->
     <div id="dialog" class="window">

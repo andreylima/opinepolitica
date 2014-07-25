@@ -392,8 +392,8 @@ a:hover
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .avalie {
-height: 100px;
-width: 200px;
+height: 85px;
+height: 5.3125rem;
 background-color: #34495e;
 text-align: center;
 color: #63e82a;
@@ -401,6 +401,8 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 padding-top: 12px;
 border: 2px solid #ecf0f1;
 margin: auto;
+font-size: 22px;
+line-height: 29px;
 }
 .avalie h2
 {
@@ -822,7 +824,7 @@ text-align: center;
 	text-align: center;
 	line-height: 35px;
 	font-family: "Lato-Bol";
-	font-size: 16px;
+	font-size: 12px;
 }
 .single-perfil .percent-both, .single-projeto .percent-both 
 {
@@ -1065,12 +1067,11 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 
 .box-autor
 {
-	width: 155px;
-	width: 9.6875rem;
+	width: 145px;
+	width: 9.0625rem;
 	margin: auto;
-	margin-left: 30px;
-	margin-top: 20px;
-	margin-top: 1.25rem;
+	margin-top: 10px;
+	margin-top: 0.625rem;
 	text-align: center;
 }
 .single-projeto .box-autor
@@ -1078,36 +1079,33 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	margin-top: 5px;
 	margin-top: 0.3125rem;
 }
-.caixa-titulo-politico {
-width: 70%;
-float: right;
+.caixa-titulo {
+
 height: 200px;
-margin-top: 100px;
-margin-right: 100px;
-border: solid black;
 text-align: center;
 border: solid #34495e;
 background-color: #ecf0f1;
 color: #34495e;
 box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
+
 .partido 
 {
 display: block;
-height: 100px;
-width: 100px;
+height: 80px;
+width: 80px;
 border-radius: 50%;
 position: relative;
 left: 93%;
-top: -20%;
-padding: 3px;
+top: -14%;
 -webkit-transition: all 0.1s linear;
 -moz-transition: all 0.1s linear;
 -o-transition: all 0.1s linear;
 transition: all 0.1s linear;
 background-color: #ecf0f1;
-line-height: 90px;
+line-height: 79px;
 border: solid #34495e;
+font-size: 16px;
 box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .partido:hover
@@ -1127,28 +1125,24 @@ position: relative;
 bottom: 20%;
 }
 .mandato {
-border: solid #34495e;
-height: 40px;
-width: 200px;
-display: block;
-line-height: 40px;
+
+width: 12%;
 position: relative;
 bottom: 20px;
-left: 20px;
-background-color: #ecf0f1;
-padding-left: 50px;
-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+margin: auto;
+
 }
 .conteudo {
 width: 70%;
-margin-right: 100px;
+margin-right: 5%;
+margin-top: 10%;
 float: right;
 }
 .perfil-size-single
 {
 
-	height: 150px;
-	width: 150px;
+	height: 140px;
+	width: 140px;
 	padding: 3px !important;
 	border: 2px solid #34495e !important;
 	
@@ -1158,8 +1152,8 @@ float: right;
 .coluna-lateral .votes,.coluna-lateral .voten, .avaliacao-projeto .votes, .avaliacao-projeto .voten {
 border: solid 2px #34495e;
 border-radius: 50%;
-height: 50px;
-width: 50px;
+height: 45px;
+width: 45px;
 position: relative;
 bottom: 40px;
 -webkit-transition: all 0.1s linear;
@@ -1173,20 +1167,25 @@ transition: all 0.1s linear;
 	left: 10px !important;
 }
 .coluna-lateral .icon-vote {
-font-size: 20pt !important;
+font-size: 16pt !important;
 top: 10px !important;
 left: 0px !important;
 }
-.single-wrapper
+#single-wrapper
 {
 	padding-top: 1%;
 	padding-bottom: 10%;
 	background-color: #34495e;
 	height: 100%;
 }
-#label_n_mandato
+.label_n_mandato
 {
 	float: left;
+}
+.n_mandato
+{
+	float: left;
+	margin-left: 5px;
 }
 .debatidos
 {
@@ -1198,7 +1197,8 @@ left: 0px !important;
 }
 .single-projeto .debatidos
 {
-	margin-top: 0;
+	margin-top: 20px;
+	margin-top: 1.25rem;
 	border-color: #34495e;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
@@ -1261,26 +1261,27 @@ float: left;
 .info-perfil-wrapper
 {
 	background-color: #ecf0f1 !important;
-	height: 275px;
-	height: 17.185rem;
 	float: left;
-	width: 230px;
-	margin-left: 20px;
-	margin-top: 100px;
+	width: 20%;
+	margin-left: 2%;
+	text-align: center;
+	border: solid #34495e;
+	margin-top: 10%;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
-
 
 }
 
 .info-perfil
 {
 	clear: both;
-}
-.info-perfil h4
-{
+	top: -26px;
+	position: relative;
 	margin: auto;
 	width: 80%;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
+
 .autor-titulo
 {
 	height: 30px;
@@ -1296,22 +1297,12 @@ float: left;
 	bottom: -4px;
 	bottom: -0.25rem;
 	position: relative;
+	font-size: 11px;
 
 }
-.caixa-titulo-projeto {
-width: 70%;
-float: right;
-height: 200px;
-margin-top: 100px;
-margin-right: 100px;
-border: solid black;
-text-align: center;
-background-color: #ecf0f1;
-border: solid #34495e;
-color: #34495e;
-}
+
 .titulo-projeto {
-font-size: 60px;
+font-size: 45px;
 position: relative;
 bottom: -30%;
 }
@@ -1322,11 +1313,8 @@ width: 300px;
 display: block;
 line-height: 40px;
 position: relative;
-bottom: -90px;
-left: 20px;
-background-color: white;
-border: solid #34495e;
-background-color: #ecf0f1;
+bottom: -75px;
+margin: auto;
 }
 .row-fluid
 {
@@ -1334,15 +1322,11 @@ background-color: #ecf0f1;
 }
 .avaliacao-projeto
 {
-	margin-left: 30px;
-	width: 220px;
-	float: left;
+	width: 80%;
+	margin: auto;
 	margin-top: 40px;
 }
-.form-comment
-{
-	clear: both;
-}
+
 .form-comment #submit
 {
 	width: 100%;
@@ -1367,13 +1351,6 @@ background-color: #ecf0f1;
 	background-color:#3ea611 !important;
 	background-image: none;
 }
-.form-comment
-{
-	width: 70%;
-	margin: auto;
-	float: right;
-	margin-right: 100px;
-}
 #comment
 {
 	color: black;
@@ -1391,12 +1368,10 @@ background-color: #ecf0f1;
 }
 .form-comment
 {
-	width: 70%;
-	margin: auto;
+	
 	background-color: white;
 	padding: 10px;
 	margin-top: 20px;
-	margin-right: 100px;
 	margin-bottom: 50px;
 }
 .form-comment a{
@@ -1756,6 +1731,31 @@ margin-right: 10px;
 	padding-left: 5%;
 	padding-right: 5%;
 	background-color: #34495e;
+}
+.project-content
+{
+	padding-top: 10px;
+}
+.sub-menu
+{
+	padding: 0;
+	display: none;
+}
+.sub-menu li
+{
+	float: none !important;
+	
+}
+#menu-item-289:hover .sub-menu
+{
+	display: block;
+	color: black !important;
+
+}
+#menu-item-289:hover
+{
+	background: rgba(255, 255, 255, 0.8);
+
 }
 }
 
@@ -2117,6 +2117,7 @@ h1
 .projeto-excerpt
 {
 	overflow: hidden;
+	padding-top: 10px;
 
 
 }
@@ -2421,12 +2422,16 @@ background-color: #63e82a;
 {
 	display: none;
 }
-.single-wrapper
+#single-wrapper
 {
 	padding-top: 25%;
 	padding-bottom: 10%;
 
 
+}
+.single-wrapper-fit
+{
+	padding-top: 10% !important;
 }
 .box-autor
 {
@@ -2434,8 +2439,8 @@ background-color: #63e82a;
 	width: 9.6875rem;
 	margin: auto;
 }
-.caixa-titulo-politico {
-width: 70%;
+.caixa-titulo{
+width: 90%;
 border: solid #34495e;
 text-align: center;
 margin: auto;
@@ -2445,48 +2450,15 @@ height: 102px;
 color: #34495e;
 box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
-.caixa-titulo-projeto {
-width: 70%;
-border: solid #34495e;
-text-align: center;
-margin: auto;
-margin-top: 21px;
-background-color: #ecf0f1;
-height: 100px;
-color: #34495e;
-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
-}
+
 .partido {
-display: block;
-height: 50px;
-width: 50px;
-border-radius: 50%;
-border: solid #34495e;
+
 position: relative;
-left: 87%;
-top: 17px;
-padding: 3px;
--webkit-transition: all 0.1s linear;
--moz-transition: all 0.1s linear;
--o-transition: all 0.1s linear;
-transition: all 0.1s linear;
-background-color: #ecf0f1;
-line-height: 0px;
+top: 70px;
 font-family: "Lato-Bol";
-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+color: #ecf0f1;
 }
-.partido:hover
-{
-	-webkit-transition: all 0.1s linear;
-	-moz-transition: all 0.1s linear;
-	-o-transition: all 0.1s linear;
-	transition: all 0.1s linear;
-	-webkit-transform:scale(1.1); /* prefixo para browsers webkit */
-	-moz-transform:scale(1.1); /* prefixo para browsers gecko */
-	-o-transform:scale(1.1); /* prefixo para opera */
-	transform:scale(1.1);
-	
-}
+
 .titulo-perfil
 {
 	position: relative;
@@ -2496,8 +2468,7 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .debatidos
 {
-	width: 90%;
-	margin: auto;
+	
 	margin-top: 20px;
 	border-color: #34495e;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
@@ -2505,7 +2476,7 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .mandato
 {
-	bottom: 41px;
+	bottom: 31px;
 	position: relative;
 	
 }
@@ -2587,10 +2558,10 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
 .avaliacao-projeto
 {
-	width: 210px;
-	width: 13.125rem;
+	width: 54%;
 	margin: auto;
 	height: 130px;
+	margin-top: 30px;
 }
 .percent-projeto {
 height: 30px;
@@ -2648,8 +2619,6 @@ border: solid 2px #ecf0f1 !important;
 }
 .form-comment
 {
-	width: 90%;
-	margin: auto;
 	background-color: white;
 	padding: 10px;
 	margin-top: 20px;
@@ -2995,5 +2964,35 @@ margin-right: 10px;
 {
 	padding-top: 10% !important; 
 
+}
+.avalie
+{
+	font-size: 28px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.single-perfil .caixa-titulo
+{
+	width: 90%;
+	text-align: center;
+	margin: auto;
+	color: #ecf0f1;
+	background: none;
+	border: none;
+	box-shadow: none;
+
+}
+.single-perfil .titulo-perfil
+{
+	position: relative;
+	bottom: 32px;
+	font-size: 25px;
+	font-family: "Lato-Bol";
+}
+.conteudo
+{
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
 }
 }

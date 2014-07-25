@@ -7,6 +7,7 @@ jQuery(".open_menu").click(function(){
 		jQuery("#destaque").removeClass("destaque-fit");
 		jQuery("#archive-wrapper").removeClass("archive-wrapper-fit");
 		jQuery("#page-wrapper").removeClass("page-wrapper-fit");
+		jQuery("#single-wrapper").removeClass("single-wrapper-fit");
 
 	}
 	else
@@ -15,6 +16,7 @@ jQuery(".open_menu").click(function(){
 		jQuery("#destaque").addClass("destaque-fit");
 		jQuery("#archive-wrapper").addClass("archive-wrapper-fit");
 		jQuery("#page-wrapper").addClass("page-wrapper-fit");
+		jQuery("#single-wrapper").addClass("single-wrapper-fit");
 	};
 
 });

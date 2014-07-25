@@ -10,7 +10,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 ?>
 
 
-<div class="single-wrapper">
+<div id="single-wrapper">
   <div class="info-perfil-wrapper">
     <div class="box-autor coluna-lateral">  
 
@@ -50,11 +50,13 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 
 
     ?>
-    <h4><?php  echo $projetos_debatidos; ?> Projetos Cadastrados</h4>
+    <?php  echo $projetos_debatidos; ?> Projetos Cadastrados
 
 </div>
 </div>
-<div class="caixa-titulo-politico">
+<div class="conteudo">
+  
+<div class="caixa-titulo">
     <div class="partido">
      <?php 
      echo $partidos[0];
@@ -62,10 +64,10 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
  </div>
 
  <div id="titulo" class="titulo-perfil"><?php the_title(); ?></div>
- <span id="mandato" class="mandato">
-    <label for="n_mandato" id="label_n_mandato">Mandato:</label>
-    <div class="n_mandato"><?php echo $perfis->getMandato(); ?></div> 
-</span>
+ <div class="mandato">
+    <span class="label_n_mandato">Mandato:</span>
+    <span class="n_mandato"><?php echo $perfis->getMandato(); ?></span> 
+</div>
 
 
 
@@ -73,7 +75,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 
 
 
-<div class="conteudo panel panel-default debatidos">
+<div class="panel panel-default debatidos">
   <div class="panel-heading title-projeto-single">PERFIL</div>
   <div class="panel-body">
     <?php while ( have_posts() ) : the_post();
@@ -91,7 +93,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 
 
 
-<div class="conteudo panel panel-default debatidos">
+<div class="panel panel-default debatidos">
   <div class="panel-heading title-projeto-single">PROJETOS DELE</div>
   <div class="panel-body">
   <div class="mini-projeto-wrapper">
@@ -159,7 +161,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 
 
 </div>
-
+</div>
 <!--   Janela Modal para login ou redirecionamento de registro. -->
     <div id="dialog" class="window">
     <a href="#" class="close">Fechar [X]</a>

@@ -217,7 +217,7 @@ else
  </header>
  <?php 
 
- 	wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-body' ) ); 
+ 	wp_nav_menu( array( 'theme_location'=>'mobile', 'container_id' => 'menu-body' ) ); 
  		
 
 ?>
