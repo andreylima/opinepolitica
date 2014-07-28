@@ -13,6 +13,10 @@ function pol_add_custom_metaboxes()
     add_meta_box('projetos_debatidos', 'Projetos Debatidos', 'projetos_debatidos_display_metabox','perfil', 'normal', 'high');
     add_meta_box( 'mandato', 'Mandato:', 'mandato_display_metabox', 'perfil', 'normal', 'high' );
     
+    // Equipe
+    add_meta_box( 'curtiu', 'Curtiram', 'curtiu_display_metabox', 'equipe', 'normal', 'high' );
+    add_meta_box( 'naocurtiu', 'Não curtiram', 'naocurtiu_display_metabox', 'equipe', 'normal', 'high' );
+    
     
 
     //Projetos

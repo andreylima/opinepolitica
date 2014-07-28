@@ -51,7 +51,25 @@ function register_post_types()
         )
     );
 
-   
+     register_post_type( 
+        'equipe',
+        array(
+            'labels' => array(
+                'name'          => 'Equipe',
+                'singular_name' => 'Equipe',
+                'search_items'  => 'Pesquisar Equipe',
+                'add_new_item'  => 'Adicionar novo Integrante',
+                'add_new'       => 'Adicionar Integrante',
+                'all_items'     => 'Todos os Integrantes',
+                'edit_item'     => 'Editar Integrante',
+            ),
+            'public'      => true,
+            'supports'    => array( 'title', 'editor', 'thumbnail'),
+            'has_archive' => true,
+            'taxonomies'  => array( 'category')
+        )
+    );
+
     }
 
 ?>
