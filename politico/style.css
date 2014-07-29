@@ -54,6 +54,14 @@ header
 	background: url("assets/img/bg-header2.png") repeat-x;
 
 }
+.projetos-slider-wrapper a
+{
+	color: black;
+}
+.projetos-slider-wrapper a:hover
+{
+	text-decoration: underline;
+}
 a:hover
 {
 	text-decoration: none;
@@ -409,6 +417,8 @@ border: 2px solid #ecf0f1;
 margin: auto;
 font-size: 22px;
 line-height: 29px;
+padding-left: 30px;
+padding-right: 30px;
 }
 .avalie h2
 {
