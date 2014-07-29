@@ -206,12 +206,17 @@ else
 		
 
 <?php } else{ ?>
+<div class="logged-menu">
+<div class="avatar">
+<?php echo get_avatar( $current_user->user_email , 60 ); ?>
+</div>
 <div class="user-logged">
 	<?php echo $current_user->user_firstname ?>
 	<span class="glyphicon glyphicon glyphicon-chevron-down open-user"></span>
 	<div class="user-menu">
 		<a href="<?php echo wp_logout_url(); ?>"><span class="log-out">Sair</span></a>
 	</div>
+</div>
 </div>
 <?php } ?>
  </header>
