@@ -26,8 +26,8 @@
 
 
     jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-z]+$/i.test(value);
-}, "Letters only please"); 
+  return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
+}, "Somente letras são permitidas"); 
 
 
 
@@ -177,7 +177,8 @@ jQuery("#cadastro_form").validate({
             	verificaCPF: true
             },
             cidade_select: "required",
-            senha: "required"
+            senha: "required",
+            termos: "required"
                        
         },
         
@@ -199,7 +200,8 @@ jQuery("#cadastro_form").validate({
             	required:"Favor inserir seu CPF",
             	verificaCPF: "CPF inválido"
             },
-            senha: "Favor escolher uma senha"
+            senha: "Favor escolher uma senha",
+            termos: "Obrigatório"
             
         },
         errorPlacement: function(error, element) {
@@ -290,6 +292,7 @@ jQuery("#contato_form").validate({
             nome: {
                 required: true,
                 lettersonly: true
+                
             },
             email: {
                 required: true,
@@ -309,7 +312,7 @@ jQuery("#contato_form").validate({
         messages: {
            nome:{
                 required: "Nome Obrigatório",
-                lettersonly: "Somente letras são permitidas"  
+                lettersonly: "somente letras"
             } ,
             email: {
                 required: "Favor inserir seu e-mail",
@@ -453,12 +456,13 @@ var user_data = jQuery('#contato_form').serialize();
                 data: user_data + '&action=send_email_contato'+'&security='+myAjax.ajax_nonce,
                 success: function(response) {
 
-                    console.log(user_data);
-
-                    if (response == true) {
+                   if (response == true) {
 
                        
-                        alert("mensagem enviada com sucesso!");
+                        jQuery('#nome').val("");
+                        jQuery('#email').val("");
+                        jQuery('#assunto').val("");
+                        jQuery('#mensagem').val("Sua mensagem foi enviada, muito obrigado. Sinta-se a vontade para enviar quantas sugestões quiser.");
 
                     }
                     

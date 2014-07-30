@@ -66,4 +66,41 @@ jQuery("#menu-body ul li a").append("<i class='fa fa-arrow-right arrow-margin'><
 
 
 
+
+jQuery(".check_aceito").click( function(){
+
+var id = '#modal-termos';
+	
+				var maskHeight = jQuery(document).height();
+				var maskWidth = jQuery(window).width();
+
+				jQuery('#mask').css({'width':maskWidth,'height':maskHeight});
+
+				jQuery('#mask').fadeIn();	
+				jQuery('#mask').fadeTo('fast',0.5);	
+
+					//Get the window height and width
+				var winH = jQuery(window).height();
+				var winW = jQuery(window).width();
+		              
+				jQuery(id).css('top',  "15%");
+				jQuery(id).css('left', "5%");
+			
+				jQuery(id).fadeIn(); 
+
+});
+
+
+jQuery('#modal-termos .close').click(function (e) {
+		e.preventDefault();
+		
+		jQuery('#mask').hide();
+		jQuery('#modal-termos').hide();
+	});	
+
+jQuery('#mask').click(function () {
+		jQuery(this).hide();
+		jQuery('#modal-termos').hide();
+	});	
+
 }

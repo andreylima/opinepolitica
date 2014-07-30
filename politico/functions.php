@@ -244,15 +244,15 @@ function verify_login()
 		$nome = sanitize_text_field($_POST['nome']);
 		$email = sanitize_email($_POST['email']);
 		$subject = sanitize_text_field($_POST['assunto']);
-		$content = sanitize_text_field($_POST['mensagem']);
-		$headers = 'From: ' .$email;
+		$content = 'Mensagem de: '.$nome.'<'.$email.'> = '. sanitize_text_field($_POST['mensagem']);
+		$headers = 'From: form-contato <contato@debategv.com.br>';
 		$to = "contato@debategv.com.br";
 		
 		
 
 		$status = wp_mail($to, $subject, $content, $headers);
 
-// Reset content-type to avoid conflicts -- http://core.trac.wordpress.org/ticket/23578
+
 				
 
 		echo $status;
