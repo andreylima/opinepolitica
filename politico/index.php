@@ -78,7 +78,7 @@ get_header();
   <form action="" method="post" id="cadastro_form" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
-  <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input" name="email">
+  <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input email_validate" name="email">
   <input type="text" placeholder="Digite seu CPF." id="CPF" class="cadastro-input cpf" name="cpf">
   <span class="sexo">Sexo:</span>
   <input type="radio" name="sex" value="male" required>M
@@ -89,6 +89,7 @@ get_header();
   <option value="Governador Valadares">Governador Valadares</option>
   </select>
   <input type="password" placeholder="Escolha uma senha." id="senha" class="cadastro-input" name="senha">
+  <input type="checkbox" name="termos" value="aceito" class="check_aceito"> Li e estou de acordo com os <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Termos' ) ) ); ?>" TARGET="_blank">Termos de uso do site.</a>
   <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
 </div>
 </form>
@@ -327,7 +328,7 @@ get_header();
   <form action="" method="post" id="cadastro_form_mobile" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome_mobile" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome_mobile" class="cadastro-input" name="sobrenome">
-  <input type="text" placeholder="Qual é o seu e-mail?" id="email_mobile" class="cadastro-input" name="email">
+  <input type="text" placeholder="Qual é o seu e-mail?" id="email_mobile" class="cadastro-input email_validate" name="email">
   <input type="text" placeholder="Digite seu CPF." id="CPF_mobile" class="cadastro-input cpf" name="cpf">
   <span class="sexo">Sexo:</span>
   <input type="radio" name="sex" value="male" required>M
@@ -338,13 +339,14 @@ get_header();
   <option value="Governador Valadares">Governador Valadares</option>
   </select>
   <input type="password" placeholder="Escolha uma senha." id="senha_mobile" class="cadastro-input" name="senha">
+  <input type="checkbox" name="termos" value="aceito" class="check_aceito"> Li e estou de acordo com os <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Termos' ) ) ); ?>" TARGET="_blank">Termos de uso do site.</a>
   <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
 </div>
 </form>
 </div>
 <?php } ?>
 
-
+<!-- modal cadastro -->
 <div id="dialog" class="window">
     <a href="#" class="close">Fechar [X]</a>
   
@@ -401,7 +403,31 @@ get_header();
 
     <div id="mask"></div>
 
+<!-- modal termos -->
+<div id="modal-termos">
+<div class="panel panel-default termos-size">
+  <div class="panel-heading">
+  <span class="close">Fechar [x]</span>
+    <span class="termos-header-modal">Termos de Serviço e Sigilo do DebateGV</span>
+    
+  </div>
+  <div class="panel-body">
+   <div id="content" class="widecolumn">
+ <?php 
 
+$page = get_posts(
+    array(
+        'name'      => 'termos',
+        'post_type' => 'page'
+    )
+);
 
+ echo $page[0]->post_content
+ ?>
+
+ </div>
+  </div>
+</div>
+</div>
 <?php get_footer() ?>
 

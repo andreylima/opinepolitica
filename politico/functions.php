@@ -9,7 +9,6 @@ include 'config/save_postmeta.php';
 include 'config/add_filters.php';
 include 'projetos/projetos.php';
 include 'perfis/perfis.php';
-include  'config/add_pdf.php';
 
 global $post; 
 
@@ -42,7 +41,14 @@ add_action('wp_ajax_nopriv_login_user', 'login_user');
 add_action('wp_ajax_cadastro_faceuser', 'cadastro_faceuser');
 add_action('wp_ajax_nopriv_cadastro_faceuser', 'cadastro_faceuser');
 
+add_action('wp_ajax_send_email_contato', 'send_email_contato');
+add_action('wp_ajax_nopriv_send_email_contato', 'send_email_contato');
+
+
 add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
+
+
+
 
 function verify_login()
 	{
@@ -225,49 +231,34 @@ function verify_login()
 		}
 
 
+		
+	}
 
-	
-
-		// if ( username_exists( $email ))
-		// {
-
-		// 	$user_id = get_user_by( 'email', $email );			
-		// 	wp_set_auth_cookie( $user_id, true);
-		// 	echo "authenticated";
-		// 	die();
-
-		// }
-		// else
-		// {
-
-		// $userdata = array(
-		// 	'user_login'  =>  $email,
-		// 	'user_pass'   =>  wp_generate_password(),
-		// 	'user_nicename' =>  $first_name,
-		// 	'user_email' => $email,
-		// 	'display_name' => $first_name,
-		// 	'nickname' => $first_name,
-		// 	'first_name' => $first_name,
-		// 	'last_name' => $last_name,
-
-  //   	);
-
-		// $user_id = wp_insert_user( $userdata );
+	function send_email_contato()
+	{
+		check_ajax_referer( 'debate_nonce', 'security' );
 
 
-		// update_user_meta( $user_id, "sexo" , $gender );
-		// wp_set_auth_cookie( $user_id, true);
 
-		// echo "registered and authenticated";
 
-		// die();
-
-		// }
-
+		$nome = sanitize_text_field($_POST['nome']);
+		$email = sanitize_email($_POST['email']);
+		$subject = sanitize_text_field($_POST['assunto']);
+		$content = 'Mensagem de: '.$nome.'<'.$email.'> = '. sanitize_text_field($_POST['mensagem']);
+		$headers = 'From: form-contato <contato@debategv.com.br>';
+		$to = "contato@debategv.com.br";
 		
 		
-		
-			}
+
+		$status = wp_mail($to, $subject, $content, $headers);
+
+
+				
+
+		echo $status;
+		die();
+
+	}
 
 
 ?>

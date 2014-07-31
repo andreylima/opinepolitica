@@ -16,7 +16,7 @@ get_header();
 
 
  <?php endwhile; endif; ?>
- <?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+
 </div>
   </div>
 </div>

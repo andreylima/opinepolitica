@@ -44,7 +44,7 @@ get_header();
 </div>
 </div>
 <h4 class="name-perfil"><?php echo get_the_title($autor_id); ?></h4>
-<a href="<?php echo get_permalink($autor_id); ?>"><div class="link-perfil">VER PERFIL</div></a>
+<a href="<?php echo get_permalink($autor_id); ?>" class="ver-perfil-buttton"><div class="link-perfil">VER PERFIL</div></a>
   <div class="avaliacao-projeto ">
       <div class="avalie">Avalie o Projeto</div>
       
