@@ -62,7 +62,7 @@ get_header();
                     </div>
                     </div>
         <div class="first-comments"> 
-
+      <span>Total de comentários: <?php echo get_comments_number( $post->ID ); ?> </span>  
         <div class="comments">
         <ol class='commentlist'>
         <?php

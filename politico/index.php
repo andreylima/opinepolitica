@@ -24,7 +24,8 @@ get_header();
 </script>
 
 <div id="destaque">
-  <?php if (!is_user_logged_in()) { ?>
+<div class="fb-like-box" data-href="https://www.facebook.com/debategv" data-width="200" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+ <?php if (!is_user_logged_in()) { ?>
 <div class="wrap-destaque wide-destaque ">
   <?php }else { ?>
 <div class="wrap-destaque-full wide-destaque">

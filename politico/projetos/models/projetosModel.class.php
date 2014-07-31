@@ -6,7 +6,7 @@ class projetosModel {
 
 	private $autor_projeto;
 
-
+	private $total_votos;
 	
 	public function __construct($post_id)
 	{
@@ -16,7 +16,7 @@ class projetosModel {
 		$this->setAutor_projeto();
 		$this->setPositivar_percent();
 		$this->setNegativar_percent();
-		
+		$this->set_total_votos();
 
 	}
 
@@ -138,6 +138,7 @@ class projetosModel {
 
 
 		$total_votos = count(array_filter($array_positivou)) + count(array_filter($array_negativou));
+		
 		if ($total_votos != 0) {
 			$this->positivarPercent = round(count(array_filter($array_positivou)) / $total_votos * 100)."%";
 
@@ -168,6 +169,7 @@ class projetosModel {
 
 
 		$total_votos = count(array_filter($array_positivou)) + count(array_filter($array_negativou));
+		
 		if ($total_votos != 0) {
 			$this->negativarPercent = round(count(array_filter($array_negativou)) / $total_votos * 100)."%";
 
@@ -216,6 +218,25 @@ class projetosModel {
 
 	}
 
+	public function set_total_votos()
+	{
+		$array_positivou = get_post_meta($this->ID, 'positivar_projeto',true);
+		$array_negativou = get_post_meta($this->ID, 'negativar_projeto',true);
+
+		$array_positivou = ($array_positivou == '') ? array() : $array_positivou;
+		$array_negativou = ($array_negativou == '') ? array() : $array_negativou;
+
+
+		$total_votos = count(array_filter($array_positivou)) + count(array_filter($array_negativou));
+
+			$this->total_votos =  $total_votos;
+	}
+
+
+	public function get_total_votos()
+	{
+		return $this->total_votos;
+	}
 
 
 

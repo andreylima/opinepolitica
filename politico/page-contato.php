@@ -12,8 +12,8 @@ get_header();
 <div class="form-comment">
 <form action="" method="post" id="contato_form" novalidate="novalidate">
 <?php if (is_user_logged_in()) { ?>
-  <input type="text" id="nome" class="cadastro-input" name="nome" value="<?php echo $current_user->user_firstname.' '.$current_user->user_lastname ?>" >
-  <input type="text" id="email" class="cadastro-input" name="email" value="<?php echo $current_user->user_email ?>" >
+  <input type="text" id="nome" class="cadastro-input" name="nome" value="<?php echo $current_user->user_firstname.' '.$current_user->user_lastname ?>" hidden>
+  <input type="text" id="email" class="cadastro-input" name="email" value="<?php echo $current_user->user_email ?>" hidden>
 <?php } else { ?>
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input" name="email">

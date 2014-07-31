@@ -15,6 +15,8 @@ class perfisModel {
 	private $votado;
 
 	private $mandato;
+
+	private $total_votos;
 	
 
 	public function __construct($perfil_id)
@@ -24,6 +26,7 @@ class perfisModel {
 		$this->setCurtiu_percent();
 		$this->setNaocurtiu_percent();
 		$this->setMandato();
+		$this->set_total_votos();
 				
 
 	}
@@ -43,6 +46,7 @@ class perfisModel {
 		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
 
 		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));
+
 		if ($total_votos != 0) {
 			$this->curtiu_percent = round(count(array_filter($array_curtiu)) / $total_votos * 100)."%";
 		}
@@ -73,7 +77,7 @@ class perfisModel {
 		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
 
 		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));
-
+		
 		if ($total_votos != 0) {
 			$this->naocurtiu_percent = round(count(array_filter($array_naocurtiu)) / $total_votos * 100)."%";
 
@@ -181,7 +185,7 @@ class perfisModel {
 
 	}
 
-	function verifica_curtida()
+	public function verifica_curtida()
 	{
 
 		$array_curtiu = get_post_meta($this->perfil_id, 'curtiu',true);
@@ -196,7 +200,7 @@ class perfisModel {
 		return false;
 
 	}
-	function verifica_naocurtida()
+	public function verifica_naocurtida()
 	{
 		$array_naocurtiu = get_post_meta($this->perfil_id, 'naocurtiu',true);
 		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
@@ -211,17 +215,38 @@ class perfisModel {
 
 	}
 
-	function setMandato()
+	public function setMandato()
 	{
 		$this->mandato = get_post_meta($this->perfil_id, 'mandato',true);
 
 	}
-	function getMandato()
+	public function getMandato()
 	{
 		return $this->mandato;
 	}
 
-	
+	public function set_total_votos()
+	{
+
+		$array_curtiu = get_post_meta($this->perfil_id, 'curtiu',true);
+		$array_naocurtiu = get_post_meta($this->perfil_id, 'naocurtiu',true);
+
+		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
+		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
+
+		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));	
+
+		$this->total_votos =  $total_votos;
+
+	}
+
+
+	public function get_total_votos()
+	{
+
+		return $this->total_votos;
+
+	}
 			
 			
 				

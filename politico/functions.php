@@ -9,6 +9,7 @@ include 'config/save_postmeta.php';
 include 'config/add_filters.php';
 include 'projetos/projetos.php';
 include 'perfis/perfis.php';
+include 'config/add_pdf.php';
 
 global $post; 
 
@@ -86,27 +87,33 @@ function verify_login()
 				case "curtir":
 					$perfis->setCurtiu_percent();
 					$perfis->setNaocurtiu_percent();
+					$perfis->set_total_votos();
 					$percent["curtiu"] = $perfis->getCurtiu_percent();
 					$percent["naocurtiu"] = $perfis->getNaoCurtiu_percent();
+					$percent["total_votos"] = $perfis->get_total_votos();
 					break;
 
 				case "naocurtir":
 					$perfis->setCurtiu_percent();
 					$perfis->setNaocurtiu_percent();
+					$perfis->set_total_votos();
 					$percent["curtiu"] = $perfis->getCurtiu_percent();
 					$percent["naocurtiu"] = $perfis->getNaoCurtiu_percent();
+					$percent["total_votos"] = $perfis->get_total_votos();
 					break;
 				case "positivar_projeto":
 					$projetos->setPositivar_percent();
 					$projetos->setNegativar_percent();
 					$percent["positivou"] = $projetos->getPositivar_percent();
 					$percent["negativou"] = $projetos->getNegativar_percent();
+					$percent["total_votos"] = $projetos->get_total_votos();
 					break;
 				case "negativar_projeto":
 					$projetos->setPositivar_percent();
 					$projetos->setNegativar_percent();
 					$percent["positivou"] = $projetos->getPositivar_percent();
 					$percent["negativou"] = $projetos->getNegativar_percent();
+					$percent["total_votos"] = $projetos->get_total_votos();
 					break;
 			}
 

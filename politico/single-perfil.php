@@ -37,7 +37,18 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
     </a>
 </div>
 <div class="info-perfil">
+<div id="titulo" class="titulo-single-mobile"><?php the_title(); ?></div>
+<div class="partido">Partido: 
+     <?php 
+     echo $partidos[0];
+     ?>
+ </div>
+     <span class="mandato">Mandato: <?php echo $perfis->getMandato(); ?></span> 
+
     <?php 
+
+    echo "<span class='total_votos'>Total de avaliações: <span class='n_votos'>".$perfis->get_total_votos()."</span></span>";
+
 
     $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true ); 
     if (!empty($projetos_debatidos)) {
@@ -49,27 +60,17 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
     }
 
 
-    ?>
-    <?php  echo $projetos_debatidos; ?> Projetos Cadastrados
+    echo "<span class='total_debatidos'>Projetos Cadastrados: ".$projetos_debatidos."</span>";
 
+    ?>
 </div>
 </div>
 <div class="conteudo">
   
 <div class="caixa-titulo">
-    <div class="partido">
-     <?php 
-     echo $partidos[0];
-     ?>
- </div>
-
- <div id="titulo" class="titulo-perfil"><?php the_title(); ?></div>
- <div class="mandato">
-    <span class="label_n_mandato">Mandato:</span>
-    <span class="n_mandato"><?php echo $perfis->getMandato(); ?></span> 
-</div>
-
-
+    
+ <div id="titulo" class="titulo-single"><?php the_title(); ?></div>
+ <div class="fb-like" data-href="<?php echo get_permalink( $post->ID );  ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
 
 </div>
 
@@ -150,9 +151,10 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
         }
         else
         {
-            ?>
-        <span> Ainda não foram cadastrados projetos desse Político. Clique AQUI e faça sua sugestão.</span>
-        <?php } ?>
+            
+        echo "<span> Ainda não foram cadastrados projetos desse Político. Clique <a href='".esc_url( get_permalink( get_page_by_title( 'contato' ) ) )."'>AQUI</a> e faça sua sugestão.</a></span>";
+
+        } ?>
           </div>
         </div>
     </div>

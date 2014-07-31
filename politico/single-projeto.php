@@ -68,19 +68,17 @@ get_header();
       </div>
     
     </div>
+    <div class="info-perfil">
+    <div id="titulo" class="titulo-single-mobile"><?php the_title(); ?></div>
+    <span class="total_votos">Total de avaliações:<span class="n_votos"> <?php echo $projetos->get_total_votos() ?></span></span>
+    <div class="data-proposta">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
+</div>
 </div>
 <div class="conteudo">
 <div class="caixa-titulo">
     
-    <div id="titulo" class="titulo-projeto"><?php the_title(); ?></div>
-    
-    <span id="data-proposta" class="data-proposta">
-    
-    <div class="data-text">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
-    
- </span>
-  
-
+    <div id="titulo" class="titulo-single"><?php the_title(); ?></div>
+<div class="fb-like" data-href="<?php echo get_permalink( $post->ID );  ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
 </div>
 
     
@@ -113,7 +111,7 @@ get_header();
           }
           else
           {
-            echo "Este é um espaço aberto para considerações do autor a respeito do projeto e de sua aceitação.Se você é o autor, clique aqui.";
+            echo "Este é um espaço aberto para considerações do autor a respeito do projeto e de sua aceitação.Se você é o autor,<a href='".esc_url( get_permalink( get_page_by_title( 'contato' ) ) )."'>clique aqui</a>";
           }
          
 
@@ -128,8 +126,9 @@ get_header();
     'title_reply' => 'Qual é a sua opnião?', 
     'label_submit' => 'Comentar' , 
     'comment_notes_after' => '', 
-    'comment_field' => '<p class="comment-form-comment"><label for="comment">Comente:</label></br><textarea id="comment" name="comment"  rows="8" aria-required="true"></textarea></p>' ) ); ?>
-      
+    'comment_field' => '<p class="comment-form-comment"><h4 class="atencao">Atenção, todos os comentários serão revisados pelo administrador antes de serem aprovados. 
+    Portanto, seu comentário poderá demorar alguns minutos para aparecer. </h4><h5>Dica: Para ter o comentário aprovado rapidamente, não ofenda pessoas, políticos nem partidos, e não faça campanha política no corpo dos comentários. Esses não serão aprovados. O objetivo aqui é debater os projetos propostos pelos políticos.</h5><label for="comment">Comente:</label></br><textarea id="comment" name="comment"  rows="8" aria-required="true"></textarea></p>' ) ); ?>
+    <span>Total de comentários: <?php echo get_comments_number( $post_id ); ?> </span>  
     <div class="comments">
         <ol class='commentlist'>
         <?php

@@ -104,8 +104,6 @@ a:hover
 	margin-top: 15px;
 
 }
-
-
 #menu-header ul li
 {
 	list-style-type: none;
@@ -202,7 +200,7 @@ a:hover
 {
 	width: 41%;
 	float: left;
-	margin-left: 5%;
+	margin-left: 20%;
 
 }
 .wrap-destaque-full
@@ -568,9 +566,18 @@ text-align: center;
 	float: left;
 	margin-right: 5px;
 	margin-top: 2px;
+	border-radius: 50%;
 }
-
-
+.atencao
+{
+	color: red;
+}
+.total_votos, .total_debatidos, .mandato , .partido, .data-proposta
+{
+	display: block;
+	font-weight: 700;
+	margin-top: 10px;
+}
 
 
 
@@ -1128,51 +1135,9 @@ border: solid #34495e;
 background-color: #ecf0f1;
 color: #34495e;
 box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+line-height: 200px;
 }
 
-.partido 
-{
-display: block;
-height: 80px;
-width: 80px;
-border-radius: 50%;
-position: relative;
-left: 93%;
-top: -14%;
--webkit-transition: all 0.1s linear;
--moz-transition: all 0.1s linear;
--o-transition: all 0.1s linear;
-transition: all 0.1s linear;
-background-color: #ecf0f1;
-line-height: 79px;
-border: solid #34495e;
-font-size: 16px;
-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
-}
-.partido:hover
-{
-	-webkit-transition: all 0.1s linear;
-	-moz-transition: all 0.1s linear;
-	-o-transition: all 0.1s linear;
-	transition: all 0.1s linear;
-	-webkit-transform:scale(1.1); /* prefixo para browsers webkit */
-	-moz-transform:scale(1.1); /* prefixo para browsers gecko */
-	-o-transform:scale(1.1); /* prefixo para opera */
-	transform:scale(1.1);
-}
-.titulo-perfil {
-font-size: 60px;
-position: relative;
-bottom: 20%;
-}
-.mandato {
-
-width: 12%;
-position: relative;
-bottom: 20px;
-margin: auto;
-
-}
 .conteudo {
 width: 70%;
 margin-right: 5%;
@@ -1187,7 +1152,6 @@ float: right;
 	padding: 3px !important;
 	border: 2px solid #34495e !important;
 	
-
 }
 
 .coluna-lateral .votes,.coluna-lateral .voten, .avaliacao-projeto .votes, .avaliacao-projeto .voten {
@@ -1219,15 +1183,7 @@ left: 0px !important;
 	background-color: #34495e;
 	height: 100%;
 }
-.label_n_mandato
-{
-	float: left;
-}
-.n_mandato
-{
-	float: left;
-	margin-left: 5px;
-}
+
 .debatidos
 {
 	
@@ -1342,21 +1298,6 @@ float: left;
 
 }
 
-.titulo-projeto {
-font-size: 45px;
-position: relative;
-bottom: -30%;
-}
-.data-proposta {
-
-height: 40px;
-width: 300px;
-display: block;
-line-height: 40px;
-position: relative;
-bottom: -75px;
-margin: auto;
-}
 .row-fluid
 {
 	clear: both;
@@ -1864,6 +1805,22 @@ margin-right: 10px;
 	z-index: 9999;
 	padding: 20px;
 	width: 50%;
+}
+.titulo-single-mobile
+{
+	display: none;
+}
+.titulo-single
+{
+	font-size: 60px;
+}
+.fb-like
+{
+	top: -220px;
+}
+.fb-like-box
+{
+	position: absolute !important;
 }
 }
 
@@ -2547,29 +2504,20 @@ background-color: #63e82a;
 	margin: auto;
 }
 .caixa-titulo{
-width: 90%;
-border: solid #34495e;
-text-align: center;
-margin: auto;
-margin-top: 21px;
-background-color: #ecf0f1;
-height: 102px;
-color: #34495e;
-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+display: none;
 }
 
 .partido {
 
-position: relative;
-top: 70px;
 font-family: "Lato-Bol";
 color: #ecf0f1;
 }
-
-.titulo-perfil
+.titulo-single
 {
-	position: relative;
-	bottom: 47px;
+	display: none;
+}
+.titulo-single-mobile
+{
 	font-size: 25px;
 	font-family: "Lato-Bol";
 }
@@ -2581,22 +2529,13 @@ color: #ecf0f1;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 
 }
-.mandato
-{
-	bottom: 31px;
-	position: relative;
-	
-}
 .title-projeto-single
 {
 	background-color: #ecf0f1 !important;
 	border-color: #34495e !important;
 	color: #34495e !important;
 }
-.single-projeto .title-projeto-single
-{
 
-}
 .mini-projeto
 {
 	margin-bottom: 40px !important;
@@ -2659,10 +2598,6 @@ color: #ecf0f1;
 {
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
 }
-.info-perfil
-{
-	display: none;
-}
 .avaliacao-projeto
 {
 	width: 54%;
@@ -2688,10 +2623,7 @@ color: #34495e;
 	line-height: 22px;
 	line-height: 1.375rem;
 }
-.titulo-projeto
-{
-	display: inline-block;
-}
+
 .single-projeto
 {
 	background-color: #34495e;
@@ -2759,10 +2691,7 @@ border: solid 2px #ecf0f1 !important;
 	background-color:#3ea611 !important;
 	background-image: none;
 }
-.data-proposta
-{
-	display: block;
-}
+
 .autor-titulo
 {
 	height: 30px;
@@ -2790,14 +2719,7 @@ border: solid 2px #ecf0f1 !important;
 	margin-top: 15px;
 	font-size: 16px;
 }
-.titulo-projeto
-{
-	font-size: 18px;
-	font-size: 1.125rem;
-	margin-top: 20px;
-	margin-top: 1.25rem;
 
-}
 #comment
 {
 	color: black;
@@ -3093,13 +3015,7 @@ margin-right: 10px;
 	box-shadow: none;
 
 }
-.single-perfil .titulo-perfil
-{
-	position: relative;
-	bottom: 32px;
-	font-size: 25px;
-	font-family: "Lato-Bol";
-}
+
 .conteudo
 {
 	width: 90%;
@@ -3121,5 +3037,17 @@ margin-right: 10px;
 {
 	height:400px;
 	overflow: scroll;
+}
+.info-perfil
+{
+	clear: both;
+	top: -26px;
+	position: relative;
+	margin: auto;
+	width: 80%;
+	font-size: 14px;
+	font-size: 0.875rem;
+	text-align: center;
+	color: #ecf0f1;
 }
 }
