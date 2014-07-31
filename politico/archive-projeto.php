@@ -31,14 +31,14 @@ get_header();
          
 
 <div class="panel panel-default mini-projeto">
-                <div class="panel-heading mini-projeto-header"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
+                <div class="panel-heading mini-projeto-header"><?php the_title(); ?></div>
                 <div class="panel-body">
                     <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-                    <a href="<?php echo the_permalink(); ?>"><div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
-                    </div>  
-                    </a>    
+                    <div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
+
+                    </div>      
                     <div class="projeto-excerpt">
-                        <a href="<?php echo the_permalink(); ?>"><?php echo the_excerpt(); ?></a>
+                        <?php echo the_excerpt(); ?>
                     </div>
                     <div class="panel-bottom">
                         <a href="<?php echo the_permalink(); ?>">
@@ -47,18 +47,15 @@ get_header();
                             </div>
                         </a>
                          <div class="percent-wrapper">
-                         <a href="<?php echo the_permalink(); ?>">
                         <span class="mini-percent-naoapoiaram">
                             <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
                             <?php echo $projetos->getNegativar_percent(); ?>
                         </span>
-                        </a>
-                        <a href="<?php echo the_permalink(); ?>">
+
                         <span class="mini-percent-apoiaram">
                             <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
                             <?php echo $projetos->getPositivar_percent(); ?>
                         </span>
-                        </a>
                     </div>
                     </div>
         <div class="first-comments"> 

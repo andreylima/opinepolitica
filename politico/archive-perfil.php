@@ -119,7 +119,7 @@ $perfis = new perfisModel($post->ID);
         </a>
       </div>
       </div>
-      <a href="<?php the_permalink(); ?>"><h4 class="name-perfil"><?php the_title() ?></h4> </a>
+      <h4 class="name-perfil"><?php the_title() ?></h4> 
       <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
     </div>
 

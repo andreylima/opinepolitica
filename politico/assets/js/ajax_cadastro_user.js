@@ -26,8 +26,8 @@
 
 
     jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
-}, "Somente letras são permitidas"); 
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Letters only please"); 
 
 
 
@@ -177,8 +177,7 @@ jQuery("#cadastro_form").validate({
             	verificaCPF: true
             },
             cidade_select: "required",
-            senha: "required",
-            termos: "required"
+            senha: "required"
                        
         },
         
@@ -200,8 +199,7 @@ jQuery("#cadastro_form").validate({
             	required:"Favor inserir seu CPF",
             	verificaCPF: "CPF inválido"
             },
-            senha: "Favor escolher uma senha",
-            termos: "Obrigatório"
+            senha: "Favor escolher uma senha"
             
         },
         errorPlacement: function(error, element) {
@@ -285,79 +283,10 @@ jQuery("#cadastro_form_mobile").validate({
     });
 
 
-jQuery("#contato_form").validate({
-    
-        // Specify the validation rules
-        rules: {
-            nome: {
-                required: true,
-                lettersonly: true
-                
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            assunto:
-            {
-                required: true,
-                lettersonly: true
-            },
-            mensagem: "required"
-            
-                       
-        },
-        
-        // Specify the validation error messages
-        messages: {
-           nome:{
-                required: "Nome Obrigatório",
-                lettersonly: "somente letras"
-            } ,
-            email: {
-                required: "Favor inserir seu e-mail",
-                email: "E-mail inválido"
-            },
-            assunto:
-            {
-                required: "Favor preencher assunto",
-                lettersonly: "Somente letras são permitidas"  
-
-            },
-            mensagem: "Favor inserir uma mensagem"
-            
-        },
-        errorPlacement: function(error, element) {
-        
-        element.css("background-color","rgb(241, 255, 168)");
-        element.css("border","solid 2px red");
-        
-        
-    },
-        
-        submitHandler: function(form) {
-            
-            send_contact_form();
-        }
-    });
-
-
-
-
-
-
 function cadastrar_usuario(size)
 {
     if (size == "mobile") {
         var user_data = jQuery('#cadastro_form_mobile').serialize();
-        
-
-    }
-    else
-    {
-        var user_data = jQuery('#cadastro_form').serialize();
-        
-    }
 
               jQuery.ajax({
                 type: 'POST',
@@ -369,10 +298,42 @@ function cadastrar_usuario(size)
 
                     if (response != true) {
 
-                        jQuery(".email_validate").val("");
-                        jQuery(".email_validate").attr("placeholder",response);
-                        jQuery(".email_validate").removeClass("valid");
-                        jQuery(".email_validate").css("border", "solid 2px red");
+                        jQuery("#email_mobile").val("");
+                        jQuery("#email_mobile").attr("placeholder",response);
+                        jQuery("#email_mobile").removeClass("valid");
+                        jQuery("#email_mobile").css("border", "solid 2px red");
+
+                        return;
+
+                    }
+                    
+
+                    location.reload(true);
+
+                    event.preventDefault();
+                }
+            });
+
+    }
+    else
+    {
+        var user_data = jQuery('#cadastro_form').serialize();
+
+
+            jQuery.ajax({
+                type: 'POST',
+                url: myAjax.ajaxurl,
+                data: user_data + '&action=savedata'+'&security='+myAjax.ajax_nonce,
+                success: function(response) {
+
+                    console.log(response);
+
+                    if (response != true) {
+
+                        jQuery("#email").val("");
+                        jQuery("#email").attr("placeholder",response);
+                        jQuery("#email").removeClass("valid");
+                        jQuery("#email").css("border", "solid 2px red");
 
                         return;
 
@@ -388,8 +349,7 @@ function cadastrar_usuario(size)
     }
 
 
-
-
+}
 
 function log_user(size)
 {
@@ -444,32 +404,30 @@ function log_user(size)
 
 
 
-function send_contact_form() {
+// function cadastro_face(first_name, last_name, email, gender)
+// {
+    
+//     var user_data = {"first_name":first_name, "last_name":last_name,"email":email,"gender":gender }
 
-jQuery('#contato_form').find(':input:disabled').removeAttr('disabled');
-var user_data = jQuery('#contato_form').serialize();
+//      jQuery.ajax({
+//                 type: 'POST',
+//                 url: myAjax.ajaxurl,
+//                 data: user_data + '&action=login_user'+'&security='+myAjax.ajax_nonce,
+//                 success: function(response) {
 
+//                     console.log(response);
 
-    jQuery.ajax({
-                type: 'POST',
-                url: myAjax.ajaxurl,
-                data: user_data + '&action=send_email_contato'+'&security='+myAjax.ajax_nonce,
-                success: function(response) {
+                    
+                        
 
-                   if (response == true) {
+//                         return;
 
-                       
-                        jQuery('#nome').val("");
-                        jQuery('#email').val("");
-                        jQuery('#assunto').val("");
-                        jQuery('#mensagem').val("Sua mensagem foi enviada, muito obrigado. Sinta-se a vontade para enviar quantas sugestões quiser.");
-
-                    }
+                    
                     
 
-                    event.preventDefault();
-                }
-            });
+//                     location.reload(true);
 
-
-}
+//                     event.preventDefault();
+//                 }
+//             });
+// }

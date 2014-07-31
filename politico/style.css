@@ -40,12 +40,8 @@ body
 	width: 100%;
 	height: 100%;
 	font-family: 'Lato-Reg' !important;
-	background-color: #34495e;
 }
-input[type="submit"]
-{
-	color: white;
-}
+
 header
 {
 	width: 100%;
@@ -58,21 +54,19 @@ header
 	background: url("assets/img/bg-header2.png") repeat-x;
 
 }
-a
+.projetos-slider-wrapper a
 {
 	color: black;
+}
+.projetos-slider-wrapper a:hover
+{
+	text-decoration: underline;
 }
 a:hover
 {
-	text-decoration: underline;
-	cursor: pointer;
-	color: black;
-}
-/*a:hover
-{
 	text-decoration: none;
-	
-}*/
+	cursor: pointer;
+}
 #logo
 {
 	height: 60px;
@@ -239,16 +233,8 @@ a:hover
 	width: 100%;
 	color: #333333 !important;
 	font-size: 16px;
-	
-}
-.text-input
-{
-	margin-top: 15px;
-	color: #333333 !important;
-	font-size: 16px;
 	border-radius: 5px;
 	padding-left: 5px;
-	width: 100%;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #333333;
@@ -559,17 +545,6 @@ text-align: center;
 	color: white;
 	text-decoration: underline;
 }
-.ver-perfil-buttton:hover
-{
-	text-decoration: none;
-}
-.avatar
-{
-	float: left;
-	margin-right: 5px;
-	margin-top: 2px;
-}
-
 
 
 
@@ -1384,7 +1359,7 @@ margin: auto;
 	padding: 11px 19px;
 	font-size: 17.5px;
 	border: 0px;
-	
+	color: white;
 }
 .form-comment #submit:hover 
 {
@@ -1584,14 +1559,9 @@ color: #63e82a;
 {
 font-family: "Kulturista_Semibold";
 }
-.logged-menu
-{
-	float: right;
-}
-
 .user-logged
 {
-	float: left;
+	float: right;
 	color: white;
 	margin-right: 20px;
 	margin-top: 20px;
@@ -1709,7 +1679,6 @@ color: #000;
 text-shadow: 0 1px 0 #fff;
 filter: alpha(opacity=20);
 opacity: .2;
-
 }
 .title-modal {
 float: left;
@@ -1843,27 +1812,6 @@ margin-right: 10px;
 .integrantes
 {
 	margin-top: 20px;
-}
-.form-cadastro-top a
-{
-	color: white;
-	text-decoration: underline;
-}
-.termos-size
-{
-	height:400px;
-	overflow: scroll;
-}
-#modal-termos
-{
-	display: none;
-	position: fixed;
-	left: 0;
-	top: 0;
-	display: none;
-	z-index: 9999;
-	padding: 20px;
-	width: 50%;
 }
 }
 
@@ -2167,6 +2115,7 @@ h1
 	border-radius: 5px;	
 	height: 28px;
 	height: 1.75rem;
+	color: white;
 	border-top: 0;
 }
 .inputs-login
@@ -2752,7 +2701,8 @@ border: solid 2px #ecf0f1 !important;
 	padding: 11px 19px;
 	font-size: 17.5px;
 	border: 0px;
-	}
+	color: white;
+}
 .form-comment #submit:hover 
 {
 	text-decoration: none;
@@ -3016,14 +2966,11 @@ padding: 0 10px 0 5px !important;
 {
 	font-size: 11px !important;
 }
-.logged-menu
-{
-	float: right;
-}
+
 
 .user-logged
 {
-	float: left;
+	float: right;
 	color: #63e82a;
 	margin-right: 20px;
 	margin-top: 20px;
@@ -3105,21 +3052,5 @@ margin-right: 10px;
 	width: 90%;
 	margin: auto;
 	margin-top: 20px;
-}
-#modal-termos
-{
-	display: none;
-	position: fixed;
-	left: 0;
-	top: 0;
-	display: none;
-	z-index: 9999;
-	padding: 20px;
-	width: 90%;
-}
-.termos-size
-{
-	height:400px;
-	overflow: scroll;
 }
 }

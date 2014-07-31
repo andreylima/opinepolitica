@@ -112,13 +112,13 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 
             ?>
             <div class="panel panel-default mini-projeto">
-                <div class="panel-heading mini-projeto-header"><a href="<?php echo $permalink; ?>"><?php echo $projeto_dados->post_title; ?></a></div>
+                <div class="panel-heading mini-projeto-header"><?php echo $projeto_dados->post_title; ?></div>
                 <div class="panel-body">
-                    <a href="<?php echo $permalink; ?>"><div class="pic-projeto" style="background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');">
-                    </div> 
-                    </a>     
+                    <div class="pic-projeto" style="background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');">
+
+                    </div>      
                     <div class="projeto-excerpt">
-                        <a href="<?php echo $permalink; ?>"><?php echo $projeto_dados->post_excerpt; ?></a>
+                        <?php echo $projeto_dados->post_excerpt; ?>
                     </div>
                     <div class="panel-bottom">
                         <a href="<?php echo $permalink; ?>">
@@ -127,18 +127,15 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
                             </div>
                         </a>
                         <div class="percent-wrapper">
-                        <a href="<?php echo $permalink; ?>">
                         <span class="mini-percent-naoapoiaram">
                             <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
                             <?php echo $projetos->getNegativar_percent(); ?>
                         </span>
-                        </a>
-                        <a href="<?php echo $permalink; ?>">
+
                         <span class="mini-percent-apoiaram">
                             <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
                             <?php echo $projetos->getPositivar_percent(); ?>
                         </span>
-                        </a>
                         </div>
                     </div>
                 </div>
