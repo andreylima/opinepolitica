@@ -130,8 +130,8 @@ class projetosModel {
 	{
 
 		
-		$array_positivou = get_post_meta($this->ID, 'positivar_projeto');
-		$array_negativou = get_post_meta($this->ID, 'negativar_projeto');
+		$array_positivou = get_post_meta($this->ID, 'positivar_projeto',true);
+		$array_negativou = get_post_meta($this->ID, 'negativar_projeto',true);
 
 		$array_positivou = ($array_positivou == '') ? array() : $array_positivou;
 		$array_negativou = ($array_negativou == '') ? array() : $array_negativou;
@@ -161,8 +161,8 @@ class projetosModel {
 	{
 
 		
-		$array_positivou = get_post_meta($this->ID, 'positivar_projeto');
-		$array_negativou = get_post_meta($this->ID, 'negativar_projeto');
+		$array_positivou = get_post_meta($this->ID, 'positivar_projeto',true);
+		$array_negativou = get_post_meta($this->ID, 'negativar_projeto',true);
 
 		$array_positivou = ($array_positivou == '') ? array() : $array_positivou;
 		$array_negativou = ($array_negativou == '') ? array() : $array_negativou;
@@ -227,7 +227,7 @@ class projetosModel {
 		$array_negativou = ($array_negativou == '') ? array() : $array_negativou;
 
 
-		$total_votos = count(array_filter($array_positivou)) + count(array_filter($array_negativou));
+		$total_votos = count($array_positivou) + count($array_negativou);
 
 			$this->total_votos =  $total_votos;
 	}

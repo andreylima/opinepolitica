@@ -104,6 +104,7 @@ function verify_login()
 				case "positivar_projeto":
 					$projetos->setPositivar_percent();
 					$projetos->setNegativar_percent();
+					$projetos->set_total_votos();
 					$percent["positivou"] = $projetos->getPositivar_percent();
 					$percent["negativou"] = $projetos->getNegativar_percent();
 					$percent["total_votos"] = $projetos->get_total_votos();
@@ -111,6 +112,7 @@ function verify_login()
 				case "negativar_projeto":
 					$projetos->setPositivar_percent();
 					$projetos->setNegativar_percent();
+					$projetos->set_total_votos();
 					$percent["positivou"] = $projetos->getPositivar_percent();
 					$percent["negativou"] = $projetos->getNegativar_percent();
 					$percent["total_votos"] = $projetos->get_total_votos();

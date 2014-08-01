@@ -884,6 +884,7 @@ text-align: center;
 	cursor: default;
 	text-align: center;
 	line-height: 30px;
+	width: 50px;
 
 }
 .cargo
@@ -2643,6 +2644,7 @@ color: #34495e;
 .single-projeto .percent-both, .single-perfil .percent-both
 {
 	border: solid 2px #ecf0f1;
+	width: 50px;
 }
 .archive .percent-both
 {

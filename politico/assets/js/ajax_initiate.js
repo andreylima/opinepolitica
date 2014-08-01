@@ -55,7 +55,7 @@ function declaraApoio(events,acao,id_votado){
 		
 			
 			var response = JSON.parse(response);
-			console.log(response.logged);
+		
 
 			if (response.logged != false) {
 

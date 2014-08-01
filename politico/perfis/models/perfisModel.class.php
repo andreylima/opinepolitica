@@ -37,18 +37,18 @@ class perfisModel {
 	{
 
 		
-		$autor_id = $this->perfil_id;
-
-		$array_curtiu = get_post_meta($autor_id, 'curtiu');
-		$array_naocurtiu = get_post_meta($autor_id, 'naocurtiu');
+		
+		$array_curtiu = get_post_meta($this->perfil_id, 'curtiu',true);
+		$array_naocurtiu = get_post_meta($this->perfil_id, 'naocurtiu',true);
 
 		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
 		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
 
-		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));
+		$total_votos = count($array_naocurtiu) + count($array_curtiu);
 
 		if ($total_votos != 0) {
-			$this->curtiu_percent = round(count(array_filter($array_curtiu)) / $total_votos * 100)."%";
+
+			$this->curtiu_percent = round(count($array_curtiu) / $total_votos * 100, 2)."%";
 		}
 		else
 		{
@@ -67,20 +67,17 @@ class perfisModel {
 	public function setNaocurtiu_percent()
 	{
 
-		
-		$autor_id = $this->perfil_id;
-
-		$array_curtiu = get_post_meta($autor_id, 'curtiu');
-		$array_naocurtiu = get_post_meta($autor_id, 'naocurtiu');
+		$array_curtiu = get_post_meta($this->perfil_id, 'curtiu',true);
+		$array_naocurtiu = get_post_meta($this->perfil_id, 'naocurtiu',true);
 
 		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
 		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
 
-		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));
-		
-		if ($total_votos != 0) {
-			$this->naocurtiu_percent = round(count(array_filter($array_naocurtiu)) / $total_votos * 100)."%";
+		$total_votos = count($array_naocurtiu) + count($array_curtiu);
 
+		if ($total_votos != 0) {
+
+			$this->naocurtiu_percent = round(count($array_naocurtiu) / $total_votos * 100, 2)."%";
 		}
 		else
 		{
@@ -101,8 +98,8 @@ class perfisModel {
 	{
 		
 			
-		$array_curtiu = get_post_meta($this->perfil_id , 'curtiu', true);
-		$array_naocurtiu = get_post_meta($this->perfil_id , 'naocurtiu', true);
+		$array_curtiu = get_post_meta($this->perfil_id , 'curtiu',true);
+		$array_naocurtiu = get_post_meta($this->perfil_id , 'naocurtiu',true);
 		
 		
 		if (!empty($array_naocurtiu)) {
@@ -115,23 +112,27 @@ class perfisModel {
 				update_post_meta( $this->perfil_id, 'naocurtiu', $array_naocurtiu);
 
 				}
+
 		}
 
 		
 
 		if (!empty($array_curtiu)) {
+			
+			if (!in_array(get_current_user_id(), $array_curtiu)) {
+				$array_curtiu[] = get_current_user_id();
+				update_post_meta( $this->perfil_id, 'curtiu', $array_curtiu );
+			
+			}
 
-			if (!in_array(get_current_user_id() , $array_curtiu)) {
-			$array_curtiu[] = get_current_user_id();
-			update_post_meta( $this->perfil_id, 'curtiu', $array_curtiu );
-				}
 
 		}
 		else
 		{
-			$array_curtiu[] = get_current_user_id();
-			update_post_meta( $this->perfil_id, 'curtiu', $array_curtiu );
-
+						
+			  $array_curtiu[] = get_current_user_id();
+		      update_post_meta( $this->perfil_id, 'curtiu', $array_curtiu);
+			
 		}
 		
 		
@@ -147,7 +148,7 @@ class perfisModel {
 	{
 
 			
-		$array_naocurtiu = get_post_meta( $this->perfil_id, 'naocurtiu', true);
+		$array_naocurtiu = get_post_meta( $this->perfil_id, 'naocurtiu',true);
 		$array_curtiu = get_post_meta( $this->perfil_id, 'curtiu', true);
 		
 		
@@ -234,7 +235,7 @@ class perfisModel {
 		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
 		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
 
-		$total_votos = count(array_filter($array_naocurtiu)) + count(array_filter($array_curtiu));	
+		$total_votos = count($array_naocurtiu) + count($array_curtiu);	
 
 		$this->total_votos =  $total_votos;
 

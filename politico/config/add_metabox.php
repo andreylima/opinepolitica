@@ -14,8 +14,8 @@ function pol_add_custom_metaboxes()
     add_meta_box( 'mandato', 'Mandato:', 'mandato_display_metabox', 'perfil', 'normal', 'high' );
     
     // Equipe
-    add_meta_box( 'curtiu', 'Curtiram', 'curtiu_display_metabox', 'equipe', 'normal', 'high' );
-    add_meta_box( 'naocurtiu', 'Não curtiram', 'naocurtiu_display_metabox', 'equipe', 'normal', 'high' );
+    // add_meta_box( 'curtiu', 'Curtiram', 'curtiu_display_metabox', 'equipe', 'normal', 'high' );
+    // add_meta_box( 'naocurtiu', 'Não curtiram', 'naocurtiu_display_metabox', 'equipe', 'normal', 'high' );
     
     
 
@@ -79,7 +79,8 @@ function autoria_display_metabox( $post, $box){
 function curtiu_display_metabox( $post, $box )
 {
     // Busca no banco o link que já foi cadastrado pelo usuário
-  $pol_curtiu = get_user_meta( get_current_user_id(), 'curtiu');
+  $pol_curtiu = get_post_meta( $post->ID, 'curtiu',true);
+  $pol_curtiu = ($pol_curtiu == '') ? array() : $pol_curtiu;
   $n_curtidas = count($pol_curtiu);
   ?>
 
@@ -93,7 +94,8 @@ function curtiu_display_metabox( $post, $box )
 function naocurtiu_display_metabox( $post, $box )
 {
     // Busca no banco o link que já foi cadastrado pelo usuário
-  $pol_naocurtiu = get_user_meta( get_current_user_id(), 'naocurtiu');
+  $pol_naocurtiu = get_post_meta( $post->ID, 'naocurtiu',true);
+  $pol_naocurtiu = ($pol_naocurtiu == '') ? array() : $pol_naocurtiu;
   $n_ncurtidas = count($pol_naocurtiu);
 
   ?>
@@ -140,8 +142,9 @@ function situacao_display_metabox($post, $box)
 function positivar_projeto_display_metabox( $post, $box )
 {
     // Busca no banco o link que já foi cadastrado pelo usuário
-  $positivaram = get_user_meta( get_current_user_id(), 'positivar_projeto');
-  $qtd_positivo = count(array_filter($positivaram));
+  $positivaram = get_post_meta( $post->ID, 'positivar_projeto',true);
+  $positivaram = ($positivaram == '') ? array() : $positivaram;
+  $qtd_positivo = count($positivaram);
   ?>
 
   <input type="text" name="curtiu" id="curtiu" value="<?php echo $qtd_positivo?>" disabled/>
@@ -154,11 +157,12 @@ function positivar_projeto_display_metabox( $post, $box )
 function negativar_projeto_display_metabox( $post, $box )
 {
     // Busca no banco o link que já foi cadastrado pelo usuário
-  $negativaram = get_user_meta( get_current_user_id(), 'negativar_projeto');
-  $qtd_positivo = count(array_filter($negativaram));
+  $negativaram = get_post_meta( $post->ID, 'negativar_projeto',true);
+   $negativaram = ($negativaram == '') ? array() : $negativaram;
+  $qtd_negativo = count($negativaram);
   ?>
 
-  <input type="text" name="curtiu" id="curtiu" value="<?php echo $qtd_positivo?>" disabled/>
+  <input type="text" name="curtiu" id="curtiu" value="<?php echo $qtd_negativo?>" disabled/>
 
   <?php
 
