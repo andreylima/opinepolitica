@@ -35,7 +35,7 @@ function save_projeto_postmeta( $post_id )
     if( isset( $_POST['autoria'] ) ) {
 
       $autor = get_post_meta( $post_id , 'autoria', true );
-
+     
       if ($autor != "") {
         $projetos = get_post_meta($autor, 'projetos_debatidos', true);
         $indice = array_search($post_id, $projetos);

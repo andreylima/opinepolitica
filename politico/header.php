@@ -206,10 +206,10 @@ else
 
   		
 		<div class="login-connect-header">
-		<div class="face_button_header">
-		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+		
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="face_button_header">
 </fb:login-button>
-</div>
+
 			<form action="" method="post" id="log-form" novalidate="novalidate">
 			 <input type="text" name="email_log" value="" id="email-log" placeholder="e-mail">
       		 <input type="password" name="senha_log" placeholder="senha" id="senha-log">

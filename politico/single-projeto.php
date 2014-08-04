@@ -70,7 +70,7 @@ get_header();
     </div>
     <div class="info-perfil">
     <div id="titulo" class="titulo-single-mobile"><?php the_title(); ?></div>
-    <span class="total_votos">Total de avaliações:<span class="n_votos"> <?php echo $projetos->get_total_votos() ?></span></span>
+    <span class="total_votos">Total de avaliações: <span class="n_votos"> <?php echo $projetos->get_total_votos() ?></span></span>
     <div class="data-proposta">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
 </div>
 </div>

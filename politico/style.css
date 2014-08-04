@@ -198,7 +198,7 @@ a:hover
 }
 .wrap-destaque
 {
-	width: 41%;
+	width: 35%;
 	float: left;
 	margin-left: 20%;
 
@@ -1713,6 +1713,11 @@ float: left;
 top: 10px;
 position: relative;
 margin-right: 10px;
+width: 80px !important;
+}
+.face_button_header *
+{
+	width: 80px !important;
 }
 .face-button-modal
 {
@@ -1813,7 +1818,7 @@ margin-right: 10px;
 }
 .titulo-single
 {
-	font-size: 60px;
+	font-size: 55px;
 }
 .fb-like
 {
@@ -1823,6 +1828,15 @@ margin-right: 10px;
 {
 	position: absolute !important;
 }
+.termos-header-modal
+{
+	font-size: 18px;
+}
+.likebox-wrapper
+{
+	float: left;
+}
+
 }
 
 
@@ -2080,6 +2094,7 @@ h1
 {
 	width: 95%;
 	float: none;
+	margin: auto;
 
 }
 .login-wrap
@@ -3051,5 +3066,9 @@ margin-right: 10px;
 	font-size: 0.875rem;
 	text-align: center;
 	color: #ecf0f1;
+}
+.likebox-wrapper
+{
+	display: none !important;
 }
 }

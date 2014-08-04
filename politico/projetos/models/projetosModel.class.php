@@ -106,18 +106,18 @@ class projetosModel {
 
 		
 
-		if (!empty($array_positivo)) {
+		if (!empty($array_negativo)) {
 
-			if (!in_array($this->user_id , $array_positivo)) {
-			$array_positivo[] = get_current_user_id();
-			update_post_meta( $this->ID, 'negativar_projeto', $array_positivo );
+			if (!in_array(get_current_user_id() , $array_negativo)) {
+			$array_negativo[] = get_current_user_id();
+			update_post_meta( $this->ID, 'negativar_projeto', $array_negativo );
 				}
 
 		}
 		else
 		{
-			$array_positivo[] = get_current_user_id();
-			update_post_meta( $this->ID, 'negativar_projeto', $array_positivo );
+			$array_negativo[] = get_current_user_id();
+			update_post_meta( $this->ID, 'negativar_projeto', $array_negativo );
 
 		}
 		
@@ -137,10 +137,10 @@ class projetosModel {
 		$array_negativou = ($array_negativou == '') ? array() : $array_negativou;
 
 
-		$total_votos = count(array_filter($array_positivou)) + count(array_filter($array_negativou));
+		$total_votos = count($array_positivou) + count($array_negativou);
 		
 		if ($total_votos != 0) {
-			$this->positivarPercent = round(count(array_filter($array_positivou)) / $total_votos * 100)."%";
+			$this->positivarPercent = round(count($array_positivou) / $total_votos * 100,2)."%";
 
 		}
 		else
@@ -171,7 +171,7 @@ class projetosModel {
 		$total_votos = count(array_filter($array_positivou)) + count(array_filter($array_negativou));
 		
 		if ($total_votos != 0) {
-			$this->negativarPercent = round(count(array_filter($array_negativou)) / $total_votos * 100)."%";
+			$this->negativarPercent = round(count($array_negativou) / $total_votos * 100,2)."%";
 
 		}
 		else
