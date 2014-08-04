@@ -1836,7 +1836,10 @@ width: 80px !important;
 {
 	float: left;
 }
-
+#cadastro_form
+{
+	clear: both;
+}
 }
 
 

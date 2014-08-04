@@ -78,6 +78,8 @@ get_header();
   
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="face_button_header">
+</fb:login-button>
   <form action="" method="post" id="cadastro_form" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
@@ -328,6 +330,8 @@ get_header();
 <div class="form-cadastro" >
   <h1>CADASTRE-SE PARA INTERAGIR.</h1>
   <h3>É rápido e fácil.</h3>
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="face_button_header">
+</fb:login-button>
   <form action="" method="post" id="cadastro_form_mobile" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome_mobile" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome_mobile" class="cadastro-input" name="sobrenome">
