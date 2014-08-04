@@ -72,6 +72,7 @@ get_header();
     <div id="titulo" class="titulo-single-mobile"><?php the_title(); ?></div>
     <span class="total_votos">Total de avaliações: <span class="n_votos"> <?php echo $projetos->get_total_votos() ?></span></span>
     <div class="data-proposta">Proposto em:  <?php echo date('d/m/Y',strtotime(get_post_meta( $post_id, 'data_proposta', true)) ); ?></div>
+    <a href="<?php pdf_file_url(); ?>" class="link-projeto-pdf">Baixar projeto</a>
 </div>
 </div>
 <div class="conteudo">
