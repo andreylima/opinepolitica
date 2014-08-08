@@ -6,7 +6,7 @@ $perfis = new perfisModel(get_the_ID());
 $curtiu = $perfis->verifica_curtida();
 $naocurtiu = $perfis->verifica_naocurtida();
 $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names"));
-
+$cargo = wp_get_post_terms( get_the_ID(), 'Cargos',array("fields" => "names"));
 ?>
 
 
@@ -37,6 +37,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
     </a>
 </div>
 <div class="info-perfil">
+<span class="cargo-single"><?php echo $cargo[0]; ?></span>
 <div id="titulo" class="titulo-single-mobile"><?php the_title(); ?></div>
 <div class="partido">Partido: 
      <?php 

@@ -572,7 +572,7 @@ text-align: center;
 {
 	color: red;
 }
-.total_votos, .total_debatidos, .mandato , .partido, .data-proposta, .link-projeto-pdf
+.total_votos, .total_debatidos, .mandato , .partido, .data-proposta, .link-projeto-pdf, .cargo-single
 {
 	display: block;
 	font-weight: 700;
