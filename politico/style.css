@@ -578,12 +578,73 @@ text-align: center;
 	font-weight: 700;
 	margin-top: 10px;
 }
-
-
-
-
-
-
+article h3 a
+{
+	color: #63e82a !important;
+}
+.seach-results a 
+{
+	color: #ecf0f1;
+}
+.seach-results
+{
+	color: #ecf0f1;
+}
+.seach-results .post_content p span
+{
+	color: #ecf0f1 !important;
+}
+#searchform
+{
+	width: 30%;
+	margin: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	color: #ecf0f1;
+}
+#searchsubmit
+{
+	text-align: center;
+	background-color: #19B5FE;
+	color: white;
+	border-radius: 5px;
+	border-radius: 0.3125rem;
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+	border: 2px solid #34495e;
+}
+#searchsubmit:hover
+{
+	background-color: #0094DA;
+}
+#s 
+{
+	color: black;
+}
+.wp-prev-next
+{
+	text-align: center;
+}
+.wp-prev-next ul li
+{
+	list-style-type: none; 
+}
+.searchform-sidebar
+{
+	padding: 0;
+	text-align: center;
+}
+.searchform-sidebar li
+{
+	list-style-type: none;
+}
+.article-search
+{
+	border: 1px solid #ecf0f1;
+	margin-bottom: 20px !important;
+	padding-left: 15px;
+}
 
 
 
@@ -3073,5 +3134,13 @@ margin-right: 10px;
 .likebox-wrapper
 {
 	display: none !important;
+}
+#searchform
+{
+	width: 90%;
+}
+#searchsubmit
+{
+	display: block;
 }
 }
