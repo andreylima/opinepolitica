@@ -23,13 +23,7 @@ $perfis = new perfisModel($post->ID);
     <h4>Executivo e Legislativo</h4> 
     <h3>de Governador Valadares</h3>
   </div>
-<<<<<<< HEAD
-
 <?php get_search_form(); ?>
-
-=======
-<?php get_search_form(); ?>
->>>>>>> origin/master
   <section class="perfis">
 
 
