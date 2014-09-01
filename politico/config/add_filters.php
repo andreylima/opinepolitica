@@ -2,22 +2,22 @@
 
 
 
-function auto_insert_excerpt(){
-	$post_data = &$_POST;
-	$post_content = $post_data['content'];
-	$length = 25;
+// function auto_insert_excerpt(){
+// 	$post_data = &$_POST;
+// 	$post_content = $post_data['content'];
+// 	$length = 25;
 
-	// This will return the first $length number of CHARACTERS
-	//$output = (strlen($post_content) > 13) ? substr($post_content,0,$length).'...' : $post_content;
+// 	// This will return the first $length number of CHARACTERS
+// 	//$output = (strlen($post_content) > 13) ? substr($post_content,0,$length).'...' : $post_content;
 
-	// This will return the first $length number of WORDS
-	$post_content_array = explode(' ',$post_content);
-	if(count($post_content_array) > $length && $length > 0)
-		$output = implode(' ',array_slice($post_content_array, 0, $length)).'...';
+// 	// This will return the first $length number of WORDS
+// 	$post_content_array = explode(' ',$post_content);
+// 	if(count($post_content_array) > $length && $length > 0)
+// 		$output = implode(' ',array_slice($post_content_array, 0, $length)).'...';
 
-	return $output;
-}
-add_filter('excerpt_save_pre', 'auto_insert_excerpt');
+// 	return $output;
+// }
+// add_filter('excerpt_save_pre', 'auto_insert_excerpt');
 
 
 

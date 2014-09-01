@@ -47,7 +47,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 </h5>
 </div>
 
-<div class="fb-like-box" data-href="https://www.facebook.com/debategv" data-width="150" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+<div class="fb-like-box fb-likebox-index" data-href="https://www.facebook.com/debategv" data-width="150" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
 
  <?php if (!is_user_logged_in()) { ?>
 <div class="wrap-destaque wide-destaque ">

@@ -39,6 +39,19 @@ add_action('wp_logout',create_function('','wp_redirect(home_url());exit();'));
 add_action( 'init', 'register_my_menus' );
 
 
+add_action( 'widgets_init', 'my_register_sidebars' );
+function my_register_sidebars() {
+	register_sidebar(
+		array(
+			'id' => 'primary',
+			'name' => __( 'Primary' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+}
 
 
 
