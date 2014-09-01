@@ -188,19 +188,19 @@ a:hover
 	padding-right: 5px;
 }
 
-.wrap-destaque h1, .wrap-destaque-full h1
+.wrap-destaque h2, .wrap-destaque-full h2
 {
 	color: white;
 	font-family: "Kulturista_Semibold";
 	padding: 10px;
-	font-size: 30px;
+    font-size: 25px;
 	text-align: center;
 }
 .wrap-destaque
 {
-	width: 35%;
+	width: 50%;
 	float: left;
-	margin-left: 20%;
+	margin-left: 16%;
 
 }
 .wrap-destaque-full
@@ -646,6 +646,10 @@ article h3 a
 	padding-left: 15px;
 }
 
+.first-panel
+{
+	margin-top: 40px;
+}
 
 
 
@@ -1071,10 +1075,10 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 .placa-projetos
 {
 	position: absolute;
-	padding-top: 22px;
+	padding-top: 12px;
 	display: none;
-	height: 162px;
-	width: 260px;
+	height: 142px;
+	width: 230px;
 	background: rgba(25,181,254,0.7);
 	left: 9%;
 	margin-left: -50px;
@@ -1095,8 +1099,8 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	position: absolute;
 	padding-top: 12px;
 	display: none;
-	height: 162px;
-	width: 260px;
+	height: 142px;
+	width: 230px;
 	background: rgba(237,72,54,0.7);
 	left: 44%;
 	margin-left: -50px;
@@ -1117,8 +1121,8 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	position: absolute;
 	padding-top: 12px;
 	display: none;
-	height: 162px;
-	width: 260px;
+	height: 142px;
+	width: 230px;
 	background: rgba(237,72,54,0.7);
 	left: 78%;
 	margin-left: -50px;
@@ -1757,7 +1761,14 @@ text-align: center;
   top:0;
   z-index:9000;
   background-color:#000;
-  display:none;
+  display: none;
+}
+.dark-mask
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	display: block !important;
 }
 div.new-fb-7
 {
@@ -1888,18 +1899,90 @@ width: 80px !important;
 .fb-like-box
 {
 	position: absolute !important;
+	float: left;
+	width: 15%;
 }
 .termos-header-modal
 {
 	font-size: 18px;
 }
-.likebox-wrapper
-{
-	float: left;
-}
+
 #cadastro_form
 {
 	clear: both;
+}
+.wrap-destaque #logo-home
+{
+	float: left;
+	margin-right: 3%;
+}
+.wrap-destaque-full #logo-home
+{
+	margin: auto;
+	width: 200px;
+	display: block;
+}
+.wrap-destaque .letreiro
+{
+	float: left;
+}
+.wrap-destaque-full .letreiro
+{
+	clear: both;
+}
+.logo-camara
+{
+	background-color: white;
+	float: left;
+}
+.content-parceiro
+{
+	font-family: "lato-Bol";
+	margin-left: 20px;
+	float: left;
+}
+.aviso-projeto
+{
+width: 41%;
+background-color: white;
+position: absolute;
+top: 50%;
+z-index: 10000;
+padding: 20px;
+font-family: Lato-reg;
+left: -41%;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.aba-aviso
+{
+display: block;
+position: absolute;
+right: -73px;
+top: 43px;
+width: 117px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+font-family: Lato-Bol;
+cursor: pointer;
+transform: rotate(90deg);
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+-o-transform: rotate(90deg);
+-ms-transform: rotate(90deg);
+border-top-left-radius: 3px;
+background: #70DAC4;
+color: #000;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e5ba0', endColorstr='#414c87', GradientType=0);
+border-top-right-radius: 3px
+
+}
+.show-aviso
+{
+	left: 0;
 }
 }
 
@@ -2999,6 +3082,7 @@ text-align: center;
   z-index:9000;
   background-color:#000;
   display:none;
+  
 }
 #vereador-scroll-block
 {
@@ -3131,9 +3215,10 @@ margin-right: 10px;
 	text-align: center;
 	color: #ecf0f1;
 }
-.likebox-wrapper
+.fb-like-box
 {
 	display: none !important;
+
 }
 #searchform
 {
@@ -3142,5 +3227,20 @@ margin-right: 10px;
 #searchsubmit
 {
 	display: block;
+}
+.aviso-projeto
+{
+	display: none;
+}
+.logo-camara
+{
+	display: block;
+	margin: auto;
+}
+.content-parceiro
+{
+	font-family: "lato-Bol";
+	margin-top: 20px;
+
 }
 }

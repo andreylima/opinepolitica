@@ -24,27 +24,57 @@ get_header();
 </script>
 
 <div id="destaque">
-  <div class="likebox-wrapper">
-<div class="fb-like-box" data-href="https://www.facebook.com/debategv" data-width="150" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
+<div class="aviso-projeto">
+  <span class="aba-aviso">IMPORTANTE</span>
+  <h3>Um pouco da sua atenção por favor!</h3>
+<h5> 
+  O DebateGV é um projeto em fase experimental. 
+</h5>
+<h5>
+Todos os Projetos de Lei apresentados são enviados pela ,Câmara Municipal de Governador Valadares,
+portanto a atualização deste site depende diretamente do recebimento dos mesmos.
+</h5>
+<h5>
+Esperamos poder estar atualizados sempre após o 7º dia útil de cada mês, uma vez que as reuniões para a apresentação dos Projetos são realizadas 
+entre esses dias.
+</h5>
+<h5>
+Para mais informações sobre o projeto, navegue sobre o MENU SUPERIOR "Sobre nós".
+</h5>
+<h5>
+Para sugestões, navegue sobre o MENU SUPERIOR "contato".
+</h5>
 </div>
+
+<div class="fb-like-box" data-href="https://www.facebook.com/debategv" data-width="150" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
  <?php if (!is_user_logged_in()) { ?>
 <div class="wrap-destaque wide-destaque ">
   <?php }else { ?>
 <div class="wrap-destaque-full wide-destaque">
   <?php } ?>
-	<h1 class="fundo">PARTICIPE E AJUDE </h1>
-  <h1 class="fundo">A FISCALIZAR A CIDADE</h1>  
-	<h1 class="fundo">QUE A GENTE AMA.</h1>
+  
+  <img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo-home">
+<div class="letreiro">
+	<h2 class="fundo">PARTICIPE E AJUDE </h2>
+  <h2 class="fundo">A FISCALIZAR A CIDADE</h2>  
+	<h2 class="fundo">QUE A GENTE AMA.</h2>
 </div>
+</div>
+
 <div class="wrap-destaque mobile-destaque">
   <h1 class="fundo">OPINE SOBRE OS PROJETOS DE LEI</h1>
   <h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES </h1>  
 </div>
 
 
+
+
+
 <a href="#projetos" class="placas">
 <div class="placa-projetos">
-  <h4>DISCUTA OS</h4>
+  <h4>DEBATA OS</h4>
   <h4>PROJETOS DE LEI</h4>
   <h4>PROPOSTOS EM</h4>
   <h4>SUA CIDADE.</h4>
@@ -206,7 +236,7 @@ get_header();
 <div class="prefeito-wrapper" id="politicos">
 	
 <a href="#vereadores-slider-wrapper" id="vereador-scroll-block"><span class="vereador-scroll">VEREADORES</span><span id="scroll-down-vereadores"></span></a>
-    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'prefeito',  'posts_per_page' => 1) ); ?>
+    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <?php 
       $perfis = new perfisModel($post->ID);
