@@ -684,6 +684,11 @@ color: #70DAC4;
 {
 	width: 80%;
 }
+#wp-social-login-connect-with 
+{
+	display: none;
+
+}
 
 
 
@@ -2034,6 +2039,12 @@ display: block;
 float: left;
 margin-top: 22px;
 margin-right: 20px;
+}
+#wp-social-login-connect-options 
+{
+	padding:0 !important;
+	float: left;
+	margin-right: 10px;
 }
 }
 
