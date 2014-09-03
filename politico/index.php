@@ -32,7 +32,7 @@ get_header();
   O DebateGV é um projeto em fase experimental. 
 </h5>
 <h5>
-Todos os Projetos de Lei apresentados são enviados pela Câmara Municipal de Governador Valadares,
+Todos os Projetos de Lei apresentados são enviados pela ,Câmara Municipal de Governador Valadares,
 portanto a atualização deste site depende diretamente do recebimento dos mesmos.
 </h5>
 <h5>
@@ -88,8 +88,8 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 <?php }else { ?>
 <div class="placa-politicos-full">
 <?php } ?>
-  <h4>CONFIRA O NÍVEL DE</h4> 
-  <h4>APROVAÇÃO E ESCOLHA</h4>
+  <h4>CONFIRA O NÍVEL DE APROVAÇÃO </h4> 
+  <h4>E ESCOLHA</h4>
   <h4>QUEM TE REPRESENTA.</h4>
 </div>
 <?php if (!is_user_logged_in()) { ?>
