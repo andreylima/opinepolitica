@@ -37,6 +37,8 @@
 
 </script>
         <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ) ?>">
+        <link rel="shortcut icon" href="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/assets/img/favicon.ico" type="image/x-icon">
 	
     <?php wp_head(); ?>
 </head>
@@ -83,7 +85,7 @@
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
+    version    : 'v2.1' // use version 2.0
   });
 
   // Now that we've initialized the JavaScript SDK, we call 
@@ -143,14 +145,7 @@
     });
   }
 </script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=520902698009161&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 <header>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 <img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo">
