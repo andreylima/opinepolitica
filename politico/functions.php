@@ -77,5 +77,17 @@ function my_register_sidebars() {
 	add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
+
+
+  
+
+
+
+
+
+
+
 ?>
+
+
 

@@ -216,16 +216,11 @@ function projetos_debatidos_display_metabox($post, $box)
 function justificativa_display_metabox($post, $box)
 {
   $justificativa = get_post_meta( $post->ID, 'justificativa', true );
+  $settings = array('textarea_name' => 'justificativa');
 
+  // wp_editor( $justificativa, 'justificativa', $settings ); 
 
-  ?>
-  
-  <label for="justificativa">JUSTIFICATIVA</label>
-  <textarea rows="3" cols="55" name="justificativa" id="justificativa"><?php echo $justificativa; ?></textarea>
-  
-
-
-  <?php
+wp_editor( $justificativa, 'content-id', array( 'textarea_name' => 'justificativa', 'media_buttons' => false, 'tinymce' => array( 'theme_advanced_buttons1' => 'formatselect,forecolor,|,bold,italic,underline,|,bullist,numlist,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,|,spellchecker,wp_fullscreen,wp_adv' ) ) ); 
 
 
 }

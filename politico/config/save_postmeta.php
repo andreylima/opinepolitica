@@ -58,7 +58,7 @@ function save_projeto_postmeta( $post_id )
 
     
    if( isset( $_POST['justificativa'] ) )
-      update_post_meta( $post_id, 'justificativa', $_POST['justificativa']);
+      update_post_meta( $post_id, 'justificativa', wpautop($_POST['justificativa']));
    
 
 

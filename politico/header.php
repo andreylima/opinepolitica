@@ -5,26 +5,7 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 	<title>
-	<?php
-	/*
-	 * Mesmo código utilizado no tema padrão do WordPress, para escrever a tag <title> do site.
-	 */
-	global $page, $paged;
-  global $current_user;
-  get_currentuserinfo();
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-
-	?>
+	<?php wp_title(' ',true); ?>
 	</title>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -44,7 +25,14 @@
 </head>
 
 <body  <?php body_class(); ?>>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=520902698009161&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <header>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -63,7 +51,7 @@
 	<?php } } ?>
 		
 
-<a href="#menu-body"><div class="open_menu">&#9776;</div></a>
+<a href="#menu-body"><div class="open_menu"><i class="fa fa-bars"></i></div></a>
  <?php 
 
 if (is_home()) {
@@ -102,8 +90,7 @@ else
   		
 		<div class="login-connect-header">
 		
-	<!-- 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="face_button_header">
-</fb:login-button> -->
+
  <?php do_action( 'wordpress_social_login' ); ?> 
 			<form action="" method="post" id="log-form" novalidate="novalidate">
 			 <input type="text" name="email_log" value="" id="email-log" placeholder="e-mail">
@@ -114,15 +101,23 @@ else
       		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
       		</form>
       		<div class="show-error"></div>
-      		<!-- <span class="forgot-pass-header"><a href="">Esqueci a senha</a> </span>  -->
+      		
 		</div>
 		
 
 <?php } else{ ?>
 <div class="logged-menu">
+<a href="https://pt.gravatar.com/">
 <div class="avatar">
-<?php echo get_avatar( $current_user->user_email , 60 ); ?>
+<?php 
+ global $current_user;
+get_currentuserinfo();
+echo get_avatar( $current_user->user_email , 60 ); 
+
+?>
+
 </div>
+</a>
 <div class="user-logged">
 	<?php echo $current_user->user_firstname ?>
 	<span class="glyphicon glyphicon glyphicon-chevron-down open-user"></span>

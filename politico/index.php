@@ -74,7 +74,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 
 <a href="#projetos" class="placas">
 <div class="placa-projetos">
-  <h4>DEBATA OS</h4>
+  <h4>OPINE SOBRE OS</h4>
   <h4>PROJETOS DE LEI</h4>
   <h4>PROPOSTOS EM</h4>
   <h4>SUA CIDADE.</h4>
