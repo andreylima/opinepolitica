@@ -57,8 +57,8 @@ function save_projeto_postmeta( $post_id )
       update_post_meta( $post_id, 'situacao', $_POST['situacao']);
 
     
-   if( isset( $_POST['consideracoes'] ) )
-      update_post_meta( $post_id, 'consideracoes', $_POST['consideracoes']);
+   if( isset( $_POST['justificativa'] ) )
+      update_post_meta( $post_id, 'justificativa', $_POST['justificativa']);
    
 
 

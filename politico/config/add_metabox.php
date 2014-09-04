@@ -23,7 +23,7 @@ function pol_add_custom_metaboxes()
     add_meta_box( 'autoria', 'Autoria do Projeto', 'autoria_display_metabox', 'projeto', 'normal', 'high' );
     add_meta_box( 'data_proposta', 'Data da proposta', 'data_proposta_display_metabox', 'projeto', 'normal', 'high' );
     add_meta_box( 'situacao', 'Situação', 'situacao_display_metabox', 'projeto', 'normal', 'high' );
-    add_meta_box( 'consideracoes', 'Consideracoes do Autor', 'consideracoes_display_metabox', 'projeto', 'normal', 'high' );
+    add_meta_box( 'justificativa', 'Justificativa', 'justificativa_display_metabox', 'projeto', 'normal', 'high' );
     add_meta_box( 'positivar_projeto', 'Positivaram', 'positivar_projeto_display_metabox', 'projeto', 'normal', 'high' );
     add_meta_box( 'negativar_projeto', 'Negativaram', 'negativar_projeto_display_metabox', 'projeto', 'normal', 'high' );
 
@@ -213,15 +213,15 @@ function projetos_debatidos_display_metabox($post, $box)
 }
 
 
-function consideracoes_display_metabox($post, $box)
+function justificativa_display_metabox($post, $box)
 {
-  $consideracoes = get_post_meta( $post->ID, 'consideracoes', true );
+  $justificativa = get_post_meta( $post->ID, 'justificativa', true );
 
 
   ?>
   
-  <label for="consideracoes">CONSIDERAÇÕES DO AUTOR</label>
-  <textarea rows="3" cols="55" name="consideracoes" id="consideracoes"><?php echo $consideracoes; ?></textarea>
+  <label for="justificativa">JUSTIFICATIVA</label>
+  <textarea rows="3" cols="55" name="justificativa" id="justificativa"><?php echo $justificativa; ?></textarea>
   
 
 

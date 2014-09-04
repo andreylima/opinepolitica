@@ -102,21 +102,12 @@ get_header();
     </div>
 
     <div id="justificativa" class="panel panel-default debatidos">
-      <div class="panel-heading font-header-small">CONSIDERAÇÕES DO AUTOR</div>
+      <div class="panel-heading font-header-small">JUSTIFICATIVA</div>
       <div class="panel-body">
        <?php
-          $consideracoes = get_post_meta( get_the_ID(), 'consideracoes', true );
-
-          if ($consideracoes != "") {
-             echo $consideracoes;
-          }
-          else
-          {
-            echo "Este é um espaço aberto para considerações do autor a respeito do projeto e de sua aceitação.Se você é o autor,<a href='".esc_url( get_permalink( get_page_by_title( 'contato' ) ) )."'>clique aqui</a>";
-          }
-         
-
-        ?>
+          echo get_post_meta( get_the_ID(), 'justificativa', true );
+  
+          ?>
     </div>
     
     </div>
