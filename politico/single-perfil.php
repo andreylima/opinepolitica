@@ -101,40 +101,43 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
       
   
     <?php 
-    $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true );
+    $id_perfil = get_the_ID();
+    $the_query = new WP_Query(array( 'post_type' => 'projeto', 'meta_key' => 'autoria', 'meta_value' => $id_perfil ));
 
-    if (!empty($projetos_debatidos)) {
-            # code...
+    if ($the_query->have_posts()) {
 
-        foreach ($projetos_debatidos as $projeto) {
-            $projeto_dados = get_post($projeto);
-            $projetos = new projetosModel($projeto_dados->ID);
-            $permalink = get_permalink( $projeto );
+    while ( $the_query->have_posts() ) : $the_query->the_post(); 
 
-            ?>
-            <div class="panel panel-default mini-projeto">
-                <div class="panel-heading mini-projeto-header"><a href="<?php echo $permalink; ?>"><?php echo $projeto_dados->post_title; ?></a></div>
+   
+       
+    $projetos = new projetosModel($post->ID);
+    $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+
+    ?>
+
+    <div class="panel panel-default mini-projeto">
+                <div class="panel-heading mini-projeto-header"><a href="<?php echo $permalink; ?>"><?php echo the_title(); ?></a></div>
                 <div class="panel-body">
-                    <a href="<?php echo $permalink; ?>"><div class="pic-projeto" style="background-image: url('http://www.apostasfc.com/blog/wp-content/uploads/2014/05/apostas-desportivas_Portugal_TVI_maisfutebol_Aposta-X.jpg');">
+                    <a href="<?php echo the_permalink();; ?>"><div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
                     </div> 
                     </a>     
                     <div class="projeto-excerpt">
-                        <a href="<?php echo $permalink; ?>"><?php echo $projeto_dados->post_excerpt; ?></a>
+                        <a href="<?php echo the_permalink();; ?>"><?php echo the_excerpt(); ?></a>
                     </div>
                     <div class="panel-bottom">
-                        <a href="<?php echo $permalink; ?>">
+                        <a href="<?php echo the_permalink();; ?>">
                             <div class="see-more">
                                 SAIBA MAIS
                             </div>
                         </a>
                         <div class="percent-wrapper">
-                        <a href="<?php echo $permalink; ?>">
+                        <a href="<?php echo the_permalink();; ?>">
                         <span class="mini-percent-naoapoiaram">
                             <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
                             <?php echo $projetos->getNegativar_percent(); ?>
                         </span>
                         </a>
-                        <a href="<?php echo $permalink; ?>">
+                        <a href="<?php echo the_permalink();; ?>">
                         <span class="mini-percent-apoiaram">
                             <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
                             <?php echo $projetos->getPositivar_percent(); ?>
@@ -146,7 +149,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 
             </div>
 
-            <?php } 
+            <?php endwhile;
 
         }
         else
@@ -154,7 +157,10 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
             
         echo "<span> Ainda não foram cadastrados projetos desse Político. Clique <a href='".esc_url( get_permalink( get_page_by_title( 'contato' ) ) )."'>AQUI</a> e faça sua sugestão.</a></span>";
 
-        } ?>
+        } 
+        wp_reset_postdata();
+         
+        ?>
           </div>
         </div>
     </div>

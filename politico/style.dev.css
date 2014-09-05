@@ -369,7 +369,10 @@ a:hover
 	height: 6.875rem;
 	
 }
-
+.single-perfil .projeto-excerpt
+{
+	height: auto;
+}
 .vereadores-slider
 {
 	background-color: #34495e;
@@ -685,11 +688,7 @@ color: #70DAC4;
 {
 	width: 80%;
 }
-#wp-social-login-connect-with 
-{
-	display: none;
 
-}
 
 
 
@@ -2054,6 +2053,14 @@ margin-right: 20px;
 {
 	padding: 0;
 }
+#wp-social-login-connect-with 
+{
+	float: left;
+line-height: 32px;
+margin-right: 10px;
+color: white;
+
+}
 }
 
 
@@ -2350,7 +2357,7 @@ h1
 }
 .login-connect input[type="submit"]
 {
-	width: 48%;
+	width: 40%;
 	margin: auto;
 	margin-left: 4%;
 	background-color: #19B5FE;
@@ -2383,7 +2390,7 @@ h1
 	margin: auto;
 	margin-top: 10px;
 	margin-top: 0.625rem;
-	width: 65%;
+	width: 80%;
 }
 .projetos-slider-wrapper
 {
@@ -3204,6 +3211,7 @@ padding: 0 10px 0 5px !important;
 top: -9px;
 position: relative;
 margin-right: 10px;
+width: 50%;
 }
 #page-wrapper
 {
@@ -3306,5 +3314,13 @@ margin: auto;
 }
 .sidebar-blog {
 display: none;
+}
+#wp-social-login-connect-with 
+{
+float: left;
+line-height: 50px;
+margin-right: 10px;
+color: #34495e;
+
 }
 }

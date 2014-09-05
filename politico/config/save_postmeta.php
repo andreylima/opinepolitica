@@ -38,6 +38,7 @@ function save_projeto_postmeta( $post_id )
      
       if ($autor != "") {
         $projetos = get_post_meta($autor, 'projetos_debatidos', true);
+        $projetos = ($projetos == '') ? array() : $projetos;
         $indice = array_search($post_id, $projetos);
         unset($projetos[$indice]);
         // die($autor);

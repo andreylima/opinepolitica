@@ -20,7 +20,11 @@
         <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ) ?>">
         <link rel="shortcut icon" href="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/assets/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/assets/img/favicon.ico" type="image/x-icon">
-	
+	<link rel="image_src" href="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/assets/img/logo.png" />
+
+	<meta property="og:image" content="<?php echo esc_url( get_stylesheet_directory_uri()); ?>/assets/img/logo.png" />
+	<meta property="og:title" content="DebateGV" />
+	<meta property="og:description" content="Opine sobre os Projetos de Lei propostos em nossa cidade" />
     <?php wp_head(); ?>
 </head>
 
