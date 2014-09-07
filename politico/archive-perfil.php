@@ -27,7 +27,7 @@ $perfis = new perfisModel($post->ID);
   <section class="perfis">
 
 
-    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'prefeito',  'posts_per_page' => 1) ); ?>
+    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <?php 
       $perfis = new perfisModel($post->ID);

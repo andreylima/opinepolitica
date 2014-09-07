@@ -17,9 +17,9 @@ get_header();
 				
 			<?php
 while ( have_posts() ) : the_post(); ?>
-	<h2 class="title-post">
+	<h1 class="title-post">
 	<?php the_title(); ?>
-	</h2>
+	</h1>
 	<?php the_post_thumbnail( 'medium', array( 'class' => 'post-thumb' ) ); ?>
 	<div class="post-body">
 	<?php the_content(); ?>

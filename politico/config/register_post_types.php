@@ -24,11 +24,12 @@ function register_post_types()
                 'add_new'       => 'Adicionar Perfil',
                 'all_items'     => 'Todos os Perfis',
                 'edit_item'     => 'Editar Perfil',
+
             ),
             'public'      => true,
             'supports'    => array( 'title', 'editor', 'thumbnail', 'taxonomies'),
             'has_archive' => true,
-            'taxonomies'  => array( 'category')
+           'taxonomies'  => array( 'category')
         )
     );
 

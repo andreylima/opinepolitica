@@ -2061,6 +2061,13 @@ margin-right: 10px;
 color: white;
 
 }
+.cadastro-manual
+{
+	font-weight: bold;
+float: right;
+line-height: 32px;
+
+}
 }
 
 

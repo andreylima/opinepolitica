@@ -106,9 +106,9 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
   <div class="form-cadastro-top" >
 
   
-  <h1>CADASTRE-SE PARA INTERAGIR.</h1>
-  <h3>É rápido e fácil.</h3>
-<?php do_action( 'wordpress_social_login' ); ?> 
+  <h1>CADASTRE-SE COM APENAS DOIS CLIQUES.</h1>
+  <h4>Não teremos acesso a sua senha do Facebook.</h4>
+<?php do_action( 'wordpress_social_login' ); ?> <span class="cadastro-manual">Cadastro manual:</span>
   <form action="" method="post" id="cadastro_form" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
