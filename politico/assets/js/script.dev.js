@@ -748,7 +748,16 @@ function getCookie(name) {
     }
 }
 
+// IsotopjQuery(function ($) {
+// var $container = $('#container');
+// // init
+// $container.isotope({
+//   // options
+//   itemSelector: '.mini-projeto',
+//   layoutMode: 'fitRows'
+// });
 
+// });e inicialize
 
 
 

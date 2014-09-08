@@ -20,7 +20,7 @@ get_header();
     <h4>e mostre que estamos de olho!</h4>
   </div>
 <?php get_search_form(); ?>
-<div class="todos-projetos">
+<div class="todos-projetos" id="container">
 	
 <?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => -1) ); 
 
@@ -30,7 +30,7 @@ get_header();
  ?>
          
 
-<div class="panel panel-default mini-projeto">
+<div class="panel panel-default mini-projeto" >
                 <div class="panel-heading mini-projeto-header"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="panel-body">
                     <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
