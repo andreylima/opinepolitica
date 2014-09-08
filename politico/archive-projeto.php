@@ -20,7 +20,7 @@ get_header();
     <h4>e mostre que estamos de olho!</h4>
   </div>
 <?php get_search_form(); ?>
-<div class="todos-projetos">
+<div class="todos-projetos" id="container">
 	
 <?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => -1) ); 
 
