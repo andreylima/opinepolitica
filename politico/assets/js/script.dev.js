@@ -759,7 +759,13 @@ function getCookie(name) {
 
 // });e inicialize
 
+//Mansory
 
+var container = document.querySelector('#container');
+var msnry = new Masonry( container, {
+  // options
+  itemSelector: '.mini-projeto'
+});
 
 
 
