@@ -31,11 +31,6 @@ function enqueue_scripts()
 
      wp_enqueue_script( "script", get_stylesheet_directory_uri() . '/assets/js/script.min.js', array('jquery'),'1.0',true );
 
-<<<<<<< HEAD
-     wp_enqueue_script( "isotope.pkgd", get_stylesheet_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'),'1.0', true );
-=======
-
->>>>>>> origin/master
 
 }
 

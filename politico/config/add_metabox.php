@@ -127,8 +127,9 @@ function situacao_display_metabox($post, $box)
   $pol_situacao = get_post_meta( $post->ID, 'situacao', true );
   ?>
   
-  <input type="text" name="situacao" id="situacao" value="<?php echo $pol_situacao; ?>" />
-
+  <input type="radio" name="situacao" value="tramite" <?php echo ($pol_situacao == 'tramite') ? 'checked':''; ?> >tramite</br>
+  <input type="radio" name="situacao" value="vetado" <?php  echo ($pol_situacao == 'vetado') ? 'checked':''; ?>>vetado</br>
+  <input type="radio" name="situacao" value="aprovado" <?php echo ($pol_situacao == 'aprovado') ? "checked":''; ?>>aprovado</br>
   <?php
   
     ?>

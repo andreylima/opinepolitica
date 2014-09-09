@@ -33,8 +33,17 @@ get_header();
 <div class="panel panel-default mini-projeto" >
                 <div class="panel-heading mini-projeto-header"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="panel-body">
-                    <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-                    <a href="<?php echo the_permalink(); ?>"><div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
+                    <?php 
+                    $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
+                    $situacao = get_post_meta( $post->ID, 'situacao',true);
+
+                    ?>
+
+                    <a href="<?php echo the_permalink(); ?>">
+
+
+                    <div class="pic-projeto <?php echo $situacao; ?>" style="background-image: url('<?php echo $url; ?>');">
+                    
                     </div>  
                     </a>    
                     <div class="projeto-excerpt">

@@ -727,6 +727,7 @@ color: #70DAC4;
 
 
 
+
 @media only screen and (min-width : 480px) { 
 
 .votes , .voten
@@ -2068,6 +2069,29 @@ float: right;
 line-height: 32px;
 
 }
+.vetado:after
+{
+background-color: rgba(0, 0, 0, 0.5);
+content: "VETADO";
+height: 100%;
+line-height: 200px;
+display: block;
+font-size: 70px;
+text-align: center;
+color: white;
+}
+
+.aprovado:after
+{
+background-color: rgba(0, 0, 0, 0.5);
+content: "VIROU LEI!";
+height: 100%;
+line-height: 200px;
+display: block;
+font-size: 70px;
+text-align: center;
+color: white;
+}
 }
 
 
@@ -2212,6 +2236,7 @@ h1
 	background-position:center;
 	background-repeat: no-repeat;
 }
+
 .mini-projeto-index .pic-projeto
 {
 	display: none;
@@ -3329,5 +3354,28 @@ line-height: 50px;
 margin-right: 10px;
 color: #34495e;
 
+}
+.vetado:after
+{
+background-color: rgba(0, 0, 0, 0.5);
+content: "VETADO";
+height: 100%;
+line-height: 200px;
+display: block;
+font-size: 25px;
+text-align: center;
+color: white;
+}
+
+.aprovado:after
+{
+background-color: rgba(0, 0, 0, 0.5);
+content: "VIROU LEI!";
+height: 100%;
+line-height: 200px;
+display: block;
+font-size: 25px;
+text-align: center;
+color: white;
 }
 }

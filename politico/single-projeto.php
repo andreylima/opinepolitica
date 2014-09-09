@@ -86,8 +86,11 @@ get_header();
     <div class="panel panel-default debatidos">
   <div class="panel-heading title-projeto-single">SOBRE O PROJETO</div>
       <div class="panel-body">
-        <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-        <div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
+        <?php 
+        $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
+        $situacao = get_post_meta( $post->ID, 'situacao',true);
+        ?>
+        <div class="pic-projeto <?php echo $situacao; ?>" style="background-image: url('<?php echo $url; ?>');">
 
         </div> 
         <div class="project-content">
