@@ -112,13 +112,13 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
        
     $projetos = new projetosModel($post->ID);
     $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-
+    $situacao = get_post_meta( $post->ID, 'situacao',true);
     ?>
 
     <div class="panel panel-default mini-projeto">
                 <div class="panel-heading mini-projeto-header"><a href="<?php echo $permalink; ?>"><?php echo the_title(); ?></a></div>
                 <div class="panel-body">
-                    <a href="<?php echo the_permalink();; ?>"><div class="pic-projeto" style="background-image: url('<?php echo $url; ?>');">
+                    <a href="<?php echo the_permalink();; ?>"><div class="pic-projeto  <?php echo $situacao; ?>" style="background-image: url('<?php echo $url; ?>');">
                     </div> 
                     </a>     
                     <div class="projeto-excerpt">
@@ -182,9 +182,10 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
       <div class="login_container">
             
               <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-              <div class="control-group">
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+               <div class="control-group face-modal">
+                
+                  <?php do_action( 'wordpress_social_login' ); ?>
+               
               </div>
               <div class="control-group">
                 
@@ -213,10 +214,9 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
     
     <div class="form-vertical well">
          <div class="legend-registerfrm">Não possui cadastro?</div> 
-         <div class="face-button-modal">             
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-</div>
+ <div class="face-button-modal">             
+             <?php do_action( 'wordpress_social_login' ); ?>
+          </div>
           <div id="register-manual-inside">Registrar Manualmente</div>
 
 

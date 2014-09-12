@@ -133,9 +133,10 @@ $perfis = new perfisModel($post->ID);
       <div class="login_container">
             
               <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-              <div class="control-group">
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+               <div class="control-group face-modal">
+                
+                  <?php do_action( 'wordpress_social_login' ); ?>
+               
               </div>
               <div class="control-group">
                 
@@ -164,10 +165,9 @@ $perfis = new perfisModel($post->ID);
     
     <div class="form-vertical well">
          <div class="legend-registerfrm">Não possui cadastro?</div> 
-         <div class="face-button-modal">             
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-</div>
+   <div class="face-button-modal">             
+             <?php do_action( 'wordpress_social_login' ); ?>
+          </div>
           <div id="register-manual-inside">Registrar Manualmente</div>
 
 

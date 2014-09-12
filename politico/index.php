@@ -170,11 +170,11 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 	<?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => 5, 'orderby'=> 'modified') ); ?>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
   <?php 
-      $projeto = new projetosModel(get_the_ID());
+      $projeto = new projetosModel($post->ID);
       $autor_id = $projeto->getAutor_projeto();
       $positivou = $projeto->verifica_positivou();
       $negativou = $projeto->verifica_negativou();
-
+      $situacao = get_post_meta( $post->ID, 'situacao',true);
   ?>
     <li class="mini-projeto-index">
      <div class="panel panel-default">
@@ -184,7 +184,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
       <div class="panel-body">
         <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
         <a href="<?php the_permalink(); ?>">
-        <div class="pic-projeto" style="background-image: url('<?php echo $url ?>');">
+        <div class="pic-projeto <?php echo $situacao; ?>" style="background-image: url('<?php echo $url ?>');">
         </div>
         </a>
       <div class="projeto-excerpt">
@@ -390,9 +390,10 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
       <div class="login_container">
             
               <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-              <div class="control-group">
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+              <div class="control-group face-modal">
+                
+                  <?php do_action( 'wordpress_social_login' ); ?>
+               
               </div>
               <div class="control-group">
                 
@@ -422,9 +423,8 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
     <div class="form-vertical well">
          <div class="legend-registerfrm">Não possui cadastro?</div> 
          <div class="face-button-modal">             
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-</div>
+             <?php do_action( 'wordpress_social_login' ); ?>
+          </div>
           <div id="register-manual">Registrar Manualmente</div>
 
 

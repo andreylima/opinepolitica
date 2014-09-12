@@ -34,6 +34,14 @@ $perfis = new perfisModel($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
 
+       $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
+    if (!empty($projetos_debatidos)) {
+           $projetos_debatidos = count(array_filter($projetos_debatidos));
+       }
+    else
+    {
+        $projetos_debatidos = "0";
+    }
        ?>
       <div class="prefeito perfil">
       <div class="thumb-wrap">
@@ -69,6 +77,7 @@ $perfis = new perfisModel($post->ID);
       </div>
       </div>
       <h4 class="name-perfil"><?php the_title() ?></h4>
+      <div class="projetos-cadastrados">Projetos cadastrados: <?php echo $projetos_debatidos; ?></div>
         <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
 
     </div>
@@ -84,6 +93,15 @@ $perfis = new perfisModel($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
 
+
+      $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
+    if (!empty($projetos_debatidos)) {
+           $projetos_debatidos = count(array_filter($projetos_debatidos));
+       }
+    else
+    {
+        $projetos_debatidos = "0";
+    }
   ?>
     <div class="vereador perfil">
     <div class="thumb-wrap">
@@ -120,6 +138,7 @@ $perfis = new perfisModel($post->ID);
       </div>
       </div>
       <a href="<?php the_permalink(); ?>"><h4 class="name-perfil"><?php the_title() ?></h4> </a>
+      <div class="projetos-cadastrados">Projetos cadastrados: <?php echo $projetos_debatidos; ?></div>
       <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
     </div>
 
@@ -140,9 +159,10 @@ $perfis = new perfisModel($post->ID);
       <div class="login_container">
             
               <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-              <div class="control-group">
-                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+                <div class="control-group face-modal">
+                
+                  <?php do_action( 'wordpress_social_login' ); ?>
+               
               </div>
               <div class="control-group">
                 
@@ -171,10 +191,9 @@ $perfis = new perfisModel($post->ID);
     
     <div class="form-vertical well">
          <div class="legend-registerfrm">Não possui cadastro?</div> 
-         <div class="face-button-modal">             
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-</div>
+           <div class="face-button-modal">             
+             <?php do_action( 'wordpress_social_login' ); ?>
+          </div>
           <div id="register-manual-inside">Registrar Manualmente</div>
 
 
