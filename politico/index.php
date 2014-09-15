@@ -112,15 +112,10 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
   <form action="" method="post" id="cadastro_form" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
-  <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input email_validate" name="email">
-  <input type="text" placeholder="Digite seu CPF." id="CPF" class="cadastro-input cpf" name="cpf">
+  <input type="text" placeholder="Qual é o seu e-mail?" id="email" class="cadastro-input email_validate email-input" name="email">
   <span class="sexo">Sexo:</span>
   <input type="radio" name="sex" value="male" required>M
   <input type="radio" name="sex" value="female">F
-  <span class="legenda-cpf">*É importante para termos certeza que você é uma pessoa real.</span>
-  <select class="cidade_select" id="cidade_select" name="cidade_select">
-  <option value="" disabled selected>Selecione a sua Cidade</option>
-  <option value="Governador Valadares">Governador Valadares</option>
   </select>
   <input type="password" placeholder="Escolha uma senha." id="senha" class="cadastro-input" name="senha">
   <input type="checkbox" name="termos" value="aceito" class="check_aceito"> Li e estou de acordo com os <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Termos' ) ) ); ?>" TARGET="_blank">Termos de uso do site.</a>
@@ -357,21 +352,16 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 <div id="cadastro-wrapper-footer">
   
 <div class="form-cadastro" >
-  <h1>CADASTRE-SE PARA INTERAGIR.</h1>
-  <h3>É rápido e fácil.</h3>
-  <?php do_action( 'wordpress_social_login' ); ?> 
+  <h1>CADASTRE-SE COM APENAS DOIS CLIQUES.</h1>
+  <h4>Não teremos acesso a sua senha do Facebook.</h4>
+<?php do_action( 'wordpress_social_login' ); ?> <span class="cadastro-manual">Cadastro manual:</span>
   <form action="" method="post" id="cadastro_form_mobile" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome_mobile" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome_mobile" class="cadastro-input" name="sobrenome">
-  <input type="text" placeholder="Qual é o seu e-mail?" id="email_mobile" class="cadastro-input email_validate" name="email">
-  <input type="text" placeholder="Digite seu CPF." id="CPF_mobile" class="cadastro-input cpf" name="cpf">
-  <span class="sexo">Sexo:</span>
+  <input type="text" placeholder="Qual é o seu e-mail?" id="email_mobile" class="cadastro-input email_validate email-input" name="email">
+    <span class="sexo">Sexo:</span>
   <input type="radio" name="sex" value="male" required>M
   <input type="radio" name="sex" value="female">F
-  <span class="legenda-cpf">*É importante para termos certeza que você é uma pessoa real.</span>
-  <select class="cidade_select" id="cidade_select_mobile" name="cidade_select">
-  <option value="" disabled selected>Selecione a sua Cidade</option>
-  <option value="Governador Valadares">Governador Valadares</option>
   </select>
   <input type="password" placeholder="Escolha uma senha." id="senha_mobile" class="cadastro-input" name="senha">
   <input type="checkbox" name="termos" value="aceito" class="check_aceito"> Li e estou de acordo com os <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Termos' ) ) ); ?>" TARGET="_blank">Termos de uso do site.</a>

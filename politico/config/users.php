@@ -20,9 +20,7 @@ add_action('wp_ajax_nopriv_cadastro_faceuser', 'cadastro_faceuser');
 		$nome = sanitize_text_field($_POST['nome']);
 		$sobrenome = sanitize_text_field($_POST['sobrenome']);
 		$email = sanitize_email($_POST['email']);
-		$cpf = intval($_POST['cpf']);
 		$sex = sanitize_text_field($_POST['sex']);
-		$cidade = sanitize_text_field($_POST['cidade_select']);
 		$senha = sanitize_text_field($_POST['senha']);
 
 		
@@ -46,8 +44,6 @@ add_action('wp_ajax_nopriv_cadastro_faceuser', 'cadastro_faceuser');
 			die();
 		}
 
-		update_user_meta( $user_id, "cpf" , $cpf );
-		update_user_meta( $user_id, "cidade" , $cidade );
 		update_user_meta( $user_id, "sexo" , $sex );
 
 		$creds = array();
