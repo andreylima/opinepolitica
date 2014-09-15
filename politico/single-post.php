@@ -26,7 +26,7 @@ while ( have_posts() ) : the_post(); ?>
 	</div>
 	<div class="form-comment">
     <?php comment_form( array( 
-    'title_reply' => 'Tem algo a nos dizer??</br><h5>Gostaria de deixar uma sugestão para o DebateGV? Adoraríamos receber. Escreva sua mensagem e comente, será um prazer poder saber sua opnião.</h5>', 
+    'title_reply' => 'O que você pensa a respeito??</br><h5>Gostaria de deixar um recado para o DebateGV? Adoraríamos receber. Escreva sua mensagem e comente, será um prazer poder saber sua opnião.</h5>', 
     'label_submit' => 'Comentar' , 
      'comment_notes_after' => '', 
 
