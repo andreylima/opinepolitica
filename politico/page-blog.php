@@ -10,8 +10,10 @@ get_header();
 $the_query = new WP_Query( array('post_type' => 'post') );
 if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-	<div <?php post_class(); ?> id="post-<?php the_ID(); ?>" class="post">
+	<div <?php post_class('post-mini'); ?> id="post-<?php the_ID(); ?>" >
+	<div class="thumb-wrapper-blog">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thumbnail', array( 'class' => 'post-thumb' ) ); ?></a>
+	</div>
 		<div class="body-post">
 		<h1 class="title-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 		<div class="resumo">
