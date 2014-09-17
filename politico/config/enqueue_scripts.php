@@ -13,9 +13,10 @@ add_action( 'init', 'ajax_curtir' );
 function enqueue_scripts()
 {
 
-
    
     wp_enqueue_script( "masonry", get_stylesheet_directory_uri() . '/assets/js/masonry.pkgd.min.js', array('jquery'),'1.0',true );
+
+    wp_register_script( 'masonry.config', get_template_directory_uri() . '/assets/js/masonry.config.js', array('jquery'),'1.0',true);
   
   	wp_enqueue_script( "jquery-finger", get_stylesheet_directory_uri() . '/assets/js/jquery-finger-v0.1.0.js', array('jquery'),'1.0', true );
 
@@ -23,12 +24,23 @@ function enqueue_scripts()
 
     wp_enqueue_script( "modernizr-custom", get_stylesheet_directory_uri() . '/assets/js/modernizr-custom-v2.7.1.js', array('jquery'),'1.0', true );
 
-     wp_enqueue_script( "jquery_validate", get_stylesheet_directory_uri() . '/assets/js/jquery-validate.js', array('jquery'),'1.0', true );
+     wp_enqueue_script( "jquery_validate", get_stylesheet_directory_uri() . '/assets/js/jquery.validate.js', array('jquery'),'1.0', true );
 
      wp_enqueue_script( "script", get_stylesheet_directory_uri() . '/assets/js/script.min.js', array('jquery'),'1.0',true );
 
 
+     if( is_archive() )
+    {
+            
+       wp_enqueue_script('masonry.config');
+                
+    }
+
+
+    
 }
+
+
 
 
 

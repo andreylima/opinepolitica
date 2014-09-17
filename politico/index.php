@@ -116,11 +116,9 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
   <span class="sexo">Sexo:</span>
   <input type="radio" name="sex" value="male" required>M
   <input type="radio" name="sex" value="female">F
-  </select>
   <input type="password" placeholder="Escolha uma senha." id="senha" class="cadastro-input" name="senha">
   <input type="checkbox" name="termos" value="aceito" class="check_aceito"> Li e estou de acordo com os <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Termos' ) ) ); ?>" TARGET="_blank">Termos de uso do site.</a>
   <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
-</div>
 </form>
 </div>
 <?php } ?>
@@ -362,11 +360,9 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
     <span class="sexo">Sexo:</span>
   <input type="radio" name="sex" value="male" required>M
   <input type="radio" name="sex" value="female">F
-  </select>
   <input type="password" placeholder="Escolha uma senha." id="senha_mobile" class="cadastro-input" name="senha">
   <input type="checkbox" name="termos" value="aceito" class="check_aceito"> Li e estou de acordo com os <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Termos' ) ) ); ?>" TARGET="_blank">Termos de uso do site.</a>
   <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
-</div>
 </form>
 </div>
 <?php } ?>
