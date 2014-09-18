@@ -118,31 +118,7 @@ get_header();
 
     
     <div class="form-comment">
-    <?php comment_form( array( 
-    'title_reply' => 'Qual é a sua opnião?', 
-    'label_submit' => 'Comentar' , 
-    'comment_notes_after' => '', 
-    'comment_field' => '<p class="comment-form-comment"><h4 class="atencao">Atenção, todos os comentários serão revisados pelo administrador antes de serem aprovados. 
-    Portanto, seu comentário poderá demorar alguns minutos para aparecer. </h4><h5>Dica: Para ter o comentário aprovado rapidamente, não ofenda pessoas, políticos nem partidos, e não faça campanha política no corpo dos comentários. Esses não serão aprovados. O objetivo aqui é debater os projetos propostos pelos políticos.</h5><label for="comment">Comente:</label></br><textarea id="comment" name="comment"  rows="8" aria-required="true"></textarea></p>' ) ); ?>
-    <span>Total de comentários: <?php echo get_comments_number( $post_id ); ?> </span>  
-    <div class="comments">
-        <ol class='commentlist'>
-        <?php
-          //Gather comments for a specific page/post 
-          $comments = get_comments(array(
-            'post_id' =>  $post->ID,
-            'status' => 'approve' //Change this to the type of comments to be displayed
-          ));
-
-          //Display the list of comments
-          wp_list_comments(array(
-            'per_page' => 10, //Allow comment pagination
-            'reverse_top_level' => false //Show the latest comments at the top of the list
-          ), $comments);
-        ?>
-      </ol>
-
-      </div>
+    <?php comments_template(); ?>
     </div>
     </div>
 <!--   Janela Modal para login ou redirecionamento de registro. -->
