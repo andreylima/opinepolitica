@@ -702,7 +702,9 @@ function getCookie(name) {
     }
 }
 
+//face-connect
 
+jQuery(".face-link").attr("href",jQuery(".wsl_connect_with_provider").attr("href"));
 
 
 

@@ -1,12 +1,35 @@
+	jQuery.validator.addMethod("verificaCPF", function(value, element) {
+    var Soma;
+    var Resto;
+    Soma = 0;   
+    //strCPF  = RetiraCaracteresInvalidos(strCPF,11);
+    if (value == "00000000000")
+	return false;
+    for (i=1; i<=9; i++)
+	Soma = Soma + parseInt(value.substring(i-1, i)) * (11 - i); 
+    Resto = (Soma * 10) % 11;
+    if ((Resto == 10) || (Resto == 11)) 
+	Resto = 0;
+    if (Resto != parseInt(value.substring(9, 10)) )
+	return false;
+	Soma = 0;
+    for (i = 1; i <= 10; i++)
+       Soma = Soma + parseInt(value.substring(i-1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+    if ((Resto == 10) || (Resto == 11)) 
+	Resto = 0;
+    if (Resto != parseInt(value.substring(10, 11) ) )
+        return false;
+    return true;
+}, "Informe um CPF válido."); 
 
-
-
-// Ajax_forms
 
 
     jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
 }, "Somente letras são permitidas"); 
+
+
 
 jQuery("#log-form").validate({
 
@@ -139,7 +162,8 @@ jQuery("#cadastro_form").validate({
         rules: {
             nome: {
                 required: true,
-                  },
+                lettersonly: true
+            },
             sobrenome:{
                 required: true,
                 lettersonly: true
@@ -148,11 +172,17 @@ jQuery("#cadastro_form").validate({
                 required: true,
                 email: true
             },
+            cpf:{
+            	required:true,
+            	verificaCPF: true
+            },
+            cidade_select: "required",
             senha: "required",
             termos: "required"
                        
         },
-               // Specify the validation error messages
+        
+        // Specify the validation error messages
         messages: {
             nome:{
                 required: "Nome Obrigatório",
@@ -166,28 +196,30 @@ jQuery("#cadastro_form").validate({
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
             },
+            cpf:{
+            	required:"Favor inserir seu CPF",
+            	verificaCPF: "CPF inválido"
+            },
             senha: "Favor escolher uma senha",
             termos: "Obrigatório"
             
         },
         errorPlacement: function(error, element) {
-        
-            
-        element.css("background-color","rgb(241, 255, 168)");
-        element.css("border","solid 2px red");
-        
+       	
+        	
+		element.css("background-color","rgb(241, 255, 168)");
+  		element.css("border","solid 2px red");
+  		
         
         
     },
         
         submitHandler: function(form) {
 
-            cadastrar_usuario("full");
-           
+        	cadastrar_usuario("full");
             
         }
     });
-
 
 
 
@@ -208,6 +240,11 @@ jQuery("#cadastro_form_mobile").validate({
                 required: true,
                 email: true
             },
+            cpf:{
+            	required:true,
+            	verificaCPF: true
+            },
+            cidade_select: "required",
             senha: "required"
                        
         },
@@ -226,11 +263,15 @@ jQuery("#cadastro_form_mobile").validate({
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
             },
-          senha: "Favor escolher uma senha"
+            cpf:{
+            	required:"Favor inserir seu CPF",
+            	verificaCPF: "CPF inválido"
+            },
+            senha: "Favor escolher uma senha"
             
         },
         errorPlacement: function(error, element) {
-        
+       	
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
         
@@ -238,7 +279,7 @@ jQuery("#cadastro_form_mobile").validate({
     },
         
         submitHandler: function(form) {
-            
+        	
             cadastrar_usuario("mobile");
         }
     });
@@ -432,298 +473,3 @@ var user_data = jQuery('#contato_form').serialize();
 
 
 }
-
-
-// Custom_changes
-
-window.onload=function(){
-
-jQuery(".open_menu").click(function(){
-
-    if (jQuery("#menu-body").hasClass("show-menu")) {
-        jQuery("#menu-body").removeClass("show-menu");
-        jQuery("#destaque").removeClass("destaque-fit");
-        jQuery("#archive-wrapper").removeClass("archive-wrapper-fit");
-        jQuery("#page-wrapper").removeClass("page-wrapper-fit");
-        jQuery("#single-wrapper").removeClass("single-wrapper-fit");
-
-    }
-    else
-    {
-        jQuery("#menu-body").addClass("show-menu");
-        jQuery("#destaque").addClass("destaque-fit");
-        jQuery("#archive-wrapper").addClass("archive-wrapper-fit");
-        jQuery("#page-wrapper").addClass("page-wrapper-fit");
-        jQuery("#single-wrapper").addClass("single-wrapper-fit");
-    };
-
-});
-
-jQuery(".log-out").click(function(){
-
-     FB.getLoginStatus(function(response) {
-        if (response && response.status === 'connected') {
-            FB.logout(function(response) {
-                document.location.reload();
-            });
-        }
-    });
-
-
-}); 
-
-        
-jQuery('.projetos-slider').flicker();
-jQuery('.vereadores-slider').flicker();
-
-
-
-if (jQuery(window).width() <= 480) {
-
-    jQuery(".user-logged").click(function(){
-
-        if (jQuery(".user-menu").hasClass("display-block")) {
-            jQuery(".user-menu").removeClass("display-block");
-        }
-        else
-        {
-            jQuery(".user-menu").addClass("display-block");
-        }
-        
-
-
-
-    });
-
-};
-
-
-
-jQuery("#menu-body ul li a").append("<i class='fa fa-arrow-right arrow-margin'></i>");
-
-
-
-
-
-jQuery(".check_aceito").click( function(){
-
-var id = '#modal-termos';
-    
-                var maskHeight = jQuery(document).height();
-                var maskWidth = jQuery(window).width();
-
-                jQuery('#mask').css({'width':maskWidth,'height':maskHeight});
-
-                jQuery('#mask').fadeIn();   
-                jQuery('#mask').fadeTo('fast',0.5); 
-
-                    //Get the window height and width
-                var winH = jQuery(window).height();
-                var winW = jQuery(window).width();
-                      
-                jQuery(id).css('top',  "15%");
-                jQuery(id).css('left', "5%");
-            
-                jQuery(id).fadeIn(); 
-
-});
-
-
-jQuery('#modal-termos .close').click(function (e) {
-        e.preventDefault();
-        
-        jQuery('#mask').hide();
-        jQuery('#modal-termos').hide();
-    }); 
-
-jQuery('#mask').click(function () {
-        jQuery(this).hide();
-        jQuery('#modal-termos').hide();
-    }); 
-
-}
-
-// Fixed
-
-
-  jQuery("document").ready(function($){
-    
-    var nav = $('header');
-    
-    var menu =$('#menu-bar');
-    
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 136) {
-            nav.addClass("header-fixed");
-            
-            
-
-        } else {
-            nav.removeClass("header-fixed");
-            
-            
-        }
-    });
- 
-});
-
-
-// Login_modal
-
-
-
-  jQuery(function ($) {
-
-$('.window .close').click(function (e) {
-        e.preventDefault();
-        
-        $('#mask').hide();
-        $('.window').hide();
-    });     
-    
-    $('#mask').click(function () {
-        $(this).hide();
-        $('.window').hide();
-    });     
-
-        $('#register-manual').click(function() {
-
-
-            width = $(window).width(); 
-            
-            if (width <= 480) {
-                window.location = "#cadastro-wrapper-footer";
-                $('#mask').hide();
-                $('.window').hide();
-                return false;
-            }
-            window.location = "#destaque";
-                $('#mask').hide();
-                $('.window').hide();
-            
-        }); 
-
-
-
-        $('#register-manual-inside').click(function() {
-
-                    
-                window.location = "http://www.debategv.com.br";
-                $('#mask').hide();
-                $('.window').hide();
-                
-            
-            
-        });     
-
-$('.aba-aviso').click(function (e) {
-
-if (!$("#mask").is(":visible")) 
-{
-  var maskHeight = jQuery(document).height();
-        var maskWidth = jQuery(window).width();
-
-        jQuery('#mask').css({'width':maskWidth,'height':maskHeight});
-
-        jQuery('#mask').fadeIn(); 
-        jQuery('#mask').fadeTo('fast',0.5); 
-
-}
-else
-{
-  $("#mask").hide();
-}
-
-
-if (jQuery("#mask").hasClass("dark-mask")) {
-  jQuery("#mask").removeClass("dark-mask");
-
-}
-
-
-
-if (jQuery(".aviso-projeto").hasClass("show-aviso")) {
-  jQuery(".aviso-projeto").removeClass("show-aviso");
-
-}
-else
-{
-  jQuery(".aviso-projeto").addClass("show-aviso");
-
-
-}       
-
-
-});  
-
-$('#mask').click(function () {
-  $(this).hide();
-  if (jQuery(".aviso-projeto").hasClass("show-aviso")) {
-    jQuery(".aviso-projeto").removeClass("show-aviso");
-    }
-    if (jQuery("#mask").hasClass("dark-mask")) {
-  jQuery("#mask").removeClass("dark-mask");
-
-}
-
-});
-
-$(function() {
-    if (!getCookie('modalOpened')) {
-        $(".aviso-projeto").addClass("show-aviso");
-        $("#mask").addClass("dark-mask");
-        // Set value to true to prevent the modal from opening again 
-        setCookie('modalOpened', true);
-    }
-});
-
-
-
-
-
-
-
-});  
-
-
-
-function setCookie(name, value, daysToLive) {
-    var expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + daysToLive);
-    document.cookie = name + '=' + escape(value) + ((daysToLive == null) ? '' : '; expires=' + expirationDate.toUTCString());
-}
-
-function getCookie(name) {
-    var cookies=document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        if (cookies[i].substr(0, cookies[i].indexOf('=')).replace(/^\s+|\s+$/g, '') == name) {
-            return unescape(cookies[i].substr(cookies[i].indexOf('=') + 1));
-        }
-    }
-}
-
-//face-connect
-
-jQuery(".face-link").attr("href",jQuery(".wsl_connect_with_provider").attr("href"));
-
-jQuery(".entrar-button").click(function(){
-
-if (jQuery(".login-connect-header").hasClass("login-connect-header-clicked")) {
-
-	jQuery(".login-connect-header").removeClass("login-connect-header-clicked");
-	jQuery(".login-buttons").removeClass("show-menu");
-}
-else
-{
-	jQuery(".login-connect-header").addClass("login-connect-header-clicked");
-	jQuery(".login-buttons").addClass("show-menu");
-}
-	
-});
-
-
-
-
-    
-
-
