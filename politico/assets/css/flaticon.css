@@ -16,7 +16,30 @@ font-style: normal;
 margin-left: 20px;
 }.flaticon-arrow195:before {
 	content: "\e000";
+	font-size: 46px;
+color: #3b5999;
+display: block;
+float: left;
+font-weight: 100 !important;
+margin-left: 0;
+}
+.flaticon-create1:before {
+	content: "\e001";
+		font-size: 30px;
+color: white;
+display: block;
+float: left;
+font-weight: 100 !important;
+margin-left: 14px;
+margin-right: 7px;
+}
+.flaticon-left176:before {
+	content: "\e002";
+		margin-left: 0;
+display: block;
+width: 20%;
+margin-top: 10px;	
 }
 .flaticon-user60:before {
-	content: "\e001";
+	content: "\e003";
 }

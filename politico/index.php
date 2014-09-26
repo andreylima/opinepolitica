@@ -108,7 +108,17 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
   
   <h1>CADASTRE-SE COM APENAS DOIS CLIQUES.</h1>
   <h4>Não teremos acesso a sua senha do Facebook.</h4>
-<?php do_action( 'wordpress_social_login' ); ?> <span class="cadastro-manual">Cadastro manual:</span>
+<div class="face-login-header">
+              <?php do_action( 'wordpress_social_login' ); ?>
+              <a class="face-link" href="">
+                <span class="login-social-header">Cadastrar com Facebook</span>
+              </a>
+            </div>
+<div class="register-with-email">
+              <span class="flaticon-create1">Cadastrar com e-mail</span>
+              
+            </div>
+
   <form action="" method="post" id="cadastro_form" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome" class="cadastro-input" name="sobrenome">
