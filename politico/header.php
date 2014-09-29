@@ -94,7 +94,7 @@
 				<div class="login-connect-header">
 
 					<div class="Entrar-wrapper">
-						<?php echo get_avatar("",40); ?>
+						<span class="flaticon-user60"></span>
 						<span class="entrar-button">ENTRAR</span> 
 					</div>
 					<div class="login-buttons">

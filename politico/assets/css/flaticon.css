@@ -42,4 +42,10 @@ margin-top: 10px;
 }
 .flaticon-user60:before {
 	content: "\e003";
+font-size: 40px;
+float: left;
+display: block;
+color: black;
+margin-right: 5px;
+line-height: 40px;
 }
