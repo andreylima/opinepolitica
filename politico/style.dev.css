@@ -16,6 +16,8 @@ Version: 1.0
 
 @import url('assets/css/font-awesome.css'); 
 
+@import url('assets/css/flaticon.css'); 
+
 @font-face {
   font-family: "Lato-Bol";
   src: url("assets/fonts/Lato-Bol.ttf");
@@ -57,6 +59,7 @@ header
 }
 a
 {
+
 	color: black;
 }
 a:hover
@@ -138,15 +141,14 @@ a:hover
 	padding-left: 5px;
 	height: 34px;
 	line-height: 34px;
-	width: 110px;
-	width: 6.875rem;
+	width: 100%;
+	margin-top: 10px;
 
 }
 .login-connect-header
 {
-	width: 44%;
-	float: right;
-	margin-top: 15px;
+float: right;
+margin-right: 30px;
 }
 .icon-input
 {
@@ -676,13 +678,7 @@ color: #70DAC4;
 {
 	width: 80%;
 }
-.window #wp-social-login-connect-with
-{
-	float: left;
-line-height: 32px;
-margin-right: 10px;
-color: black;
-}
+
 .face-modal
 {
 	width: 60%;
@@ -709,6 +705,42 @@ color: black;
 	float: left;
 	width: 79%;
 }
+.show-menu
+{
+	display: block !important;
+}
+.hide
+{
+	display: none !important;
+}
+#wp-social-login-connect-with
+{
+	display: none;
+}
+.face-login-header
+{
+width: 80%;
+background: #3b5999;
+color: white;
+height: 40px;
+line-height: 40px;
+padding-left: 5px;
+font-family: arial;
+font-weight: 900;
+border-radius: 5px;
+margin: auto;
+}
+#wp-social-login-connect-options 
+{
+	padding:0 !important;
+	float: left;
+	margin-right: 10px;
+}
+
+
+
+
+
 
 
 
@@ -964,18 +996,12 @@ color: black;
 	line-height: 1.75rem;
 	 color: #ffffff;
 	  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	  background-color: #2f96b4;
-	  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
-	  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
-	  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
-	  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
-	  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
-	  background-repeat: repeat-x;
-	  border-color: #2f96b4 #2f96b4 #1f6377;
-	  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-	  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
-	  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-
+	 background-color: #19B5FE;
+	 width: 45%;
+	 margin: auto;
+	 display: block;
+	 margin-top: 10px;
+	 border: 0;
 }
 .percent-both 
 {
@@ -1911,7 +1937,7 @@ width: 80px !important;
 .form-cadastro-top a
 {
 	color: white;
-	text-decoration: underline;
+
 }
 .termos-size
 {
@@ -1955,6 +1981,7 @@ width: 80px !important;
 #cadastro_form
 {
 	clear: both;
+	display: none;
 }
 .wrap-destaque #logo-home
 {
@@ -2057,31 +2084,13 @@ float: left;
 margin-top: 22px;
 margin-right: 20px;
 }
-#wp-social-login-connect-options 
-{
-	padding:0 !important;
-	float: left;
-	margin-right: 10px;
-}
+
 .menu
 {
 	padding: 0;
 }
-#wp-social-login-connect-with 
-{
-	float: left;
-line-height: 32px;
-margin-right: 10px;
-color: white;
 
-}
-.cadastro-manual
-{
-	font-weight: bold;
-float: right;
-line-height: 32px;
 
-}
 .vetado:after
 {
 background-color: rgba(0, 0, 0, 0.5);
@@ -2111,6 +2120,96 @@ color: white;
 }
 
 
+.login-social-header
+{
+	display: block;
+}
+.login-social-header:before
+{
+border-left: 1px solid #4c6bad;
+border-right: 1px solid #2c4781;
+content: '';
+margin-right: 4px;
+display: block;
+float: left;
+margin-top: 5px;
+height: 30px;
+}
+#wp-social-login-connect-options
+{
+	margin-right: 5px;	
+}
+.face-link
+{
+	color: white;
+}
+.face-link:hover
+{
+	color: white;
+}
+.entrar-button {
+height: 40px;
+line-height: 40px;
+text-align: center;
+display: block;
+background-color: #19B5FE;
+padding-left: 10px;
+color: white;
+padding-right: 10px;
+font-family: "Lato-Bol";
+float: left;
+cursor: pointer;
+}
+.Entrar-wrapper
+{
+	width: 60%;
+	margin: auto;
+	margin-top: 15px;
+	height: 40px;
+}
+.login-connect-header {
+float: right;
+margin-right: 30px;
+width: 20%;
+margin-top: 3px;
+
+}
+.login-connect-header-clicked {
+float: right;
+margin-right: 30px;
+background-color: white;
+width: 20%;
+margin-top: 3px;
+border-radius: 5px;
+height: auto;
+padding-bottom: 15px;
+}
+.login-buttons
+{
+	display: none;
+	clear: both;
+	margin-top: 15px;
+}
+.login-with-email, .register-with-email
+{
+	height: 40px;
+	line-height: 40px;
+	font-family: arial;
+	font-weight: 900;
+	margin: auto;
+	margin-top: 15px;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+	width: 80%;
+	cursor: pointer;
+
+}
+#log-form
+{
+	width: 80%;
+	margin: auto;
+	display: none;
+}
 }
 
 
@@ -2266,10 +2365,7 @@ h1
 	font-family: "Lato-Bol";
 
 }
-.show-menu
-{
-	display: block !important;
-}
+
 .votes , .voten
 {
 	border: solid 2px #34495e;
@@ -2376,9 +2472,9 @@ h1
 {
 	padding-top: 15px;
 	padding-top: 0.9375rem;
+	padding-bottom: 15px;
 	background-color: #ecf0f1;
-	height: 200px;
-	height: 12.5rem;
+
 }
 .login-title
 {
@@ -2410,7 +2506,7 @@ h1
 {
 	width: 40%;
 	margin: auto;
-	margin-left: 4%;
+	display: block;
 	background-color: #19B5FE;
 	border-radius: 5px;	
 	height: 28px;
@@ -2434,6 +2530,7 @@ h1
 {
 	width: 100%;
 	margin: auto;
+	margin-top: 15px;
 }
 
 .center-buttons
@@ -3353,14 +3450,7 @@ margin: auto;
 .sidebar-blog {
 display: none;
 }
-#wp-social-login-connect-with 
-{
-float: left;
-line-height: 50px;
-margin-right: 10px;
-color: white;
 
-}
 .vetado:after
 {
 background-color: rgba(0, 0, 0, 0.5);
@@ -3384,5 +3474,25 @@ font-size: 25px;
 text-align: center;
 color: white;
 }
-.
+.entrar-manual
+{
+	display: block;
+	width: 80%;
+	margin: auto;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 10px;
+}
+#cadastro-wrapper-footer .face-login-header
+{
+	width: 90%;	
+}
+.cadastro-manual
+{
+font-weight: bold;
+line-height: 32px;
+margin-top: 10px;
+display: block;
+
+}
 }

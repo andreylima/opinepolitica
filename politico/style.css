@@ -678,13 +678,7 @@ color: #70DAC4;
 {
 	width: 80%;
 }
-.window #wp-social-login-connect-with
-{
-	float: left;
-line-height: 32px;
-margin-right: 10px;
-color: black;
-}
+
 .face-modal
 {
 	width: 60%;
@@ -719,6 +713,36 @@ color: black;
 {
 	display: none !important;
 }
+#wp-social-login-connect-with
+{
+	display: none;
+}
+.face-login-header
+{
+width: 80%;
+background: #3b5999;
+color: white;
+height: 40px;
+line-height: 40px;
+padding-left: 5px;
+font-family: arial;
+font-weight: 900;
+border-radius: 5px;
+margin: auto;
+}
+#wp-social-login-connect-options 
+{
+	padding:0 !important;
+	float: left;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
 
 
 
@@ -2060,31 +2084,13 @@ float: left;
 margin-top: 22px;
 margin-right: 20px;
 }
-#wp-social-login-connect-options 
-{
-	padding:0 !important;
-	float: left;
-	margin-right: 10px;
-}
+
 .menu
 {
 	padding: 0;
 }
-#wp-social-login-connect-with 
-{
-	float: left;
-line-height: 32px;
-margin-right: 10px;
-color: white;
 
-}
-.cadastro-manual
-{
-	font-weight: bold;
-float: right;
-line-height: 32px;
 
-}
 .vetado:after
 {
 background-color: rgba(0, 0, 0, 0.5);
@@ -2112,23 +2118,8 @@ color: white;
 {
 	text-decoration: underline;
 }
-.face-login-header #wp-social-login-connect-with
-{
-	display: none;
-}
-.face-login-header
-{
-width: 80%;
-background: #3b5999;
-color: white;
-height: 40px;
-line-height: 40px;
-padding-left: 5px;
-font-family: arial;
-font-weight: 900;
-border-radius: 5px;
-margin: auto;
-}
+
+
 .login-social-header
 {
 	display: block;
@@ -2171,7 +2162,7 @@ cursor: pointer;
 }
 .Entrar-wrapper
 {
-	width: 55%;
+	width: 60%;
 	margin: auto;
 	margin-top: 15px;
 	height: 40px;
@@ -2481,9 +2472,9 @@ h1
 {
 	padding-top: 15px;
 	padding-top: 0.9375rem;
+	padding-bottom: 15px;
 	background-color: #ecf0f1;
-	height: 200px;
-	height: 12.5rem;
+
 }
 .login-title
 {
@@ -2515,7 +2506,7 @@ h1
 {
 	width: 40%;
 	margin: auto;
-	margin-left: 4%;
+	display: block;
 	background-color: #19B5FE;
 	border-radius: 5px;	
 	height: 28px;
@@ -2539,6 +2530,7 @@ h1
 {
 	width: 100%;
 	margin: auto;
+	margin-top: 15px;
 }
 
 .center-buttons
@@ -3458,14 +3450,7 @@ margin: auto;
 .sidebar-blog {
 display: none;
 }
-#wp-social-login-connect-with 
-{
-float: left;
-line-height: 50px;
-margin-right: 10px;
-color: white;
 
-}
 .vetado:after
 {
 background-color: rgba(0, 0, 0, 0.5);
@@ -3489,5 +3474,25 @@ font-size: 25px;
 text-align: center;
 color: white;
 }
+.entrar-manual
+{
+	display: block;
+	width: 80%;
+	margin: auto;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 10px;
+}
+#cadastro-wrapper-footer .face-login-header
+{
+	width: 90%;	
+}
+.cadastro-manual
+{
+font-weight: bold;
+line-height: 32px;
+margin-top: 10px;
+display: block;
 
+}
 }

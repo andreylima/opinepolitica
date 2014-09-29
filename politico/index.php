@@ -110,9 +110,9 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
   <h4>Não teremos acesso a sua senha do Facebook.</h4>
 <div class="face-login-header">
               <?php do_action( 'wordpress_social_login' ); ?>
-              <a class="face-link" href="">
+              
                 <span class="login-social-header">Cadastrar com Facebook</span>
-              </a>
+              
             </div>
 <div class="register-with-email">
               <span class="flaticon-create1">Cadastrar com e-mail</span>
@@ -140,6 +140,13 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 <div class="login-wrap">
 
   <div class="login-title"> FAÇA LOGIN</div>
+  <div class="face-login-header">
+              <?php do_action( 'wordpress_social_login' ); ?>
+              
+                <span class="login-social-header">Entrar com Facebook</span>
+              
+            </div>
+            <span class="entrar-manual"> Entrar com e-mail:</span>
 	<div class="login-field">
 		
 		<div class="login-connect">
@@ -150,9 +157,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
       		</div>
       		<div class="center-buttons">
           
-          <div class="face-button-mobile">
-      		<?php do_action( 'wordpress_social_login' ); ?> 
-        </div>
+      
       		<input type="submit" name="login" value="ENTRAR" id="btnentrar-log">
       		</div>
           </form>
@@ -362,7 +367,12 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 <div class="form-cadastro" >
   <h1>CADASTRE-SE COM APENAS DOIS CLIQUES.</h1>
   <h4>Não teremos acesso a sua senha do Facebook.</h4>
-<?php do_action( 'wordpress_social_login' ); ?> <span class="cadastro-manual">Cadastro manual:</span>
+<div class="face-login-header">
+              <?php do_action( 'wordpress_social_login' ); ?>
+              
+                <span class="login-social-header">Cadastrar com Facebook</span>
+              
+            </div><span class="cadastro-manual">Cadastro manual:</span>
   <form action="" method="post" id="cadastro_form_mobile" novalidate="novalidate">
   <input type="text" placeholder="Nome" id="nome_mobile" class="cadastro-input" name="nome">
   <input type="text" placeholder="Sobrenome" id="sobrenome_mobile" class="cadastro-input" name="sobrenome">

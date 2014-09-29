@@ -101,9 +101,9 @@
 
 						<div class="face-login-header">
 							<?php do_action( 'wordpress_social_login' ); ?>
-							<a class="face-link" href="">
+							
 								<span class="login-social-header">Entrar com Facebook</span>
-							</a>
+							
 						</div>
 
 						<div class="login-with-email">
