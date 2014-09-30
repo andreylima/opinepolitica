@@ -47,7 +47,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 </h5>
 </div>
 
-<div class="fb-like-box fb-likebox-index" data-href="https://www.facebook.com/debategv" data-width="150" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
 
  <?php if (!is_user_logged_in()) { ?>
 <div class="wrap-destaque wide-destaque ">
@@ -359,6 +359,10 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 
 
 </div> <!-- vereadores wrapper -->
+<div class="social-wrapper">
+  <span class="social-title">A UNIÃO FAZ A FORÇA!</span>
+<div class="fb-like-box" data-href="https://www.facebook.com/debategv" data-width="1000" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+</div>
 <?php if (!is_user_logged_in()) {
 
       ?>
@@ -470,5 +474,8 @@ $page = get_posts(
   </div>
 </div>
 </div>
+
+
+
 <?php get_footer() ?>
 

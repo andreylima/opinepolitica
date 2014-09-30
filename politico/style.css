@@ -1967,12 +1967,7 @@ width: 80px !important;
 {
 	top: -220px;
 }
-.fb-likebox-index
-{
-	position: absolute !important;
-	left: 0;
-	width: 15%;
-}
+
 .termos-header-modal
 {
 	font-size: 18px;
@@ -2209,6 +2204,31 @@ padding-bottom: 15px;
 	width: 80%;
 	margin: auto;
 	display: none;
+}
+.social-wrapper
+{
+	height: 70%;
+	background-color: white;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+.fb-like-box
+{
+
+	margin: auto;
+	margin-top: 2%;
+	width: 1000px;
+	display: block !important;
+}
+.social-title
+{
+width: 45%;
+margin: auto;
+font-family: "Lato-Bol";
+font-size: 35px;
+text-align: center;
+color: #34495e;
+display: block;
 }
 }
 
@@ -3494,5 +3514,9 @@ line-height: 32px;
 margin-top: 10px;
 display: block;
 
+}
+.social-wrapper
+{
+	display: none;
 }
 }
