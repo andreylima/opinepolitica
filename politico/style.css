@@ -39,7 +39,7 @@ body
 	width: 100%;
 	height: 100%;
 	font-family: 'Lato-Reg' !important;
-	background-color: #34495e;
+	
 }
 input[type="submit"]
 {
@@ -170,7 +170,7 @@ margin-right: 30px;
 {
 	padding-top: 70px;
 	height: 100%;
-	background: #1c1c1e url("assets/img/valadares.jpg") 50% 0 no-repeat fixed;
+	
 	
 }
 .fundo
@@ -218,9 +218,10 @@ margin-right: 30px;
 	border-radius: 5px;
 	color: white;
 	padding: 15px;
-	float: right;
 	margin-right: 2%;
 	margin-top: 20px;
+	position: absolute;
+	right: 0%;
 
 }
 
@@ -262,9 +263,8 @@ margin-right: 30px;
 {
 	height: 100%;
 	padding-top: 5%;
-	background-color: #34495e;
 	color:#70DAC4;
-	
+	background: rgba(0,0,0,0.6);
 }
 
 .projetos-title
@@ -284,7 +284,7 @@ margin-right: 30px;
 }
 .prefeito-wrapper
 {
-	background-color: white;
+	background: rgba(255,255,255,0.8);
 	height: 100%;
 	padding-top: 5%;
 }
@@ -295,7 +295,10 @@ margin-right: 30px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
-
+.flickerplate
+{
+	background-color: transparent;
+}
 .flickerplate .arrow-navigation 
 {
 	top: 0 !important;
@@ -360,7 +363,7 @@ margin-right: 30px;
 }
 .vereadores-slider
 {
-	background-color: #34495e;
+	background-color: transparent;
 	
 }
 .vereador
@@ -796,13 +799,13 @@ margin: auto;
 }
 .projetos-slider
 {
-	background-color: #34495e;
-	height: 100%;
+	
+	height: auto !important;
 	overflow: hidden;
 }
 .projetos-slider .dot-navigation
 {
-	bottom: 20px;
+	bottom: -14px;
 }
 .vereadores-slider .dot-navigation
 {
@@ -812,6 +815,7 @@ margin: auto;
 {
 	height: 100%;
 	padding-top: 5%;
+	background: rgba(0,0,0,0.6);
 }
 .vereadores-slider
 {
@@ -1062,7 +1066,7 @@ margin: auto;
 	display: none;
 	height: 98px;
 	width: 99px;
-	left: 15%;
+	left: 25%;
 	margin-left: -50px;
 	background: url(assets/img/down_arrow_blue.png) repeat-x;
 	background-position: bottom;
@@ -1090,7 +1094,7 @@ a:hover .placa-projetos {
 	display: none;
 	height: 98px;
 	width: 99px;
-	left: 50%;
+	right: 25%;
 	margin-left: -50px;
 	background: url(assets/img/down_arrow_red.png) repeat-x;
 	background-position: bottom;
@@ -1157,8 +1161,8 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	display: none;
 	height: 142px;
 	width: 230px;
-	background: rgba(25,181,254,0.7);
-	left: 9%;
+	background: rgb(25,181,254);
+	left: 20%;
 	margin-left: -50px;
 	-moz-border-radius: 100px;
 	-khtml-border-radius: 100px;
@@ -1179,8 +1183,8 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	display: none;
 	height: 142px;
 	width: 230px;
-	background: rgba(237,72,54,0.7);
-	left: 44%;
+	background: rgb(237,72,54);
+	right: 20%;
 	margin-left: -50px;
 	-moz-border-radius: 100px;
 	-khtml-border-radius: 100px;
@@ -2166,7 +2170,7 @@ cursor: pointer;
 .login-connect-header {
 float: right;
 margin-right: 30px;
-width: 20%;
+width: 25%;
 margin-top: 3px;
 
 }
@@ -2174,7 +2178,7 @@ margin-top: 3px;
 float: right;
 margin-right: 30px;
 background-color: white;
-width: 20%;
+width: 25%;
 margin-top: 3px;
 border-radius: 5px;
 height: auto;
@@ -2212,6 +2216,7 @@ padding-bottom: 15px;
 	background-color: white;
 	padding-top: 5%;
 	padding-bottom: 5%;
+	background: rgba(255,255,255,0.8);
 }
 .fb-like-box
 {
@@ -2230,6 +2235,14 @@ font-size: 35px;
 text-align: center;
 color: #34495e;
 display: block;
+}
+body
+{
+	background: #1c1c1e url("assets/img/valadares.jpg") 50% 0 no-repeat fixed;
+}
+.color-avatar
+{
+	color: #3b5999;
 }
 }
 
