@@ -24,7 +24,7 @@ $perfis = new perfisModel($post->ID);
     <h3>de Governador Valadares</h3>
   </div>
 <?php get_search_form(); ?>
-  <section class="perfis">
+  <div class="perfis">
 
 
     <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); ?>
@@ -82,7 +82,7 @@ $perfis = new perfisModel($post->ID);
 
     </div>
 
-  <?php endwhile; ?>
+  <?php endwhile; wp_reset_postdata();?>
 
 
 
@@ -142,9 +142,9 @@ $perfis = new perfisModel($post->ID);
       <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
     </div>
 
-  <?php endwhile; ?>
+  <?php endwhile; wp_reset_postdata();?>
 
-
+</div>
 
 
 

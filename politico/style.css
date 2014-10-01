@@ -68,11 +68,7 @@ a:hover
 	cursor: pointer;
 	color: black;
 }
-/*a:hover
-{
-	text-decoration: none;
-	
-}*/
+
 #logo
 {
 	height: 60px;
@@ -1584,7 +1580,7 @@ left: 10px !important;
 }
 .archive .vereador
 {
-	background-color: #34495e;
+	background-color: transparent;
 	color: #ecf0f1 ;
 	box-shadow: none;
 	float: left;
@@ -2236,9 +2232,14 @@ text-align: center;
 color: #34495e;
 display: block;
 }
-body
+.home
 {
 	background: #1c1c1e url("assets/img/valadares.jpg") 50% 0 no-repeat fixed;
+}
+.post-type-archive-perfil
+{
+	background: #1c1c1e url("assets/img/prefeitura-fundo.jpg") 50% 0 no-repeat fixed;
+	background-size: cover;
 }
 .color-avatar
 {
@@ -3186,7 +3187,7 @@ border: solid 2px #ecf0f1 !important;
 }
 .archive .vereador
 {
-	background-color: #34495e;
+	background-color: none;
 	color: #ecf0f1;
 	box-shadow: none;
 	margin-top: 15px;
