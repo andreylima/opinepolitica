@@ -4,6 +4,7 @@ get_header();
 
 ?>
 <div id="page-wrapper">
+
 <div class="post-wrapper">
 
 <?php 
@@ -44,8 +45,8 @@ wp_reset_postdata();
 
 ?>
 </div>
+<div class="sidebar-wrapper"><?php get_sidebar(); ?></div>
 
-<?php get_sidebar(); ?>
 
 
 

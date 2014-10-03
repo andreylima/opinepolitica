@@ -1596,7 +1596,7 @@ left: 10px !important;
 #archive-wrapper
 {
 	padding-top: 100px;
-	background: rgba(0,0,0,0.8);#archive-wrapper
+	background: rgba(0,0,0,0.7);
 	height: auto;
 	overflow: auto;
 
@@ -1879,7 +1879,7 @@ width: 80px !important;
 	padding-right: 5%;
 	background-color: #34495e;
 	padding-bottom: 10%;
-	
+	overflow: auto;
 
 }
 .project-content
@@ -2218,7 +2218,7 @@ padding-bottom: 15px;
 	padding-bottom: 5%;
 	background: rgba(255,255,255,0.8);
 }
-.fb-like-box
+.social-wrapper .fb-like-box
 {
 
 	margin: auto;
@@ -2243,6 +2243,11 @@ display: block;
 .post-type-archive-perfil
 {
 	background: #1c1c1e url("assets/img/prefeitura-fundo.jpg") 50% 0 no-repeat fixed;
+	background-size: cover;
+}
+.post-type-archive-projeto
+{
+	background: #1c1c1e url("assets/img/Valadares-ana-paula-viana-.jpg") 50% 0 no-repeat fixed;
 	background-size: cover;
 }
 .color-avatar
@@ -3394,6 +3399,7 @@ width: 50%;
 	padding-right: 5%;
 	padding-bottom: 10%;
 	background-color: #34495e;
+	overflow: auto;
 
 }
 .page-wrapper-fit
