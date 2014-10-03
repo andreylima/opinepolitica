@@ -1596,6 +1596,10 @@ left: 10px !important;
 #archive-wrapper
 {
 	padding-top: 100px;
+	background: rgba(0,0,0,0.8);#archive-wrapper
+	height: auto;
+	overflow: auto;
+
 }
 .archive
 {

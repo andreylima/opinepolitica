@@ -26,15 +26,15 @@ $perfis = new perfisModel($post->ID);
 <?php get_search_form(); ?>
   <div class="perfis">
 
+    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); 
 
-    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); ?>
-    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <?php 
+   while ( $loop->have_posts() ) : $loop->the_post(); 
+
       $perfis = new perfisModel($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
+      $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
 
-       $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
     if (!empty($projetos_debatidos)) {
            $projetos_debatidos = count(array_filter($projetos_debatidos));
        }
@@ -47,31 +47,33 @@ $perfis = new perfisModel($post->ID);
       <div class="thumb-wrap">
         <div class="thumb">  
           <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
-          <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-            <span class="glyphicon glyphicon-thumbs-up icon-vote">
+          <a href="">
+            <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
+              <span class="glyphicon glyphicon-thumbs-up icon-vote">
+                
+              </span>
+              <span class="percent-both percent-curtiu">
+              <?php 
               
-            </span>
-            <span class="percent-both percent-curtiu">
-            <?php 
-            
-            echo $perfis->getCurtiu_percent(); 
+              echo $perfis->getCurtiu_percent(); 
 
-            ?>
-            </span>
-          </div>
+              ?>
+              </span>
+            </div>
         </a>
         <a href="">
-        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-        <span class="glyphicon glyphicon-thumbs-down icon-vote">
-          
-        </span>
-       <span class="percent-both percent-naocurtiu">
-              <?php 
+          <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
+          <span class="glyphicon glyphicon-thumbs-down icon-vote">
             
-            echo $perfis->getNaocurtiu_percent(); 
+          </span>
+           <span class="percent-both percent-naocurtiu">
+                  <?php 
+                
+                echo $perfis->getNaocurtiu_percent(); 
 
-            ?>
+                ?>
             </span>
+
         </div>
         </a>
       </div>
@@ -81,20 +83,18 @@ $perfis = new perfisModel($post->ID);
         <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
 
     </div>
+  
+  <?php endwhile; wp_reset_postdata();
 
-  <?php endwhile; wp_reset_postdata();?>
+  $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'Vereador',  'posts_per_page' => 100, 'orderby'=> 'title', 'order' => 'asc') );
 
+  while ( $loop->have_posts() ) : $loop->the_post(); 
 
-
-  <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'Vereador',  'posts_per_page' => 100, 'orderby'=> 'title', 'order' => 'asc') ); ?>
-  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-  <?php 
       $perfis = new perfisModel($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
-
-
       $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
+
     if (!empty($projetos_debatidos)) {
            $projetos_debatidos = count(array_filter($projetos_debatidos));
        }
@@ -103,7 +103,10 @@ $perfis = new perfisModel($post->ID);
         $projetos_debatidos = "0";
     }
   ?>
-    <div class="vereador perfil">
+  
+  <div class="vereador perfil">
+
+
     <div class="thumb-wrap">
       <div class="thumb">
         <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
@@ -137,10 +140,25 @@ $perfis = new perfisModel($post->ID);
         </a>
       </div>
       </div>
-      <a href="<?php the_permalink(); ?>"><h4 class="name-perfil"><?php the_title() ?></h4> </a>
-      <div class="projetos-cadastrados">Projetos cadastrados: <?php echo $projetos_debatidos; ?></div>
-      <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
-    </div>
+
+      <a href="<?php the_permalink(); ?>">
+        <h4 class="name-perfil">
+        <?php the_title() ?>
+        </h4> 
+      </a>
+
+      <div class="projetos-cadastrados">
+        Projetos cadastrados: <?php echo $projetos_debatidos; ?>
+      </div>
+
+      <a href="<?php the_permalink(); ?>">
+        <div class="link-perfil">
+          PERFIL
+        </div>
+      </a>
+
+  </div>
+  
 
   <?php endwhile; wp_reset_postdata();?>
 
