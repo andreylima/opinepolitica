@@ -1,6 +1,6 @@
 <?php
 
 
-require_once 'models/perfisModel.class.php';
+require_once 'controller/perfisController.class.php';
 
 ?>

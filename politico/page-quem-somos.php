@@ -4,7 +4,7 @@ get_header();
 
 global $post;
 
-$perfis = new perfisModel($post->ID);
+$perfis = new perfisController($post->ID);
 
 
 ?>
@@ -56,7 +56,7 @@ $perfis = new perfisModel($post->ID);
 <?php $loop = new WP_Query( array( 'post_type' => 'equipe' , 'posts_per_page' => 100, 'orderby'=> 'title', 'order' => 'asc') ); ?>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
   <?php 
-      $perfis = new perfisModel($post->ID);
+      $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
 
@@ -80,7 +80,7 @@ $perfis = new perfisModel($post->ID);
         </span>
         <span class="percent-both percent-curtiu">
               <?php 
-            $perfis = new perfisModel($post->ID);
+            $perfis = new perfisController($post->ID);
             echo $perfis->getCurtiu_percent(); 
 
             ?>
@@ -94,7 +94,7 @@ $perfis = new perfisModel($post->ID);
         </span>
         <span class="percent-both percent-naocurtiu">
                <?php 
-            $perfis = new perfisModel($post->ID);
+            $perfis = new perfisController($post->ID);
             echo $perfis->getNaocurtiu_percent(); 
 
             ?>

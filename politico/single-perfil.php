@@ -2,7 +2,7 @@
 
 get_header(); 
 
-$perfis = new perfisModel(get_the_ID());
+$perfis = new perfisController(get_the_ID());
 $curtiu = $perfis->verifica_curtida();
 $naocurtiu = $perfis->verifica_naocurtida();
 $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names"));

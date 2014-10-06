@@ -4,7 +4,7 @@ get_header();
 
 global $post;
 
-$perfis = new perfisModel($post->ID);
+$perfis = new perfisController($post->ID);
 
 ?>
 
@@ -30,7 +30,7 @@ $perfis = new perfisModel($post->ID);
 
    while ( $loop->have_posts() ) : $loop->the_post(); 
 
-      $perfis = new perfisModel($post->ID);
+      $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
       $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
@@ -90,7 +90,7 @@ $perfis = new perfisModel($post->ID);
 
   while ( $loop->have_posts() ) : $loop->the_post(); 
 
-      $perfis = new perfisModel($post->ID);
+      $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
       $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
@@ -117,7 +117,7 @@ $perfis = new perfisModel($post->ID);
         </span>
         <span class="percent-both percent-curtiu">
               <?php 
-            $perfis = new perfisModel($post->ID);
+            $perfis = new perfisController($post->ID);
             echo $perfis->getCurtiu_percent(); 
 
             ?>
@@ -131,7 +131,7 @@ $perfis = new perfisModel($post->ID);
         </span>
         <span class="percent-both percent-naocurtiu">
                <?php 
-            $perfis = new perfisModel($post->ID);
+            $perfis = new perfisController($post->ID);
             echo $perfis->getNaocurtiu_percent(); 
 
             ?>

@@ -543,6 +543,8 @@ jQuery('#mask').click(function () {
 
 }
 
+
+
 // Fixed
 
 
@@ -644,12 +646,15 @@ if (jQuery("#mask").hasClass("dark-mask")) {
 
 if (jQuery(".aviso-projeto").hasClass("show-aviso")) {
   jQuery(".aviso-projeto").removeClass("show-aviso");
+   jQuery(".aba-aviso").removeClass("flaticon-down53");
+    jQuery(".aba-aviso").addClass("flaticon-up22");
 
 }
 else
 {
   jQuery(".aviso-projeto").addClass("show-aviso");
-
+  jQuery(".aba-aviso").removeClass("flaticon-up22");
+    jQuery(".aba-aviso").addClass("flaticon-down53");
 
 }       
 

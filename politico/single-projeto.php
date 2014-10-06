@@ -4,7 +4,7 @@ $post_id = $wp_query->post->ID;
 
 
 $projetos = new projetosModel($post_id);
-$perfis = new perfisModel($projetos->getAutor_projeto());
+$perfis = new perfisController($projetos->getAutor_projeto());
 $autor_id = $projetos->getAutor_projeto();
 $curtiu = $perfis->verifica_curtida();
 $naocurtiu = $perfis->verifica_naocurtida();

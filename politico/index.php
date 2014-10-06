@@ -26,7 +26,7 @@ get_header();
 <div id="destaque">
 
 <div class="aviso-projeto">
-  <span class="aba-aviso">IMPORTANTE</span>
+  <span class="aba-aviso flaticon-up22">IMPORTANTE</span>
   <h3>Um pouco da sua atenção por favor!</h3>
 <h5> 
   O DebateGV é um projeto em fase experimental. 
@@ -246,7 +246,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
     <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <?php 
-      $perfis = new perfisModel($post->ID);
+      $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
 
@@ -303,7 +303,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
             <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'Vereador',  'posts_per_page' => 100, 'orderby'=> 'title', 'order' => 'asc') ); ?>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
   <?php 
-      $perfis = new perfisModel($post->ID);
+      $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
 
@@ -322,7 +322,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
         </span>
         <span class="percent-both percent-curtiu">
               <?php 
-            $perfis = new perfisModel($post->ID);
+            $perfis = new perfisController($post->ID);
             echo $perfis->getCurtiu_percent(); 
 
             ?>
@@ -336,7 +336,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
         </span>
         <span class="percent-both percent-naocurtiu">
                <?php 
-            $perfis = new perfisModel($post->ID);
+            $perfis = new perfisController($post->ID);
             echo $perfis->getNaocurtiu_percent(); 
 
             ?>

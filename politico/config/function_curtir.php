@@ -20,12 +20,12 @@ function verify_login()
 			switch ($acao) {
 
 				case "curtir":
-					$perfis = new perfisModel($id_votado);
+					$perfis = new perfisController($id_votado);
 					$perfis->curtir();
 					break;
 
 				case "naocurtir":
-					$perfis = new perfisModel($id_votado);
+					$perfis = new perfisController($id_votado);
 					$perfis->naocurtir();
 					break;
 				case "positivar_projeto":
