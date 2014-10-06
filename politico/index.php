@@ -389,6 +389,7 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
   <input type="submit" name="cadastrar" value="Criar conta" id="button-cadastrar">
 </form>
 </div>
+</div>
 <?php } ?>
 
 <!-- modal cadastro -->
@@ -400,11 +401,12 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
       <div class="login_container">
             
               <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-              <div class="control-group face-modal">
-                
-                  <?php do_action( 'wordpress_social_login' ); ?>
-               
-              </div>
+             <div class="face-login-header">
+              <?php do_action( 'wordpress_social_login' ); ?>
+              
+                <span class="login-social-header">Cadastrar com Facebook</span>
+              
+            </div>
               <div class="control-group">
                 
                 <div class="controls">
@@ -432,9 +434,12 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
     
     <div class="form-vertical well">
          <div class="legend-registerfrm">Não possui cadastro?</div> 
-         <div class="face-button-modal">             
-             <?php do_action( 'wordpress_social_login' ); ?>
-          </div>
+          <div class="face-login-header">
+              <?php do_action( 'wordpress_social_login' ); ?>
+              
+                <span class="login-social-header">Cadastrar com Facebook</span>
+              
+            </div>
           <div id="register-manual">Registrar Manualmente</div>
 
 

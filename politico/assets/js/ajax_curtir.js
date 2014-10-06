@@ -120,6 +120,8 @@ function declaraApoio(events,acao,id_votado){
 			
 				jQuery(id).fadeIn(); 
 
+
+			
 			}
 
 

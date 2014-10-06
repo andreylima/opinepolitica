@@ -169,7 +169,7 @@ $perfis = new perfisModel($post->ID);
 </div>
 
 <!--   Janela Modal para login ou redirecionamento de registro. -->
-    <div id="dialog" class="window">
+<div id="dialog" class="window">
     <a href="#" class="close">Fechar [X]</a>
   
     <div class="title-modal">Para opinar é necessário estar cadastrado.</div>
@@ -177,7 +177,7 @@ $perfis = new perfisModel($post->ID);
       <div class="login_container">
             
               <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-                <div class="control-group face-modal">
+              <div class="control-group face-modal">
                 
                   <?php do_action( 'wordpress_social_login' ); ?>
                

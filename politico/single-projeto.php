@@ -14,7 +14,7 @@ $negativou = $projetos->verifica_negativou();
 get_header(); 
 
 ?>
-<div id="single-wrapper">
+<div id="single-projeto-wrapper">
   <div class="info-perfil-wrapper coluna-lateral">
   <div class="overflow-autor">
     <div class="box-autor">  

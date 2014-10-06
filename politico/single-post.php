@@ -7,7 +7,7 @@ get_header();
 
 
 
-<div id="page-wrapper">
+<div id="single-post-wrapper">
 <div class="post-wrapper">
 
 
@@ -38,7 +38,6 @@ while ( have_posts() ) : the_post(); ?>
 	</div>
 
 
-</div>
 
 <?php get_sidebar(); ?>
 

@@ -10,7 +10,7 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
 ?>
 
 
-<div id="single-wrapper">
+<div id="single-perfil-wrapper">
   <div class="info-perfil-wrapper">
     <div class="box-autor coluna-lateral">  
 

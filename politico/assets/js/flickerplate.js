@@ -26,7 +26,7 @@
 			arrows							: true,
 			arrows_constraint				: false,
 			auto_flick						: true,
-			auto_flick_delay				: 10,
+			auto_flick_delay				: 25,
 			block_text						: true,
 			dot_navigation					: true,
 			dot_alignment					: 'center',
