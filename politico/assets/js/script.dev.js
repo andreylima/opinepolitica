@@ -673,14 +673,14 @@ $('#mask').click(function () {
 
 });
 
-$(function() {
-    if (!getCookie('modalOpened')) {
-        $(".aviso-projeto").addClass("show-aviso");
-        $("#mask").addClass("dark-mask");
-        // Set value to true to prevent the modal from opening again 
-        setCookie('modalOpened', true);
-    }
-});
+// $(function() {
+//     if (!getCookie('modalOpened')) {
+//         $(".aviso-projeto").addClass("show-aviso");
+//         $("#mask").addClass("dark-mask");
+//         // Set value to true to prevent the modal from opening again 
+//         setCookie('modalOpened', true);
+//     }
+// });
 
 
 

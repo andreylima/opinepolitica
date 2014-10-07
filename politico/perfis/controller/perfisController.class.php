@@ -249,8 +249,22 @@ class perfisController {
 
 	}
 			
-			
-				
+	
+
+	public function get_projetos_debatidos()
+	{
+		$projetos_debatidos = get_post_meta($this->perfil_id, 'projetos_debatidos', true ); 
+
+    if (!empty($projetos_debatidos)) {
+           $projetos_debatidos = count(array_filter($projetos_debatidos));
+       }
+    else
+    {
+        $projetos_debatidos = "0";
+    }
+
+    return $projetos_debatidos;
+	}		
 
 	
 

@@ -243,51 +243,20 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 <div class="prefeito-wrapper" id="politicos">
 	
 <a href="#vereadores-slider-wrapper" id="vereador-scroll-block"><span class="vereador-scroll">VEREADORES</span><span id="scroll-down-vereadores"></span></a>
-    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); ?>
-    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) );
+    $thumbnail_size = 'custom'; //300 x 300
+
+    while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <?php 
       $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
+      $projetos_debatidos = $perfis->get_projetos_debatidos();
 
        ?>
       <div class="prefeito perfil">
         <div class="cargo"><?php $terms = wp_get_post_terms( $post->ID, "Cargos", array("fields" => "names") ); echo $terms[0];  ?></div>
-        <div class="thumb-wrap">
-        <div class="thumb">  
-          <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('custom', array('class' => 'img-circle perfil-size')); ?></a> 
-          <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-            <span class="glyphicon glyphicon-thumbs-up icon-vote">
-              
-            </span>
-            <span class="percent-both percent-curtiu">
-            <?php 
-            
-            echo $perfis->getCurtiu_percent(); 
-
-            ?>
-            </span>
-          </div>
-        
-        
-        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-        <span class="glyphicon glyphicon-thumbs-down icon-vote">
-          
-        </span>
-       <span class="percent-both percent-naocurtiu">
-              <?php 
-            
-            echo $perfis->getNaocurtiu_percent(); 
-
-            ?>
-            </span>
-        </div>
-        
-      </div>
-      </div>  <!-- thumb wrap -->
-
-      <h1 class="name-perfil"><?php the_title() ?></h1>
-        <a href="<?php the_permalink(); ?>"><div class="link-perfil">VER PERFIL</div></a>
+         <?php include(locate_template('perfis/view/perfil-wrap.php')); ?> <!-- carrega o template parte do perfil do político -->
 
     </div>
 
@@ -306,48 +275,14 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
       $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
-
+      $projetos_debatidos = $perfis->get_projetos_debatidos();
   ?>
     <li>
 
     <div class="vereador perfil  <?php echo $post->ID ?>">
       <div class="cargo"><?php $terms = wp_get_post_terms( $post->ID, "Cargos", array("fields" => "names") ); echo $terms[0];  ?></div>
-      <div class="thumb-wrap">
-      <div class="thumb">
-        <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('custom', array('class' => 'img-circle perfil-size')); ?></a> 
-        <a href="">
-        <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-        <span class="glyphicon glyphicon-thumbs-up icon-vote">
-          
-        </span>
-        <span class="percent-both percent-curtiu">
-              <?php 
-            $perfis = new perfisController($post->ID);
-            echo $perfis->getCurtiu_percent(); 
 
-            ?>
-            </span>
-        </div>
-        </a>
-        <a href=""> 
-        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-        <span class="glyphicon glyphicon-thumbs-down icon-vote">
-          
-        </span>
-        <span class="percent-both percent-naocurtiu">
-               <?php 
-            $perfis = new perfisController($post->ID);
-            echo $perfis->getNaocurtiu_percent(); 
-
-            ?>
-            </span>
-        </div>
-        </a>
-      </div>
-      </div> <!-- thumb-wrap -->
-      <h1 class="name-perfil"><?php the_title() ?></h1>
-        <a href="<?php the_permalink(); ?>" ><div class="link-perfil">VER PERFIL</div></a>
-    </div>
+       <?php include(locate_template('perfis/view/perfil-wrap.php')); ?> <!-- carrega o template parte do perfil do político -->
  </li>
   <?php endwhile; ?>
 

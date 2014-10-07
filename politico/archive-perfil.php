@@ -30,70 +30,30 @@ $perfis = new perfisController($post->ID);
 
    while ( $loop->have_posts() ) : $loop->the_post(); 
 
+
       $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
-      $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
-
-    if (!empty($projetos_debatidos)) {
-           $projetos_debatidos = count(array_filter($projetos_debatidos));
-       }
-    else
-    {
-        $projetos_debatidos = "0";
-    }
+      $projetos_debatidos = $perfis->get_projetos_debatidos();
+      
        ?>
       <div class="prefeito perfil">
-      <div class="thumb-wrap">
-        <div class="thumb">  
-          <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
-          <a href="">
-            <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-              <span class="glyphicon glyphicon-thumbs-up icon-vote">
-                
-              </span>
-              <span class="percent-both percent-curtiu">
-              <?php 
-              
-              echo $perfis->getCurtiu_percent(); 
-
-              ?>
-              </span>
-            </div>
-        </a>
-        <a href="">
-          <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-          <span class="glyphicon glyphicon-thumbs-down icon-vote">
-            
-          </span>
-           <span class="percent-both percent-naocurtiu">
-                  <?php 
-                
-                echo $perfis->getNaocurtiu_percent(); 
-
-                ?>
-            </span>
-
-        </div>
-        </a>
-      </div>
-      </div>
-      <h4 class="name-perfil"><?php the_title() ?></h4>
-      <div class="projetos-cadastrados">Projetos cadastrados: <?php echo $projetos_debatidos; ?></div>
-        <a href="<?php the_permalink(); ?>"><div class="link-perfil"> PERFIL</div></a>
+      
+      <?php include(locate_template('perfis/view/perfil-wrap.php')); ?> <!-- carrega o template parte do perfil do político -->
 
     </div>
   
   <?php endwhile; wp_reset_postdata();
 
   $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'Vereador',  'posts_per_page' => 100, 'orderby'=> 'title', 'order' => 'asc') );
-
+  $thumbnail_size = 'thumbnail'; //150 x 150
   while ( $loop->have_posts() ) : $loop->the_post(); 
 
-      $perfis = new perfisController($post->ID);
+      
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
       $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
+
 
     if (!empty($projetos_debatidos)) {
            $projetos_debatidos = count(array_filter($projetos_debatidos));
@@ -106,56 +66,7 @@ $perfis = new perfisController($post->ID);
   
   <div class="vereador perfil">
 
-
-    <div class="thumb-wrap">
-      <div class="thumb">
-        <a href="<?php echo get_permalink($post->ID); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?></a> 
-        <a href="">
-        <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-        <span class="glyphicon glyphicon-thumbs-up icon-vote">
-          
-        </span>
-        <span class="percent-both percent-curtiu">
-              <?php 
-            $perfis = new perfisController($post->ID);
-            echo $perfis->getCurtiu_percent(); 
-
-            ?>
-            </span>
-        </div>
-        </a>
-        <a href=""> 
-        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
-        <span class="glyphicon glyphicon-thumbs-down icon-vote">
-          
-        </span>
-        <span class="percent-both percent-naocurtiu">
-               <?php 
-            $perfis = new perfisController($post->ID);
-            echo $perfis->getNaocurtiu_percent(); 
-
-            ?>
-            </span>
-        </div>
-        </a>
-      </div>
-      </div>
-
-      <a href="<?php the_permalink(); ?>">
-        <h4 class="name-perfil">
-        <?php the_title() ?>
-        </h4> 
-      </a>
-
-      <div class="projetos-cadastrados">
-        Projetos cadastrados: <?php echo $projetos_debatidos; ?>
-      </div>
-
-      <a href="<?php the_permalink(); ?>">
-        <div class="link-perfil">
-          PERFIL
-        </div>
-      </a>
+<?php include(locate_template('perfis/view/perfil-wrap.php')); ?> <!-- carrega o template parte do perfil do político -->
 
   </div>
   
