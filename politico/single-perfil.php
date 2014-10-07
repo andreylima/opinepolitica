@@ -6,7 +6,9 @@ $perfis = new perfisController(get_the_ID());
 $curtiu = $perfis->verifica_curtida();
 $naocurtiu = $perfis->verifica_naocurtida();
 $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names"));
-
+$thumbnail_size = 'thumbnail'; //150 x 150
+$projetos_debatidos = $perfis->get_projetos_debatidos();
+$total_votos = $perfis->get_total_votos();
 ?>
 
 
@@ -14,55 +16,19 @@ $partidos = wp_get_post_terms( get_the_ID(), 'Partidos',array("fields" => "names
   <div class="info-perfil-wrapper">
     <div class="box-autor coluna-lateral">  
 
-        <?php  echo get_the_post_thumbnail( get_the_ID(), array('class' =>'null perfil-size-single img-circle')); ?>
-        <a href=""><div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo get_the_ID() ?>">
-            <span class="glyphicon glyphicon-thumbs-up icon-vote">
+<?php include(locate_template('perfis/view/perfil-wrap.php')); ?> <!-- carrega o template parte do perfil do político -->
 
-
-            </span>
-            <span class="percent-both percent-curtiu">
-                <?php echo $perfis->getCurtiu_percent(); ?>
-            </span>
-        </div>
-    </a>
-    <a href="">
-        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo get_the_ID() ?>">
-            <span class="glyphicon glyphicon-thumbs-down icon-vote">
-
-            </span>
-            <span class="percent-both percent-naocurtiu">
-                <?php echo $perfis->getNaocurtiu_percent(); ?>
-            </span>
-        </div>
-    </a>
 </div>
 <div class="info-perfil">
-<div id="titulo" class="titulo-single-mobile"><?php the_title(); ?></div>
+
 <div class="partido">Partido: 
      <?php 
      echo $partidos[0];
      ?>
  </div>
      <span class="mandato">Mandato: <?php echo $perfis->getMandato(); ?></span> 
-
-    <?php 
-
-    echo "<span class='total_votos'>Total de avaliações: <span class='n_votos'>".$perfis->get_total_votos()."</span></span>";
-
-
-    $projetos_debatidos = get_post_meta( get_the_ID(), 'projetos_debatidos', true ); 
-    if (!empty($projetos_debatidos)) {
-           $projetos_debatidos = count(array_filter($projetos_debatidos));
-       }
-    else
-    {
-        $projetos_debatidos = "0";
-    }
-
-
-    echo "<span class='total_debatidos'>Projetos Cadastrados: ".$projetos_debatidos."</span>";
-
-    ?>
+    <span class='total_votos'>Total de avaliações: <span class='n_votos'> <?php echo $total_votos; ?></span></span>
+   
 </div>
 </div>
 <div class="conteudo">

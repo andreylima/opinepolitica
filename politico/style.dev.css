@@ -689,6 +689,8 @@ color: #70DAC4;
 	color: white;
 	text-align: center;
 	margin-top: 5px;
+	font-weight: bold;
+	font-size: 14px;
 }
 .email-input
 {
@@ -744,10 +746,14 @@ margin: auto;
 {
 	text-align: left;
 }
-
-
-
-
+.home .projetos-cadastrados
+{
+	color: #34495e;
+}
+.info-perfil, .box-autor .projetos-cadastrados
+{
+	color: #34495e;
+}
 
 
 
@@ -917,10 +923,6 @@ margin: auto;
 }
 .perfil-size 
 {
-	height: 250px;
-	height: 15.625rem;
-	width: 250px;
-	width: 15.625rem;
 	padding: 3px;
 	border: 2px solid #34495e;
 	margin: auto;
@@ -1263,8 +1265,7 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 
 .box-autor
 {
-	width: 145px;
-	width: 9.0625rem;
+	width: 90%;
 	margin: auto;
 	margin-top: 10px;
 	margin-top: 0.625rem;
@@ -1412,13 +1413,13 @@ float: left;
 	border: solid #34495e;
 	margin-top: 10%;
 	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.6);
+	padding-bottom: 15px;
 
 }
 
 .info-perfil
 {
 	clear: both;
-	top: -26px;
 	position: relative;
 	margin: auto;
 	width: 80%;
@@ -1442,6 +1443,8 @@ float: left;
 	bottom: -0.25rem;
 	position: relative;
 	font-size: 11px;
+	width: 70%;
+	margin: auto;
 
 }
 
@@ -1545,14 +1548,8 @@ float: left;
 }
 .perfis .perfil-size
 {
-	height: 150px;
-	height: 9.375rem;
-	width: 150px;
-	width: 9.375rem;
-	padding: 3px;
 	border: 2px solid #ecf0f1;
-	margin: auto;
-	display: block;
+	
 }
 .perfis .votes,.perfis .voten {
 border: solid 2px #ecf0f1;
@@ -1594,7 +1591,7 @@ left: 10px !important;
 }
 .archive .perfil
 {
-	width: 24%;
+	width: 25%;
 }
 .post-type-archive-projeto h3
 {
@@ -2270,6 +2267,25 @@ display: block;
 {
 		background: #1c1c1e url("assets/img/asa-delta-ceu-gv.jpg") 50% 0 no-repeat fixed;
 		background-size: cover;
+}
+
+.box-autor .thumb-wrap
+{
+	overflow: hidden;
+	height: 170px;
+}
+.box-autor .thumb
+{
+	width: 155px;
+	margin: auto;
+}
+.box-autor .link-perfil
+{
+	display: none;
+}
+.box-autor .name-perfil
+{
+	display: none;
 }
 }
 

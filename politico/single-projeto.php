@@ -17,8 +17,9 @@ get_header();
 <div id="single-projeto-wrapper">
   <div class="info-perfil-wrapper coluna-lateral">
   <div class="overflow-autor">
+       <div class="autor-titulo">AUTOR DO PROJETO</div>
     <div class="box-autor">  
-      <div class="autor-titulo">AUTOR DO PROJETO</div>
+
         <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
         <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">

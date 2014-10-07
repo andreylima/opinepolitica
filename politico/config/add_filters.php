@@ -32,7 +32,7 @@ return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'wpmayor_filter_image_sizes');
 
-add_image_size( 'custom', 300, 300, true );
+add_image_size( 'custom', 250, 250, true );
 
 
 
