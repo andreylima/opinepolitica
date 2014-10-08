@@ -16,10 +16,11 @@ get_header();
 ?>
 <div id="single-projeto-wrapper">
   <div class="info-perfil-wrapper coluna-lateral">
-  <div class="overflow-autor">
+  
        <div class="autor-titulo">AUTOR DO PROJETO</div>
     <div class="box-autor">  
-
+<div class="thumb-wrap">
+<div class="thumb">
         <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
         <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
             <span class="glyphicon glyphicon-thumbs-up icon-vote">
@@ -44,6 +45,8 @@ get_header();
     
 </div>
 </div>
+</div>
+
 <h4 class="name-perfil"><?php echo get_the_title($autor_id); ?></h4>
 <a href="<?php echo get_permalink($autor_id); ?>" class="ver-perfil-buttton"><div class="link-perfil">VER PERFIL</div></a>
   <div class="avaliacao-projeto ">

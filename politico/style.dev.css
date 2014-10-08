@@ -750,11 +750,10 @@ margin: auto;
 {
 	color: #34495e;
 }
-.info-perfil, .box-autor .projetos-cadastrados
+.box-autor .link-perfil
 {
-	color: #34495e;
+	display: none;
 }
-
 
 
 
@@ -1416,7 +1415,10 @@ float: left;
 	padding-bottom: 15px;
 
 }
-
+.info-perfil-wrapper a
+{
+	color: #34495e;
+}
 .info-perfil
 {
 	clear: both;
@@ -2279,13 +2281,14 @@ display: block;
 	width: 155px;
 	margin: auto;
 }
-.box-autor .link-perfil
-{
-	display: none;
-}
+
 .box-autor .name-perfil
 {
 	display: none;
+}
+.info-perfil, .box-autor .projetos-cadastrados
+{
+	color: #34495e;
 }
 }
 
@@ -2641,7 +2644,8 @@ h1
 
 .vereadores-slider
 {
-	height: 350px !important;
+	height: 375px !important;
+	
 }
 .projeto-excerpt
 {
@@ -2776,8 +2780,9 @@ h1
 	text-align: center;
 	font-family: "Lato-Bol";
 	margin: 0;
+	font-size: 20px;
 }
-.single-projeto .name-perfil
+.single-projeto .name-perfil, .box-autor .name-perfil
 {
 	text-align: center;
 	font-family: "Lato-Bol";
@@ -2951,8 +2956,7 @@ background-color: #63e82a;
 }
 .box-autor
 {
-	width: 155px;
-	width: 9.6875rem;
+	width: 90%;
 	margin: auto;
 }
 .caixa-titulo{
@@ -3150,6 +3154,8 @@ border: solid 2px #ecf0f1 !important;
 	bottom: -4px;
 	bottom: -0.25rem;
 	position: relative;
+	width: 90%;
+	margin: auto;
 
 }
 .single-projeto .row-fluid
@@ -3239,16 +3245,11 @@ border: solid 2px #ecf0f1 !important;
 {
 	color: #ecf0f1;
 }
-.perfis .perfil-size
+.perfis .perfil-size, .box-autor .perfil-size
 {
-	height: 150px;
-	height: 9.375rem;
-	width: 150px;
-	width: 9.375rem;
-	padding: 3px;
+	
 	border: 2px solid #ecf0f1;
-	margin: auto;
-	display: block;
+
 }
 .percent-wrapper
 {
@@ -3483,7 +3484,6 @@ width: 50%;
 .info-perfil
 {
 	clear: both;
-	top: -26px;
 	position: relative;
 	margin: auto;
 	width: 80%;
@@ -3576,5 +3576,20 @@ display: block;
 .social-wrapper
 {
 	display: none;
+}
+#vereadores-slider-wrapper
+{
+	height: auto;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background: #34495e;
+}
+.info-perfil, .box-autor .projetos-cadastrados
+{
+	color: #ecf0f1;
+}
+.info-perfil-wrapper a
+{
+	color: #ecf0f1;
 }
 }
