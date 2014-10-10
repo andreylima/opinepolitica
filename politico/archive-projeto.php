@@ -27,6 +27,9 @@ get_header();
  while ( $loop->have_posts() ) : $loop->the_post(); 
 
  $projetos = new projetosModel($post->ID);
+  $autor_id = $projeto->getAutor_projeto();
+  $situacao = get_post_meta( $post->ID, 'situacao',true);
+
  ?>
          
 

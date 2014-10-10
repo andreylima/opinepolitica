@@ -26,8 +26,10 @@ get_header();
 <div id="destaque">
 
 <div class="aviso-projeto">
-  <span class="aba-aviso flaticon-up22">IMPORTANTE</span>
-  <h3>Um pouco da sua atenção por favor!</h3>
+
+<span class="aba-aviso flaticon-up22">IMPORTANTE</span>
+
+<h3>Um pouco da sua atenção por favor!</h3>
 <h5> 
   O DebateGV é um projeto em fase experimental. 
 </h5>
@@ -176,56 +178,15 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 			
 									
 	<?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => 5, 'orderby'=> 'modified') ); ?>
-  <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-  <?php 
+  <?php while ( $loop->have_posts() ) : $loop->the_post(); 
+  
       $projeto = new projetosModel($post->ID);
       $autor_id = $projeto->getAutor_projeto();
-      $positivou = $projeto->verifica_positivou();
-      $negativou = $projeto->verifica_negativou();
       $situacao = get_post_meta( $post->ID, 'situacao',true);
   ?>
     <li class="mini-projeto-index">
-     <div class="panel panel-default">
-      <div class="panel-heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><span class="title-autor-panel">AUTOR:  
-        <a href="<?php echo get_permalink( $autor_id); ?> ">
-          <?php  echo get_the_post_thumbnail( $autor_id, "thumbnail",  array('class' =>'panel-autor')); ?></a></span></div>
-      <div class="panel-body">
-        <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-        <a href="<?php the_permalink(); ?>">
-        <div class="pic-projeto <?php echo $situacao; ?>" style="background-image: url('<?php echo $url ?>');">
-        </div>
-        </a>
-      <div class="projeto-excerpt">
-        <a href="<?php the_permalink(); ?>">
-      	<?php the_excerpt(); ?>
-      </a>
-      	</div>
-      	<div class="panel-bottom">
-        <a href="<?php the_permalink(); ?>">
-      	<div class="see-more">
-      		SAIBA MAIS
-      	</div>
-        </a>
-      	<div class="percent-wrapper">
-          <a href="<?php the_permalink(); ?>">
-      	<span class="mini-percent-naoapoiaram">
-          <div>
-            <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
-            <?php echo $projeto->getNegativar_percent(); ?>
-          </div>
-            </span>
-          </a>
-          <a href="<?php the_permalink(); ?>">
-            <span class="mini-percent-apoiaram">
-            <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
-            <?php echo $projeto->getPositivar_percent(); ?>
-            </span>
-          </a>
-		</div>
-		</div>
-		</div>
 
-      	</div>
+     <?php include(locate_template('projetos/view/projeto-wrap.php')); ?> <!-- carrega o template parte do projeto -->
 
     </li>
 

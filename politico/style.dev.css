@@ -750,7 +750,7 @@ margin: auto;
 {
 	color: #34495e;
 }
-.box-autor .link-perfil
+.box-perfil .link-perfil
 {
 	display: none;
 }
@@ -1210,7 +1210,7 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	display: none;
 	height: 142px;
 	width: 230px;
-	background: rgba(237,72,54,0.7);
+	background: rgb(237,72,54);
 	left: 78%;
 	margin-left: -50px;
 	-moz-border-radius: 100px;
@@ -1262,7 +1262,7 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	float: right;
 }
 
-.box-autor
+.box-autor, .box-perfil
 {
 	width: 90%;
 	margin: auto;
@@ -1270,7 +1270,7 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	margin-top: 0.625rem;
 	text-align: center;
 }
-.single-projeto .box-autor
+.single-projeto .box-perfil
 {
 	margin-top: 5px;
 	margin-top: 0.3125rem;
@@ -1441,8 +1441,7 @@ float: left;
 	color: #34495e;
 	text-align: center;
 	font-family: "Lato-Bol";
-	bottom: -4px;
-	bottom: -0.25rem;
+	bottom: -11px;
 	position: relative;
 	font-size: 11px;
 	width: 70%;
@@ -2271,22 +2270,22 @@ display: block;
 		background-size: cover;
 }
 
-.box-autor .thumb-wrap
+.box-autor .thumb-wrap, .box-perfil .thumb-wrap
 {
 	overflow: hidden;
 	height: 170px;
 }
-.box-autor .thumb
+.box-autor .thumb, .box-perfil .thumb
 {
 	width: 155px;
 	margin: auto;
 }
 
-.box-autor .name-perfil
+.box-perfil .name-perfil
 {
 	display: none;
 }
-.info-perfil, .box-autor .projetos-cadastrados
+.info-perfil, .box-perfil .projetos-cadastrados, .box-autor .projetos-cadastrados
 {
 	color: #34495e;
 }
@@ -2954,7 +2953,7 @@ background-color: #63e82a;
 {
 	padding-top: 10% !important;
 }
-.box-autor
+.box-autor, .box-perfil
 {
 	width: 90%;
 	margin: auto;
@@ -3151,8 +3150,7 @@ border: solid 2px #ecf0f1 !important;
 	color: white;
 	text-align: center;
 	font-family: "Lato-Bol";
-	bottom: -4px;
-	bottom: -0.25rem;
+	bottom: -11px;
 	position: relative;
 	width: 90%;
 	margin: auto;

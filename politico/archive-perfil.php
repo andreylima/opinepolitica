@@ -4,7 +4,6 @@ get_header();
 
 global $post;
 
-$perfis = new perfisController($post->ID);
 
 ?>
 
@@ -27,7 +26,7 @@ $perfis = new perfisController($post->ID);
   <div class="perfis">
 
     <?php $loop = new WP_Query( array( 'post_type' => 'perfil' , 'cargos'=>'executivo',  'posts_per_page' => 1) ); 
-
+$thumbnail_size = 'thumbnail'; //150 x 150
    while ( $loop->have_posts() ) : $loop->the_post(); 
 
 
@@ -49,19 +48,11 @@ $perfis = new perfisController($post->ID);
   $thumbnail_size = 'thumbnail'; //150 x 150
   while ( $loop->have_posts() ) : $loop->the_post(); 
 
-      
+      $perfis = new perfisController($post->ID);
       $curtiu = $perfis->verifica_curtida();
       $naocurtiu = $perfis->verifica_naocurtida();
-      $projetos_debatidos = get_post_meta( $post->ID, 'projetos_debatidos', true ); 
-
-
-    if (!empty($projetos_debatidos)) {
-           $projetos_debatidos = count(array_filter($projetos_debatidos));
-       }
-    else
-    {
-        $projetos_debatidos = "0";
-    }
+      $projetos_debatidos = $perfis->get_projetos_debatidos(); 
+    
   ?>
   
   <div class="vereador perfil">

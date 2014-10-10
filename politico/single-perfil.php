@@ -14,7 +14,7 @@ $total_votos = $perfis->get_total_votos();
 
 <div id="single-perfil-wrapper">
   <div class="info-perfil-wrapper">
-    <div class="box-autor coluna-lateral">  
+    <div class="box-perfil coluna-lateral">  
 
 <?php include(locate_template('perfis/view/perfil-wrap.php')); ?> <!-- carrega o template parte do perfil do político -->
 

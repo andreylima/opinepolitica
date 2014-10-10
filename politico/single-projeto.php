@@ -4,12 +4,11 @@ $post_id = $wp_query->post->ID;
 
 
 $projetos = new projetosModel($post_id);
-$perfis = new perfisController($projetos->getAutor_projeto());
+
 $autor_id = $projetos->getAutor_projeto();
-$curtiu = $perfis->verifica_curtida();
-$naocurtiu = $perfis->verifica_naocurtida();
 $positivou = $projetos->verifica_positivou();
 $negativou = $projetos->verifica_negativou();
+$thumbnail_size = 'thumbnail'; //150 x 150
 
 get_header(); 
 
@@ -19,36 +18,26 @@ get_header();
   
        <div class="autor-titulo">AUTOR DO PROJETO</div>
     <div class="box-autor">  
-<div class="thumb-wrap">
-<div class="thumb">
-        <a href="<?php echo get_permalink($autor_id); ?>"><?php  echo get_the_post_thumbnail( $autor_id, array('class' =>'null perfil-size-single img-circle')); ?></a>
-        <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
-            <span class="glyphicon glyphicon-thumbs-up icon-vote">
-            
-              
-            </span>
-            <span class="percent-both percent-curtiu">
-            <?php echo $perfis->getCurtiu_percent(); ?>
-            </span>
-        </div>
-    
+     <?php 
 
-    
-        <div class="voten pull-right naocurtir <?php echo ($naocurtiu) ? "votado" : ""; ?>" id="<?php echo $autor_id ?>">
-            <span class="glyphicon glyphicon-thumbs-down icon-vote">
-        
-            </span>
-            <span class="percent-both percent-naocurtiu">
-            <?php echo $perfis->getNaocurtiu_percent(); ?>
-            </span>
-        </div>
-    
-</div>
-</div>
+
+     $loop = new WP_Query( array( 'p' => $autor_id,'post_type' => 'perfil') );
+   
+   while ( $loop->have_posts() ) : $loop->the_post(); 
+
+
+      $perfis = new perfisController($projetos->getAutor_projeto());
+      $curtiu = $perfis->verifica_curtida();
+      $naocurtiu = $perfis->verifica_naocurtida();
+      $projetos_debatidos = $perfis->get_projetos_debatidos();
+     
+       ?>
+
+<?php include(locate_template('perfis/view/perfil-wrap.php')); ?> <!-- carrega o template parte do perfil do político -->
+
+<?php endwhile; wp_reset_postdata(); ?>
 </div>
 
-<h4 class="name-perfil"><?php echo get_the_title($autor_id); ?></h4>
-<a href="<?php echo get_permalink($autor_id); ?>" class="ver-perfil-buttton"><div class="link-perfil">VER PERFIL</div></a>
   <div class="avaliacao-projeto ">
       <div class="avalie">Avalie o Projeto</div>
       
