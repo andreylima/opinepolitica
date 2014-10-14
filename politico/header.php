@@ -130,7 +130,7 @@
 
 
       	<?php } else{ ?>
-      	<div class="logged-menu">
+      	<div class="float-right">
       		<a href="https://pt.gravatar.com/">
       			<div class="avatar">
       				<?php 
