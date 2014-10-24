@@ -130,6 +130,7 @@ function situacao_display_metabox($post, $box)
   <input type="radio" name="situacao" value="tramite" <?php echo ($pol_situacao == 'tramite') ? 'checked':''; ?> >tramite</br>
   <input type="radio" name="situacao" value="vetado" <?php  echo ($pol_situacao == 'vetado') ? 'checked':''; ?>>vetado</br>
   <input type="radio" name="situacao" value="aprovado" <?php echo ($pol_situacao == 'aprovado') ? "checked":''; ?>>aprovado</br>
+  <input type="radio" name="situacao" value="arquivado" <?php echo ($pol_situacao == 'arquivado') ? "checked":''; ?>>arquivado</br>
   <?php
   
     ?>

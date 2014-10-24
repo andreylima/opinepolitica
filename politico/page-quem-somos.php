@@ -43,7 +43,8 @@ $perfis = new perfisController($post->ID);
   MISSÃO
   </div>
   <div class="panel-body">
-  Conscientização política
+  A missão desse projeto é levar informação política aos eleitores da cidade,
+para ajudá-los de forma objetiva, a fazer uma melhor escolha na hora do voto.
   </div>
 </div>
 
@@ -72,7 +73,7 @@ $perfis = new perfisController($post->ID);
 
     <div class="thumb-wrap">
       <div class="thumb">
-        <?php the_post_thumbnail('thumbnail', array('class' => 'img-circle perfil-size')); ?>
+        <?php the_post_thumbnail('custom', array('class' => 'img-circle perfil-size')); ?>
         <a href="">
         <div class="votes pull-left curtir <?php echo ($curtiu) ? "votado" : ""; ?>" id="<?php echo $post->ID; ?>">
         <span class="glyphicon glyphicon-thumbs-up icon-vote">

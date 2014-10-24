@@ -2119,6 +2119,17 @@ font-size: 70px;
 text-align: center;
 color: white;
 }
+.arquivado:after
+{
+background-color: rgba(0, 0, 0, 0.5);
+content: "ARQUIVADO";
+height: 100%;
+line-height: 200px;
+display: block;
+font-size: 70px;
+text-align: center;
+color: white;
+}
 #projetos a:hover, .todos-projetos a:hover
 {
 	text-decoration: underline;
@@ -3540,6 +3551,17 @@ color: white;
 {
 background-color: rgba(0, 0, 0, 0.5);
 content: "VIROU LEI!";
+height: 100%;
+line-height: 200px;
+display: block;
+font-size: 25px;
+text-align: center;
+color: white;
+}
+.arquivado:after
+{
+background-color: rgba(0, 0, 0, 0.5);
+content: "ARQUIVADO";
 height: 100%;
 line-height: 200px;
 display: block;
