@@ -765,3 +765,5 @@ else
 
 });
 
+
+jQuery('.chosen-select').chosen();

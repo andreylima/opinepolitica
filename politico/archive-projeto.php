@@ -20,6 +20,21 @@ get_header();
     <h4>e mostre que estamos de olho!</h4>
   </div>
 <?php get_search_form(); ?>
+
+
+<select data-placeholder="Choose a Country..." class="chosen-select" style="width:350px;" tabindex="2">
+            <option value=""></option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Aland Islands">Aland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            
+          </select>
+
+
 <div class="todos-projetos" id="container">
 	
 <?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => -1) ); 
@@ -27,14 +42,19 @@ get_header();
  while ( $loop->have_posts() ) : $loop->the_post(); 
 
  $projetos = new projetosModel($post->ID);
-  $autor_id = $projeto->getAutor_projeto();
-  $situacao = get_post_meta( $post->ID, 'situacao',true);
+
+//  $cats = get_the_category();
+
+// foreach( $cats as $cat ){
+//   $cat_name .= $cat -> cat_name;
+// }
+$autor_id = $projetos->getAutor_projeto();
 
  ?>
          
 
-<div class="panel panel-default mini-projeto" >
-                <div class="panel-heading mini-projeto-header"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
+<div class="panel panel-default mini-projeto <?php echo  $autor_id; ?>" >
+                <div class="panel-heading mini-projeto-header "><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
                 <div class="panel-body">
                     <?php 
                     $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
