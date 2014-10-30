@@ -22,15 +22,16 @@ get_header();
 <?php get_search_form(); ?>
 
 
-<select data-placeholder="Choose a Country..." class="chosen-select" style="width:350px;" tabindex="2">
-            <option value=""></option>
-            <option value="United States">United States</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Aland Islands">Aland Islands</option>
-            <option value="Albania">Albania</option>
-            <option value="Algeria">Algeria</option>
-            <option value="American Samoa">American Samoa</option>
+<select data-placeholder="Escolha um Vereador..." class="chosen-select-author" style="width:350px;" tabindex="2">
+<option value=""></option>
+    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' ) ); 
+
+   while ( $loop->have_posts() ) : $loop->the_post(); 
+
+   ?>
+            <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
+
+  <?php endwhile; wp_reset_postdata(); ?>      
             
           </select>
 

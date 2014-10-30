@@ -1607,6 +1607,7 @@ left: 10px !important;
 {
 	padding-top: 100px;
 	background: rgba(0,0,0,0.7);
+	min-height: 100%;
 	height: auto;
 	overflow: auto;
 
@@ -2302,6 +2303,12 @@ display: block;
 {
 	color: #34495e;
 }
+.chosen-select-author
+{
+	margin: auto;
+	display: block;
+}
+
 }
 
 
