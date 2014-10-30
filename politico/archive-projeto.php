@@ -21,19 +21,44 @@ get_header();
   </div>
 <?php get_search_form(); ?>
 
+<!-- filtro de autores dos projetos -->
 
 <select data-placeholder="Escolha um Vereador..." class="chosen-select-author" style="width:350px;" tabindex="2">
-<option value=""></option>
+<option value="*">Escolha um Vereador...</option>
+<option value="*">Todos</option>
     <?php $loop = new WP_Query( array( 'post_type' => 'perfil' ) ); 
 
    while ( $loop->have_posts() ) : $loop->the_post(); 
 
    ?>
-            <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
+  
+  <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
+
 
   <?php endwhile; wp_reset_postdata(); ?>      
             
-          </select>
+  </select>
+
+<!-- filtro de partidos dos autores -->
+
+<select data-placeholder="Partidos" class="chosen-select-author" style="width:350px;" tabindex="2">
+<option value="*">Partidos</option>
+<option value="*">Todos</option>
+    <?php 
+
+    $partidos = get_terms('Partidos');
+
+     foreach ( $partidos as $partido ) {
+         
+   ?>
+ 
+  <option value="<?php echo $partido->name; ?>"><?php echo $partido->name; ?></option>
+
+  <?php } ?>
+            
+  </select>
+
+
 
 
 <div class="todos-projetos" id="container">
@@ -44,82 +69,79 @@ get_header();
 
  $projetos = new projetosModel($post->ID);
 
-//  $cats = get_the_category();
 
-// foreach( $cats as $cat ){
-//   $cat_name .= $cat -> cat_name;
-// }
 $autor_id = $projetos->getAutor_projeto();
+$partido = wp_get_post_terms($autor_id, 'Partidos');
 
- ?>
+?>
          
 
-<div class="panel panel-default mini-projeto <?php echo  $autor_id; ?>" >
-                <div class="panel-heading mini-projeto-header "><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
-                <div class="panel-body">
-                    <?php 
-                    $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
-                    $situacao = get_post_meta( $post->ID, 'situacao',true);
+<div class="panel panel-default mini-projeto <?php echo  $autor_id.' '.$partido; ?>" >
+  <div class="panel-heading mini-projeto-header "><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
+  <div class="panel-body">
+    <?php 
+    $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
+    $situacao = get_post_meta( $post->ID, 'situacao',true);
 
-                    ?>
+    ?>
 
-                    <a href="<?php echo the_permalink(); ?>">
+    <a href="<?php echo the_permalink(); ?>">
 
 
-                    <div class="pic-projeto <?php echo $situacao; ?>" style="background-image: url('<?php echo $url; ?>');">
-                    
-                    </div>  
-                    </a>    
-                    <div class="projeto-excerpt">
-                        <a href="<?php echo the_permalink(); ?>"><?php echo the_excerpt(); ?></a>
-                    </div>
-                    <div class="panel-bottom">
-                        <a href="<?php echo the_permalink(); ?>">
-                            <div class="see-more">
-                                SAIBA MAIS
-                            </div>
-                        </a>
-                         <div class="percent-wrapper">
-                         <a href="<?php echo the_permalink(); ?>">
-                        <span class="mini-percent-naoapoiaram">
-                            <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
-                            <?php echo $projetos->getNegativar_percent(); ?>
-                        </span>
-                        </a>
-                        <a href="<?php echo the_permalink(); ?>">
-                        <span class="mini-percent-apoiaram">
-                            <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
-                            <?php echo $projetos->getPositivar_percent(); ?>
-                        </span>
-                        </a>
-                    </div>
-                    </div>
-        <div class="first-comments"> 
-      <span>Total de comentários: <?php echo get_comments_number( $post->ID ); ?> </span>  
-        <div class="comments">
-        <ol class='commentlist'>
+      <div class="pic-projeto <?php echo $situacao; ?>" style="background-image: url('<?php echo $url; ?>');">
+
+      </div>  
+    </a>    
+    <div class="projeto-excerpt">
+      <a href="<?php echo the_permalink(); ?>"><?php echo the_excerpt(); ?></a>
+    </div>
+    <div class="panel-bottom">
+      <a href="<?php echo the_permalink(); ?>">
+        <div class="see-more">
+          SAIBA MAIS
+        </div>
+      </a>
+      <div class="percent-wrapper">
+       <a href="<?php echo the_permalink(); ?>">
+        <span class="mini-percent-naoapoiaram">
+          <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
+          <?php echo $projetos->getNegativar_percent(); ?>
+        </span>
+      </a>
+      <a href="<?php echo the_permalink(); ?>">
+        <span class="mini-percent-apoiaram">
+          <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
+          <?php echo $projetos->getPositivar_percent(); ?>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="first-comments"> 
+    <span>Total de comentários: <?php echo get_comments_number( $post->ID ); ?> </span>  
+    <div class="comments">
+      <ol class='commentlist'>
         <?php
           //Gather comments for a specific page/post 
-          $comments = get_comments(array(
-            'number' => '3',
-            'post_id' =>  $post->ID,
+        $comments = get_comments(array(
+          'number' => '3',
+          'post_id' =>  $post->ID,
             'status' => 'approve' //Change this to the type of comments to be displayed
-          ));
+            ));
 
           //Display the list of comments
-          wp_list_comments(array(
+        wp_list_comments(array(
             'per_page' => 3, //Allow comment pagination
             'reverse_top_level' => false //Show the latest comments at the top of the list
-          ), $comments);
-        ?>
-      </ol>
+            ), $comments);
+            ?>
+          </ol>
 
+        </div>
       </div>
-    </div>
 
     </div>
 
-            </div>
+  </div>
 
 
 
