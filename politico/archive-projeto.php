@@ -71,12 +71,17 @@ get_header();
 
 
 $autor_id = $projetos->getAutor_projeto();
-$partido = wp_get_post_terms($autor_id, 'Partidos');
-
+// $partidos = get_the_terms( $autor_id, 'Partidos' );
+$terms = get_the_terms( $autor_id, 'Partidos' );
+// print_r($partidos);
+foreach ( $terms as $term ) {
+    $draught_links[] = $term->name;
+  }
+  print_r($draught_links);
 ?>
          
 
-<div class="panel panel-default mini-projeto <?php echo  $autor_id.' '.$partido; ?>" >
+<div class="panel panel-default mini-projeto <?php echo  $autor_id.' '.$sigla; ?>" >
   <div class="panel-heading mini-projeto-header "><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
   <div class="panel-body">
     <?php 
