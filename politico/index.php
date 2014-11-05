@@ -180,9 +180,12 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 	<?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => 5, 'orderby'=> 'modified') ); ?>
   <?php while ( $loop->have_posts() ) : $loop->the_post(); 
   
-      $projeto = new projetosModel($post->ID);
-      $autor_id = $projeto->getAutor_projeto();
+      $projetos = new projetosModel($post->ID);
+      $autor_id = $projetos->getAutor_projeto();
       $situacao = get_post_meta( $post->ID, 'situacao',true);
+      $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+      $sigla = $projetos->get_partido();
+
   ?>
     <li class="mini-projeto-index">
 
@@ -288,66 +291,8 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 </div>
 <?php } ?>
 
-<!-- modal cadastro -->
-<div id="dialog" class="window">
-    <a href="#" class="close">Fechar [X]</a>
-  
-    <div class="title-modal">Para opinar é necessário estar cadastrado.</div>
-    <div class="inner_container">
-      <div class="login_container">
-            
-              <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-             <div class="face-login-header">
-              <?php do_action( 'wordpress_social_login' ); ?>
-              
-                <span class="login-social-header">Cadastrar com Facebook</span>
-              
-            </div>
-              <div class="control-group">
-                
-                <div class="controls">
-                  <input type="text" class="input-large" id="email_log" name="email_log" placeholder="e-mail">
-                </div>
-               </div>
-              <div class="control-group">
-                <div class="controls">
-                  <input type="password" class="input-large"  id="senha_log" name="senha_log" placeholder="senha">
-                </div>
-              </div>
 
-              <div class="control-group">
-                <button type="submit" class="btn-entrar">Entrar</button>
-                <a href="" onclick="" class="lnk-recovery-password" data-toggle="modal">Esqueci
-                  minha senha</a>
-              </div>
-              <div class="show-error-modal"> </div>
-            </form>
-          
-          </div>
-
-    <div class="register-container">
-     
-    
-    <div class="form-vertical well">
-         <div class="legend-registerfrm">Não possui cadastro?</div> 
-          <div class="face-login-header">
-              <?php do_action( 'wordpress_social_login' ); ?>
-              
-                <span class="login-social-header">Cadastrar com Facebook</span>
-              
-            </div>
-          <div id="register-manual">Registrar Manualmente</div>
-
-
-
-    </div>
-      
-
-    </div>
-    </div>
-    </div>
-
-    <div id="mask"></div>
+<?php include(locate_template('modal-template.php')); ?> <!-- carrega o template parte do modal -->
 
 <!-- modal termos -->
 <div id="modal-termos">

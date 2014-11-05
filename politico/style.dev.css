@@ -18,6 +18,8 @@ Version: 1.0
 
 @import url('assets/css/flaticon.css'); 
 
+@import url('assets/css/chosen.css'); 
+
 @font-face {
   font-family: "Lato-Bol";
   src: url("assets/fonts/Lato-Bol.ttf");
@@ -290,6 +292,7 @@ margin-right: 30px;
 	margin: auto;
 	padding-top: 15px;
 	padding-bottom: 15px;
+
 }
 .flickerplate
 {
@@ -727,7 +730,7 @@ height: 40px;
 line-height: 40px;
 padding-left: 5px;
 font-family: arial;
-font-weight: 900;
+font-weight: 600;
 border-radius: 5px;
 margin: auto;
 }
@@ -1367,8 +1370,8 @@ text-align: #34495e;
 .mini-projeto {
 margin-bottom: 40px !important;
 border-color: #34495e;
-width: 40%;
-margin-right: 5%;
+width: 450px;
+margin-right: 20px;
 float: left;
 }
 .mini-projeto-wrapper
@@ -1595,7 +1598,7 @@ left: 10px !important;
 }
 .archive .perfil
 {
-	width: 25%;
+	width: 280px;
 }
 .post-type-archive-projeto h3
 {
@@ -1605,6 +1608,7 @@ left: 10px !important;
 {
 	padding-top: 100px;
 	background: rgba(0,0,0,0.7);
+	min-height: 100%;
 	height: auto;
 	overflow: auto;
 
@@ -1660,7 +1664,7 @@ left: 10px !important;
 }
 .todos-projetos
 {
-	width: 90%;
+	width: 80%;
 	margin: auto;
 	padding-top: 20px;
 
@@ -2270,7 +2274,7 @@ display: block;
 {
 	color: #3b5999;
 }
-.page
+.page, .search
 {
 	background: #1c1c1e url("assets/img/ceu-de-gv.jpg") 50% 0 no-repeat fixed;
 	background-size: cover;
@@ -2300,6 +2304,24 @@ display: block;
 {
 	color: #34495e;
 }
+.chosen-select-author, .chosen-select-partido, .chosen-select
+{
+	margin: auto;
+	display: block;
+	width: 250px !important;
+	float: left;
+	margin-right: 20px;
+}
+
+.filtro-projetos, .filtro-perfis
+{
+	width: 65%;
+	margin: auto;
+	height: 30px;
+	margin-bottom: 30px;
+}
+
+
 }
 
 
@@ -2759,6 +2781,7 @@ h1
 	margin: auto;
 	padding-top: 15px;
 	padding-bottom: 15px;
+	
 }
 
 .thumb 
@@ -3244,12 +3267,13 @@ border: solid 2px #ecf0f1 !important;
 }
 .archive .vereador
 {
-	background-color: none;
+	background: none;
 	color: #ecf0f1;
 	box-shadow: none;
 	margin-top: 15px;
-	margin-top: 0.9375rem;
+
 }
+
 .archive .name-perfil
 {
 	color: #ecf0f1;
@@ -3506,11 +3530,9 @@ width: 50%;
 #searchform
 {
 	width: 90%;
+	text-align: center;
 }
-#searchsubmit
-{
-	display: block;
-}
+
 .aviso-projeto
 {
 	display: none;
@@ -3609,4 +3631,23 @@ display: block;
 {
 	color: #ecf0f1;
 }
+
+.chosen-select
+{
+	margin: auto;
+	display: block;
+	width: 90% !important;
+	margin-bottom: 20px;
+}
+.archive .perfil{
+
+position: relative !important;
+transform: none !important;
+
+}
+.screen-reader-text
+{
+	display: none;
+}
+
 }

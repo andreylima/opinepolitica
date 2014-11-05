@@ -9,20 +9,15 @@ jQuery(function ($) {
 	});
  
 
- 	var $perfis = $('.perfis');
+ 	var $perfis = $('#perfis');
 	$perfis.isotope({ //Isotope options, 'item' matches the class in the PHP
 		itemSelector : '.perfil', 
-	
-		  		
+
+				  		
 	});
  
 });
 
 
-// var container = document.querySelector('#container');
-// var msnry = new Masonry( container, {
-//   // options
-//   itemSelector: '.mini-projeto',
 
-// });
 

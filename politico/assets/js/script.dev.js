@@ -765,5 +765,67 @@ else
 
 });
 
+//chosen
 
-jQuery('.chosen-select').chosen();
+
+jQuery('.chosen-select').chosen({inherit_select_classes : true});
+
+var filters = {};
+
+jQuery('.chosen-select').change(function(event){
+
+     if(event.target == this){
+        
+        if (jQuery(this).parent().hasClass('filtro-projetos')) { 
+
+          
+       
+          // get group key
+          var buttonGroup = jQuery("option:selected", this).parents('.chosen-select');
+          var filterGroup = buttonGroup.attr('data-filter-group');
+          // set filter for group
+          filters[ filterGroup ] = jQuery("option:selected", this).attr('data-filter');
+          // combine filters
+          var filterValue = '';
+          for ( var prop in filters ) {
+            filterValue += filters[ prop ];
+        }
+          // set filter for Isotope
+       
+          jQuery('#container').isotope({ filter: filterValue });
+          // jQuery('#container').isotope({ filter: jQuery(this).val() })
+        
+      
+        
+        }
+        else if (jQuery(this).parent().hasClass('filtro-perfis')) 
+        {
+
+        
+         
+          // get group key
+          var buttonGroup = jQuery("option:selected", this).parents('.chosen-select');
+          var filterGroup = buttonGroup.attr('data-filter-group');
+          // set filter for group
+          filters[ filterGroup ] = jQuery("option:selected", this).attr('data-filter');
+          // combine filters
+          var filterValue = '';
+          for ( var prop in filters ) {
+            filterValue += filters[ prop ];
+        }
+          // set filter for Isotope
+       
+          jQuery('#perfis').isotope({ filter: filterValue });
+          // jQuery('#container').isotope({ filter: jQuery(this).val() })
+        
+       
+        };
+
+
+
+        
+     }
+
+});
+
+

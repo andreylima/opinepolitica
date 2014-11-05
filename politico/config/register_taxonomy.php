@@ -37,7 +37,27 @@ register_taxonomy(
 		)
 	);
 
+register_taxonomy(
+		'Genero',
+		'perfil',
+		array(
+			'labels' => array(
+          'name'          => 'Gênero',
+          'singular_name' => 'Gênero',
+          'add_new_item'  => 'Adicionar Novo Gênero'
+        ),
+			'rewrite' => array( 'slug' => 'gênero' ),
+			'public'       => true,
+        	'hierarchical' => true,
+        	
+			
+		)
+	);
+
+
 }
+
+
 add_action( 'init', 'tax_init' );
 
 ?>

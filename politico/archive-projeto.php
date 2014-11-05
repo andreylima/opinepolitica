@@ -9,30 +9,30 @@ get_header();
 <div id="archive-wrapper">
 
   <div class="title-panel text-center big-header">
-    <h1>Conheça mais sobre cada Projeto,</h1> 
-    <h2>dê a sua opinião,</h2> 
-    <h1>e mostre que estamos de olho!</h1>
+    <h2>Conheça cada Projeto, dê a sua opinião,</h2> 
+    <h2>e mostre que estamos de olho!</h2>
   </div>
 
   <div class="title-panel text-center small-header">
-    <h4>Conheça mais sobre cada Projeto,</h4> 
+    <h4>Conheça cada Projeto,</h4> 
     <h4>dê a sua opinião,</h4> 
     <h4>e mostre que estamos de olho!</h4>
   </div>
 <?php get_search_form(); ?>
 
+<div class="filtro-projetos">
 <!-- filtro de autores dos projetos -->
 
-<select data-placeholder="Escolha um Vereador..." class="chosen-select-author" style="width:350px;" tabindex="2">
-<option value="*">Escolha um Vereador...</option>
-<option value="*">Todos</option>
-    <?php $loop = new WP_Query( array( 'post_type' => 'perfil' ) ); 
+<select data-filter-group="autores" data-placeholder="Escolha um Vereador..." class="chosen-select-author chosen-select" style="width:350px;" tabindex="2">
+<option data-filter="" value="*">Escolha um Vereador...</option>
+<option data-filter="" value="*">Todos</option>
+    <?php $loop = new WP_Query( array( 'post_type' => 'perfil','posts_per_page' => 100 ) ); 
 
    while ( $loop->have_posts() ) : $loop->the_post(); 
 
    ?>
   
-  <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
+  <option data-filter=".<?php echo the_ID(); ?>" value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
 
 
   <?php endwhile; wp_reset_postdata(); ?>      
@@ -41,9 +41,9 @@ get_header();
 
 <!-- filtro de partidos dos autores -->
 
-<select data-placeholder="Partidos" class="chosen-select-author" style="width:350px;" tabindex="2">
-<option value="*">Partidos</option>
-<option value="*">Todos</option>
+<select data-filter-group="partidos" data-placeholder="Partidos" class="chosen-select-partido chosen-select" style="width:350px;" tabindex="2">
+<option data-filter="" value="*">Partidos</option>
+<option data-filter="" value="*">Todos</option>
     <?php 
 
     $partidos = get_terms('Partidos');
@@ -52,110 +52,57 @@ get_header();
          
    ?>
  
-  <option value="<?php echo $partido->name; ?>"><?php echo $partido->name; ?></option>
+  <option data-filter=".<?php echo $partido->name; ?>" value="<?php echo $partido->name; ?>"><?php echo $partido->name; ?></option>
 
   <?php } ?>
             
   </select>
 
+<!-- filtro de situação dos projetos dos autores -->
+
+<select data-filter-group="situacao" data-placeholder="Situação" class="chosen-select-situacao chosen-select" style="width:350px;" tabindex="2">
+<option data-filter="" value="*">Situação</option>
+<option data-filter="" value="*">Todos</option>
+<option data-filter=".projeto-aprovado" value="projeto-aprovado">Aprovado</option>
+<option data-filter=".projeto-arquivado" value="projeto-arquivado">Arquivado</option>  
+<option data-filter=".projeto-tramite" value="projeto-tramite">em Trâmite</option>  
+<option data-filter=".projeto-vetado" value="projeto-vetado">Vetado</option>         
+</select>
+
+</div>
 
 
 
-<div class="todos-projetos" id="container">
+<div class="todos-projetos container" id="container">
 	
 <?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => -1) ); 
 
  while ( $loop->have_posts() ) : $loop->the_post(); 
 
- $projetos = new projetosModel($post->ID);
-
-
+$projetos = new projetosModel($post->ID);
 $autor_id = $projetos->getAutor_projeto();
-// $partidos = get_the_terms( $autor_id, 'Partidos' );
-$terms = get_the_terms( $autor_id, 'Partidos' );
-// print_r($partidos);
-foreach ( $terms as $term ) {
-    $draught_links[] = $term->name;
-  }
-  print_r($draught_links);
+$sigla = $projetos->get_partido();
+$situacao = get_post_meta( $post->ID, 'situacao',true); 
+$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
+$total_comments = get_comments_number( $post->ID );
+$is_mini = true; //exibido pequeno ou grande
+$show_comments = true;//se true mostra os comentários no projeto
+
+// Pega comentários de um post específico
+$comments = get_comments(array(
+  'number' => '3',
+  'post_id' =>  $post->ID,
+  'status' => 'approve' //Change this to the type of comments to be displayed
+  ));
+
 ?>
          
-
-<div class="panel panel-default mini-projeto <?php echo  $autor_id.' '.$sigla; ?>" >
-  <div class="panel-heading mini-projeto-header "><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></div>
-  <div class="panel-body">
-    <?php 
-    $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
-    $situacao = get_post_meta( $post->ID, 'situacao',true);
-
-    ?>
-
-    <a href="<?php echo the_permalink(); ?>">
-
-
-      <div class="pic-projeto <?php echo $situacao; ?>" style="background-image: url('<?php echo $url; ?>');">
-
-      </div>  
-    </a>    
-    <div class="projeto-excerpt">
-      <a href="<?php echo the_permalink(); ?>"><?php echo the_excerpt(); ?></a>
-    </div>
-    <div class="panel-bottom">
-      <a href="<?php echo the_permalink(); ?>">
-        <div class="see-more">
-          SAIBA MAIS
-        </div>
-      </a>
-      <div class="percent-wrapper">
-       <a href="<?php echo the_permalink(); ?>">
-        <span class="mini-percent-naoapoiaram">
-          <span class="glyphicon glyphicon-thumbs-down mini-icon-n"></span>
-          <?php echo $projetos->getNegativar_percent(); ?>
-        </span>
-      </a>
-      <a href="<?php echo the_permalink(); ?>">
-        <span class="mini-percent-apoiaram">
-          <span class="glyphicon glyphicon-thumbs-up mini-icon-s"></span>
-          <?php echo $projetos->getPositivar_percent(); ?>
-        </span>
-      </a>
-    </div>
-  </div>
-  <div class="first-comments"> 
-    <span>Total de comentários: <?php echo get_comments_number( $post->ID ); ?> </span>  
-    <div class="comments">
-      <ol class='commentlist'>
-        <?php
-          //Gather comments for a specific page/post 
-        $comments = get_comments(array(
-          'number' => '3',
-          'post_id' =>  $post->ID,
-            'status' => 'approve' //Change this to the type of comments to be displayed
-            ));
-
-          //Display the list of comments
-        wp_list_comments(array(
-            'per_page' => 3, //Allow comment pagination
-            'reverse_top_level' => false //Show the latest comments at the top of the list
-            ), $comments);
-            ?>
-          </ol>
-
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-
+<?php include(locate_template('projetos/view/projeto-wrap.php')); ?> <!-- carrega o template parte do projeto -->
 
 
 <?php endwhile; ?>
 
 
-
-
 </div>
 
 
@@ -163,60 +110,7 @@ foreach ( $terms as $term ) {
 
 </div>
 
-<!--   Janela Modal para login ou redirecionamento de registro. -->
-    <div id="dialog" class="window">
-    <a href="#" class="close">Fechar [X]</a>
-  
-    <div class="title-modal">Para opinar é necessário estar cadastrado.</div>
-    <div class="inner_container">
-      <div class="login_container">
-            
-              <form id="formLogin" class="form-vertical well"  action="" method="POST" novalidate="novalidate">
-             <div class="control-group face-modal">
-                
-                  <?php do_action( 'wordpress_social_login' ); ?>
-               
-              </div>
-              <div class="control-group">
-                
-                <div class="controls">
-                  <input type="text" class="input-large" id="email_log" name="email_log" placeholder="e-mail">
-                </div>
-               </div>
-              <div class="control-group">
-                <div class="controls">
-                  <input type="password" class="input-large"  id="senha_log" name="senha_log" placeholder="senha">
-                </div>
-              </div>
-
-              <div class="control-group">
-                <button type="submit" class="btn-entrar">Entrar</button>
-                <a href="" onclick="" class="lnk-recovery-password" data-toggle="modal">Esqueci
-                  minha senha</a>
-              </div>
-              <div class="show-error-modal"> </div>
-            </form>
-          
-          </div>
-
-    <div class="register-container">
-     
-    
-    <div class="form-vertical well">
-         <div class="legend-registerfrm">Não possui cadastro?</div> 
-      <div class="face-button-modal">             
-             <?php do_action( 'wordpress_social_login' ); ?>
-          </div>
-          <div id="register-manual-inside">Registrar Manualmente</div>
+<?php include(locate_template('modal-template.php')); ?> <!-- carrega o template parte do modal -->
 
 
-
-    </div>
-      
-
-    </div>
-    </div>
-    </div>
-
-    <div id="mask"></div>
 <?php get_footer() ?>

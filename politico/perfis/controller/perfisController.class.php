@@ -17,7 +17,12 @@ class perfisController {
 	private $mandato;
 
 	private $total_votos;
+
+	private $cargo;
 	
+	private $partido;
+
+	private $genero;
 
 	public function __construct($perfil_id)
 	{
@@ -27,7 +32,9 @@ class perfisController {
 		$this->setNaocurtiu_percent();
 		$this->setMandato();
 		$this->set_total_votos();
-				
+		$this->set_cargo();
+		$this->set_partido();		
+		$this->set_genero();
 
 	}
 
@@ -264,9 +271,79 @@ class perfisController {
     }
 
     return $projetos_debatidos;
-	}		
+	}
 
-	
+
+	public function set_cargo()
+	{
+
+		$cargos_perfis = get_the_terms( $this->perfil_id, 'Cargos' );
+		if ($cargos_perfis) {
+
+			foreach ( $cargos_perfis as $cargo_perfil ) {
+				$this->cargo = $cargo_perfil->name;
+			}
+
+		}
+		else
+		{
+			$this->cargo = '';
+		}
+
+
+	}
+
+	public function get_cargo()
+	{
+		return $this->cargo;
+
+	}
+
+	public function set_partido()
+	{
+
+		$partidos_perfis = get_the_terms( $this->perfil_id, 'Partidos' );
+		if ($partidos_perfis) {
+
+			foreach ( $partidos_perfis as $partido_perfil ) {
+				$this->partido = $partido_perfil->name;
+			}
+
+		}
+		else
+		{
+			$this->partido = '';
+		}
+
+	}
+
+	public function get_partido()
+	{
+		return $this->partido;
+	}
+
+	public function set_genero()
+	{
+		$genero_perfis = get_the_terms( $this->perfil_id, 'Genero' );
+		if ($genero_perfis) {
+
+			foreach ( $genero_perfis as $genero_perfil ) {
+				$this->genero = $genero_perfil->name;
+			}
+
+		}
+		else
+		{
+			$this->genero = '';
+		}
+
+	}
+
+	public function get_genero()
+	{
+		return $this->genero;
+
+	}
 
 }
 

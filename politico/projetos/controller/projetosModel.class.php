@@ -7,6 +7,8 @@ class projetosModel {
 	private $autor_projeto;
 
 	private $total_votos;
+
+	private $partido;
 	
 	public function __construct($post_id)
 	{
@@ -17,7 +19,7 @@ class projetosModel {
 		$this->setPositivar_percent();
 		$this->setNegativar_percent();
 		$this->set_total_votos();
-
+		$this->set_partido();
 	}
 
 	
@@ -238,6 +240,31 @@ class projetosModel {
 		return $this->total_votos;
 	}
 
+
+	public function set_partido()
+	{
+		$partidos_autores = get_the_terms( $this->autor_projeto, 'Partidos' );
+		
+		if ($partidos_autores) {
+
+			foreach ( $partidos_autores as $partido_autores ) {
+				$this->partido = $partido_autores->name;
+			}
+
+		}
+		else
+		{
+			$this->partido = '';
+		}
+
+
+	}
+
+	public function get_partido()
+	{
+		return $this->partido;
+		
+	}
 
 
 }

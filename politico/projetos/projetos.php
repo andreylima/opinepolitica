@@ -1,6 +1,6 @@
 <?php
 
 
-require_once 'models/projetosModel.class.php';
+require_once 'controller/projetosModel.class.php';
 
 ?>
