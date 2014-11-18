@@ -9,7 +9,7 @@ get_header();
 <div id="archive-wrapper">
 
   <div class="title-panel text-center big-header">
-    <h2>Conheça cada Projeto, dê a sua opinião,</h2> 
+    <h2>Dê a sua opinião sobre cada Projeto de Lei</h2> 
     <h2>e mostre que estamos de olho!</h2>
   </div>
 
@@ -18,7 +18,7 @@ get_header();
     <h4>dê a sua opinião,</h4> 
     <h4>e mostre que estamos de olho!</h4>
   </div>
-<?php get_search_form(); ?>
+<!--  <?php get_search_form(); ?>-->
 
 <div class="filtro-projetos">
 <!-- filtro de autores dos projetos -->

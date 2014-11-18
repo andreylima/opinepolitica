@@ -107,7 +107,26 @@ a:hover
 {
 	list-style-type: none;
 	float: left;
-	margin-right: 20px;
+	min-width: 100px;
+	padding: 5px;
+
+}
+#menu-header ul li:nth-child(-n+2)
+{
+	background-color: white;
+	padding: 5px;
+	box-shadow: 0 2px 5px -1px rgba(0,0,0,.7);
+}
+#menu-header .sub-menu li:nth-child(-n+2)
+{
+	background-color: white;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	box-shadow: none;
+}
+#menu-header ul li:nth-child(-n+2) a
+{
+	color: black;
 }
 #menu-header
 {
@@ -260,7 +279,7 @@ margin-right: 30px;
 .projetos-slider-wrapper
 {
 	height: 100%;
-	padding-top: 5%;
+	padding-top: 3%;
 	color:#70DAC4;
 	background: rgba(0,0,0,0.6);
 }
@@ -761,8 +780,15 @@ margin: auto;
 {
 	float: right;
 }
-
-
+.wp-social-login-provider-list img
+{
+	float: left;
+	margin-top: 4px;
+}
+.wp-social-login-provider-list
+{
+	padding: 0 !important;
+}
 
 
 
@@ -1077,7 +1103,7 @@ margin: auto;
 	display: none;
 	height: 98px;
 	width: 99px;
-	left: 19%;
+	left: 22%;
 	margin-left: -50px;
 	background: url(assets/img/down_arrow_blue.png) repeat-x;
 	background-position: bottom;
@@ -1105,7 +1131,7 @@ a:hover .placa-projetos {
 	display: none;
 	height: 98px;
 	width: 99px;
-	right: 25%;
+	right: 18%;
 	margin-left: -50px;
 	background: url(assets/img/down_arrow_red.png) repeat-x;
 	background-position: bottom;
@@ -1170,11 +1196,10 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	position: absolute;
 	padding-top: 12px;
 	display: none;
-	height: 142px;
-	width: 230px;
+	height: 130px;
+	width: 24%;
 	background: rgb(25,181,254);
-	left: 14%;
-	margin-left: -50px;
+	left: 10%;
 	-moz-border-radius: 100px;
 	-khtml-border-radius: 100px;
 	-moz-transition: all 0.5s ease;
@@ -1184,7 +1209,8 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	bottom: 134px;
 	color: white;
 	text-align: center;
-	font-size: 16px;
+	font-size: 20px;
+	line-height: 50px;
 	
 }
 .placa-politicos
@@ -1192,13 +1218,10 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	position: absolute;
 	padding-top: 12px;
 	display: none;
-	height: 142px;
-	width: 230px;
+	height: 130px;
+	width: 24%;
 	background: rgb(237,72,54);
-	right: 20%;
-	margin-left: -50px;
-	-moz-border-radius: 100px;
-	-khtml-border-radius: 100px;
+	right: 10%;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
@@ -1206,6 +1229,8 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	bottom: 134px;
 	text-align: center;
 	color: white;
+	font-size: 20px;
+	line-height: 50px;
 	
 
 }
@@ -1214,13 +1239,10 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	position: absolute;
 	padding-top: 12px;
 	display: none;
-	height: 142px;
-	width: 230px;
+	height: 130px;
+	width: 24%;
 	background: rgb(237,72,54);
-	left: 78%;
-	margin-left: -50px;
-	-moz-border-radius: 100px;
-	-khtml-border-radius: 100px;
+	right: 11%;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
@@ -1228,6 +1250,8 @@ a:hover .placa-politicos, a:hover .placa-politicos-full
 	bottom: 134px;
 	text-align: center;
 	color: white;
+	font-size: 20px;
+	line-height: 50px;
 	
 
 }
@@ -1899,13 +1923,14 @@ width: 80px !important;
 {
 	padding: 0;
 	display: none;
+	margin-left: -5px;
 }
 
 .menu-item:hover .sub-menu
 {
 	display: block;
 	background: white;
-	box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.7);
 	position: absolute;
 	
 }
@@ -1913,9 +1938,13 @@ width: 80px !important;
 {
 	background-color: white;
 	cursor: pointer;
+	box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.7);
 
 }
-
+.sub-menu .menu-item:hover
+{
+	box-shadow:none;
+}
 .menu-item:hover .sub-menu li
 {
 	margin-right: 0 !important;
@@ -1999,19 +2028,11 @@ width: 80px !important;
 	width: 170px;
 	margin-top: 20px;
 }
-.wrap-destaque-full #logo-home
-{
-	margin: auto;
-	width: 200px;
-	display: block;
-}
+
 .wrap-destaque .letreiro
 {
 	float: left;
-}
-.wrap-destaque-full .letreiro
-{
-	clear: both;
+	
 }
 .logo-camara
 {
@@ -2023,49 +2044,6 @@ width: 80px !important;
 	font-family: "lato-Bol";
 	margin-left: 20px;
 	float: left;
-}
-.aviso-projeto
-{
-width: 41%;
-background-color: white;
-position: absolute;
-top: 50%;
-z-index: 10000;
-padding: 20px;
-font-family: Lato-reg;
-left: -41%;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-.aba-aviso
-{
-display: block;
-position: absolute;
-right: -80px;
-top: 50px;
-width: 130px;
-height: 30px;
-line-height: 30px;
-text-align: center;
-font-family: Lato-Bol;
-cursor: pointer;
-transform: rotate(90deg);
--webkit-transform: rotate(90deg);
--moz-transform: rotate(90deg);
--o-transform: rotate(90deg);
--ms-transform: rotate(90deg);
-border-top-left-radius: 3px;
-background: #70DAC4;
-color: #000;
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4e5ba0', endColorstr='#414c87', GradientType=0);
-border-top-right-radius: 3px
-
-}
-.show-aviso
-{
-	left: 0;
 }
 .post-wrapper {
 float: left;
@@ -2143,6 +2121,8 @@ color: white;
 .login-social-header
 {
 	display: block;
+	float: left;
+	margin-left: 5px;
 }
 .login-social-header:before
 {
@@ -2265,6 +2245,10 @@ display: block;
 	background: #1c1c1e url("assets/img/prefeitura-fundo.jpg") 50% 0 no-repeat fixed;
 	background-size: cover;
 }
+.post-type-archive-perfil:after
+{
+	background: white;
+}
 .post-type-archive-projeto
 {
 	background: #1c1c1e url("assets/img/Valadares-ana-paula-viana-.jpg") 50% 0 no-repeat fixed;
@@ -2308,19 +2292,19 @@ display: block;
 {
 	margin: auto;
 	display: block;
-	width: 250px !important;
+	width: 30% !important;
 	float: left;
-	margin-right: 20px;
+	margin-right: 2%;
 }
 
 .filtro-projetos, .filtro-perfis
 {
-	width: 65%;
+	width: 80%;
 	margin: auto;
 	height: 30px;
 	margin-bottom: 30px;
+	margin-top: 40px;
 }
-
 
 }
 
@@ -3531,11 +3515,6 @@ width: 50%;
 {
 	width: 90%;
 	text-align: center;
-}
-
-.aviso-projeto
-{
-	display: none;
 }
 .logo-camara
 {

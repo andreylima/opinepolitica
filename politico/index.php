@@ -25,49 +25,24 @@ get_header();
 
 <div id="destaque">
 
-<div class="aviso-projeto">
-
-<span class="aba-aviso flaticon-up22">IMPORTANTE</span>
-
-<h3>Um pouco da sua atenção por favor!</h3>
-<h5> 
-  O DebateGV é um projeto em fase experimental. 
-</h5>
-<h5>
-Todos os Projetos de Lei apresentados são enviados pela Câmara Municipal de Governador Valadares,
-portanto a atualização deste site depende diretamente do recebimento dos mesmos.
-</h5>
-<h5>
-Esperamos poder estar atualizados sempre após o 7º dia útil de cada mês, uma vez que as reuniões para a apresentação dos Projetos são realizadas 
-entre esses dias.
-</h5>
-<h5>
-Para mais informações sobre o projeto, navegue sobre o MENU SUPERIOR "Sobre nós".
-</h5>
-<h5>
-Para sugestões, navegue sobre o MENU SUPERIOR "contato".
-</h5>
-</div>
 
 
 
- <?php if (!is_user_logged_in()) { ?>
 <div class="wrap-destaque wide-destaque ">
-  <?php }else { ?>
-<div class="wrap-destaque-full wide-destaque">
-  <?php } ?>
   
   <img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo-home">
 <div class="letreiro">
-	<h2 class="fundo">PARTICIPE E AJUDE </h2>
-  <h2 class="fundo">A FISCALIZAR A CIDADE</h2>  
-	<h2 class="fundo">QUE A GENTE AMA.</h2>
-</div>
+  <h2 class="fundo">PARTICIPE,</h2>
+	<h2 class="fundo">AJUDE A FISCALIZAR</h2>
+  <h2 class="fundo"> A CIDADE QUE A GENTE AMA.</h2>  
+	</div>
 </div>
 
 <div class="wrap-destaque mobile-destaque">
-  <h1 class="fundo">OPINE SOBRE OS PROJETOS DE LEI</h1>
-  <h1 class="fundo">PROPOSTOS EM GOVERNADOR VALADARES </h1>  
+   <h2 class="fundo">PARTICIPE,</h2>
+  <h2 class="fundo">AJUDE A FISCALIZAR</h2>
+  <h2 class="fundo"> A CIDADE QUE A GENTE AMA.</h2>  
+  
 </div>
 
 
@@ -76,10 +51,10 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 
 <a href="#projetos" class="placas">
 <div class="placa-projetos">
-  <h4>OPINE SOBRE OS</h4>
-  <h4>PROJETOS DE LEI</h4>
-  <h4>PROPOSTOS EM</h4>
-  <h4>SUA CIDADE.</h4>
+  <span>ÚLTIMOS PROJETOS DE LEI</span>
+  <div class="icon-projetos-container">
+<span class="flaticon-signature2"></span>
+</div>
 </div>
 <span id="scroll-down-proj"></span>
 </a>
@@ -90,10 +65,11 @@ Para sugestões, navegue sobre o MENU SUPERIOR "contato".
 <?php }else { ?>
 <div class="placa-politicos-full">
 <?php } ?>
-  <h4>CONFIRA O NÍVEL DE</h4> 
-  <h4>APROVAÇÃO E ESCOLHA</h4>
-  <h4>QUEM TE REPRESENTA.</h4>
-</div>
+  <span>AVALIE UM POLÍTICO</span>
+  <div class="icon-avalie-container">
+  <span class="flaticon-thumb35 icon-avalie-up"></span>
+    </div>
+ </div>
 <?php if (!is_user_logged_in()) { ?>
 <span id="scroll-down-pol"></span>
 <?php }else { ?>

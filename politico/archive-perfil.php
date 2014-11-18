@@ -20,11 +20,11 @@ global $post;
     <h2>Avalie os Poderes Executivo e Legislativo</h2> 
     <h2>de Governador Valadares</h2>
   </div>
-<?php get_search_form(); ?>
+ <!--<?php get_search_form(); ?>-->
 
 <div class="filtro-perfis">
 
- <!-- filtro cargos -->
+
 <select data-filter-group="cargos" data-placeholder="Cargos" class="chosen-select-cargo chosen-select" style="width:350px;" tabindex="2">
 <option data-filter="" value="*">Cargos</option>
 <option data-filter="" value="*">Todos</option>

@@ -618,77 +618,14 @@ $('.window .close').click(function (e) {
             
         });     
 
-$('.aba-aviso').click(function (e) {
-
-if (!$("#mask").is(":visible")) 
-{
-  var maskHeight = jQuery(document).height();
-        var maskWidth = jQuery(window).width();
-
-        jQuery('#mask').css({'width':maskWidth,'height':maskHeight});
-
-        jQuery('#mask').fadeIn(); 
-        jQuery('#mask').fadeTo('fast',0.5); 
-
-}
-else
-{
-  $("#mask").hide();
-}
-
-
-if (jQuery("#mask").hasClass("dark-mask")) {
-  jQuery("#mask").removeClass("dark-mask");
-
-}
-
-
-
-if (jQuery(".aviso-projeto").hasClass("show-aviso")) {
-  jQuery(".aviso-projeto").removeClass("show-aviso");
-   jQuery(".aba-aviso").removeClass("flaticon-down53");
-    jQuery(".aba-aviso").addClass("flaticon-up22");
-
-}
-else
-{
-  jQuery(".aviso-projeto").addClass("show-aviso");
-  jQuery(".aba-aviso").removeClass("flaticon-up22");
-    jQuery(".aba-aviso").addClass("flaticon-down53");
-
-}       
+  
 
 
 });  
 
-$('#mask').click(function () {
-  $(this).hide();
-  if (jQuery(".aviso-projeto").hasClass("show-aviso")) {
-    jQuery(".aviso-projeto").removeClass("show-aviso");
-    }
-    if (jQuery("#mask").hasClass("dark-mask")) {
-  jQuery("#mask").removeClass("dark-mask");
-
-}
-
-});
-
-// $(function() {
-//     if (!getCookie('modalOpened')) {
-//         $(".aviso-projeto").addClass("show-aviso");
-//         $("#mask").addClass("dark-mask");
-//         // Set value to true to prevent the modal from opening again 
-//         setCookie('modalOpened', true);
-//     }
-// });
 
 
-
-
-
-
-
-});  
+    
 
 
 
