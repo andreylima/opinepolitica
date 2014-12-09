@@ -761,9 +761,25 @@ margin: auto;
 {
 	padding: 0 !important;
 }
-
-
-
+.next-posts
+{
+	background-color: white;
+	width: 150px;
+	text-align: center;
+	float: right;
+}
+.prev-posts
+{
+	background-color: white;
+	width: 150px;
+	text-align: center;
+	float: left;
+}
+#single-post-wrapper .fb-like
+{
+	top: 0px;
+	left: 25%;
+}
 
 
 

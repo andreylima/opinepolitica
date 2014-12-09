@@ -1,12 +1,7 @@
 <?php 
 
 get_header(); 
-  global $paged;
-  global $wp_query;
-  $temp = $wp_query; 
-  $wp_query = null; 
-  $wp_query = new WP_Query(); 
-  $wp_query->query('posts_per_page=7&post_type=post'.'&paged='.$paged);
+
 ?>
 <div id="page-wrapper">
 
@@ -14,7 +9,7 @@ get_header();
 
 <?php 
 // $the_query = new WP_Query( array('post_type' => 'post','orderby'=> 'date', 'order' => 'desc','posts_per_page' => 7,'paged' => $paged) );
-if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 	<div <?php post_class('post-mini'); ?> id="post-<?php the_ID(); ?>" >
 	<div class="thumb-wrapper-blog">
