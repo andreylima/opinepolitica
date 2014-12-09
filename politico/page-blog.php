@@ -7,8 +7,8 @@ get_header();
 
 <div class="post-wrapper">
 
-<?php 
-$the_query = new WP_Query( array('post_type' => 'post') );
+<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$the_query = new WP_Query( array('post_type' => 'post','orderby'=> 'date', 'order' => 'desc','posts_per_page' => 7,'paged' => $paged) );
 if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
 	<div <?php post_class('post-mini'); ?> id="post-<?php the_ID(); ?>" >
@@ -29,8 +29,8 @@ if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->t
 <?php endwhile; ?>
 
 	<div class="navigation">
-		<div class="next-posts"><?php next_posts_link(); ?></div>
-		<div class="prev-posts"><?php previous_posts_link(); ?></div>
+		<div class="next-posts"><?php next_posts_link('Mais Posts'); ?></div>
+		<div class="prev-posts"><?php previous_posts_link('Posts Recentes'); ?></div>
 	</div>
 
 <?php else : ?>

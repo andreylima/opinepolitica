@@ -75,7 +75,7 @@ get_header();
 
 <div class="todos-projetos container" id="container">
 	
-<?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => -1) ); 
+<?php $loop = new WP_Query( array( 'post_type' => 'projeto' , 'posts_per_page' => -1, 'orderby'=> 'date', 'order' => 'desc') ); 
 
  while ( $loop->have_posts() ) : $loop->the_post(); 
 

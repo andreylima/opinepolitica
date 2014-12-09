@@ -39,9 +39,9 @@ get_header();
 </div>
 
 <div class="wrap-destaque mobile-destaque">
-   <h2 class="fundo">PARTICIPE,</h2>
-  <h2 class="fundo">AJUDE A FISCALIZAR</h2>
-  <h2 class="fundo"> A CIDADE QUE A GENTE AMA.</h2>  
+   <h2>PARTICIPE,</h2>
+  <h2>AJUDE A FISCALIZAR</h2>
+  <h2> A CIDADE QUE A GENTE AMA.</h2>  
   
 </div>
 

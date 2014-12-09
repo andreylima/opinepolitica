@@ -31,7 +31,7 @@ margin-left: 20px;
 	float: left;
 	font-weight: 100 !important;
 	margin-left: 14px;
-	margin-right: 7px;
+	margin-right: 5px;
 }
 .flaticon-create1:after 
 {
@@ -42,10 +42,14 @@ margin-left: 20px;
 	float: left;
 	margin-top: 5px;
 	height: 30px;
-	margin-left: 3px;
+	margin-left: 0px;
 }
 .flaticon-dislike:before {
 	content: "\e002";
+}
+.flaticon-left176
+{
+	cursor: pointer;
 }
 .flaticon-left176:before {
 	content: "\e003";
