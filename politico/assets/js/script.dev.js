@@ -765,4 +765,3 @@ jQuery('.chosen-select').change(function(event){
 
 });
 
-
