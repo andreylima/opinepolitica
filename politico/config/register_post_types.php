@@ -71,6 +71,28 @@ function register_post_types()
         )
     );
 
+     register_post_type( 
+        'denuncia',
+        array(
+            'labels' => array(
+                'name'          => 'Denúncias',
+                'singular_name' => 'Denúncia',
+                'search_items'  => 'Pesquisar Denúncia',
+                'add_new_item'  => 'Adicionar nova Denúncia',
+                'add_new'       => 'Adicionar Denúncia',
+                'all_items'     => 'Todos as Denúncias',
+                'edit_item'     => 'Editar Denúncia',
+            ),
+            'public'      => true,
+            'supports'    => array( 'title', 'editor', 'thumbnail'),
+            'has_archive' => true,
+            'taxonomies'  => array( 'category')
+        )
+    );
+
+
+
+
     }
 
 ?>
