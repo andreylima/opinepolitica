@@ -800,7 +800,10 @@ margin: auto;
 	height: 30px;
 	width: 100%;
 	margin: auto;
+	color: white;
+	line-height: 30px;
 	background-color: #0094DA;
+	padding-left: 10px;
 }
 .page-denuncia h3, .page-denuncia h4, .page-denuncia label
 {

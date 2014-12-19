@@ -3,9 +3,14 @@
 get_header(); 
 
 ?>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-<div id="page-wrapper-2" class="page-denuncia">
 
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<div id="page-wrapper-2" class="page-denuncia">
+<div class="rd-city hide">Governador Valadares</div>
+<div class="rd-state hide">MG</div>
+<input id="lat" name="denuncia[latitude]" type="hidden" value="">
+<input id="addressField" name="denuncia[endereco]" type="hidden" value="">
+<input id="lng" name="denuncia[longitude]" type="hidden" value="">
 
 <h3>1) Endereço</h3>
 <h4>Informe o endereço do local denunciado</h4>
@@ -22,10 +27,7 @@ get_header();
 <div class="youtube-upload-box float-left">
 <label for="youtube-video"  >Link do vídeo do Youtube:</label>  <input type="text" class="youtube-video"> 
 </div>
-<span class="ou-format">ou</span> 
-<div class="img-upload-box float-right">
-<label for="img-denuncia" > Upload de imagem: </label><input type="file" class="img-denuncia">
-</div>
+
 </div>
 
 <div class="descricao-box">
