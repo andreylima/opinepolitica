@@ -22,15 +22,6 @@ $perfis = new perfisController($post->ID);
 
 <div class="panel panel-default">
   <div class="panel-heading">
-  O PROJETO
-  </div>
-  <div class="panel-body">
-  O DebateGV é um projeto que foi desenvolvido para ser apresentado como Trabalho de Conclusão do Curso de Sistemas de Informação da Universidade Vale do Rio Doce – Governador Valadares, período 2011 – 2014.
-  </div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
   O OBJETIVO
   </div>
   <div class="panel-body">
@@ -43,8 +34,25 @@ $perfis = new perfisController($post->ID);
   MISSÃO
   </div>
   <div class="panel-body">
-  A missão desse projeto é levar informação política aos eleitores da cidade,
-para ajudá-los de forma objetiva, a fazer uma melhor escolha na hora do voto.
+    Colaborar para que Governador Valadares seja um lugar melhor para se viver.
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  VISÃO
+  </div>
+  <div class="panel-body">
+    Ser a mais relevante plataforma de interação e informação política da cidade.
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  VALORES 
+  </div>
+  <div class="panel-body">
+    Transparência, Integridade e Honestidade. 
   </div>
 </div>
 
