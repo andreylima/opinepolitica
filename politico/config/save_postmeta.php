@@ -6,8 +6,8 @@ add_action( 'publish_projeto', 'save_projeto_postmeta' );
 add_action( 'save_perfil', 'save_perfil_postmeta' );
 add_action( 'publish_perfil', 'save_perfil_postmeta' );
 
-add_action( 'save_debate', 'save_debate_postmeta' );
-add_action( 'publish_debate', 'save_debate_postmeta' );
+add_action( 'save_denuncia', 'save_denuncia_postmeta' );
+add_action( 'publish_denuncia', 'save_denuncia_postmeta' );
 
 function save_projeto_postmeta( $post_id )
 {
@@ -110,7 +110,39 @@ function save_perfil_postmeta($post_id)
 
 }
 
+function save_denuncia_postmeta($post_id) 
+{
 
+    // verify if this is an auto save routine.
+    // If it is our form has not been submitted, so we dont want to do anything
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+       return;
+ 
+    // Check permissions
+    if ( 'page' == $_POST['post_type'] ) {
+        if ( !current_user_can( 'edit_page', $post_id ) )
+            return;
+    }
+    else {
+        if ( !current_user_can( 'edit_posts', $post_id ) )
+        return;
+    }
+    
+    // Pegamos o valor digitado pelo usuário no metabox através da variável $_POST do php
+    // Utilizamos a função esc_url() para garantir a segurança dos dados antes de salvar no banco de dados
+   
+    if( isset( $_POST['latitude'] ) )
+      update_post_meta( $post_id, 'latitude', $_POST['latitude']);
+
+    if( isset( $_POST['longitude'] ) )
+      update_post_meta( $post_id, 'longitude', $_POST['longitude']);
+
+    if( isset( $_POST['local_denuncia'] ) )
+          update_post_meta( $post_id, 'local_denuncia', $_POST['local_denuncia']);
+
+    
+
+}
 
 
 ?>

@@ -28,6 +28,14 @@ function pol_add_custom_metaboxes()
     add_meta_box( 'negativar_projeto', 'Negativaram', 'negativar_projeto_display_metabox', 'projeto', 'normal', 'high' );
 
 
+
+    //Denúncia
+    add_meta_box( 'link_video', 'Link do vídeo (youtube)', 'link_video_display_metabox', 'denuncia', 'normal', 'high' );
+    add_meta_box( 'local_denuncia', 'Local da denuncia', 'local_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
+    add_meta_box( 'latitude', 'Latitude', 'latitude_display_metabox', 'denuncia', 'normal', 'high' );
+    add_meta_box( 'longitude', 'Longitude', 'longitude_display_metabox', 'denuncia', 'normal', 'high' );
+    
+
 }
 
 /**
@@ -224,6 +232,50 @@ function justificativa_display_metabox($post, $box)
 
 wp_editor( $justificativa, 'content-id', array( 'textarea_name' => 'justificativa', 'media_buttons' => false, 'tinymce' => array( 'theme_advanced_buttons1' => 'formatselect,forecolor,|,bold,italic,underline,|,bullist,numlist,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,|,spellchecker,wp_fullscreen,wp_adv' ) ) ); 
 
+
+}
+
+function local_denuncia_display_metabox($post, $box)
+{
+  $longitude = get_post_meta($post->ID, 'local_denuncia', true);
+  
+?>
+  <input type="text" name="local_denuncia" id="local_denuncia" 
+  value="<?php echo $local_denuncia; ?>" />
+<?php
+
+}
+
+function latitude_display_metabox($post, $box)
+{
+  $latitude = get_post_meta($post->ID, 'latitude', true);
+  
+?>
+  <input type="text" name="latitude" id="latitude" 
+  value="<?php echo $latitude; ?>" />
+<?php
+
+}
+
+function longitude_display_metabox($post, $box)
+{
+  $longitude = get_post_meta($post->ID, 'longitude', true);
+  
+?>
+  <input type="text" name="longitude" id="longitude" 
+  value="<?php echo $longitude; ?>" />
+<?php
+
+}
+
+function link_video_display_metabox($post, $box)
+{
+  $link_video = get_post_meta($post->ID, 'link_video', true);
+  
+?>
+  <input type="text" name="link_video" id="link_video" 
+  value="<?php echo $link_video; ?>" />
+<?php
 
 }
 
