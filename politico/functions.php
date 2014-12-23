@@ -9,6 +9,7 @@ include 'config/save_postmeta.php';
 include 'config/add_filters.php';
 include 'projetos/projetos.php';
 include 'perfis/perfis.php';
+include 'trombone/trombone.php';
 include 'config/add_pdf.php';
 include 'config/users.php';
 include 'config/function_curtir.php';

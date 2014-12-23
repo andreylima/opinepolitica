@@ -788,12 +788,18 @@ margin: auto;
 {
 	height: 500px;
 	width: 65%;
+	float: left;
 }
 #mapagv-register
 {
 	height: 250px;
 	width: 100%;
 	margin: auto;
+}
+.denuncias-list
+{
+	float: left;
+	color: white;
 }
 .active-adress
 {

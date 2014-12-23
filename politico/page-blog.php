@@ -31,7 +31,7 @@ if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_
 		</div>
 	</div>
 
-<?php endwhile; ?>
+<?php endwhile;  ?>
 
 	<div class="navigation">
 		<div class="next-posts"><?php next_posts_link('Mais Posts'); ?></div>

@@ -2,13 +2,14 @@
 
 
 class tromboneController {
+
 	
 private $denuncia_completa;
 
 
 
 
-	public function __construct($perfil_id)
+	public function __construct()
 	{
 		
 		$this->setDenuncia_completa();
@@ -16,34 +17,41 @@ private $denuncia_completa;
 	}
 
 
-		public function setDenuncia_completa()
+	public function setDenuncia_completa()
 	{
 
 		
+		$loop = new WP_Query( array( 'post_type' => 'denuncia' ) ); 
+
+		$i = 0;
+
+		if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); 
+
+		$denuncia_values = get_post_meta(get_the_id());
+
+		$denuncia_completa[$i]['id'] = get_the_id();
+		$denuncia_completa[$i]['link_video'] = $denuncia_values['link_video'];
+		$denuncia_completa[$i]['local_denuncia'] = $denuncia_values['local_denuncia'];
+		$denuncia_completa[$i]['latitude'] = $denuncia_values['latitude'];
+		$denuncia_completa[$i]['longitude'] = $denuncia_values['longitude'];
+
+		$i += 1;
+ 		endwhile; endif; 
+
+
+		wp_reset_postdata();
+
+		$this->denuncia_completa = $denuncia_completa;
+
 		
-		$array_curtiu = get_post_meta($this->perfil_id, 'curtiu',true);
-		$array_naocurtiu = get_post_meta($this->perfil_id, 'naocurtiu',true);
-
-		$array_curtiu = ($array_curtiu == '') ? array() : $array_curtiu;
-		$array_naocurtiu = ($array_naocurtiu == '') ? array() : $array_naocurtiu;
-
-		$total_votos = count($array_naocurtiu) + count($array_curtiu);
-
-		if ($total_votos != 0) {
-
-			$this->curtiu_percent = round(count($array_curtiu) / $total_votos * 100, 2)."%";
-		}
-		else
-		{
-			$this->curtiu_percent = "0%";
-		}
-		
+	
 	}
+
 
 	public function getDenuncia_completa()
 	{
 
-		return $this->curtiu_percent;
+		return $this->denuncia_completa;
 
 	}
 
