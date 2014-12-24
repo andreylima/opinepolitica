@@ -19,10 +19,9 @@ $i = 0;
 <div id="mapagv"></div>
 <div class="denuncias-list"><?php foreach ($denuncia_completa as $denuncia) {
 
-	echo $denuncia[$i]['latitude'];
+	echo $denuncia['id'];
 
-	$i += 1;
-	
+		
 } ?></div>
 
 

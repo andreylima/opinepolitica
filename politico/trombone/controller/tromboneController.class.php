@@ -27,13 +27,12 @@ private $denuncia_completa;
 
 		if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); 
 
-		$denuncia_values = get_post_meta(get_the_id());
 
 		$denuncia_completa[$i]['id'] = get_the_id();
-		$denuncia_completa[$i]['link_video'] = $denuncia_values['link_video'];
-		$denuncia_completa[$i]['local_denuncia'] = $denuncia_values['local_denuncia'];
-		$denuncia_completa[$i]['latitude'] = $denuncia_values['latitude'];
-		$denuncia_completa[$i]['longitude'] = $denuncia_values['longitude'];
+		$denuncia_completa[$i]['link_video'] = get_post_meta(get_the_id(), 'link_video', true );
+		$denuncia_completa[$i]['local_denuncia'] = get_post_meta(get_the_id(), 'local_denuncia', true  );
+		$denuncia_completa[$i]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
+		$denuncia_completa[$i]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
 
 		$i += 1;
  		endwhile; endif; 
