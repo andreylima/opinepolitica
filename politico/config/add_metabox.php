@@ -237,7 +237,7 @@ wp_editor( $justificativa, 'content-id', array( 'textarea_name' => 'justificativ
 
 function local_denuncia_display_metabox($post, $box)
 {
-  $longitude = get_post_meta($post->ID, 'local_denuncia', true);
+  $local_denuncia = get_post_meta($post->ID, 'local_denuncia', true);
   
 ?>
   <input type="text" name="local_denuncia" id="local_denuncia" 

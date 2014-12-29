@@ -25,6 +25,7 @@ private $denuncia_completa;
 
 		$i = 0;
 
+
 		if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); 
 
 
@@ -40,6 +41,8 @@ private $denuncia_completa;
 
 		wp_reset_postdata();
 
+
+		$denuncia_completa = ($denuncia_completa == '') ? array() : $denuncia_completa;
 		$this->denuncia_completa = $denuncia_completa;
 
 		
