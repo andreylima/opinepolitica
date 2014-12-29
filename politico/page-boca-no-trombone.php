@@ -6,9 +6,12 @@ $denuncias = new tromboneController();
 
 $denuncia_completa = $denuncias->getDenuncia_completa();
 
-$i = 0;
-?>
 
+
+?>
+<script>
+	var templateDir = "<?php bloginfo('template_directory'); ?>";
+</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <div id="page-wrapper-2">
