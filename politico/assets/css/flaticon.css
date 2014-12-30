@@ -23,8 +23,12 @@ margin-left: 20px;
 	font-weight: 100 !important;
 	margin-left: 0;
 }
-.flaticon-create1:before {
+.flaticon-calendar146:before {
 	content: "\e001";
+	margin-left: 0;
+}
+.flaticon-create1:before {
+	content: "\e002";
 	font-size: 30px;
 	color: white;
 	display: block;
@@ -45,32 +49,36 @@ margin-left: 20px;
 	margin-left: 0px;
 }
 .flaticon-dislike:before {
-	content: "\e002";
+	content: "\e003";
 }
 .flaticon-left176
 {
 	cursor: pointer;
 }
 .flaticon-left176:before {
-	content: "\e003";
+	content: "\e004";
 	margin-left: 0;
 	display: block;
 	width: 20%;
 	margin-top: 10px;
 }
+.flaticon-map15:before {
+	content: "\e005";
+	margin-left: 0;
+}
 .flaticon-signature2:before {
-	content: "\e004";
+	content: "\e006";
 	font-size: 55px;
 }
 .flaticon-thumb35:before {
-	content: "\e005";
+	content: "\e007";
 	font-size: 55px;
 }
 .flaticon-thumb36:before {
-	content: "\e006";
+	content: "\e008";
 }
 .flaticon-user60:before {
-	content: "\e007";
+	content: "\e009";
 	color: white;
 	font-size: 40px;
 	float: left;
