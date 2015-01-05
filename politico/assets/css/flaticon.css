@@ -14,21 +14,33 @@
         font-size: 20px;
 font-style: normal;
 margin-left: 20px;
-}.flaticon-arrow195:before {
+}.flaticon-back36:before {
 	content: "\e000";
-	font-size: 46px;
-	color: #3b5999;
-	display: block;
-	float: left;
-	font-weight: 100 !important;
 	margin-left: 0;
+	display: block;
+	width: 20%;
+	margin-top: 10px;
+}
+.flaticon-back36
+{
+	cursor: pointer;
 }
 .flaticon-calendar146:before {
 	content: "\e001";
 	margin-left: 0;
 }
-.flaticon-create1:before {
+.flaticon-comments16
+{
+	line-height: 35px;
+	height: 35px;
+}
+.flaticon-comments16:before {
 	content: "\e002";
+	font-size: 35px;
+	margin-left: 0px;
+}
+.flaticon-create1:before {
+	content: "\e003";
 	font-size: 30px;
 	color: white;
 	display: block;
@@ -48,23 +60,20 @@ margin-left: 20px;
 	height: 30px;
 	margin-left: 0px;
 }
-.flaticon-dislike:before {
-	content: "\e003";
-}
-.flaticon-left176
-{
-	cursor: pointer;
-}
-.flaticon-left176:before {
+.flaticon-pin56:before {
 	content: "\e004";
 	margin-left: 0;
-	display: block;
-	width: 20%;
-	margin-top: 10px;
+
 }
-.flaticon-map15:before {
+.flaticon-right133:before {
 	content: "\e005";
+	font-size: 32px;
+	color: #3b5999;
+	display: block;
+	float: left;
+	font-weight: 100 !important;
 	margin-left: 0;
+	margin-right: 10px;
 }
 .flaticon-signature2:before {
 	content: "\e006";
@@ -74,11 +83,8 @@ margin-left: 20px;
 	content: "\e007";
 	font-size: 55px;
 }
-.flaticon-thumb36:before {
-	content: "\e008";
-}
 .flaticon-user60:before {
-	content: "\e009";
+	content: "\e008";
 	color: white;
 	font-size: 40px;
 	float: left;

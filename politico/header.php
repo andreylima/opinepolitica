@@ -106,7 +106,7 @@
 						</div>
 
 						<div class="login-with-email">
-							<span class="flaticon-arrow195">Entrar com e-mail</span>
+							<span class="flaticon-right133">Entrar com e-mail</span>
 							
 						</div>
 
@@ -115,7 +115,7 @@
 
 
 			<form action="" method="post" id="log-form" novalidate="novalidate">
-			<span class="flaticon-left176"></span>
+			<span class="flaticon-back36"></span>
 			 <input type="text" name="email_log" value="" id="email-log" placeholder="e-mail">
       		 <input type="password" name="senha_log" placeholder="senha" id="senha-log">
       		

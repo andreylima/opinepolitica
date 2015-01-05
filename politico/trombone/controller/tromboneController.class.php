@@ -36,8 +36,9 @@ private $denuncia_completa;
 		$denuncia_completa[$i]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
 		$denuncia_completa[$i]['data'] = get_the_date();
 		$denuncia_completa[$i]['permalink'] = get_the_permalink();
-
-
+		$denuncia_completa[$i]['situacao_denuncia'] = get_post_meta(get_the_id(), 'situacao_denuncia', true  );
+		$denuncia_completa[$i]['qtd_comments_denuncia'] = get_comments_number( get_the_id() );
+		
 		$i += 1;
  		endwhile; endif; 
 

@@ -34,7 +34,7 @@ function pol_add_custom_metaboxes()
     add_meta_box( 'local_denuncia', 'Local da denuncia', 'local_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'latitude', 'Latitude', 'latitude_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'longitude', 'Longitude', 'longitude_display_metabox', 'denuncia', 'normal', 'high' );
-    
+    add_meta_box( 'situacao_denuncia', 'Situacao da denuncia', 'situacao_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
 
 }
 
@@ -275,6 +275,17 @@ function link_video_display_metabox($post, $box)
 ?>
   <input type="text" name="link_video" id="link_video" 
   value="<?php echo $link_video; ?>" />
+<?php
+
+}
+
+function situacao_denuncia_display_metabox($post, $box)
+{
+    $situacao_denuncia = get_post_meta($post->ID, 'situacao_denuncia', true);
+  
+?>
+  <input type="text" name="situacao_denuncia" id="situacao_denuncia" 
+  value="<?php echo $situacao_denuncia; ?>" />
 <?php
 
 }

@@ -680,7 +680,7 @@ jQuery("#log-form").addClass("show-menu");
 
 });
 
-jQuery(".flaticon-left176").click(function(){
+jQuery(".flaticon-back36").click(function(){
 
 jQuery("#log-form").removeClass("show-menu");
 
