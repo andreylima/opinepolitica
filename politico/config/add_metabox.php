@@ -32,6 +32,7 @@ function pol_add_custom_metaboxes()
     //Denúncia
     add_meta_box( 'link_video', 'Link do vídeo (youtube)', 'link_video_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'local_denuncia', 'Local da denuncia', 'local_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
+    add_meta_box( 'bairro_denuncia', 'Bairro da denuncia', 'bairro_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'latitude', 'Latitude', 'latitude_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'longitude', 'Longitude', 'longitude_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'situacao_denuncia', 'Situacao da denuncia', 'situacao_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
@@ -284,10 +285,39 @@ function situacao_denuncia_display_metabox($post, $box)
     $situacao_denuncia = get_post_meta($post->ID, 'situacao_denuncia', true);
   
 ?>
-  <input type="text" name="situacao_denuncia" id="situacao_denuncia" 
-  value="<?php echo $situacao_denuncia; ?>" />
+  <select name="situacao_denuncia" id="situacao_denuncia">
+    <option value="nao_resolvida" <?php echo ($situacao_denuncia == 'nao_resolvida') ? "selected" : ""; ?> >Não resolvida</option>
+    <option value="resolvida" <?php echo ($situacao_denuncia == 'resolvida') ? "selected" : ""; ?>>Resolvida</option>
+  </select>
+
 <?php
 
 }
+
+function bairro_denuncia_display_metabox($post, $box)
+{
+
+    $bairro_denuncia = get_post_meta($post->ID, 'bairro_denuncia', true);
+    $denuncias = new tromboneController();
+    $denuncias->set_bairros_gv();
+    $bairros = $denuncias->get_bairros_gv();
+
+  
+?>
+  <select name="bairro_denuncia" id="bairro_denuncia">
+<?php
+  foreach ($bairros as $bairro) { ?>
+      <option value="<?php echo $bairro ?>" <?php echo ($bairro_denuncia == $bairro) ? "selected" : ""; ?>><?php echo $bairro ?></option>
+<?php
+  }
+?>
+  </select>
+
+<?php
+  
+}
+
+
+
 
 ?>

@@ -23,6 +23,8 @@ $denuncia_completa = $denuncias->getDenuncia_completa();
 <div id="mapagv"></div>
 </div>
 <div class="coluna-2">
+
+
 <div class="denuncias-list"><?php foreach ($denuncia_completa as $denuncia) {
 
 	echo $denuncia['id'];

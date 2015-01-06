@@ -917,15 +917,16 @@ padding-bottom: 5px;
 #situacao_denuncia
 {
 	display: block;
-	width: 60%;
+	width: 80%;
 }
 .qtd-comments-denuncia
 {
-	margin-top: 10px;
+	margin-top: 15px;
+	display: block;
 }
 .situacao-label
 {
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 
