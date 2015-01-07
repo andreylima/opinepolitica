@@ -14,13 +14,15 @@ private $qtd_denuncias;
 
 private $qtd_denuncia_resolvida;
 
-
+private $percent_resolvidas;
 
 	public function __construct()
 	{
 		
 		$this->setDenuncia_completa();
+		$this->set_qtd_denuncias();
 		$this->set_qtd_resolvidas();
+		$this->set_percent_resolvidas();
 	}
 
 
@@ -110,7 +112,7 @@ private $qtd_denuncia_resolvida;
 		$bairros_denuncia = $wpdb->get_col("SELECT meta_value
 		FROM $wpdb->postmeta WHERE meta_key = 'bairro_denuncia'" );
 
-		$this->$bairros_denuncia = array_count_values( $bairros_denuncia );
+		$this->bairros_denuncia = array_count_values( $bairros_denuncia );
 
 
 	}
@@ -119,26 +121,34 @@ private $qtd_denuncia_resolvida;
 	public function get_count_bairros()
 	{
 
-		return $this->$bairros_denuncia;
+		return $this->bairros_denuncia;
 	}
 
 
 	public function set_qtd_denuncias()
 	{
-		$this->$qtd_denuncias = wp_count_posts( 'denuncia' );
+		$posts = wp_count_posts( 'denuncia' );
+		$this->qtd_denuncias = $posts->publish;
+
 
 	}
 
 	public function get_qtd_denuncias()
 	{
-		return $this->$qtd_denuncias;
+		return $this->qtd_denuncias;
 	}
 
 	public function set_qtd_resolvidas()
 	{
 		global $wpdb;
-		$this->qtd_denuncia_resolvida = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts, $wpdb->postmeta
-		WHERE $wpdb->posts.post_type = 'projeto' AND $wpdb->postmeta.meta_value = 'vetado' " );
+		$this->qtd_denuncia_resolvida = $wpdb->get_var( "SELECT count(DISTINCT pm.post_id)
+														FROM $wpdb->postmeta pm
+														JOIN $wpdb->posts p ON (p.ID = pm.post_id)
+														WHERE pm.meta_key = 'situacao_denuncia'
+														AND pm.meta_value = 'resolvida'
+														AND p.post_type = 'denuncia'
+														AND p.post_status = 'publish'
+														" );
 
 
 	}
@@ -150,6 +160,26 @@ private $qtd_denuncia_resolvida;
 
 	}
 
+
+
+	public function set_percent_resolvidas()
+	{
+		$total = $this->get_qtd_denuncias();
+
+		$resolvidas = $this->get_qtd_resolvidas();
+
+		$this->percent_resolvidas =  round(count($resolvidas) / $total * 100, 2)."%"; 
+
+
+	}
+
+
+	public function get_percent_resolvidas()
+	{
+
+		return $this->percent_resolvidas;
+
+	}
 
 // 330 denuncias realizadas até hoje
 // 50 denúncias resolvidas

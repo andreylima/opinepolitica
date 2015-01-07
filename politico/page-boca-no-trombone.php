@@ -23,16 +23,19 @@ $denuncia_completa = $denuncias->getDenuncia_completa();
 <div id="mapagv"></div>
 </div>
 <div class="coluna-2">
-<span>
-<?php echo $denuncias->get_qtd_resolvidas(); ?>
-</span>
+<div class="total_denuncias"><?php echo $denuncias->get_qtd_denuncias(); ?> Denúncias registradas até o momento </div>
+<div class="total_denuncias"><?php echo $denuncias->get_qtd_resolvidas(); ?> Denúncias Resolvidas </div>
+<div class="percent_resolvidas"><?php echo $denuncias->get_percent_resolvidas(); ?> de eficiência</div>
 
-<div class="denuncias-list"><?php foreach ($denuncia_completa as $denuncia) {
+<input type="button" value="teste" id="clear">
+<input type="button" value="teste2" id="clear2">
+
+<!-- <div class="denuncias-list"><?php foreach ($denuncia_completa as $denuncia) {
 
 	echo $denuncia['id'];
 
 		
-} ?></div>
+} ?></div> -->
 </div>
 
 
