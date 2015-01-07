@@ -23,7 +23,9 @@ $denuncia_completa = $denuncias->getDenuncia_completa();
 <div id="mapagv"></div>
 </div>
 <div class="coluna-2">
-
+<span>
+<?php echo $denuncias->get_qtd_resolvidas(); ?>
+</span>
 
 <div class="denuncias-list"><?php foreach ($denuncia_completa as $denuncia) {
 

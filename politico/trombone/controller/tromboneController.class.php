@@ -8,13 +8,19 @@ private $denuncia_completa;
 
 private $bairros_gv;
 
+private $bairros_denuncia;
+
+private $qtd_denuncias;
+
+private $qtd_denuncia_resolvida;
+
 
 
 	public function __construct()
 	{
 		
 		$this->setDenuncia_completa();
-
+		$this->set_qtd_resolvidas();
 	}
 
 
@@ -101,11 +107,64 @@ private $bairros_gv;
 
 	public function set_count_bairros()
 	{
-		$values = $wpdb->get_col("SELECT meta_value
-		FROM $wpdb->postmeta WHERE meta_key = 'yourmetakey'" );
+		$bairros_denuncia = $wpdb->get_col("SELECT meta_value
+		FROM $wpdb->postmeta WHERE meta_key = 'bairro_denuncia'" );
+
+		$this->$bairros_denuncia = array_count_values( $bairros_denuncia );
 
 
 	}
+
+
+	public function get_count_bairros()
+	{
+
+		return $this->$bairros_denuncia;
+	}
+
+
+	public function set_qtd_denuncias()
+	{
+		$this->$qtd_denuncias = wp_count_posts( 'denuncia' );
+
+	}
+
+	public function get_qtd_denuncias()
+	{
+		return $this->$qtd_denuncias;
+	}
+
+	public function set_qtd_resolvidas()
+	{
+		global $wpdb;
+		$this->qtd_denuncia_resolvida = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts, $wpdb->postmeta
+		WHERE $wpdb->posts.post_type = 'projeto' AND $wpdb->postmeta.meta_value = 'vetado' " );
+
+
+	}
+
+
+	public function get_qtd_resolvidas()
+	{
+		return $this->qtd_denuncia_resolvida;
+
+	}
+
+
+// 330 denuncias realizadas até hoje
+// 50 denúncias resolvidas
+// 30% de eficiência
+
+// Bairros
+// [ select ]
+
+// denúncias recentes
+
+
+
+
+
+
 
 }
 
