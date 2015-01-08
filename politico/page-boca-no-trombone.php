@@ -5,7 +5,8 @@ get_header();
 $denuncias = new tromboneController();
 
 $denuncia_completa = $denuncias->getDenuncia_completa();
-
+$denuncias->set_bairros_gv();
+$bairros = $denuncias->get_bairros_gv();
 
 
 ?>
@@ -27,7 +28,14 @@ $denuncia_completa = $denuncias->getDenuncia_completa();
 <div class="total_denuncias"><?php echo $denuncias->get_qtd_resolvidas(); ?> Denúncias Resolvidas </div>
 <div class="percent_resolvidas"><?php echo $denuncias->get_percent_resolvidas(); ?> de eficiência</div>
 
-<input type="button" value="teste" id="clear">
+<select name="bairro_denuncia" id="bairro_denuncia">
+<?php
+  foreach ($bairros as $bairro) { ?>
+      <option value="<?php echo $bairro ?>"><?php echo $bairro ?></option>
+<?php
+  }
+?>
+  </select>
 <input type="button" value="teste2" id="clear2">
 
 <!-- <div class="denuncias-list"><?php foreach ($denuncia_completa as $denuncia) {
