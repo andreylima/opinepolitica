@@ -36,14 +36,27 @@ $bairros = $denuncias->get_bairros_gv();
   }
 ?>
   </select>
-<input type="button" value="teste2" id="clear2">
+<input type="button" value="Mostrar todas" id="show_all">
 
-<!-- <div class="denuncias-list"><?php foreach ($denuncia_completa as $denuncia) {
+ <div class="denuncias-list">
 
-	echo $denuncia['id'];
+ 	<?php foreach ($denuncia_completa as $denuncia) {
 
+ 	?>
+ 	<div class="list_lines">
+	<?php	
+	echo '<span>'.$denuncia['titulo'].'</span>';
+	echo '<span>'.$denuncia['local_denuncia'].'</span>';
+	echo '<span>'.$denuncia['data'].'</span>';
+	?>
+ 	</div>
+	
 		
-} ?></div> -->
+	<?php } ?>
+
+</div> 
+
+
 </div>
 
 

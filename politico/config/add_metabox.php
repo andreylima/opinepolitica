@@ -306,6 +306,7 @@ function bairro_denuncia_display_metabox($post, $box)
 ?>
   <select name="bairro_denuncia" id="bairro_denuncia">
 <?php
+  var_dump($bairros);
   foreach ($bairros as $bairro) { ?>
       <option value="<?php echo $bairro ?>" <?php echo ($bairro_denuncia == $bairro) ? "selected" : ""; ?>><?php echo $bairro ?></option>
 <?php

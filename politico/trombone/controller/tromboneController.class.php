@@ -30,7 +30,7 @@ private $percent_resolvidas;
 	{
 
 		
-		$loop = new WP_Query( array( 'post_type' => 'denuncia' ) ); 
+		$loop = new WP_Query( array( 'post_type' => 'denuncia', 'oderby' => 'date' ) ); 
 
 		$i = 0;
 
@@ -91,6 +91,8 @@ private $percent_resolvidas;
 							 'Nova Vila Bretas', 'Bela Vista','Retiro dos Lagos','Kennedy','Jardim Pérola','Fraternidade','Vila Rica', 'São José',
 							 'Elvamar','Vilagge da Serra','Parque das Aroeiras','Encosta do Sol');
 
+	
+	
 		$this->bairros_gv = $bairros_gv;
 
 
