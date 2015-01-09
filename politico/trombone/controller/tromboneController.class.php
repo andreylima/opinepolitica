@@ -91,7 +91,7 @@ private $percent_resolvidas;
 							 'Nova Vila Bretas', 'Bela Vista','Retiro dos Lagos','Kennedy','Jardim Pérola','Fraternidade','Vila Rica', 'São José',
 							 'Elvamar','Vilagge da Serra','Parque das Aroeiras','Encosta do Sol');
 
-	
+		
 	
 		$this->bairros_gv = $bairros_gv;
 
@@ -170,7 +170,7 @@ private $percent_resolvidas;
 
 		$resolvidas = $this->get_qtd_resolvidas();
 
-		$this->percent_resolvidas =  round(count($resolvidas) / $total * 100, 2)."%"; 
+		$this->percent_resolvidas =  round($resolvidas / $total * 100, 2)."%"; 
 
 
 	}

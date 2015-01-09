@@ -3,8 +3,6 @@
 get_header(); 
 
 $denuncias = new tromboneController();
-
-$denuncia_completa = $denuncias->getDenuncia_completa();
 $denuncias->set_bairros_gv();
 $bairros = $denuncias->get_bairros_gv();
 
@@ -24,11 +22,12 @@ $bairros = $denuncias->get_bairros_gv();
 <div id="mapagv"></div>
 </div>
 <div class="coluna-2">
-<div class="total_denuncias"><?php echo $denuncias->get_qtd_denuncias(); ?> Denúncias registradas até o momento </div>
-<div class="total_denuncias"><?php echo $denuncias->get_qtd_resolvidas(); ?> Denúncias Resolvidas </div>
-<div class="percent_resolvidas"><?php echo $denuncias->get_percent_resolvidas(); ?> de eficiência</div>
-
+<div class="total_denuncias"><?php echo "<span class='number_denuncia'>".$denuncias->get_qtd_denuncias()."</span>" ?> Denúncias registradas até o momento </div>
+<div class="total_resolvidas"><?php echo "<span class='number_denuncia'>".$denuncias->get_qtd_resolvidas()."</span>" ?> Denúncias Resolvidas </div>
+<div class="percent_resolvidas"><?php echo "<span class='number_denuncia'>".$denuncias->get_percent_resolvidas()."</span>" ?> de eficiência</div>
+<div class="title_filtrar">FILTRAR POR BAIRRO</div>
 <select name="bairro_denuncia" id="bairro_denuncia">
+<option value="">Bairros</option>
 <?php
   foreach ($bairros as $bairro) { ?>
       <option value="<?php echo $bairro ?>"><?php echo $bairro ?></option>
@@ -38,21 +37,12 @@ $bairros = $denuncias->get_bairros_gv();
   </select>
 <input type="button" value="Mostrar todas" id="show_all">
 
- <div class="denuncias-list">
+ <div id="denuncias_list">
 
- 	<?php foreach ($denuncia_completa as $denuncia) {
-
- 	?>
- 	<div class="list_lines">
-	<?php	
-	echo '<span>'.$denuncia['titulo'].'</span>';
-	echo '<span>'.$denuncia['local_denuncia'].'</span>';
-	echo '<span>'.$denuncia['data'].'</span>';
-	?>
- 	</div>
+</div>
 	
 		
-	<?php } ?>
+
 
 </div> 
 

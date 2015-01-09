@@ -21,8 +21,12 @@ get_header();
 
 
 <h3>2) Dados da Denúncia</h3>
-<h4>Dê detalhes sobre a denuncia. Anexar uma foto ou vídeo do Youtube mostrando o local é obrigatório. </h4>
+<h4>Dê detalhes sobre a denuncia. </h4>
 
+<div class="wrap-line">
+<label for="denuncia-title" class="label-denuncia-title">Título da Denúncia</label>
+<input type="text" class="denuncia-title" placeholder="Ex: Buraco, Descaso, Lixo ....">
+</div>
 <div class="wrap-line">
 <div class="youtube-upload-box float-left">
 <label for="youtube-video"  >Link do vídeo do Youtube:</label>  <input type="text" class="youtube-video"> 
