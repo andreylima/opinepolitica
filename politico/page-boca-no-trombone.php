@@ -14,7 +14,7 @@ $bairros = $denuncias->get_bairros_gv();
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-<div id="page-wrapper-2">
+<div id="page-wrapper-3">
 
 
 

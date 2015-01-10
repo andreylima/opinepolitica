@@ -27,17 +27,24 @@ get_header();
 <label for="denuncia-title" class="label-denuncia-title">Título da Denúncia</label>
 <input type="text" class="denuncia-title" placeholder="Ex: Buraco, Descaso, Lixo ....">
 </div>
-<div class="wrap-line">
-<div class="youtube-upload-box float-left">
-<label for="youtube-video"  >Link do vídeo do Youtube:</label>  <input type="text" class="youtube-video"> 
-</div>
-
-</div>
 
 <div class="descricao-box">
-<label for="descricao-input">Faça a sua denúncia:</label>
-<textarea name="mensagem" id="mensagem"  rows="10" class="descricao-input"></textarea>
+<label for="descricao-input">Descreva a denúncia:</label>
+<textarea name="mensagem" id="mensagem"  rows="5" class="descricao-input" placeholder="Descreva a situação e dê os detalhes que achar necessários." ></textarea>
 </div>
+
+
+<h3>3) Vídeo</h3>
+<h4>Nesta área você deve enviar o link de um vídeo da denúncia gravado por você, ou solicitar que o DEBATEGV faça o vídeo. </h4>
+
+<div class="wrap-line">
+<div class="youtube-upload-box float-left">
+<label for="youtube-video" >Link do vídeo do Youtube:</label>  <input type="text" class="youtube-video" placeholder=" Suba seu vídeo no youtube e cole o link aqui..."> 
+</div>
+
+</div>
+
+
 
 </div>
 
