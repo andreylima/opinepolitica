@@ -9,10 +9,9 @@ get_header();
 <div class="rd-city hide">Governador Valadares</div>
 <div class="rd-state hide">MG</div>
 <form action="" method="post" id="denuncia_form" novalidate="novalidate">
-<input id="lat" name="denuncia[latitude]" type="hidden" value="">
 <input id="addressField" name="denuncia[endereco]" type="hidden" value="">
 <input id="lng" name="denuncia[longitude]" type="hidden" value="">
-
+<input id="lat" name="denuncia[latitude]" type="hidden" value="">
 <h3>1) Endereço</h3>
 <h4>Informe o endereço do local denunciado no campo de texto ou arraste o marcador até o local correto.</h4>
 <?php if ( !is_user_logged_in() ) { 
@@ -32,12 +31,12 @@ get_header();
 
 <div class="wrap-line">
 <label for="denuncia-title" class="label-denuncia-title">Título da Denúncia</label>
-<input type="text" class="denuncia-title" name="denuncia_title" placeholder="Ex: Buraco, Descaso, Lixo ....">
+<input type="text" class="denuncia-title" name="denuncia_title" placeholder="Ex: Buraco, Descaso, Lixo ...." >
 </div>
 
 <div class="descricao-box">
-<label for="descricao-input">Descreva a denúncia:</label>
-<textarea name="mensagem" id="mensagem"  rows="5" class="descricao-input" placeholder="Descreva a situação e dê os detalhes que achar necessários." ></textarea>
+<label for="descricao_denuncia">Descreva a denúncia:</label>
+<textarea name="descricao_denuncia" id="descricao-denuncia"  rows="5" class="descricao_denuncia" placeholder="Descreva a situação e dê os detalhes que achar necessários." ></textarea>
 </div>
 
 
