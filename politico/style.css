@@ -874,10 +874,10 @@ padding-bottom: 5px;
 	display: block;
 	width: 0;
 }
-.aviso-local
+.aviso-local, .aviso-video
 {
 	width: auto;
-	background-color: #0094DA;
+	background-color: #DA0042;
 	height: 40px;
 	margin: auto;
 	font-size: 13px;
@@ -889,13 +889,13 @@ padding-bottom: 5px;
 	line-height: 30px;
 	display: none;
 }
-.aviso-local:after
+.aviso-local:after, .aviso-video:after
 {
 	top: -20px;
 	bottom: auto;
 	left: 30px;
 	border-width: 20px 20px 0 0;
-	border-color: transparent #0094DA;
+	border-color: transparent #DA0042;
 	content: "";
 	position: absolute;
 	border-style: solid;

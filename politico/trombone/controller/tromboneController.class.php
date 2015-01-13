@@ -183,14 +183,26 @@ private $percent_resolvidas;
 
 	}
 
-// 330 denuncias realizadas até hoje
-// 50 denúncias resolvidas
-// 30% de eficiência
+	public function save_denuncia_wp($denuncia)
+	{
 
-// Bairros
-// [ select ]
+		$my_post = array(
+		  'post_title'    => $denuncia['denuncia_title'],
+		  'post_content'  => $denuncia['descricao_denuncia'],
+		  'post_status'   => 'publish',
+		  'post_type' => 'denuncia',
 
-// denúncias recentes
+		);
+
+
+		$postID = wp_insert_post( $my_post );
+
+
+		return $postID;
+
+
+
+	}
 
 
 

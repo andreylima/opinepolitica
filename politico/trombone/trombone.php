@@ -33,7 +33,7 @@ function save_denuncia()
 	{
 		check_ajax_referer( 'debate_nonce', 'security' );
 
-		$denuncia['endereco'] = sanitize_text_field($_POST['endereco']);
+		$denuncia['endereco'] = sanitize_text_field($_POST['denuncia-endereco']);
 		$denuncia['longitude'] = sanitize_text_field($_POST['longitude']);
 		$denuncia['latitude'] = sanitize_text_field($_POST['latitude']);
 		$denuncia['denuncia_title'] = sanitize_text_field($_POST['denuncia_title']);
@@ -42,7 +42,33 @@ function save_denuncia()
 		$denuncia['debate-video'] = sanitize_text_field($_POST['debate-video']);
 		$denuncia['user-personagem'] = sanitize_text_field($_POST['user-personagem']);
 
-		echo json_encode($denuncia);
+		if ($denuncia['endereco'] == "") {
+
+			$erros = 'noadress';
+			echo $erros;
+
+			exit;
+		}
+
+
+
+		if ($denuncia['youtube-video'] == "" && $denuncia['debate-video'] =="") {
+			
+			$erros = 'novideo';
+			echo $erros;
+
+			exit;
+
+
+		}
+
+
+		$denuncias = new tromboneController();
+
+		$denuncia_retorno = $denuncias->save_denuncia_wp($denuncia);
+
+
+		echo json_encode($denuncia_retorno);
 			
 		exit;
 		

@@ -79,6 +79,19 @@ function my_register_sidebars() {
 	add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
+function my_remove_menu_pages() {
+ 
+    global $user_ID;
+ 
+    if ( current_user_can( 'wpmayorauthor' ) ) {
+	remove_menu_page( 'edit.php?post_type=posts' );
+	remove_menu_page( 'edit.php?post_type=denuncia' );
+       
+    }
+}
+
+
+
 
 
 ?>

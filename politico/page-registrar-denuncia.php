@@ -42,6 +42,7 @@ get_header();
 
 
 <h3>3) Vídeo</h3>
+<div class="aviso-video">É obrigatório escolher uma opção de vídeo.</div>
 <h4>Nesta área você deve enviar o link de um vídeo da denúncia gravado por você, ou solicitar que o DEBATEGV faça o vídeo. </h4>
 
 <div class="wrap-line">
