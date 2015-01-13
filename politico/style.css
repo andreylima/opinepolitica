@@ -852,7 +852,7 @@ padding-bottom: 5px;
 	background-color: #0094DA;
 	height: 40px;
 	margin: auto;
-	font-size: 12px;
+	font-size: 13px;
 	margin-top: 25px;
 	padding: 5px;
 	text-align: center;
@@ -862,6 +862,34 @@ padding-bottom: 5px;
 
 }
 .tip-link:after
+{
+	top: -20px;
+	bottom: auto;
+	left: 30px;
+	border-width: 20px 20px 0 0;
+	border-color: transparent #0094DA;
+	content: "";
+	position: absolute;
+	border-style: solid;
+	display: block;
+	width: 0;
+}
+.aviso-local
+{
+	width: auto;
+	background-color: #0094DA;
+	height: 40px;
+	margin: auto;
+	font-size: 13px;
+	margin-top: 25px;
+	padding: 5px;
+	text-align: center;
+	position: relative;	
+	color: white;
+	line-height: 30px;
+	display: none;
+}
+.aviso-local:after
 {
 	top: -20px;
 	bottom: auto;
@@ -900,19 +928,17 @@ padding-bottom: 5px;
 	margin-top: 15px;
 
 }
-.descricao-input
+.descricao_denuncia
 {
 	display: block;
+	width: 50%;
 }
 .wrap-line
 {
 	overflow: auto;
 	margin-bottom: 10px;
 }
-.descricao-input
-{
-	width: 50%;
-}
+
 #link_video
 {
 	margin-top: 10px;

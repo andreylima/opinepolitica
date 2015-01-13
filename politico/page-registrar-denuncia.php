@@ -9,9 +9,9 @@ get_header();
 <div class="rd-city hide">Governador Valadares</div>
 <div class="rd-state hide">MG</div>
 <form action="" method="post" id="denuncia_form" novalidate="novalidate">
-<input id="addressField" name="denuncia[endereco]" type="hidden" value="">
-<input id="lng" name="denuncia[longitude]" type="hidden" value="">
-<input id="lat" name="denuncia[latitude]" type="hidden" value="">
+<input id="addressField" name="denuncia-endereco" type="hidden" value="">
+<input id="lng" name="longitude" type="hidden" value="">
+<input id="lat" name="latitude" type="hidden" value="">
 <h3>1) Endereço</h3>
 <h4>Informe o endereço do local denunciado no campo de texto ou arraste o marcador até o local correto.</h4>
 <?php if ( !is_user_logged_in() ) { 
@@ -25,11 +25,12 @@ get_header();
 <div id="mapagv-register"></div>
 <div class="active-adress"></div>
 
-
+<div class="aviso-local" >Só continue o preenchimento do formulário se já estiver informado o local da denúncia.</div>
 <h3>2) Dados da Denúncia</h3>
 <h4>Dê detalhes sobre a denuncia. </h4>
 
 <div class="wrap-line">
+
 <label for="denuncia-title" class="label-denuncia-title">Título da Denúncia</label>
 <input type="text" class="denuncia-title" name="denuncia_title" placeholder="Ex: Buraco, Descaso, Lixo ...." >
 </div>
@@ -45,17 +46,17 @@ get_header();
 
 <div class="wrap-line">
 <div class="youtube-upload-box float-left">
-<label for="youtube-video" >Link do vídeo do Youtube:</label>  <input type="text" class="youtube-video" placeholder=" Suba seu vídeo no youtube e cole o link aqui..."> 
+<label for="youtube-video" >Link do vídeo do Youtube:</label>  <input name="youtube-video" type="text" class="youtube-video" placeholder=" Suba seu vídeo no youtube e cole o link aqui..."> 
 <div class="tip-link">O vídeo deve mostrar o problema apontado na denúncia.</div>
 </div>
 <div class="option-video "> 
 <div class="debate-filma-box">
-<input type="radio" name="debate-video" class="debate-video" value="yes">
-<label for="debate-video" class="debate-video-label">Gostaria que o DEBATEGV fizesse o vídeo da denúncia.</label>
+<input type="radio" id="debate-video" name="debate-video" class="debate-video" value="yes">
+<label for="debate-video" class="debate-video-label"><i>Gostaria que o DEBATEGV fizesse o vídeo da denúncia.</i></label>
 <div class="tip-link">O DEBATEGV irá até o local da denúncia fazer a gravação do vídeo.</div>
 </div>
 <div class="user-personagem-box">
-<input type="checkbox" name="user-personagem" class="user-personagem" value="yes">
+<input type="checkbox" id="user-personagem" name="user-personagem" class="user-personagem" value="yes">
 <label for="user-personagem">Gostaria de ser um personagem do vídeo.</label>
 <div class="tip-link">O DEBATEGV entrará em contato por e-mail para combinar o melhor horário para a gravação.</div>
 </div>
