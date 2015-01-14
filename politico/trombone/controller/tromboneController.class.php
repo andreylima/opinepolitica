@@ -170,7 +170,16 @@ private $percent_resolvidas;
 
 		$resolvidas = $this->get_qtd_resolvidas();
 
-		$this->percent_resolvidas =  round($resolvidas / $total * 100, 2)."%"; 
+		if ($total == 0) {
+			$this->percent_resolvidas = 0;
+		}
+		else
+		{
+
+			$this->percent_resolvidas =  round($resolvidas / $total * 100, 2)."%"; 
+		}
+
+		
 
 
 	}
