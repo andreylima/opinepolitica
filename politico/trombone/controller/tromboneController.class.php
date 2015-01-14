@@ -189,7 +189,7 @@ private $percent_resolvidas;
 		$my_post = array(
 		  'post_title'    => $denuncia['denuncia_title'],
 		  'post_content'  => $denuncia['descricao_denuncia'],
-		  'post_status'   => 'publish',
+		  'post_status'   => 'pending',
 		  'post_type' => 'denuncia',
 
 		);

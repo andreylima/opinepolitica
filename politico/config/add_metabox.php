@@ -36,7 +36,7 @@ function pol_add_custom_metaboxes()
     add_meta_box( 'latitude', 'Latitude', 'latitude_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'longitude', 'Longitude', 'longitude_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'situacao_denuncia', 'Situacao da denuncia', 'situacao_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
-
+    add_meta_box( 'Autor', 'Autor da Denúncia', 'autor_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
 }
 
 /**
@@ -318,7 +318,18 @@ function bairro_denuncia_display_metabox($post, $box)
   
 }
 
+function autor_denuncia_display_metabox($post, $box)
+{
+    $autor = get_the_author();
+  
+?>
+  <input type="text" name="autor" id="autor" 
+  value="<?php echo $autor; ?>" />
+<?php
 
+
+
+}
 
 
 ?>
