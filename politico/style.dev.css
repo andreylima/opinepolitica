@@ -752,6 +752,10 @@ margin: auto;
 {
 	float: right;
 }
+.float-left
+{
+	float: left;
+}
 .wp-social-login-provider-list img
 {
 	float: left;
@@ -783,7 +787,332 @@ margin: auto;
 #mapagv
 {
 	height: 100%;
+	width: 100%;
+	float: left;
 }
+#mapagv-register
+{
+	height: 250px;
+	width: 100%;
+	margin: auto;
+	margin-top: -30px;	
+
+}
+.denuncias-list
+{
+	float: left;
+	color: white;
+}
+.active-adress
+{
+	height: 30px;
+	width: 100%;
+	margin: auto;
+	color: white;
+	line-height: 30px;
+	background-color: #0094DA;
+	padding-left: 10px;
+}
+.page-denuncia h3, .page-denuncia h4, .page-denuncia label
+{
+	color: white;
+}
+.page-denuncia h4{
+border-bottom: 2px dotted rgba(95, 176, 255, 0.61);
+padding-bottom: 5px;
+}
+
+
+.youtube-video
+{
+	width: 400px;
+	display: block;
+	padding-left:20px;
+	
+}
+.tip-link
+{
+	width: auto;
+	background-color: #0094DA;
+	height: 40px;
+	margin: auto;
+	font-size: 13px;
+	margin-top: 25px;
+	padding: 5px;
+	text-align: center;
+	position: relative;	
+	color: white;
+	line-height: 30px;
+
+}
+.tip-link:after
+{
+	top: -20px;
+	bottom: auto;
+	left: 30px;
+	border-width: 20px 20px 0 0;
+	border-color: transparent #0094DA;
+	content: "";
+	position: absolute;
+	border-style: solid;
+	display: block;
+	width: 0;
+}
+.aviso-local, .aviso-video
+{
+	width: auto;
+	background-color: #DA0042;
+	height: 40px;
+	margin: auto;
+	font-size: 13px;
+	margin-top: 25px;
+	padding: 5px;
+	text-align: center;
+	position: relative;	
+	color: white;
+	line-height: 30px;
+	display: none;
+}
+.aviso-local:after, .aviso-video:after
+{
+	top: -20px;
+	bottom: auto;
+	left: 30px;
+	border-width: 20px 20px 0 0;
+	border-color: transparent #DA0042;
+	content: "";
+	position: absolute;
+	border-style: solid;
+	display: block;
+	width: 0;
+}
+.img-denuncia
+{
+	color: white;
+	display: block;
+}
+.ou-format
+{
+	color: white;
+	font-weight: 900;
+	margin-top: 5px;
+	display: block;
+	float: left;
+	margin-left: 20%;
+	font-size: 25px;
+
+}
+.page-denuncia label
+{
+	margin-right: 5px;
+}
+.descricao-box
+{
+	clear: both;
+	margin-top: 15px;
+
+}
+
+#link_video
+{
+	margin-top: 10px;
+	display: block;
+	float: left;
+}
+.hc-info-title
+{
+	float: left;
+	width: 60%;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+.data-denuncia
+{
+	margin-top: 0px;
+	margin-bottom: 5px;
+	display: block;
+
+}
+.local-denuncia
+{
+	display: block;
+	clear: both;
+	font-size: 11px;
+}
+.hc-info-box
+{
+	float: left;
+	margin-top: 10px;
+	padding-left: 10px;
+	width: 140px;
+
+}
+#situacao_denuncia
+{
+	display: block;
+	width: 80%;
+}
+.qtd-comments-denuncia
+{
+	margin-top: 15px;
+	display: block;
+}
+.situacao-label
+{
+	margin-top: 15px;
+}
+
+.total_denuncias, .total_resolvidas, .percent_resolvidas
+{
+
+color: white;
+font-size: 15px;
+
+}
+.total_denuncias .number_denuncia, .total_resolvidas .number_denuncia, .percent_resolvidas .number_denuncia
+{
+	font-size: 33px;
+	margin-right: 4px;
+}
+#show_all
+{
+background-color: #19B5FE;
+border: 0;
+color: white;
+border-radius: 5px;
+padding: 5px;
+margin: auto;
+width: 50%;
+display: block;
+}
+#bairro_denuncia_chosen
+{
+	display: block;
+	margin: auto;
+	margin-bottom: 15px;
+}
+.title_filtrar
+{
+color: white;
+font-weight: 900;
+text-align: center;
+text-decoration: underline;
+margin-bottom: 15px;
+margin-top: 20px;
+}
+#denuncias_list
+{
+	margin-top: 15px;
+	border: solid 1px #FFB9B2;
+	border-radius: 4px;
+	height: 245px;
+	overflow-y: scroll;
+}
+#denuncias_list li
+{
+	list-style: none;
+	border-bottom: solid 1px #FFB9B2;
+}
+#denuncias_list li:last-child
+{
+	border: 0; 
+}
+#denuncias_list li h4
+{
+	color: white;
+	margin: 4px;
+}
+#denuncias_list li h5
+{
+	color: #FFB9B2;
+	margin: 4px;
+}
+.label-denuncia-title
+{
+	display: block;
+}
+.denuncia-title
+{
+	float: left;
+	display: block;
+	width: 300px;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    gray;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    gray;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:   gray;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    gray;
+}
+
+.debate-video
+{
+	margin-right: 15px !important;
+
+}
+.user-personagem
+{
+	margin-right: 15px !important;
+}
+.deactive-color
+{
+	background-color: rgb(190, 190, 190);
+}
+.display-none
+{
+	display: none;
+}
+
+.youtube-upload-box
+{
+	margin-left: 20px;
+}
+.registered-users-required
+{
+	width: 700px;
+	height: 70px;
+	text-align: center;
+	font-size: 20px;
+	background-color: #EF4836;
+	color: white;
+	margin: auto;
+	line-height: 35px;
+	margin-top: 40px;
+
+}
+
+
+.denunciar
+{
+	width: 50%;
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	line-height: 34px;
+	background-color: #19B5FE;
+	border-radius: 6px;
+	font-size: 17.5px;
+	border: 0px;
+	margin-top: 10px;
+}
+
+.ver-mapa:hover
+{
+	text-decoration: none;
+	background-color: #89002A !important;
+}
+#registrar-denuncia:hover, .denunciar:hover, #show_all:hover
+{
+	text-decoration: none;
+	background-color: #0094DA !important;
+	
+}
+
 
 
 
@@ -1902,6 +2231,37 @@ width: 80px !important;
 	overflow: auto;
 	min-height: 100%;
 }
+#page-wrapper-2
+{
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background: rgba(0,0,0,0.6);
+	height: auto;
+	overflow: hidden;
+
+}
+#page-wrapper-3
+{
+	padding-top: 5%;
+	background: rgba(0,0,0,0.6);
+	height: 100%;
+	
+}
+#page-wrapper-3 .coluna-1
+{
+	float: left;
+	height: 100%;
+	width: 75%;
+}
+#page-wrapper-3 .coluna-2
+{
+	float: left;
+	height: 100%;
+	width: 25%;
+	background-color: #EF4836;
+	padding: 10px;
+
+}
 .project-content
 {
 	padding-top: 10px;
@@ -2316,6 +2676,83 @@ margin-right: 4%;
 {
 margin: 15px;
 }
+.search-adress
+{
+	position: relative;
+	z-index: 2;
+	width: 320px;
+	top: 22px;
+	left: 66.7%;
+	border-radius: 3px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border: solid 2px transparent;
+	border-radius: 0;
+	margin-top: 2px;
+	font-size: .8em;
+	padding: 10px;
+	font-size: 16px;
+	color: #999;
+}
+.wrap-line
+{
+	overflow: auto;
+	margin-bottom: 10px;
+}
+.option-video
+{
+	float: left;
+	color: white;
+	font-size: 23px;
+	margin-left: 100px;
+	margin-top: 20px;
+
+}
+.descricao_denuncia
+{
+	display: block;
+	width: 50%;
+}
+.user-personagem-box
+{
+	margin-left: 40px;
+	margin-top: 20px;
+	display: none;
+}
+#registrar-denuncia
+{
+	width: 30%;
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	line-height: 34px;
+	background-color: #19B5FE;
+	border-radius: 6px;
+	padding: 11px 19px;
+	font-size: 17.5px;
+	border: 0px;
+	margin-top: 20px;
+	float: left;
+	margin-left: 100px;
+}
+.ver-mapa
+{
+	width: 30%;
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	line-height: 34px;
+	background-color: #DA0042;
+	border-radius: 6px;
+	padding: 11px 19px;
+	font-size: 17.5px;
+	border: 0px;
+	margin-top: 20px;
+	float: left;
+	color: white;
+	margin-left: 100px;
+	text-align: center;
+}
+
 }
 
 
@@ -2866,18 +3303,7 @@ h1
 	border-radius: 5px;
 	padding-left: 5px;
 }
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #333333;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #333333;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #333333;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #333333;
-}
+
 
 
 
@@ -3450,7 +3876,7 @@ position: relative;
 margin-right: 10px;
 width: 50%;
 }
-#page-wrapper, #single-post-wrapper
+#page-wrapper, #single-post-wrapper, #page-wrapper-2
 {
 	padding-top: 30%;
 	padding-left: 5%;
@@ -3458,6 +3884,7 @@ width: 50%;
 	padding-bottom: 10%;
 	background-color: #34495e;
 	overflow: auto;
+	height: 100%;
 
 }
 .page-wrapper-fit
@@ -3645,5 +4072,108 @@ transform: none !important;
 	padding: 2px;
 	font-size: 23px;
 	text-align: center;
+}
+#page-wrapper-3 .coluna-1
+{
+	height: 100%;
+	width: 100%;
+}
+.search-adress
+{
+	position: relative;
+	z-index: 2;
+	width: 275px;
+	top: 22px;
+	left: 8%;
+	border-radius: 3px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border: solid 2px transparent;
+	border-radius: 0;
+	margin-top: 2px;
+	font-size: .8em;
+	padding: 10px;
+	font-size: 16px;
+	color: #999;
+}
+.wrap-line
+{
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.option-video
+{
+	float: left;
+	color: white;
+	font-size: 23px;
+	margin-top: 20px;
+
+}
+.descricao_denuncia
+{
+	display: block;
+	width: 80%;
+}
+.debate-filma-box
+{
+	text-align: center;
+}
+.user-personagem-box
+{
+	text-align: center;
+	margin-top: 20px;
+	display: none;
+}
+.user-personagem-box .tip-link
+{
+	height: 70px;
+
+}
+#registrar-denuncia
+{
+	width: 80%;
+	display: block;
+	margin: auto;
+	line-height: 34px;
+	background-color: #19B5FE;
+	border-radius: 6px;
+	padding: 11px 19px;
+	font-size: 17.5px;
+	border: 0px;
+	margin-top: 20px;
+}
+
+
+.ver-mapa
+{
+	width: 80%;
+	display: block;
+	margin: auto;
+	line-height: 34px;
+	background-color: #DA0042;
+	border-radius: 6px;
+	padding: 11px 19px;
+	font-size: 17.5px;
+	border: 0px;
+	margin-top: 20px;
+	color: white;
+	text-align: center;
+}
+#page-wrapper-3
+{
+	height: 100%;
+}
+#page-wrapper-3 .coluna-1
+{
+
+	height: 95%;
+	width: 100%;
+}
+#page-wrapper-3 .coluna-2
+{
+
+	width: 100%;
+	background-color: #EF4836;
+	padding: 10px;
+
 }
 }

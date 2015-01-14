@@ -39,8 +39,8 @@ function save_denuncia()
 		$denuncia['denuncia_title'] = sanitize_text_field($_POST['denuncia_title']);
 		$denuncia['descricao_denuncia'] = sanitize_text_field($_POST['descricao_denuncia']);
 		$denuncia['youtube-video'] = sanitize_text_field($_POST['youtube-video']);
-		$denuncia['debate-video'] = sanitize_text_field($_POST['debate-video']);
-		$denuncia['user-personagem'] = sanitize_text_field($_POST['user-personagem']);
+		$denuncia['debate-video'] = (sanitize_text_field($_POST['debate-video']) == '') ? 'nao' : sanitize_text_field($_POST['debate-video']); 
+		$denuncia['user-personagem'] = (sanitize_text_field($_POST['user-personagem']) == '') ? 'nao' : sanitize_text_field($_POST['user-personagem']);
 
 		if ($denuncia['endereco'] == "") {
 
@@ -68,7 +68,7 @@ function save_denuncia()
 		$denuncia_retorno = $denuncias->save_denuncia_wp($denuncia);
 
 
-		echo json_encode($denuncia_retorno);
+		echo json_encode($denuncia);
 			
 		exit;
 		

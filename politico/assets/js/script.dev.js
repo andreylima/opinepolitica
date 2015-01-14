@@ -300,7 +300,40 @@ jQuery("#contato_form").validate({
         }
     });
 
+jQuery("#denuncia_form").validate({
 
+ rules: {
+            
+            denuncia_title: "required",
+            descricao_denuncia: "required"
+           
+                       
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            
+            denuncia_title: "",
+            descricao_denuncia: ""
+            
+        },
+        errorPlacement: function(error, element) {
+        
+            
+        element.css("background-color","rgb(241, 255, 168)");
+        element.css("border","solid 2px red");
+        
+        
+        
+    },
+        
+        submitHandler: function(form) {
+
+            save_denuncia_ajax();
+            
+        }
+
+});
 
 
 
@@ -765,3 +798,97 @@ jQuery('.chosen-select').change(function(event){
 
 });
 
+//trombone
+
+jQuery('#bairro_denuncia').chosen({inherit_select_classes : false});
+
+
+jQuery(document).ready(function() {
+
+jQuery(".debate-video").change(function(){
+
+if (jQuery(".debate-video").is(':checked')) {
+
+
+jQuery(".youtube-video").addClass("deactive-color");
+jQuery(".user-personagem-box").addClass("display-block");
+
+}
+
+})
+
+jQuery(".youtube-video").focus(function(){
+
+jQuery(".youtube-video").removeClass("deactive-color");
+jQuery(".debate-video").prop('checked', false);
+jQuery(".user-personagem-box").removeClass("display-block");
+})
+
+
+
+jQuery(".denuncia-title").focus(function()
+{
+    if (jQuery("#addressField").val() == "") {
+        jQuery(".aviso-local").addClass("display-block");
+        
+    }
+    else
+    {
+        jQuery(".aviso-local").removeClass("display-block");
+
+    }
+})
+
+jQuery(".denuncia-title").focusout(function()
+{
+    if (jQuery("#addressField").val() == "") {
+        jQuery(".aviso-local").addClass("display-block");
+        
+    }
+    else
+    {
+        jQuery(".aviso-local").removeClass("display-block");
+
+    }
+})
+
+
+
+
+});
+
+var request_count = 0;
+
+function save_denuncia_ajax()
+{
+    var denuncia_data = jQuery('#denuncia_form').serialize();
+ 
+if (request_count != 1) {
+    jQuery.ajax({
+                type: 'POST',
+                url: myAjax.ajaxurl,
+                data: denuncia_data + '&action=save_denuncia'+'&security='+myAjax.ajax_nonce,
+                success: function(response) {
+
+                    switch(response){
+
+                        case "novideo":
+                        jQuery(".aviso-video").addClass("display-block");
+                        break;
+                        case "noadress":
+                        jQuery(".aviso-local").addClass("display-block");
+                        break;
+
+                    };
+
+                    request_count = 1;
+
+                    location.reload(true);
+
+                    event.preventDefault();
+                }
+            });
+
+    };
+
+}

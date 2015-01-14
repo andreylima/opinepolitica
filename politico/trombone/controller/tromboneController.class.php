@@ -30,7 +30,7 @@ private $percent_resolvidas;
 	{
 
 		
-		$loop = new WP_Query( array( 'post_type' => 'denuncia', 'oderby' => 'date' ) ); 
+		$loop = new WP_Query( array( 'post_type' => 'denuncia', 'oderby' => 'date',  'post_status'=>'publish' ) ); 
 
 		$i = 0;
 
@@ -197,8 +197,18 @@ private $percent_resolvidas;
 
 		$postID = wp_insert_post( $my_post );
 
+		update_post_meta( $postID, 'local_denuncia', $denuncia['endereco']);
+		update_post_meta( $postID, 'longitude', $denuncia['longitude']);
+		update_post_meta( $postID, 'latitude', $denuncia['latitude']);
+		update_post_meta( $postID, 'link_video', $denuncia['youtube-video']);
+		update_post_meta( $postID, 'debate_video', $denuncia['debate-video']);
+		update_post_meta( $postID, 'user-personagem', $denuncia['user-personagem']);
 
-		return $postID;
+
+
+		send_email_denuncia();
+		
+		return 1;
 
 
 

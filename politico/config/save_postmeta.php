@@ -143,6 +143,12 @@ function save_denuncia_postmeta($post_id)
      if( isset( $_POST['link_video'] ) )
           update_post_meta( $post_id, 'link_video', $_POST['link_video']);
 
+      if( isset( $_POST['debate_video'] ) )
+         update_post_meta( $post_id, 'debate_video', $_POST['debate_video']);
+
+       if( isset( $_POST['user-personagem'] ) )
+         update_post_meta( $post_id, 'user-personagem', $_POST['user-personagem']); 
+
       if( isset( $_POST['situacao_denuncia'] ) )
           update_post_meta( $post_id, 'situacao_denuncia', $_POST['situacao_denuncia']);
 

@@ -31,6 +31,8 @@ function pol_add_custom_metaboxes()
 
     //Denúncia
     add_meta_box( 'link_video', 'Link do vídeo (youtube)', 'link_video_display_metabox', 'denuncia', 'normal', 'high' );
+    add_meta_box( 'debate_video', 'DebateGV faz o vídeo?', 'debate_video_display_metabox', 'denuncia', 'normal', 'high' );
+    add_meta_box( 'user-personagem', 'Quer ser personagem do vídeo?', 'user_personagem_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'local_denuncia', 'Local da denuncia', 'local_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'bairro_denuncia', 'Bairro da denuncia', 'bairro_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'latitude', 'Latitude', 'latitude_display_metabox', 'denuncia', 'normal', 'high' );
@@ -280,6 +282,30 @@ function link_video_display_metabox($post, $box)
 
 }
 
+function debate_video_display_metabox($post, $box)
+{
+  $debate_video = get_post_meta($post->ID, 'debate_video', true);
+  
+?>
+  <input type="text" name="debate_video" id="debate_video" 
+  value="<?php echo $debate_video; ?>" />
+<?php
+
+}
+
+function user_personagem_display_metabox($post, $box)
+{
+  $user_personagem = get_post_meta($post->ID, 'user-personagem', true);
+  
+?>
+  <input type="text" name="user-personagem" id="user-personagem" 
+  value="<?php echo $user_personagem; ?>" />
+<?php
+
+}
+
+
+
 function situacao_denuncia_display_metabox($post, $box)
 {
     $situacao_denuncia = get_post_meta($post->ID, 'situacao_denuncia', true);
@@ -320,7 +346,8 @@ function bairro_denuncia_display_metabox($post, $box)
 
 function autor_denuncia_display_metabox($post, $box)
 {
-    $autor = get_the_author();
+   $autor = get_userdata( get_the_author_ID() );
+    $autor = $autor->user_email;
   
 ?>
   <input type="text" name="autor" id="autor" 
