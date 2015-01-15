@@ -12,6 +12,9 @@ add_action('wp_ajax_nopriv_get_denuncias', 'get_denuncias');
 add_action('wp_ajax_save_denuncia', 'save_denuncia');
 add_action('wp_ajax_nopriv_save_denuncia', 'save_denuncia');
 
+add_action('wp_ajax_get_denuncia', 'get_denuncia');
+add_action('wp_ajax_nopriv_get_denuncia', 'get_denuncia');
+
 function get_denuncias()
 	{
 		
@@ -27,6 +30,22 @@ function get_denuncias()
 	
 
 	}
+
+function get_denuncia()
+{
+	
+		$denuncia = new tromboneController();
+
+		$denuncia_single = $denuncias->getDenuncia_completa();
+
+					
+	   	echo json_encode($denuncia_single);
+			
+		exit;
+
+
+
+}
 
 
 function save_denuncia()

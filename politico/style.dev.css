@@ -1112,7 +1112,14 @@ margin-top: 20px;
 	background-color: #0094DA !important;
 	
 }
-
+.denuncia-sucesso
+{
+	background-color: #00DAC1;
+	display: block;
+	width: 50%;
+	clear: both;
+	margin-top: 29px;
+}
 
 
 

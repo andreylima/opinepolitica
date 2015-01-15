@@ -40,7 +40,7 @@ function enqueue_scripts()
                 
     }
 
-         if( is_page() )
+         if( is_page('boca-no-trombone') or is_page('registrar-denuncia') or ( 'denuncia' == get_post_type() ) )
     {
 
        wp_enqueue_script('google.maps.api');

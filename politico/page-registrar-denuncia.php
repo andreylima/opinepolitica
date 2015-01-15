@@ -74,11 +74,13 @@ get_header();
 }
 else
 {?>
+<div class="wrap-line">
   <input type="submit" name="registrar-denuncia" value="REGISTRAR DENÚNCIA" id="registrar-denuncia" >
  <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Boca no Trombone' ) ) ); ?>" ><div class="ver-mapa">VOLTAR PARA O MAPA</div></a>
 <?php } ?>
+</div>
 </form>
-
+<div class="denuncia-sucesso">A denúncia foi registrada com sucesso, aguarde a aprovação para que ela apareça no mapa. </br>Para realizar outra denúncia recarregue a página.</div>
 
 <?php 
 
