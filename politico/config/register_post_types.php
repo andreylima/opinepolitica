@@ -84,7 +84,7 @@ function register_post_types()
                 'edit_item'     => 'Editar Denúncia',
             ),
             'public'      => true,
-            'supports'    => array( 'title', 'editor', 'thumbnail'),
+            'supports'    => array( 'title', 'editor', 'thumbnail','comments'),
             'has_archive' => true,
             'taxonomies'  => array( 'category')
         )

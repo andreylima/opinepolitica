@@ -228,17 +228,17 @@ private $denuncia_single;
 	public function set_denuncia_single()
 	{
 
-		$denuncia_single[$i]['titulo'] = get_the_title();
-		$denuncia_single[$i]['id'] = get_the_id();
-		$denuncia_single[$i]['link_video'] = get_post_meta(get_the_id(), 'link_video', true );
-		$denuncia_single[$i]['local_denuncia'] = get_post_meta(get_the_id(), 'local_denuncia', true  );
-		$denuncia_single[$i]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
-		$denuncia_single[$i]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
-		$denuncia_single[$i]['data'] = get_the_date();
-		$denuncia_single[$i]['permalink'] = get_the_permalink();
-		$denuncia_single[$i]['situacao_denuncia'] = get_post_meta(get_the_id(), 'situacao_denuncia', true  );
-		$denuncia_single[$i]['qtd_comments_denuncia'] = get_comments_number( get_the_id() );
-		$denuncia_single[$i]['bairro_denuncia'] = get_post_meta(get_the_id(), 'bairro_denuncia', true );
+		$denuncia_single[0]['titulo'] = get_the_title();
+		$denuncia_single[0]['id'] = get_the_id();
+		$denuncia_single[0]['link_video'] = get_post_meta(get_the_id(), 'link_video', true );
+		$denuncia_single[0]['local_denuncia'] = get_post_meta(get_the_id(), 'local_denuncia', true  );
+		$denuncia_single[0]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
+		$denuncia_single[0]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
+		$denuncia_single[0]['data'] = get_the_date();
+		$denuncia_single[0]['permalink'] = get_the_permalink();
+		$denuncia_single[0]['situacao_denuncia'] = get_post_meta(get_the_id(), 'situacao_denuncia', true  );
+		$denuncia_single[0]['qtd_comments_denuncia'] = get_comments_number( get_the_id() );
+		$denuncia_single[0]['bairro_denuncia'] = get_post_meta(get_the_id(), 'bairro_denuncia', true );
 
 		$this->denuncia_single = $denuncia_single;
 

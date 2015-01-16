@@ -7,7 +7,10 @@ $link_video = explode("=",$link_video);
 
 ?>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+	var templateDir = "<?php bloginfo('template_directory'); ?>";
+	
+</script>
 
 <div class="single-denuncia-wrapper">
 	
@@ -30,7 +33,14 @@ $link_video = explode("=",$link_video);
 <iframe id="link_video-single" style="width:600px;height:430px;background-color:black"  src="//www.youtube.com/embed/<?php echo $link_video[1]; ?>" frameborder="0" allowfullscreen ALT="carregando video"></iframe>
 
 
-<?php  print_r( get_post_type()); ?>
+
+
+    
+
+<?php comments_template(); ?>
+
+ 
+  
 
 
 

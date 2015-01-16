@@ -36,7 +36,8 @@ function get_denuncia()
 	
 		$denuncia = new tromboneController();
 
-		$denuncia_single = $denuncias->getDenuncia_completa();
+		$denuncia->set_denuncia_single();
+		$denuncia_single = $denuncia->get_denuncia_single();
 
 					
 	   	echo json_encode($denuncia_single);
