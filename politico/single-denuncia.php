@@ -14,7 +14,7 @@ $link_video = explode("=",$link_video);
 
 <div class="single-denuncia-wrapper">
 	
-
+<div class="denuncia-wrapper">
 <h3><?php the_title(); ?></h3>
 <h4> 
 <?php while ( have_posts() ) : the_post();
@@ -33,11 +33,13 @@ $link_video = explode("=",$link_video);
 <iframe id="link_video-single" style="width:600px;height:430px;background-color:black"  src="//www.youtube.com/embed/<?php echo $link_video[1]; ?>" frameborder="0" allowfullscreen ALT="carregando video"></iframe>
 
 
-
+</div>
 
     
+  <div class="form-comment-denuncia">
+    <?php comments_template(); ?>
+    </div>
 
-<?php comments_template(); ?>
 
  
   

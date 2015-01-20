@@ -824,14 +824,11 @@ margin: auto;
 {
 	color: white;
 }
-.page-denuncia h4{
+.denuncia-wrapper h4{
 border-bottom: 2px dotted rgba(95, 176, 255, 0.61);
 padding-bottom: 5px;
 }
-.single-denuncia-wrapper h4 {
-border-bottom: 2px dotted rgba(95, 176, 255, 0.61);
-padding-bottom: 5px;
-}
+
 .youtube-video
 {
 	width: 400px;
@@ -1881,6 +1878,23 @@ float: left;
 	height: 200px;
 	height: 12.5rem;
 	overflow: hidden;
+}
+.form-comment-denuncia
+{
+	background-color: white;
+	padding: 10px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	width: 60%;
+}
+.form-comment-denuncia h3
+{
+	color: black;
+}
+.form-comment-denuncia h4
+{
+	color: red;
 }
 .form-comment
 {
@@ -3613,7 +3627,7 @@ border: solid 2px #ecf0f1 !important;
 
 }
 
-.form-comment #submit
+#comments.page-denuncia h3, .page-denuncia h4, .page-denuncia label, .single-denuncia-wrapper h3, .single-denuncia-wrapper h4, .single.denuncia-wrapper label #submit
 {
 	width: 100%;
 	display: block;
@@ -3625,7 +3639,7 @@ border: solid 2px #ecf0f1 !important;
 	padding: 11px 19px;
 	font-size: 17.5px;
 	border: 0px;
-	}
+}
 
 .autor-titulo
 {
@@ -4210,5 +4224,22 @@ transform: none !important;
 	background-color: #EF4836;
 	padding: 10px;
 
+}
+.form-comment-denuncia
+{
+	background-color: white;
+	padding: 10px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	
+}
+.form-comment-denuncia h3
+{
+	color: black;
+}
+.form-comment-denuncia h4
+{
+	color: red;
 }
 }
