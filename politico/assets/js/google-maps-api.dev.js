@@ -70,6 +70,21 @@ var position = new google.maps.LatLng(-18.8595948, -41.9529012);
 
 google.maps.event.addDomListener(window, 'load', initialize2);
 
+function initialize3() {
+  var mapOptions = {
+    zoom: 13,
+    center: new google.maps.LatLng(-18.8595948, -41.9529012)
+  };
+  map = new google.maps.Map(document.getElementById('map-single'),
+      mapOptions);
+  map.setOptions(mapOptions);
+
+put_marker_single(map);
+
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize3);
 
 var geocodePosition = function(pos){
   var city;
@@ -82,7 +97,7 @@ var geocodePosition = function(pos){
       if(map){
         jQuery('#lat').val(results[0].geometry.location.lat());
         jQuery('#lng').val(results[0].geometry.location.lng());
-       	jQuery('#addressField').val(results[0].formatted_address);
+        jQuery('#addressField').val(results[0].formatted_address);
         jQuery('.active-adress').addClass('active').html('<span class="icon map-marker"></span> &nbsp;'+results[0].formatted_address);
       }
 
@@ -132,6 +147,31 @@ var put_markers_on_map = function(map){
 });
 
 }
+
+
+var put_marker_single = function(map){
+
+
+  jQuery.ajax({
+    type: 'POST',
+    url: myAjax.ajaxurl,
+    data: 'action=get_denuncia',
+    success: function(response) {
+    
+    response = JSON.parse(response);
+    denuncia_completa = response;
+  
+    add_markers(response, map);
+   
+    }
+
+
+});
+
+}
+
+
+
 
 var markers = [];
 

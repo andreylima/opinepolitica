@@ -296,6 +296,7 @@ jQuery("#contato_form").validate({
         
         submitHandler: function(form) {
             
+           
             send_contact_form();
         }
     });
@@ -441,7 +442,7 @@ function send_contact_form() {
 jQuery('#contato_form').find(':input:disabled').removeAttr('disabled');
 var user_data = jQuery('#contato_form').serialize();
 
-
+ 
     jQuery.ajax({
                 type: 'POST',
                 url: myAjax.ajaxurl,
@@ -458,7 +459,7 @@ var user_data = jQuery('#contato_form').serialize();
 
                     }
                     
-
+                    console.log(response);
                     event.preventDefault();
                 }
             });
@@ -883,7 +884,12 @@ if (request_count != 1) {
 
                     request_count = 1;
 
-                    location.reload(true);
+                    jQuery(".denuncia-title").val('');
+                    jQuery(".descricao_denuncia").val('');
+                    jQuery(".youtube-video").val('');
+                    jQuery(".debate-video").prop('checked', false);
+                    jQuery(".user-personagem").prop('checked', false);
+                    jQuery(".denuncia-sucesso").addClass("display-block");
 
                     event.preventDefault();
                 }
