@@ -46,6 +46,14 @@ function enqueue_scripts()
     {
 
        wp_enqueue_script('google.maps.api');
+        
+           
+    }
+
+           if( is_page('boca-no-trombone') or ( 'denuncia' == get_post_type() ) )
+    {
+
+      
         wp_enqueue_script('google.instantiate');
            
     }

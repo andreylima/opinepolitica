@@ -3,7 +3,7 @@
 get_header(); 
 
 ?>
-
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 <div id="page-wrapper-2" class="page-denuncia">
 <div class="rd-city hide">Governador Valadares</div>
 <div class="rd-state hide">MG</div>
