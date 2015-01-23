@@ -154,7 +154,9 @@ function save_denuncia_postmeta($post_id)
 
      if( isset( $_POST['bairro_denuncia'] ) )
           update_post_meta( $post_id, 'bairro_denuncia', $_POST['bairro_denuncia']);
-
+        
+      if( isset( $_POST['obs_bairro'] ) )
+          update_post_meta( $post_id, 'obs_bairro', $_POST['obs_bairro']);
 }
 
 

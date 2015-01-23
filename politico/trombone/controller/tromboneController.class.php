@@ -209,6 +209,7 @@ private $denuncia_single;
 		$postID = wp_insert_post( $my_post );
 
 		update_post_meta( $postID, 'local_denuncia', $denuncia['endereco']);
+		update_post_meta( $postID, 'obs_bairro', $denuncia['obs-bairro']);
 		update_post_meta( $postID, 'longitude', $denuncia['longitude']);
 		update_post_meta( $postID, 'latitude', $denuncia['latitude']);
 		update_post_meta( $postID, 'link_video', $denuncia['youtube-video']);

@@ -23,13 +23,17 @@ get_header();
 <input type="text" placeholder="Buscar Endereço" class="search-adress">
 <div id="mapagv-register"></div>
 <div class="active-adress"></div>
+<div class="aviso-bairro-wrapper">
+<h4 class="aviso-bairros">ATENÇÃO. O google é responsável pelo endereço que aparece acima, portanto, caso o nome do bairro estiver diferente do que procura, favor informar o bairro correto no campo de observações a seguir.</h4>
+<label for="observacao-bairro" class="float-left">Observações:</label><input name="obs-bairro" type="text" placeholder="Nome do Bairro" class="obs-bairro float-left"><span class="obs-input-bairro float-left">Preencha somente em caso de erro.</span>
+</div>
 
 <div class="aviso-local" >Só continue o preenchimento do formulário se já estiver informado o local da denúncia.</div>
-<h3>2) Dados da Denúncia</h3>
-<h4>Dê detalhes sobre a denuncia. </h4>
+
 
 <div class="wrap-line">
-
+<h3>2) Dados da Denúncia</h3>
+<h4>Dê detalhes sobre a denuncia. </h4>
 <label for="denuncia-title" class="label-denuncia-title">Título da Denúncia</label>
 <input type="text" class="denuncia-title" name="denuncia_title" placeholder="Ex: Buraco, Descaso, Lixo ...." >
 </div>

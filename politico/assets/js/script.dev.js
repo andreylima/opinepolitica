@@ -887,6 +887,7 @@ if (request_count != 1) {
                     jQuery(".denuncia-title").val('');
                     jQuery(".descricao_denuncia").val('');
                     jQuery(".youtube-video").val('');
+                    jQuery(".obs-bairro").val('');
                     jQuery(".debate-video").prop('checked', false);
                     jQuery(".user-personagem").prop('checked', false);
                     jQuery(".denuncia-sucesso").addClass("display-block");

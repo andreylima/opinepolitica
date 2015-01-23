@@ -34,6 +34,7 @@ function pol_add_custom_metaboxes()
     add_meta_box( 'debate_video', 'DebateGV faz o vídeo?', 'debate_video_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'user-personagem', 'Quer ser personagem do vídeo?', 'user_personagem_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'local_denuncia', 'Local da denuncia', 'local_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
+    add_meta_box( 'obs_bairro', 'Observação (Bairro)', 'obs_bairro_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'bairro_denuncia', 'Bairro da denuncia', 'bairro_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'latitude', 'Latitude', 'latitude_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'longitude', 'Longitude', 'longitude_display_metabox', 'denuncia', 'normal', 'high' );
@@ -356,6 +357,16 @@ function autor_denuncia_display_metabox($post, $box)
 
 
 
+}
+
+function obs_bairro_display_metabox($post, $box)
+{
+     
+   $obs_bairro = get_post_meta($post->ID, 'obs_bairro', true);
+?>
+  <input type="text" name="obs_bairro" id="obs_bairro" 
+  value="<?php echo $obs_bairro; ?>" />
+<?php
 }
 
 

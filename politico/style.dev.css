@@ -1096,7 +1096,25 @@ margin-top: 20px;
 	margin-top: 40px;
 
 }
+.aviso-bairros
+{
+	padding: 10px;
+	background-color: #EF4836;
+	color: white;
+	width: 80%;
 
+}
+.aviso-bairro-wrapper
+{
+	margin-bottom: 20px;
+	overflow: auto; 
+}
+.obs-input-bairro
+{
+	display: block;
+	margin-left: 10px;
+	color: white;
+}
 
 .denunciar
 {
@@ -2746,6 +2764,7 @@ margin: 15px;
 {
 	overflow: auto;
 	margin-bottom: 10px;
+	clear: both;
 }
 .option-video
 {
