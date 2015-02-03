@@ -41,7 +41,6 @@ private $denuncia_single;
 
 		$denuncia_completa[$i]['titulo'] = get_the_title();
 		$denuncia_completa[$i]['id'] = get_the_id();
-		$denuncia_completa[$i]['link_video'] = get_post_meta(get_the_id(), 'link_video', true );
 		$denuncia_completa[$i]['local_denuncia'] = get_post_meta(get_the_id(), 'local_denuncia', true  );
 		$denuncia_completa[$i]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
 		$denuncia_completa[$i]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
@@ -50,7 +49,7 @@ private $denuncia_single;
 		$denuncia_completa[$i]['situacao_denuncia'] = get_post_meta(get_the_id(), 'situacao_denuncia', true  );
 		$denuncia_completa[$i]['qtd_comments_denuncia'] = get_comments_number( get_the_id() );
 		$denuncia_completa[$i]['bairro_denuncia'] = get_post_meta(get_the_id(), 'bairro_denuncia', true );
-
+		$denuncia_completa[$i]['link_imagem'] = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post_id ) );
 
 		$i += 1;
  		endwhile; endif; 
@@ -212,10 +211,9 @@ private $denuncia_single;
 		update_post_meta( $postID, 'obs_bairro', $denuncia['obs-bairro']);
 		update_post_meta( $postID, 'longitude', $denuncia['longitude']);
 		update_post_meta( $postID, 'latitude', $denuncia['latitude']);
-		update_post_meta( $postID, 'link_video', $denuncia['youtube-video']);
 		update_post_meta( $postID, 'debate_video', $denuncia['debate-video']);
 		update_post_meta( $postID, 'user-personagem', $denuncia['user-personagem']);
-
+		update_post_meta( $postID, 'data-denuncia', get_the_date($postID));
 
 
 		send_email_denuncia();
@@ -231,15 +229,15 @@ private $denuncia_single;
 
 		$denuncia_single[0]['titulo'] = get_the_title();
 		$denuncia_single[0]['id'] = get_the_id();
-		$denuncia_single[0]['link_video'] = get_post_meta(get_the_id(), 'link_video', true );
 		$denuncia_single[0]['local_denuncia'] = get_post_meta(get_the_id(), 'local_denuncia', true  );
 		$denuncia_single[0]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
 		$denuncia_single[0]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
-		$denuncia_single[0]['data'] = get_the_date();
+		$denuncia_single[0]['data'] = get_post_meta(get_the_id(), 'data-denuncia', true  );
 		$denuncia_single[0]['permalink'] = get_the_permalink();
 		$denuncia_single[0]['situacao_denuncia'] = get_post_meta(get_the_id(), 'situacao_denuncia', true  );
 		$denuncia_single[0]['qtd_comments_denuncia'] = get_comments_number( get_the_id() );
 		$denuncia_single[0]['bairro_denuncia'] = get_post_meta(get_the_id(), 'bairro_denuncia', true );
+
 
 		$this->denuncia_single = $denuncia_single;
 

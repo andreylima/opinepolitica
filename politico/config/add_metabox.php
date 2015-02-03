@@ -30,7 +30,6 @@ function pol_add_custom_metaboxes()
 
 
     //Denúncia
-    add_meta_box( 'link_video', 'Link do vídeo (youtube)', 'link_video_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'debate_video', 'DebateGV faz o vídeo?', 'debate_video_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'user-personagem', 'Quer ser personagem do vídeo?', 'user_personagem_display_metabox', 'denuncia', 'normal', 'high' );
     add_meta_box( 'local_denuncia', 'Local da denuncia', 'local_denuncia_display_metabox', 'denuncia', 'normal', 'high' );
@@ -272,16 +271,7 @@ function longitude_display_metabox($post, $box)
 
 }
 
-function link_video_display_metabox($post, $box)
-{
-  $link_video = get_post_meta($post->ID, 'link_video', true);
-  
-?>
-  <input type="text" name="link_video" id="link_video" 
-  value="<?php echo $link_video; ?>" />
-<?php
 
-}
 
 function debate_video_display_metabox($post, $box)
 {
