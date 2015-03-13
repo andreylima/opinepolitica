@@ -4,13 +4,14 @@
 jQuery(document).ready(function(){
 
 var map;
-var denuncias;
+var reclamacoes;
 
 
 function initialize() {
   var mapOptions = {
     zoom: 13,
-    center: new google.maps.LatLng(-18.8595948, -41.9529012)
+    center: new google.maps.LatLng(-18.8595948, -41.9529012),
+    maxWidth: 500
   };
   map = new google.maps.Map(document.getElementById('mapagv'),
       mapOptions);
@@ -73,7 +74,8 @@ google.maps.event.addDomListener(window, 'load', initialize2);
 function initialize3() {
   var mapOptions = {
     zoom: 13,
-    center: new google.maps.LatLng(-18.8595948, -41.9529012)
+    center: new google.maps.LatLng(-18.8595948, -41.9529012),
+    scrollwheel: false,
   };
   map = new google.maps.Map(document.getElementById('map-single'),
       mapOptions);
@@ -117,7 +119,7 @@ var geocodePosition = function(pos){
         bairro = null;
 
       if(bairro)
-        jQuery('#denuncia_bairro').val(bairro);
+        jQuery('#reclamacao_bairro').val(bairro);
     }else
       jQuery("#dragMap").append('Não foi possível determinar sua localização'+status);
   });
@@ -125,7 +127,7 @@ var geocodePosition = function(pos){
 
 
 
-var denuncia_completa = [];
+var reclamacao_completa = [];
 var response;
 
 var put_markers_on_map = function(map){
@@ -134,11 +136,11 @@ var put_markers_on_map = function(map){
   jQuery.ajax({
     type: 'POST',
     url: myAjax.ajaxurl,
-    data: 'action=get_denuncias',
+    data: 'action=get_reclamacoes',
     success: function(response) {
-    
+
     response = JSON.parse(response);
-    denuncia_completa = response;
+    reclamacao_completa = response;
     add_markers(response, map);
 
     }
@@ -155,14 +157,14 @@ var put_marker_single = function(map){
   jQuery.ajax({
     type: 'POST',
     url: myAjax.ajaxurl,
-    data: 'action=get_denuncia',
+    data: 'action=get_reclamacao',
     success: function(response) {
-    
+
     response = JSON.parse(response);
-    denuncia_completa = response;
-  
+    reclamacao_completa = response;
+
     add_markers(response, map);
-   
+
     }
 
 
@@ -177,39 +179,38 @@ var markers = [];
 
 function add_markers(response, map)
 {
-  
+
   var infoWindowList = [];
   var j;
    markers = [];
- var markersList = jQuery('#denuncias_list');
+ var markersList = jQuery('#reclamacao_list');
  markersList.html('');
- 
+
   for (var i=0,len=response.length; i < len; i++) {
     var current = response[i];
-    var pin = ((current.situacao_denuncia == "resolvida") ? "pin_2" : "pin_1") ;
-    var situacao = ((current.situacao_denuncia == "resolvida") ? "Resolvida" : "Não Resolvida") ;
+    var pin = ((current.situacao_reclamacao == "resolvida") ? "pin_2" : "pin_1") ;
+    var situacao = ((current.situacao_reclamacao == "resolvida") ? "Resolvida" : "Não Resolvida") ;
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(current.latitude, current.longitude),
       map: map,
       icon: templateDir+'/assets/img/'+pin+'.png',
     });
 
-    var link_video = current.link_video.split('=');
-    var link_video = link_video[1];
+
     var date = current.data.split('/'),
         orderedDate = [date[1], date[0], date[2]],
         infowindow = new google.maps.InfoWindow({maxWidth: 300}),
         htmlContent = '<div class="hc-info-window">'
         +  '<h4 class="hc-info-title"><a  href="'+current.permalink+'">'+current.titulo+'</a></h4>'
-        +  '<span class="flaticon-pin56 local-denuncia">&nbsp;'+current.local_denuncia+'</span>'
-        + '<iframe id="link_video" style="width:300px;height:215px;background-color:black"  src="//www.youtube.com/embed/'+link_video+'" frameborder="0" allowfullscreen ALT="carregando video"></iframe>'
+        +  '<a  href="'+current.permalink+'"><span class="flaticon-pin56 local-reclamacao">&nbsp;'+current.local_reclamacao+'</span></a>'
+        + '<a  href="'+current.permalink+'" class="image-reclam-link"><img src="'+current.link_imagem+'" alt="'+current.titulo+'" class="imagem-reclamacao"></a>'
         +  '<div class="hc-info-box">'
-        +  '<label for="data-denuncia">Data da Denúncia:</label>'
-        +  '<h6 class="flaticon-calendar146 data-denuncia">&nbsp;'+orderedDate.join('/')+'</h6>'
-        +  '<label for="situacao_denuncia" class="situacao-label">Situação:</label>' 
-        + '<input type="text" name="situacao_denuncia" value="'+situacao+'" id="situacao_denuncia" disabled>'
-        + '<a  href="'+current.permalink+'" class="qtd-comments-denuncia" ><div class="flaticon-comments16 ">'+current.qtd_comments_denuncia+'</div></a>'
-        +  '<a href="'+current.permalink+'" class="button-info-denuncia">+ Ver Comentários</a></div>'
+        +  '<label for="data-reclamacao">Data da Reclamação:</label>'
+        +  '<h6 class="flaticon-calendar146 data-reclamacao">&nbsp;'+orderedDate.join('/')+'</h6>'
+        +  '<label for="situacao_reclamacao" class="situacao-label">Situação:</label>'
+        + '<input type="text" name="situacao_reclamacao" value="'+situacao+'" id="situacao_reclamacao" disabled>'
+        + '<a  href="'+current.permalink+'" class="qtd-comments-reclamacao" ><div class="flaticon-comments16 ">'+current.qtd_comments_reclamacao+'</div></a>'
+        +  '<a href="'+current.permalink+'" class="button-info-reclamacao">+ Ver Comentários</a></div>'
         +  '</div>';
 
     markers.push(marker);
@@ -219,7 +220,7 @@ function add_markers(response, map)
     google.maps.event.addListener(marker, 'click', (function(marker, j) {
 
       return function () {
-       
+
         infoWindowList.map(function(el,id,arr){ el.close(); });
         infoWindowList[markers.indexOf(marker)].open(map, marker);
       }
@@ -235,8 +236,8 @@ function add_markers(response, map)
     });
 
    }
-  
-  
+
+
 
 
 
@@ -248,7 +249,7 @@ var buildLastReportContent = function(report, date, index) {
   var htmlContent = '<li><a class="list_lines" data-index="'+index+'">'
     + '<div class="">'
     + '<h4>'+report.titulo+'</h4>'
-    + '<h5>'+report.local_denuncia+'</h5>'
+    + '<h5>'+report.local_reclamacao+'</h5>'
     + '<h5><i class="icon-calendar"></i>'+orderedDate.join('/')+'</h5>'
     + '</div>'
     + '</a></li>';
@@ -261,31 +262,31 @@ var buildLastReportContent = function(report, date, index) {
 
 
 
-var denuncias_por_bairros = [];
+var reclamacoes_por_bairros = [];
 
 function filter_bairros(bairro)
 {
-  
-denuncias_por_bairros = [];
-  
-  for (var i=0,len=denuncia_completa.length; i < len; i++) {
-  var current = denuncia_completa[i];
-    if (current.bairro_denuncia == bairro ) 
+
+reclamacoes_por_bairros = [];
+
+  for (var i=0,len=reclamacao_completa.length; i < len; i++) {
+  var current = reclamacao_completa[i];
+    if (current.bairro_reclamacao == bairro )
     {
-      
-      denuncias_por_bairros.push(current);
+
+      reclamacoes_por_bairros.push(current);
 
     }
 
-     
+
 
  }
 
 
 setAllMap(null);
 
-add_markers(denuncias_por_bairros, map)
-// alert(denuncias_por_bairros);
+add_markers(reclamacoes_por_bairros, map)
+// alert(reclamacoes_por_bairros);
 
 
 
@@ -310,14 +311,14 @@ function clearMarkers() {
 function setmarkers()
 {
   setAllMap(null);
-  markers = denuncia_completa;
- 
+  markers = reclamacao_completa;
+
   add_markers(markers, map);
 
 }
 
 
-jQuery("#bairro_denuncia").change(function(){ 
+jQuery("#bairro_reclamacao").change(function(){
 
 if (this.value == '') {
 setmarkers()
@@ -326,7 +327,7 @@ setmarkers()
 else
 {
 
-  filter_bairros(this.value);  
+  filter_bairros(this.value);
 }
 
 

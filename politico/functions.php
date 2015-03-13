@@ -17,7 +17,7 @@ include 'config/send_emails.php';
 
 
 
-global $post; 
+global $post;
 global $wpdb;
 
 add_filter('show_admin_bar', '__return_false');
@@ -79,21 +79,11 @@ function my_register_sidebars() {
 	add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 
-function my_remove_menu_pages() {
- 
-    global $user_ID;
- 
-    if ( current_user_can( 'wpmayorauthor' ) ) {
-	remove_menu_page( 'edit.php?post_type=posts' );
-	remove_menu_page( 'edit.php?post_type=denuncia' );
-       
-    }
-}
 
 
 add_filter( 'add_menu_classes', 'show_pending_number');
 function show_pending_number( $menu ) {
-    $type = "denuncia";
+    $type = "reclamacao";
     $status = "pending";
     $num_posts = wp_count_posts( $type, 'readable' );
     $pending_count = 0;

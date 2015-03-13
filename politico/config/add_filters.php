@@ -58,7 +58,7 @@ function cd_pre_comment_text( $arg ) {
 
 class Comment_Says_Custom_Text_Wrangler {
 	function comment_says_text($translation, $text, $domain) {
-	
+
 	$ID = get_the_ID();
 
 	$comment_id = get_comment_ID();
@@ -68,12 +68,12 @@ class Comment_Says_Custom_Text_Wrangler {
 	$quem_negativou = get_post_meta( get_the_id(), 'negativar_projeto', true);
 
 	if (!empty($quem_positivou)) {
-		
+
 		if (in_array($author , $quem_positivou )) {
 			$voto = "Apoia";
 		}
 		elseif (!empty($quem_negativou)) {
-			if (in_array($author , $quem_negativou)) 
+			if (in_array($author , $quem_negativou))
 			$voto = "Não Apoia";
 		}
 		else
@@ -83,9 +83,9 @@ class Comment_Says_Custom_Text_Wrangler {
 	}
 	else
 	{
-		if (!empty($quem_negativou)) 
+		if (!empty($quem_negativou))
 		{
-			if (in_array($author , $quem_negativou )) 
+			if (in_array($author , $quem_negativou ))
 			{
 				$voto = "Não Apoia";
 			}
@@ -94,7 +94,7 @@ class Comment_Says_Custom_Text_Wrangler {
 			$voto = "Não voltou";
 			}
 		}
-		
+
 	}
 
 
@@ -105,7 +105,7 @@ class Comment_Says_Custom_Text_Wrangler {
        return $translations->translate( '<cite class="fn">%s</cite><span class="says">'.$new_says.' - </span>' );
      } else {
     return $translation; // standard text
-	 }  
+	 }
 	}
 }
 add_filter('gettext', array('Comment_Says_Custom_Text_Wrangler', 'comment_says_text'), 10, 4);

@@ -1,14 +1,14 @@
 
 
 	jQuery('.curtir').click(function(events){
-		
+
 		var acao = "curtir";
 		var id_votado = jQuery(this).attr('id');
 		declaraApoio(events,acao,id_votado);
 		// jQuery(this).addClass("votado");
 		// jQuery("div#" + id_votado + ".voten").removeClass("votado");
-		events.preventDefault();	
-		});	
+		events.preventDefault();
+		});
 
 	jQuery('.naocurtir').click(function(events){
 		var acao = "naocurtir";
@@ -16,7 +16,7 @@
 		declaraApoio(events,acao,id_votado);
 		// jQuery(this).addClass("votado");
 		// jQuery("div#" + id_votado + ".votes").removeClass("votado");
-		events.preventDefault();	
+		events.preventDefault();
 		});
 
 	jQuery('.positivar-projeto').click(function(events){
@@ -34,10 +34,10 @@
 		declaraApoio(events,acao,id_votado);
 		// jQuery(this).addClass("votado");
 		// jQuery("div#" + id_votado + ".votes").removeClass("votado");
-		events.preventDefault();	
+		events.preventDefault();
 		});
 
-	
+
 
 
 
@@ -46,20 +46,20 @@
 
 function declaraApoio(events,acao,id_votado){
 
-		
+
 	jQuery.ajax({
 		type: 'POST',
 		url: myAjax.ajaxurl,
 		data: 'action=verify_login&acao='+acao+'&id_votado='+id_votado+'&security='+myAjax.ajax_nonce,
 		success: function(response) {
-		
-			
+
+
 			var response = JSON.parse(response);
-		
+
 
 			if (response.logged != false) {
 
-			
+
 			switch(acao){
 
 				case "curtir":
@@ -90,8 +90,8 @@ function declaraApoio(events,acao,id_votado){
 				jQuery("div#" + id_votado + ".voten").addClass("votado");
 				jQuery("div#" + id_votado + ".votes").removeClass("votado");
 				break;
-			
-				
+
+
 			};
 
 
@@ -102,32 +102,32 @@ function declaraApoio(events,acao,id_votado){
 
 
 				var id = '#dialog';
-	
+
 				var maskHeight = jQuery(document).height();
 				var maskWidth = jQuery(window).width();
 
 				jQuery('#mask').css({'width':maskWidth,'height':maskHeight});
 
-				jQuery('#mask').fadeIn();	
-				jQuery('#mask').fadeTo('fast',0.5);	
+				jQuery('#mask').fadeIn();
+				jQuery('#mask').fadeTo('fast',0.5);
 
 					//Get the window height and width
 				var winH = jQuery(window).height();
 				var winW = jQuery(window).width();
-		              
+
 				jQuery(id).css('top',  "15%");
 				jQuery(id).css('left', "5%");
-			
-				jQuery(id).fadeIn(); 
+
+				jQuery(id).fadeIn();
 
 
-			
+
 			}
 
 
 		}
 	});
-	
+
 };
 
 
@@ -140,6 +140,6 @@ function declaraApoio(events,acao,id_votado){
 
 
 
-	
+
 
 

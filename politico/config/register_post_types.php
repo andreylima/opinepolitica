@@ -5,15 +5,15 @@ add_action( 'init', 'register_post_types' );
 
 /**
  * Registra novos tipos de conteúdo personalizados.
- * 
+ *
  * NOTA: Não se esqueça de sempre que registrar um novo post type entrar na edição
  * de links permanentes para reescrever a url do novo post type.
- * 
+ *
  * @return void
  */
 function register_post_types()
 {
-    register_post_type( 
+    register_post_type(
         'perfil',
         array(
             'labels' => array(
@@ -33,7 +33,7 @@ function register_post_types()
         )
     );
 
-    register_post_type( 
+    register_post_type(
         'projeto',
         array(
             'labels' => array(
@@ -52,7 +52,7 @@ function register_post_types()
         )
     );
 
-     register_post_type( 
+     register_post_type(
         'equipe',
         array(
             'labels' => array(
@@ -71,17 +71,17 @@ function register_post_types()
         )
     );
 
-     register_post_type( 
-        'denuncia',
+     register_post_type(
+        'reclamacao',
         array(
             'labels' => array(
-                'name'          => 'Denúncias',
-                'singular_name' => 'Denúncia',
-                'search_items'  => 'Pesquisar Denúncia',
-                'add_new_item'  => 'Adicionar nova Denúncia',
-                'add_new'       => 'Adicionar Denúncia',
-                'all_items'     => 'Todos as Denúncias',
-                'edit_item'     => 'Editar Denúncia',
+                'name'          => 'Reclamações',
+                'singular_name' => 'Reclamação',
+                'search_items'  => 'Pesquisar Reclamação',
+                'add_new_item'  => 'Adicionar nova Reclamação',
+                'add_new'       => 'Adicionar Reclamação',
+                'all_items'     => 'Todos as Reclamações',
+                'edit_item'     => 'Editar Reclamação',
             ),
             'public'      => true,
             'supports'    => array( 'title', 'editor', 'thumbnail','comments'),
@@ -90,7 +90,7 @@ function register_post_types()
         )
     );
 
-         
+
 
 
     }

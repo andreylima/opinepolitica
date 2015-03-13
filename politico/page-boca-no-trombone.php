@@ -1,16 +1,16 @@
-<?php 
+<?php
 
-get_header(); 
+get_header();
 
-$denuncias = new tromboneController();
-$denuncias->set_bairros_gv();
-$bairros = $denuncias->get_bairros_gv();
+$reclamacao = new tromboneController();
+$reclamacao->set_bairros_gv();
+$bairros = $reclamacao->get_bairros_gv();
 
 
 ?>
 <script>
 	var templateDir = "<?php bloginfo('template_directory'); ?>";
-	
+
 </script>
 
 
@@ -22,12 +22,12 @@ $bairros = $denuncias->get_bairros_gv();
 <div id="mapagv"></div>
 </div>
 <div class="coluna-2">
- <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Registrar Denúncia' ) ) ); ?>" ><input type="submit" name="denunciar" value="DENUNCIAR" class="denunciar" ></a>
-<div class="total_denuncias"><?php echo "<span class='number_denuncia'>".$denuncias->get_qtd_denuncias()."</span>" ?> Denúncias registradas até o momento </div>
-<div class="total_resolvidas"><?php echo "<span class='number_denuncia'>".$denuncias->get_qtd_resolvidas()."</span>" ?> Denúncias Resolvidas </div>
-<div class="percent_resolvidas"><?php echo "<span class='number_denuncia'>".$denuncias->get_percent_resolvidas()."</span>" ?> de eficiência</div>
+ <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Registrar Reclamação' ) ) ); ?>" ><input type="submit" name="reclamar" value="Reclamar" class="reclamar" ></a>
+<div class="total_reclamacao"><?php echo "<span class='number_reclamacao'>".$reclamacao->get_qtd_reclamacoes()."</span>" ?> Reclamaçãos registradas até o momento </div>
+<div class="total_resolvidas"><?php echo "<span class='number_reclamacao'>".$reclamacao->get_qtd_resolvidas()."</span>" ?> Reclamaçãos Resolvidas </div>
+<div class="percent_resolvidas"><?php echo "<span class='number_reclamacao'>".$reclamacao->get_percent_resolvidas()."</span>" ?> de eficiência</div>
 <div class="title_filtrar">FILTRAR POR BAIRRO</div>
-<select name="bairro_denuncia" id="bairro_denuncia">
+<select name="bairro_reclamacao" id="bairro_reclamacao">
 <option value="">Bairros</option>
 <?php
   foreach ($bairros as $bairro) { ?>
@@ -38,21 +38,14 @@ $bairros = $denuncias->get_bairros_gv();
   </select>
 <input type="button" value="Mostrar todas" id="show_all">
 
- <div id="denuncias_list">
-
-</div>
-	
-		
-
-
-</div> 
-
+ <div id="reclamacao_list">
 
 </div>
 
 
 
 
+</div>
 
 
 </div>
@@ -61,8 +54,15 @@ $bairros = $denuncias->get_bairros_gv();
 
 
 
-<?php 
 
-get_footer(); 
+</div>
+
+
+
+
+
+<?php
+
+get_footer();
 
 ?>

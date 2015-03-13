@@ -44,15 +44,27 @@ get_header();
 </div>
 
 
-<h3>3) Imagem da Reclamação</h3>
-<h4>Nesta área você carregará a imagem da Reclamação. </h4>
+<h3>3) Vídeo</h3>
+<div class="aviso-video">É obrigatório escolher uma opção de vídeo.</div>
+<h4>Nesta área você deve enviar o link de um vídeo da denúncia gravado por você, ou solicitar que o DEBATEGV faça o vídeo. </h4>
 
 <div class="wrap-line">
 <div class="youtube-upload-box float-left">
-<label for="youtube-video" >Faça o upload da imagem:</label><input type="file"> 
-
+<label for="youtube-video" >Link do vídeo do Youtube:</label>  <input name="youtube-video" type="text" class="youtube-video" placeholder=" Suba seu vídeo no youtube e cole o link aqui..."> 
+<div class="tip-link">O vídeo deve mostrar o problema apontado na denúncia.</div>
 </div>
-
+<div class="option-video "> 
+<div class="debate-filma-box">
+<input type="radio" id="debate-video" name="debate-video" class="debate-video" value="yes">
+<label for="debate-video" class="debate-video-label"><i>Gostaria que o DEBATEGV fizesse o vídeo da denúncia.</i></label>
+<div class="tip-link">O DEBATEGV irá até o local da denúncia fazer a gravação do vídeo.</div>
+</div>
+<div class="user-personagem-box">
+<input type="checkbox" id="user-personagem" name="user-personagem" class="user-personagem" value="yes">
+<label for="user-personagem">Gostaria de ser um personagem do vídeo.</label>
+<div class="tip-link">O DEBATEGV entrará em contato por e-mail para combinar o melhor horário para a gravação.</div>
+</div>
+</div>
 
 </div>
 

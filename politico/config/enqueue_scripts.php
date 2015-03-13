@@ -7,7 +7,7 @@ add_action( 'init', 'ajax_curtir' );
 
 /**
  * Adiciona e/ou gerencia os arquivos Javascript do tema
- * 
+ *
  * @return void
  */
 function enqueue_scripts()
@@ -15,7 +15,7 @@ function enqueue_scripts()
     wp_enqueue_script( "chosen", get_stylesheet_directory_uri() . '/assets/js/chosen.jquery.js', array('jquery'),'1.0',true );
 
     wp_register_script( 'isotope', get_template_directory_uri(). '/assets/js/jquery.isotope.min.js', array('jquery'),  true );
-   
+
     wp_register_script( 'masonry.config', get_template_directory_uri() .'/assets/js/masonry.config.js' , array('jquery', 'isotope'),'1.0',true);
 
     wp_register_script( 'google.maps.api', get_template_directory_uri() .'/assets/js/google-maps-api.min.js' , array('jquery'),'1.0',true);
@@ -37,29 +37,29 @@ function enqueue_scripts()
 
      if( is_archive() )
     {
-            
+
        wp_enqueue_script('masonry.config');
-                
+
     }
 
-         if( is_page('boca-no-trombone') or is_page('registrar-denuncia') or ( 'denuncia' == get_post_type() ) )
+         if( is_page('boca-no-trombone') or is_page('registrar-reclamacao') or ( 'reclamacao' == get_post_type() ) )
     {
 
        wp_enqueue_script('google.maps.api');
-        
-           
+
+
     }
 
-           if( is_page('boca-no-trombone') or ( 'denuncia' == get_post_type() ) )
+           if( is_page('boca-no-trombone') or ( 'reclamacao' == get_post_type() ) )
     {
 
-      
+
         wp_enqueue_script('google.instantiate');
-           
+
     }
 
 
-    
+
 }
 
 
@@ -68,15 +68,15 @@ function enqueue_scripts()
 function ajax_curtir() {
 
    wp_enqueue_script( "ajax_curtir",get_template_directory_uri().'/assets/js/ajax_curtir.min.js', array('jquery'), '1.0', true ); //chama a função php via ajax
-   
-   wp_localize_script( 'ajax_curtir', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'ajax_nonce' => wp_create_nonce('debate_nonce'),)); // localiza o arquivo que vai tratar o ajax       
-   
+
+   wp_localize_script( 'ajax_curtir', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'ajax_nonce' => wp_create_nonce('debate_nonce'),)); // localiza o arquivo que vai tratar o ajax
+
 }
 
 
 
 
 
-  
+
 
 ?>

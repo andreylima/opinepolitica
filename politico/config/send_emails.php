@@ -18,13 +18,13 @@ add_action('wp_ajax_nopriv_send_email_contato', 'send_email_contato');
 		$content = 'Mensagem de: '.$nome.'<'.$email.'> = '. sanitize_text_field($_POST['mensagem']);
 		$headers = 'From: form-contato <contato@debategv.com.br>';
 		$to = "contato@debategv.com.br";
-		
-		
+
+
 
 		$status = wp_mail($to, $subject, $content, $headers);
 
 
-				
+
 
 		echo $status;
 		die();
@@ -33,23 +33,23 @@ add_action('wp_ajax_nopriv_send_email_contato', 'send_email_contato');
 
 
 
-	function send_email_denuncia()
+	function send_email_reclamacao()
 	{
-		
 
 
-		
-		$subject = 'Denúncia Realizada';
-		$content = 'Uma denúncia foi registrada no site. Faça login para aprová-la.';
+
+
+		$subject = 'Reclamação Realizada';
+		$content = 'Uma Reclamação foi registrada no site. Faça login para aprová-la.';
 		$headers = 'From: form-contato <contato@debategv.com.br>';
 		$to = "contato@debategv.com.br";
-		
-		
+
+
 
 		$status = wp_mail($to, $subject, $content, $headers);
 
 
-				
+
 
 		echo $status;
 		die();

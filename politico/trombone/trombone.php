@@ -6,42 +6,42 @@ require_once 'controller/tromboneController.class.php';
 
 
 
-add_action('wp_ajax_get_denuncias', 'get_denuncias');
-add_action('wp_ajax_nopriv_get_denuncias', 'get_denuncias');
+add_action('wp_ajax_get_reclamacoes', 'get_reclamacoes');
+add_action('wp_ajax_nopriv_get_reclamacoes', 'get_reclamacoes');
 
-add_action('wp_ajax_save_denuncia', 'save_denuncia');
-add_action('wp_ajax_nopriv_save_denuncia', 'save_denuncia');
+add_action('wp_ajax_save_reclamacao', 'save_reclamacao');
+add_action('wp_ajax_nopriv_save_reclamacao', 'save_reclamacao');
 
-add_action('wp_ajax_get_denuncia', 'get_denuncia');
-add_action('wp_ajax_nopriv_get_denuncia', 'get_denuncia');
+add_action('wp_ajax_get_reclamacao', 'get_reclamacao');
+add_action('wp_ajax_nopriv_get_reclamacao', 'get_reclamacao');
 
-function get_denuncias()
+function get_reclamacoes()
 	{
-		
-		$denuncias = new tromboneController();
 
-		$denuncia_completa = $denuncias->getDenuncia_completa();
+		$reclamacoes = new tromboneController();
 
-					
-	   	echo json_encode($denuncia_completa);
-			
+		$reclamacao_completa = $reclamacoes->get_reclamacao_completa();
+
+
+	   	echo json_encode($reclamacao_completa);
+
 		exit;
 
-	
+
 
 	}
 
-function get_denuncia()
+function get_reclamacao()
 {
-	
-		$denuncia = new tromboneController();
 
-		$denuncia->set_denuncia_single();
-		$denuncia_single = $denuncia->get_denuncia_single();
+		$reclamacao = new tromboneController();
 
-					
-	   	echo json_encode($denuncia_single);
-			
+		$reclamacao->set_reclamacao_single();
+		$reclamacao_single = $reclamacao->get_reclamacao_single();
+
+
+	   	echo json_encode($reclamacao_single);
+
 		exit;
 
 
@@ -49,53 +49,66 @@ function get_denuncia()
 }
 
 
-function save_denuncia()
+function save_reclamacao()
 	{
+
 		check_ajax_referer( 'debate_nonce', 'security' );
 
-		$denuncia['endereco'] = sanitize_text_field($_POST['denuncia-endereco']);
-		$denuncia['obs-bairro'] = sanitize_text_field($_POST['obs-bairro']);
-		$denuncia['longitude'] = sanitize_text_field($_POST['longitude']);
-		$denuncia['latitude'] = sanitize_text_field($_POST['latitude']);
-		$denuncia['denuncia_title'] = sanitize_text_field($_POST['denuncia_title']);
-		$denuncia['descricao_denuncia'] = sanitize_text_field($_POST['descricao_denuncia']);
-		$denuncia['youtube-video'] = sanitize_text_field($_POST['youtube-video']);
-		$denuncia['debate-video'] = (sanitize_text_field($_POST['debate-video']) == '') ? 'nao' : sanitize_text_field($_POST['debate-video']); 
-		$denuncia['user-personagem'] = (sanitize_text_field($_POST['user-personagem']) == '') ? 'nao' : sanitize_text_field($_POST['user-personagem']);
+		$reclamacao['endereco'] = sanitize_text_field($_POST['reclamacao-endereco']);
+		$reclamacao['obs-bairro'] = sanitize_text_field($_POST['obs-bairro']);
+		$reclamacao['longitude'] = sanitize_text_field($_POST['longitude']);
+		$reclamacao['latitude'] = sanitize_text_field($_POST['latitude']);
+		$reclamacao['reclamacao_title'] = $_REQUEST['reclamacao_title']	;
+		$reclamacao['descricao_reclamacao'] = sanitize_text_field($_POST['descricao_reclamacao']);
 
-
-		if ($denuncia['endereco'] == "") {
-
-			$erros = 'noadress';
-			echo $erros;
-
+		if ($_POST['reclamacao-endereco'] == "") {
+			echo "endereco";
 			exit;
 		}
 
+		 if(isset($_FILES["file"]["type"]))
+		{
+			$validextensions = array("jpeg", "jpg", "png");
+			$temporary = explode(".", $_FILES["file"]["name"]);
+			$file_extension = end($temporary);
+
+			if (($_FILES["file"]["type"] != "image/png") && ($_FILES["file"]["type"] != "image/jpg")  && ($_FILES["file"]["type"] != "image/jpeg"))
+			{
+				echo "type";
+				exit;
+			}
+			if ($_FILES["file"]["size"] > 2048000)
+			{
+				echo "size";
+				exit;
+			}
+			if ($_FILES["file"]["error"] > 0)
+			{
+				echo "error";
+				exit;
+			}
+
+		 	$reclamacao['file'] = $_FILES["file"];
 
 
-		if ($denuncia['youtube-video'] == "" && $denuncia['debate-video'] =="") {
-			
-			$erros = 'novideo';
-			echo $erros;
 
-			exit;
+		 $reclamacoes = new tromboneController();
+
+		$reclamacao_retorno = $reclamacoes->save_reclamacao_wp($reclamacao);
 
 
-		}
+		echo $reclamacao_retorno;
 
-
-		$denuncias = new tromboneController();
-
-		$denuncia_retorno = $denuncias->save_denuncia_wp($denuncia);
-
-
-		echo json_encode($denuncia);
-			
 		exit;
-		
+
+		 }
+		 else
+		 {
+			echo "error";
+			exit;
+		}
 
 
-	} 
+	}
 
 ?>

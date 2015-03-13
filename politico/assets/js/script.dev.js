@@ -6,44 +6,44 @@
 
     jQuery.validator.addMethod("lettersonly", function(value, element) {
   return this.optional(element) || /^[a-zA-Z\s]*$/.test(value);
-}, "Somente letras são permitidas"); 
+}, "Somente letras são permitidas");
 
 jQuery("#log-form").validate({
 
  rules: {
-            
+
             email_log: {
                 required: true,
                 email: true
             },
             senha_log: "required"
-                       
+
         },
-        
+
         // Specify the validation error messages
         messages: {
-            
+
             email_log: {
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
             },
             senha_log: "Digitar senha"
-            
+
         },
         errorPlacement: function(error, element) {
-        
-            
+
+
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
-        
-        
-        
+
+
+
     },
-        
+
         submitHandler: function(form) {
 
             log_user("full");
-            
+
         }
 
 });
@@ -52,39 +52,39 @@ jQuery("#log-form").validate({
 jQuery("#log-form-mobile").validate({
 
  rules: {
-            
+
             email_log: {
                 required: true,
                 email: true
             },
             senha_log: "required"
-                       
+
         },
-        
+
         // Specify the validation error messages
         messages: {
-            
+
             email_log: {
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
             },
             senha_log: "Digitar senha"
-            
+
         },
         errorPlacement: function(error, element) {
-        
-            
+
+
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
-        
-        
-        
+
+
+
     },
-        
+
         submitHandler: function(form) {
 
             log_user("mobile");
-            
+
         }
 
 });
@@ -93,39 +93,39 @@ jQuery("#log-form-mobile").validate({
 jQuery("#formLogin").validate({
 
  rules: {
-            
+
             email_log: {
                 required: true,
                 email: true
             },
             senha_log: "required"
-                       
+
         },
-        
+
         // Specify the validation error messages
         messages: {
-            
+
             email_log: {
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
             },
             senha_log: "Digitar senha"
-            
+
         },
         errorPlacement: function(error, element) {
-        
-            
+
+
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
-        
-        
-        
+
+
+
     },
-        
+
         submitHandler: function(form) {
 
             log_user("modal");
-            
+
         }
 
 });
@@ -134,7 +134,7 @@ jQuery("#formLogin").validate({
 
 
 jQuery("#cadastro_form").validate({
-    
+
         // Specify the validation rules
         rules: {
             nome: {
@@ -150,17 +150,17 @@ jQuery("#cadastro_form").validate({
             },
             senha: "required",
             termos: "required"
-                       
+
         },
                // Specify the validation error messages
         messages: {
             nome:{
                 required: "Nome Obrigatório",
-                lettersonly: "Somente letras são permitidas"  
+                lettersonly: "Somente letras são permitidas"
             } ,
             sobrenome:{
-                required: "Sobrenome Obrigatório",  
-                lettersonly: "Somente letras são permitidas" 
+                required: "Sobrenome Obrigatório",
+                lettersonly: "Somente letras são permitidas"
             } ,
             email: {
                 required: "Favor inserir seu e-mail",
@@ -168,23 +168,23 @@ jQuery("#cadastro_form").validate({
             },
             senha: "Favor escolher uma senha",
             termos: "Obrigatório"
-            
+
         },
         errorPlacement: function(error, element) {
-        
-            
+
+
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
-        
-        
-        
+
+
+
     },
-        
+
         submitHandler: function(form) {
 
             cadastrar_usuario("full");
-           
-            
+
+
         }
     });
 
@@ -193,7 +193,7 @@ jQuery("#cadastro_form").validate({
 
 
 jQuery("#cadastro_form_mobile").validate({
-    
+
         // Specify the validation rules
         rules: {
             nome: {
@@ -209,49 +209,49 @@ jQuery("#cadastro_form_mobile").validate({
                 email: true
             },
             senha: "required"
-                       
+
         },
-        
+
         // Specify the validation error messages
         messages: {
            nome:{
                 required: "Nome Obrigatório",
-                lettersonly: "Somente letras são permitidas"  
+                lettersonly: "Somente letras são permitidas"
             } ,
             sobrenome:{
-                required: "Sobrenome Obrigatório",  
-                lettersonly: "Somente letras são permitidas" 
+                required: "Sobrenome Obrigatório",
+                lettersonly: "Somente letras são permitidas"
             } ,
             email: {
                 required: "Favor inserir seu e-mail",
                 email: "E-mail inválido"
             },
           senha: "Favor escolher uma senha"
-            
+
         },
         errorPlacement: function(error, element) {
-        
+
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
-        
-        
+
+
     },
-        
+
         submitHandler: function(form) {
-            
+
             cadastrar_usuario("mobile");
         }
     });
 
 
 jQuery("#contato_form").validate({
-    
+
         // Specify the validation rules
         rules: {
             nome: {
                 required: true,
                 lettersonly: true
-                
+
             },
             email: {
                 required: true,
@@ -263,10 +263,10 @@ jQuery("#contato_form").validate({
                 lettersonly: true
             },
             mensagem: "required"
-            
-                       
+
+
         },
-        
+
         // Specify the validation error messages
         messages: {
            nome:{
@@ -280,58 +280,64 @@ jQuery("#contato_form").validate({
             assunto:
             {
                 required: "Favor preencher assunto",
-                lettersonly: "Somente letras são permitidas"  
+                lettersonly: "Somente letras são permitidas"
 
             },
             mensagem: "Favor inserir uma mensagem"
-            
+
         },
         errorPlacement: function(error, element) {
-        
+
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
-        
-        
+
+
     },
-        
+
         submitHandler: function(form) {
-            
-           
+
+
             send_contact_form();
         }
     });
 
-jQuery("#denuncia_form").validate({
+jQuery("#reclam_form").validate({
 
  rules: {
-            
-            denuncia_title: "required",
-            descricao_denuncia: "required"
-           
-                       
+
+            reclamacao_title: "required",
+            descricao_reclamacao: "required",
+            file: "required",
+
+
         },
-        
+
         // Specify the validation error messages
         messages: {
-            
-            denuncia_title: "",
-            descricao_denuncia: ""
-            
+
+            reclamacao_title: "",
+            descricao_reclamacao: "",
+            file:""
+
         },
         errorPlacement: function(error, element) {
-        
-            
+
+
         element.css("background-color","rgb(241, 255, 168)");
         element.css("border","solid 2px red");
-        
-        
-        
+
+
+
     },
-        
+
         submitHandler: function(form) {
 
-            save_denuncia_ajax();
-            
+            jQuery(".reclamacao-type").removeClass("display-block");
+            jQuery(".reclamacao-size").removeClass("display-block");
+            jQuery(".reclamacao-error").removeClass("display-block");
+            jQuery(".reclamacao-endereco").removeClass("display-block");
+            save_reclamacao_ajax();
+
         }
 
 });
@@ -343,13 +349,13 @@ function cadastrar_usuario(size)
 {
     if (size == "mobile") {
         var user_data = jQuery('#cadastro_form_mobile').serialize();
-        
+
 
     }
     else
     {
         var user_data = jQuery('#cadastro_form').serialize();
-        
+
     }
 
               jQuery.ajax({
@@ -370,7 +376,7 @@ function cadastrar_usuario(size)
                         return;
 
                     }
-                    
+
 
                     location.reload(true);
 
@@ -386,7 +392,7 @@ function cadastrar_usuario(size)
 
 function log_user(size)
 {
-    switch(size)  
+    switch(size)
     {
         case "mobile":
         var user_data = jQuery('#log-form-mobile').serialize();
@@ -414,18 +420,18 @@ function log_user(size)
                         if (size == "modal") {
 
                         jQuery(".show-error-modal").css("display", "block");
-                        jQuery(".show-error-modal").html(response);   
+                        jQuery(".show-error-modal").html(response);
                         return;
                         };
 
                         jQuery(".show-error").css("display", "block");
                         jQuery(".show-error").html(response);
-                        
+
 
                         return;
 
                     }
-                    
+
 
                     location.reload(true);
 
@@ -442,7 +448,7 @@ function send_contact_form() {
 jQuery('#contato_form').find(':input:disabled').removeAttr('disabled');
 var user_data = jQuery('#contato_form').serialize();
 
- 
+
     jQuery.ajax({
                 type: 'POST',
                 url: myAjax.ajaxurl,
@@ -451,14 +457,14 @@ var user_data = jQuery('#contato_form').serialize();
 
                    if (response == true) {
 
-                       
+
                         jQuery('#nome').val("");
                         jQuery('#email').val("");
                         jQuery('#assunto').val("");
                         jQuery('#mensagem').val("Sua mensagem foi enviada, muito obrigado. Sinta-se a vontade para enviar quantas sugestões quiser.");
 
                     }
-                    
+
                     console.log(response);
                     event.preventDefault();
                 }
@@ -504,9 +510,9 @@ jQuery(".log-out").click(function(){
     });
 
 
-}); 
+});
 
-        
+
 jQuery('.projetos-slider').flicker();
 jQuery('.vereadores-slider').flicker();
 
@@ -523,7 +529,7 @@ if (jQuery(window).width() <= 480) {
         {
             jQuery(".user-menu").addClass("display-block");
         }
-        
+
 
 
 
@@ -542,38 +548,38 @@ jQuery("#menu-body ul li a").append("<i class='fa fa-arrow-right arrow-margin'><
 jQuery(".check_aceito").click( function(){
 
 var id = '#modal-termos';
-    
+
                 var maskHeight = jQuery(document).height();
                 var maskWidth = jQuery(window).width();
 
                 jQuery('#mask').css({'width':maskWidth,'height':maskHeight});
 
-                jQuery('#mask').fadeIn();   
-                jQuery('#mask').fadeTo('fast',0.5); 
+                jQuery('#mask').fadeIn();
+                jQuery('#mask').fadeTo('fast',0.5);
 
                     //Get the window height and width
                 var winH = jQuery(window).height();
                 var winW = jQuery(window).width();
-                      
+
                 jQuery(id).css('top',  "15%");
                 jQuery(id).css('left', "5%");
-            
-                jQuery(id).fadeIn(); 
+
+                jQuery(id).fadeIn();
 
 });
 
 
 jQuery('#modal-termos .close').click(function (e) {
         e.preventDefault();
-        
+
         jQuery('#mask').hide();
         jQuery('#modal-termos').hide();
-    }); 
+    });
 
 jQuery('#mask').click(function () {
         jQuery(this).hide();
         jQuery('#modal-termos').hide();
-    }); 
+    });
 
 }
 
@@ -583,24 +589,24 @@ jQuery('#mask').click(function () {
 
 
   jQuery("document").ready(function($){
-    
+
     var nav = $('header');
-    
+
     var menu =$('#menu-bar');
-    
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 136) {
             nav.addClass("header-fixed");
-            
-            
+
+
 
         } else {
             nav.removeClass("header-fixed");
-            
-            
+
+
         }
     });
- 
+
 });
 
 
@@ -612,21 +618,21 @@ jQuery('#mask').click(function () {
 
 $('.window .close').click(function (e) {
         e.preventDefault();
-        
+
         $('#mask').hide();
         $('.window').hide();
-    });     
-    
+    });
+
     $('#mask').click(function () {
         $(this).hide();
         $('.window').hide();
-    });     
+    });
 
         $('#register-manual').click(function() {
 
 
-            width = $(window).width(); 
-            
+            width = $(window).width();
+
             if (width <= 480) {
                 window.location = "#cadastro-wrapper-footer";
                 $('#mask').hide();
@@ -636,30 +642,30 @@ $('.window .close').click(function (e) {
             window.location = "#destaque";
                 $('#mask').hide();
                 $('.window').hide();
-            
-        }); 
+
+        });
 
 
 
         $('#register-manual-inside').click(function() {
 
-                    
+
                 window.location = "http://www.debategv.com.br";
                 $('#mask').hide();
                 $('.window').hide();
-                
-            
-            
-        });     
-
-  
-
-
-});  
 
 
 
-    
+        });
+
+
+
+
+});
+
+
+
+
 
 
 
@@ -699,9 +705,9 @@ else
     jQuery(".login-buttons").addClass("show-menu");
     jQuery(".flaticon-user60").addClass("color-avatar");
 
-    
+
 }
-    
+
 });
 
 
@@ -722,7 +728,7 @@ jQuery(".login-buttons").removeClass("hide");
 
 });
 
-    
+
 jQuery(".register-with-email").click(function(){
 
 if (jQuery("#cadastro_form").hasClass("show-menu")) {
@@ -746,11 +752,11 @@ var filters = {};
 jQuery('.chosen-select').change(function(event){
 
      if(event.target == this){
-        
-        if (jQuery(this).parent().hasClass('filtro-projetos')) { 
 
-          
-       
+        if (jQuery(this).parent().hasClass('filtro-projetos')) {
+
+
+
           // get group key
           var buttonGroup = jQuery("option:selected", this).parents('.chosen-select');
           var filterGroup = buttonGroup.attr('data-filter-group');
@@ -762,18 +768,18 @@ jQuery('.chosen-select').change(function(event){
             filterValue += filters[ prop ];
         }
           // set filter for Isotope
-       
+
           jQuery('#container').isotope({ filter: filterValue });
           // jQuery('#container').isotope({ filter: jQuery(this).val() })
-        
-      
-        
+
+
+
         }
-        else if (jQuery(this).parent().hasClass('filtro-perfis')) 
+        else if (jQuery(this).parent().hasClass('filtro-perfis'))
         {
 
-        
-         
+
+
           // get group key
           var buttonGroup = jQuery("option:selected", this).parents('.chosen-select');
           var filterGroup = buttonGroup.attr('data-filter-group');
@@ -785,53 +791,34 @@ jQuery('.chosen-select').change(function(event){
             filterValue += filters[ prop ];
         }
           // set filter for Isotope
-       
+
           jQuery('#perfis').isotope({ filter: filterValue });
           // jQuery('#container').isotope({ filter: jQuery(this).val() })
-        
-       
+
+
         };
 
 
 
-        
+
      }
 
 });
 
 //trombone
 
-jQuery('#bairro_denuncia').chosen({inherit_select_classes : false});
+jQuery('#bairro_reclamacao').chosen({inherit_select_classes : false});
 
 
 jQuery(document).ready(function() {
 
-jQuery(".debate-video").change(function(){
-
-if (jQuery(".debate-video").is(':checked')) {
 
 
-jQuery(".youtube-video").addClass("deactive-color");
-jQuery(".user-personagem-box").addClass("display-block");
-
-}
-
-})
-
-jQuery(".youtube-video").focus(function(){
-
-jQuery(".youtube-video").removeClass("deactive-color");
-jQuery(".debate-video").prop('checked', false);
-jQuery(".user-personagem-box").removeClass("display-block");
-})
-
-
-
-jQuery(".denuncia-title").focus(function()
+jQuery(".reclamacao-title").focus(function()
 {
     if (jQuery("#addressField").val() == "") {
         jQuery(".aviso-local").addClass("display-block");
-        
+
     }
     else
     {
@@ -840,11 +827,11 @@ jQuery(".denuncia-title").focus(function()
     }
 })
 
-jQuery(".denuncia-title").focusout(function()
+jQuery(".reclamacao-title").focusout(function()
 {
     if (jQuery("#addressField").val() == "") {
         jQuery(".aviso-local").addClass("display-block");
-        
+
     }
     else
     {
@@ -860,42 +847,72 @@ jQuery(".denuncia-title").focusout(function()
 
 var request_count = 0;
 
-function save_denuncia_ajax()
+function save_reclamacao_ajax()
 {
-    var denuncia_data = jQuery('#denuncia_form').serialize();
- 
+
 if (request_count != 1) {
-    jQuery.ajax({
-                type: 'POST',
-                url: myAjax.ajaxurl,
-                data: denuncia_data + '&action=save_denuncia'+'&security='+myAjax.ajax_nonce,
-                success: function(response) {
+var formElement = document.getElementById("reclam_form");
+var formData = new FormData(reclam_form);
+formData.append("action", "save_reclamacao");
+formData.append("security",myAjax.ajax_nonce);
 
-                    switch(response){
 
-                        case "novideo":
-                        jQuery(".aviso-video").addClass("display-block");
-                        break;
-                        case "noadress":
-                        jQuery(".aviso-local").addClass("display-block");
-                        break;
 
-                    };
+  var xhr = new XMLHttpRequest();
 
-                    request_count = 1;
+  xhr.open("POST",myAjax.ajaxurl,true);
+  xhr.send(formData);
 
-                    jQuery(".denuncia-title").val('');
-                    jQuery(".descricao_denuncia").val('');
-                    jQuery(".youtube-video").val('');
-                    jQuery(".obs-bairro").val('');
-                    jQuery(".debate-video").prop('checked', false);
-                    jQuery(".user-personagem").prop('checked', false);
-                    jQuery(".denuncia-sucesso").addClass("display-block");
+   xhr.onreadystatechange=function(){
+
+    if (xhr.readyState==4 && xhr.status==200){
+console.log(xhr.responseText);
+
+switch(xhr.responseText)
+{
+    case "endereco":
+     jQuery(".reclamacao-endereco").addClass("display-block");
+     window.scrollTo(0,document.body.scrollHeight);
+     break;
+    case "type":
+    jQuery(".reclamacao-type").addClass("display-block");
+    window.scrollTo(0,document.body.scrollHeight);
+    break;
+    case "size":
+    jQuery(".reclamacao-size").addClass("display-block");
+    window.scrollTo(0,document.body.scrollHeight);
+    break;
+    case "error":
+    jQuery(".reclamacao-error").addClass("display-block");
+    window.scrollTo(0,document.body.scrollHeight);
+    break;
+    default:
+     jQuery(".reclamacao-title").val('');
+    jQuery(".descricao_reclamacao").val('');
+    jQuery(".obs-bairro").val('');
+    jQuery("#file").val("");
+    jQuery(".reclamacao-sucesso").addClass("display-block");
+    window.scrollTo(0,document.body.scrollHeight);
+    request_count = 1;
+    break;
+
+};
+
+
+
+
+
+    }
+  }
+
+
+
+
+
 
                     event.preventDefault();
-                }
-            });
-
-    };
 
 }
+
+}
+

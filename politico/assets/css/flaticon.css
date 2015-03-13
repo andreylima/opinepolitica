@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
 	font-family: Flaticon;
         font-size: 20px;
 font-style: normal;
@@ -20,6 +20,7 @@ margin-left: 20px;
 	display: block;
 	width: 20%;
 	margin-top: 10px;
+	color:#3b5999;
 }
 .flaticon-back36
 {
@@ -49,7 +50,7 @@ margin-left: 20px;
 	margin-left: 14px;
 	margin-right: 5px;
 }
-.flaticon-create1:after 
+.flaticon-create1:after
 {
 	border-left: 1px solid white;
 	content: '';
@@ -60,13 +61,17 @@ margin-left: 20px;
 	height: 30px;
 	margin-left: 0px;
 }
-.flaticon-pin56:before {
+.flaticon-loudspeaker17:before {
 	content: "\e004";
+	font-size: 55px;
+}
+.flaticon-pin56:before {
+	content: "\e006";
 	margin-left: 0;
 
 }
 .flaticon-right133:before {
-	content: "\e005";
+	content: "\e007";
 	font-size: 32px;
 	color: #3b5999;
 	display: block;
@@ -76,16 +81,16 @@ margin-left: 20px;
 	margin-right: 10px;
 }
 .flaticon-signature2:before {
-	content: "\e006";
+	content: "\e005";
 	font-size: 55px;
 }
 .flaticon-thumb35:before {
-	content: "\e007";
+	content: "\e008";
 	font-size: 55px;
 }
 .flaticon-user60:before {
-	content: "\e008";
-	color: white;
+	content: "\e009";
+	color: #807f83;
 	font-size: 40px;
 	float: left;
 	display: block;

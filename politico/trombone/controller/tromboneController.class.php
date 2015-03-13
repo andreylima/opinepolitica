@@ -3,73 +3,73 @@
 
 class tromboneController {
 
-	
-private $denuncia_completa;
+
+private $reclamacao_completa;
 
 private $bairros_gv;
 
-private $bairros_denuncia;
+private $bairros_reclamacao;
 
-private $qtd_denuncias;
+private $qtd_reclamacoes;
 
-private $qtd_denuncia_resolvida;
+private $qtd_reclamacao_resolvida;
 
 private $percent_resolvidas;
 
-private $denuncia_single;
+private $reclamacao_single;
 
 	public function __construct()
 	{
-		
-		$this->setDenuncia_completa();
-		$this->set_qtd_denuncias();
+
+		$this->setreclamacao_completa();
+		$this->set_qtd_reclamacoes();
 		$this->set_qtd_resolvidas();
 		$this->set_percent_resolvidas();
 	}
 
 
-	public function setDenuncia_completa()
+	public function setreclamacao_completa()
 	{
 
-		
-		$loop = new WP_Query( array( 'post_type' => 'denuncia', 'oderby' => 'date',  'post_status'=>'publish' ) ); 
+
+		$loop = new WP_Query( array( 'post_type' => 'reclamacao', 'oderby' => 'date',  'post_status'=>'publish' ) );
 
 		$i = 0;
 
 
-		if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post(); 
+		if ($loop->have_posts()) : while ($loop->have_posts()) : $loop->the_post();
 
-		$denuncia_completa[$i]['titulo'] = get_the_title();
-		$denuncia_completa[$i]['id'] = get_the_id();
-		$denuncia_completa[$i]['local_denuncia'] = get_post_meta(get_the_id(), 'local_denuncia', true  );
-		$denuncia_completa[$i]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
-		$denuncia_completa[$i]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
-		$denuncia_completa[$i]['data'] = get_the_date();
-		$denuncia_completa[$i]['permalink'] = get_the_permalink();
-		$denuncia_completa[$i]['situacao_denuncia'] = get_post_meta(get_the_id(), 'situacao_denuncia', true  );
-		$denuncia_completa[$i]['qtd_comments_denuncia'] = get_comments_number( get_the_id() );
-		$denuncia_completa[$i]['bairro_denuncia'] = get_post_meta(get_the_id(), 'bairro_denuncia', true );
-		$denuncia_completa[$i]['link_imagem'] = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post_id ) );
+		$reclamacao_completa[$i]['titulo'] = get_the_title();
+		$reclamacao_completa[$i]['id'] = get_the_id();
+		$reclamacao_completa[$i]['local_reclamacao'] = get_post_meta(get_the_id(), 'local_reclamacao', true  );
+		$reclamacao_completa[$i]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
+		$reclamacao_completa[$i]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
+		$reclamacao_completa[$i]['data'] = get_the_date();
+		$reclamacao_completa[$i]['permalink'] = get_the_permalink();
+		$reclamacao_completa[$i]['situacao_reclamacao'] = get_post_meta(get_the_id(), 'situacao_reclamacao', true  );
+		$reclamacao_completa[$i]['qtd_comments_reclamacao'] = get_comments_number( get_the_id() );
+		$reclamacao_completa[$i]['bairro_reclamacao'] = get_post_meta(get_the_id(), 'bairro_reclamacao', true );
+		$reclamacao_completa[$i]['link_imagem'] = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post_id ) );
 
 		$i += 1;
- 		endwhile; endif; 
+ 		endwhile; endif;
 
 
 		wp_reset_postdata();
 
 
-		$denuncia_completa = ($denuncia_completa == '') ? array() : $denuncia_completa;
-		$this->denuncia_completa = $denuncia_completa;
+		$reclamacao_completa = ($reclamacao_completa == '') ? array() : $reclamacao_completa;
+		$this->reclamacao_completa = $reclamacao_completa;
 
-		
-	
+
+
 	}
 
 
-	public function getDenuncia_completa()
+	public function get_reclamacao_completa()
 	{
 
-		return $this->denuncia_completa;
+		return $this->reclamacao_completa;
 
 	}
 
@@ -92,8 +92,8 @@ private $denuncia_single;
 							 'Nova Vila Bretas', 'Bela Vista','Retiro dos Lagos','Kennedy','Jardim Pérola','Fraternidade','Vila Rica', 'São José',
 							 'Elvamar','Vilagge da Serra','Parque das Aroeiras','Encosta do Sol');
 
-		
-	
+
+
 		$this->bairros_gv = $bairros_gv;
 
 
@@ -112,10 +112,10 @@ private $denuncia_single;
 
 	public function set_count_bairros()
 	{
-		$bairros_denuncia = $wpdb->get_col("SELECT meta_value
-		FROM $wpdb->postmeta WHERE meta_key = 'bairro_denuncia'" );
+		$bairros_reclamacao = $wpdb->get_col("SELECT meta_value
+		FROM $wpdb->postmeta WHERE meta_key = 'bairro_reclamacao'" );
 
-		$this->bairros_denuncia = array_count_values( $bairros_denuncia );
+		$this->bairros_reclamacao = array_count_values( $bairros_reclamacao );
 
 
 	}
@@ -124,32 +124,32 @@ private $denuncia_single;
 	public function get_count_bairros()
 	{
 
-		return $this->bairros_denuncia;
+		return $this->bairros_reclamacao;
 	}
 
 
-	public function set_qtd_denuncias()
+	public function set_qtd_reclamacoes()
 	{
-		$posts = wp_count_posts( 'denuncia' );
-		$this->qtd_denuncias = $posts->publish;
+		$posts = wp_count_posts( 'reclamacao' );
+		$this->qtd_reclamacoes = $posts->publish;
 
 
 	}
 
-	public function get_qtd_denuncias()
+	public function get_qtd_reclamacoes()
 	{
-		return $this->qtd_denuncias;
+		return $this->qtd_reclamacoes;
 	}
 
 	public function set_qtd_resolvidas()
 	{
 		global $wpdb;
-		$this->qtd_denuncia_resolvida = $wpdb->get_var( "SELECT count(DISTINCT pm.post_id)
+		$this->qtd_reclamacao_resolvida = $wpdb->get_var( "SELECT count(DISTINCT pm.post_id)
 														FROM $wpdb->postmeta pm
 														JOIN $wpdb->posts p ON (p.ID = pm.post_id)
-														WHERE pm.meta_key = 'situacao_denuncia'
+														WHERE pm.meta_key = 'situacao_reclamacao'
 														AND pm.meta_value = 'resolvida'
-														AND p.post_type = 'denuncia'
+														AND p.post_type = 'reclamacao'
 														AND p.post_status = 'publish'
 														" );
 
@@ -159,7 +159,7 @@ private $denuncia_single;
 
 	public function get_qtd_resolvidas()
 	{
-		return $this->qtd_denuncia_resolvida;
+		return $this->qtd_reclamacao_resolvida;
 
 	}
 
@@ -167,7 +167,7 @@ private $denuncia_single;
 
 	public function set_percent_resolvidas()
 	{
-		$total = $this->get_qtd_denuncias();
+		$total = $this->get_qtd_reclamacoes();
 
 		$resolvidas = $this->get_qtd_resolvidas();
 
@@ -177,10 +177,10 @@ private $denuncia_single;
 		else
 		{
 
-			$this->percent_resolvidas =  round($resolvidas / $total * 100, 2)."%"; 
+			$this->percent_resolvidas =  round($resolvidas / $total * 100, 2)."%";
 		}
 
-		
+
 
 
 	}
@@ -193,60 +193,82 @@ private $denuncia_single;
 
 	}
 
-	public function save_denuncia_wp($denuncia)
+	public function save_reclamacao_wp($reclamacao)
 	{
 
+
 		$my_post = array(
-		  'post_title'    => $denuncia['denuncia_title'],
-		  'post_content'  => $denuncia['descricao_denuncia'],
+		  'post_title'    => $reclamacao['reclamacao_title'],
+		  'post_content'  => $reclamacao['descricao_reclamacao'],
 		  'post_status'   => 'pending',
-		  'post_type' => 'denuncia',
+		  'post_type' => 'reclamacao',
 
 		);
 
 
 		$postID = wp_insert_post( $my_post );
+		global $current_user;
+		get_currentuserinfo();
 
-		update_post_meta( $postID, 'local_denuncia', $denuncia['endereco']);
-		update_post_meta( $postID, 'obs_bairro', $denuncia['obs-bairro']);
-		update_post_meta( $postID, 'longitude', $denuncia['longitude']);
-		update_post_meta( $postID, 'latitude', $denuncia['latitude']);
-		update_post_meta( $postID, 'debate_video', $denuncia['debate-video']);
-		update_post_meta( $postID, 'user-personagem', $denuncia['user-personagem']);
-		update_post_meta( $postID, 'data-denuncia', get_the_date($postID));
+		update_post_meta( $postID, 'local_reclamacao', $reclamacao['endereco']);
+		update_post_meta( $postID, 'obs_bairro', $reclamacao['obs-bairro']);
+		update_post_meta( $postID, 'longitude', $reclamacao['longitude']);
+		update_post_meta( $postID, 'latitude', $reclamacao['latitude']);
+		update_post_meta( $postID, 'autor-email', $current_user->user_email);
+
+		$filename = $_FILES['file']['name'];
+		$uploaddir = wp_upload_dir();
+		$uploadfile = $uploaddir['path'] . '/' . $filename;
+		move_uploaded_file( $_FILES['file']['tmp_name'] , $uploadfile );
+
+		$wp_filetype = wp_check_filetype(basename($filename), null );
+
+		 $attachment = array(
+		      'guid'           => $uploaddir['url'] . '/' . basename( $filename ),
+		      'post_mime_type' => $wp_filetype['type'],
+		      'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
+		      'post_content' => '',
+		      'post_status' => 'inherit',
+		      'menu_order' => $_i + 1000
+		  );
+		  $attach_id = wp_insert_attachment( $attachment, $uploadfile, $postID );
+
+		  update_post_meta($postID,'thumbnail_id',$attach_id);
+
+		  set_post_thumbnail( $postID, $attach_id );
 
 
-		send_email_denuncia();
-		
-		return 1;
+		send_email_reclamacao();
+
+		return $postID;
 
 
 
 	}
 
-	public function set_denuncia_single()
+	public function set_reclamacao_single()
 	{
 
-		$denuncia_single[0]['titulo'] = get_the_title();
-		$denuncia_single[0]['id'] = get_the_id();
-		$denuncia_single[0]['local_denuncia'] = get_post_meta(get_the_id(), 'local_denuncia', true  );
-		$denuncia_single[0]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
-		$denuncia_single[0]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
-		$denuncia_single[0]['data'] = get_post_meta(get_the_id(), 'data-denuncia', true  );
-		$denuncia_single[0]['permalink'] = get_the_permalink();
-		$denuncia_single[0]['situacao_denuncia'] = get_post_meta(get_the_id(), 'situacao_denuncia', true  );
-		$denuncia_single[0]['qtd_comments_denuncia'] = get_comments_number( get_the_id() );
-		$denuncia_single[0]['bairro_denuncia'] = get_post_meta(get_the_id(), 'bairro_denuncia', true );
+		$reclamacao_single[0]['titulo'] = get_the_title();
+		$reclamacao_single[0]['id'] = get_the_id();
+		$reclamacao_single[0]['local_reclamacao'] = get_post_meta(get_the_id(), 'local_reclamacao', true  );
+		$reclamacao_single[0]['latitude'] = get_post_meta(get_the_id(), 'latitude' , true );
+		$reclamacao_single[0]['longitude'] = get_post_meta(get_the_id(), 'longitude', true  );
+		$reclamacao_single[0]['data'] = get_post_meta(get_the_id(), 'data-reclamacao', true  );
+		$reclamacao_single[0]['permalink'] = get_the_permalink();
+		$reclamacao_single[0]['situacao_reclamacao'] = get_post_meta(get_the_id(), 'situacao_reclamacao', true  );
+		$reclamacao_single[0]['qtd_comments_reclamacao'] = get_comments_number( get_the_id() );
+		$reclamacao_single[0]['bairro_reclamacao'] = get_post_meta(get_the_id(), 'bairro_reclamacao', true );
 
 
-		$this->denuncia_single = $denuncia_single;
+		$this->reclamacao_single = $reclamacao_single;
 
 	}
 
-	public function get_denuncia_single()
+	public function get_reclamacao_single()
 	{
 
-		return $this->denuncia_single;
+		return $this->reclamacao_single;
 
 	}
 

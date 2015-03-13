@@ -42,9 +42,9 @@
 			<img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo">
 		</a>
 
-		<?php if (!is_user_logged_in()) 
+		<?php if (!is_user_logged_in())
 		{
-			if (is_home()) 
+			if (is_home())
 				{ ?>
 			<a href="#cadastro-wrapper-footer" class="cadastrar-link">CADASTRE-SE</a>
 
@@ -55,30 +55,30 @@
 
 
 			<a href="#menu-body"><div class="open_menu"><i class="fa fa-bars"></i></div></a>
-			<?php 
+			<?php
 
 			if (is_home()) {
-				if (is_user_logged_in()) { 
+				if (is_user_logged_in()) {
 
-					wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-header' ) ); 
+					wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-header' ) );
 
 				}
 				else
 				{
-					wp_nav_menu( array( 'theme_location'=>'logged_out', 'container_id' => 'menu-header' ) ); 
+					wp_nav_menu( array( 'theme_location'=>'logged_out', 'container_id' => 'menu-header' ) );
 
 				}
 			}
 			else
 			{
-				if (is_user_logged_in()) { 
+				if (is_user_logged_in()) {
 
-					wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-header' ) ); 
+					wp_nav_menu( array( 'theme_location'=>'logged_in', 'container_id' => 'menu-header' ) );
 
 				}
 				else
 				{
-					wp_nav_menu( array( 'theme_location'=>'interno', 'container_id' => 'menu-header' ) ); 
+					wp_nav_menu( array( 'theme_location'=>'interno', 'container_id' => 'menu-header' ) );
 
 				}
 			}
@@ -92,22 +92,22 @@
 
 				<div class="login-connect-header">
 
-					<div class="Entrar-wrapper">
+					<div class="entrar-wrapper">
 						<span class="flaticon-user60"></span>
-						<span class="entrar-button">ENTRAR</span> 
+						<span class="entrar-button">ENTRAR</span>
 					</div>
 					<div class="login-buttons">
 
 						<div class="face-login-header">
 							<?php do_action( 'wordpress_social_login' ); ?>
-							
+
 								<span class="login-social-header">Entrar com Facebook</span>
-							
+
 						</div>
 
 						<div class="login-with-email">
 							<span class="flaticon-right133">Entrar com e-mail</span>
-							
+
 						</div>
 
 					</div>
@@ -118,13 +118,13 @@
 			<span class="flaticon-back36"></span>
 			 <input type="text" name="email_log" value="" id="email-log" placeholder="e-mail">
       		 <input type="password" name="senha_log" placeholder="senha" id="senha-log">
-      		
-      		
-      		
+
+
+
       		<input type="submit" name="login" value="LOGIN" id="btnentrar-log">
       		</form>
       		<div class="show-error"></div>
-      		
+
       	</div>
 
 
@@ -132,10 +132,10 @@
       	<div class="float-right">
       		<a href="https://pt.gravatar.com/">
       			<div class="avatar">
-      				<?php 
+      				<?php
       				global $current_user;
       				get_currentuserinfo();
-      				echo get_avatar( $current_user->user_email , 60 ); 
+      				echo get_avatar( $current_user->user_email , 50 );
 
       				?>
 
@@ -151,9 +151,9 @@
       	</div>
       	<?php } ?>
       </header>
-      <?php 
+      <?php
 
-      wp_nav_menu( array( 'theme_location'=>'mobile', 'container_id' => 'menu-body' ) ); 
+      wp_nav_menu( array( 'theme_location'=>'mobile', 'container_id' => 'menu-body' ) );
 
 
       ?>

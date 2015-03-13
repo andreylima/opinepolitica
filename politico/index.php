@@ -59,6 +59,17 @@ get_header();
 <span id="scroll-down-proj"></span>
 </a>
 
+<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'boca no trombone' ) ));  ?>" class="placas">
+<div class="placa-trombone">
+  <span class="boca-label">BOCA NO TROMBONE</span>
+    <div class="icon-trombone-container">
+<span class="flaticon-loudspeaker17"></span>
+</div>
+<span class="boca-label2">FAÇA A SUA RECLAMAÇÃO!</span>
+<span class="boca-label3">VEJA TAMBÉM O MAPA DE RECLAMAÇÕES.</span>
+</div>
+</a>
+
 <a href="#politicos" class="placas">
 <?php if (!is_user_logged_in()) { ?>
 <div class="placa-politicos">
