@@ -32,7 +32,7 @@ get_header();
   
   <img src="<?php echo get_stylesheet_directory_uri().'/assets/img/logo.png' ?>" alt="" id="logo-home">
 <div class="letreiro">
-  <h2 class="fundo">PARTICIPE,</h2>
+  <h2 class="fundo">PARTICIPE!</h2>
 	<h2 class="fundo">AJUDE A FISCALIZAR</h2>
   <h2 class="fundo"> A CIDADE QUE A GENTE AMA.</h2>  
 	</div>
